@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bilflip — finn undervurderte biler</title>
+  <meta name="description" content="AI-drevet bruktbilanalyse. Vi scanner Finn.no daglig og finner biler under markedsverdi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #f5f4f1;
+      --white:      #ffffff;
+      --border:     #e4e2dd;
+      --text:       #1c1c1c;
+      --muted:      #8a8880;
+      --muted2:     #b5b2ac;
+      --tag-bg:     #f0ede8;
+      --tag-text:   #5a574f;
+      --green-bg:   #eef6f0;
+      --green-text: #2a7a4b;
+      --green-mid:  #3d9960;
+      --blue-bg:    #eef3fb;
+      --blue-text:  #1f5fa6;
+      --amber-bg:   #fdf5e6;
+      --amber-text: #8a5e00;
+      --radius-sm:  10px;
+      --radius-md:  14px;
+      --radius-lg:  20px;
+      --radius-xl:  28px;
+      --ff: 'Figtree', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      font-family: var(--ff);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 20px;
+    }
+    .header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo { font-size: 22px; font-weight: 600; letter-spacing: -0.4px; color: var(--text); text-decoration: none; }
+    .live-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--green-bg); border-radius: 20px;
+      padding: 5px 12px; font-size: 12px; font-weight: 500; color: var(--green-text);
+    }
+    .live-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--green-mid);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+    .stats-row {
+      max-width: 680px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
+      padding: 12px 0;
+    }
+    .stat-mini { background: var(--tag-bg); border-radius: var(--radius-sm); padding: 10px 13px; }
+    .stat-mini-label { font-size: 11px; color: var(--muted); margin-bottom: 3px; font-weight: 500; letter-spacing: 0.02em; }
+    .stat-mini-val { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+    .stat-mini-val.green { color: var(--green-text); }
+
+    /* ─── MAIN ─── */
+    main { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* ─── FILTERS ─── */
+    .filter-row { display: flex; gap: 8px; padding: 18px 0 4px; flex-wrap: wrap; }
+    .chip {
+      font-size: 13px; font-weight: 500; padding: 7px 16px;
+      border-radius: 20px; border: 1.5px solid var(--border);
+      background: var(--white); color: var(--muted);
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+      font-family: var(--ff);
+    }
+    .chip.active { background: var(--text); color: var(--white); border-color: var(--text); }
+    .chip:hover:not(.active) { border-color: var(--muted2); color: var(--text); }
+
+    .section-label {
+      font-size: 12px; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 16px 0 10px;
+    }
+
+    /* ─── CAR CARD ─── */
+    .car-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-bottom: 14px;
+      transition: border-color 0.2s;
+    }
+    .car-card.featured { border: 2px solid var(--text); }
+    .car-card:hover { border-color: var(--muted2); }
+    .car-card.featured:hover { border-color: var(--text); }
+
+    .card-header { padding: 18px 18px 14px; border-bottom: 1px solid var(--border); }
+    .card-header-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 12px; margin-bottom: 10px;
+    }
+    .card-left { flex: 1; min-width: 0; }
+    .rank-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+    .rank-pill {
+      background: var(--text); color: var(--white);
+      font-size: 11px; font-weight: 600;
+      border-radius: 7px; padding: 3px 9px;
+    }
+    .rank-pill.green { background: var(--green-mid); }
+    .car-name { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; line-height: 1.25; }
+    .car-year { font-size: 14px; color: var(--muted); font-weight: 400; margin-left: 5px; }
+    .car-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    .price-block { text-align: right; flex-shrink: 0; }
+    .price-main { font-size: 19px; font-weight: 600; letter-spacing: -0.4px; white-space: nowrap; }
+    .price-margin { font-size: 13px; font-weight: 600; color: var(--green-text); white-space: nowrap; margin-top: 2px; }
+
+    .car-meta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+    .meta-item { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); }
+
+    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .tag {
+      font-size: 12px; font-weight: 500; padding: 4px 11px;
+      border-radius: 8px; background: var(--tag-bg); color: var(--tag-text);
+    }
+    .tag.green { background: var(--green-bg); color: var(--green-text); }
+    .tag.blue  { background: var(--blue-bg);  color: var(--blue-text);  }
+    .tag.amber { background: var(--amber-bg); color: var(--amber-text); }
+
+    .score-bar-wrap { display: flex; align-items: center; gap: 10px; }
+    .score-bar-track {
+      flex: 1; height: 6px; background: var(--tag-bg);
+      border-radius: 3px; overflow: hidden;
+    }
+    .score-bar-fill { height: 100%; border-radius: 3px; background: var(--green-mid); transition: width 0.6s ease; }
+    .score-num { font-size: 14px; font-weight: 600; min-width: 24px; text-align: right; }
+
+    .card-body { display: grid; grid-template-columns: 1fr 1fr; }
+    .card-col { padding: 14px 18px; }
+    .card-col:first-child { border-right: 1px solid var(--border); }
+    .col-label {
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;
+    }
+    .ai-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+
+    .kalkyle-row {
+      display: flex; justify-content: space-between;
+      align-items: center; font-size: 13px;
+      padding: 4px 0; border-bottom: 1px solid var(--border);
+    }
+    .kalkyle-row:last-of-type { border-bottom: none; }
+    .kalkyle-row.total {
+      font-weight: 600; font-size: 14px;
+      color: var(--green-text); padding-top: 10px;
+      margin-top: 4px; border-top: 1.5px solid var(--border);
+    }
+    .kalkyle-label { color: var(--muted); }
+
+    .btn-finn {
+      display: block; margin: 0 18px 18px;
+      padding: 14px; background: var(--text); color: var(--white);
+      border-radius: var(--radius-md); text-align: center;
+      font-size: 14px; font-weight: 600; cursor: pointer;
+      border: none; font-family: var(--ff);
+      text-decoration: none; transition: opacity 0.15s;
+    }
+    .btn-finn:hover { opacity: 0.85; }
+
+    /* ─── LOCKED CARD ─── */
+    .locked-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 18px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 12px;
+      margin-bottom: 14px;
+    }
+    .locked-left { flex: 1; min-width: 0; }
+    .locked-rank { font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+    .locked-title { font-size: 15px; font-weight: 600; filter: blur(6px); user-select: none; }
+    .locked-sub   { font-size: 13px; color: var(--muted); filter: blur(5px); user-select: none; margin-top: 2px; }
+    .locked-right { text-align: right; flex-shrink: 0; }
+    .locked-price  { font-size: 16px; font-weight: 600; filter: blur(6px); user-select: none; }
+    .locked-margin { font-size: 13px; color: var(--green-text); font-weight: 600; filter: blur(5px); user-select: none; margin-top: 2px; }
+    .btn-unlock {
+      font-size: 12px; font-weight: 600; padding: 7px 14px;
+      border-radius: var(--radius-sm); background: var(--tag-bg);
+      color: var(--text); border: 1.5px solid var(--border);
+      cursor: pointer; margin-top: 10px; font-family: var(--ff);
+      transition: all 0.15s;
+    }
+    .btn-unlock:hover { border-color: var(--text); }
+
+    /* ─── PAYWALL ─── */
+    .paywall-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--border); padding: 26px 22px;
+      margin-top: 8px;
+    }
+    .paywall-head { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 6px; }
+    .paywall-sub  { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.55; }
+
+    .price-highlight { display: flex; align-items: baseline; gap: 5px; margin-bottom: 6px; }
+    .price-big  { font-size: 36px; font-weight: 600; letter-spacing: -1.5px; }
+    .price-per  { font-size: 15px; color: var(--muted); }
+    .trial-note { font-size: 13px; color: var(--green-text); font-weight: 500; margin-bottom: 20px; }
+
+    .feature-list { list-style: none; margin-bottom: 22px; }
+    .feature-list li {
+      font-size: 14px; color: var(--text); padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feat-icon {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: var(--green-bg); display: flex;
+      align-items: center; justify-content: center; flex-shrink: 0;
+    }
+
+    .btn-cta {
+      display: block; width: 100%; padding: 16px;
+      background: var(--text); color: var(--white);
+      border-radius: var(--radius-md); text-align: center;
+      font-size: 16px; font-weight: 600; cursor: pointer;
+      border: none; font-family: var(--ff);
+      margin-bottom: 10px; transition: opacity 0.15s;
+    }
+    .btn-cta:hover { opacity: 0.85; }
+    .btn-free {
+      display: block; width: 100%; padding: 13px;
+      background: transparent; color: var(--muted);
+      border-radius: var(--radius-md); text-align: center;
+      font-size: 14px; cursor: pointer;
+      border: 1.5px solid var(--border); font-family: var(--ff);
+      transition: border-color 0.15s;
+    }
+    .btn-free:hover { border-color: var(--muted2); color: var(--text); }
+    .disclaimer {
+      font-size: 12px; color: var(--muted);
+      text-align: center; margin-top: 12px; line-height: 1.5;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      max-width: 680px; margin: 0 auto;
+      padding: 24px 20px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    .footer-logo { font-size: 16px; font-weight: 600; color: var(--text); }
+    .footer-disc { font-size: 12px; color: var(--muted); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 520px) {
+      .card-body { grid-template-columns: 1fr; }
+      .card-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-mini-val { font-size: 16px; }
+      .car-name { font-size: 15px; }
+      .price-main { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── HEADER ─── -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="/">bilflip</a>
+    <div class="live-pill">
+      <span class="live-dot"></span>
+      <span id="oppdatert-tid">Oppdatert i dag</span>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat-mini">
+      <div class="stat-mini-label">Skannet i dag</div>
+      <div class="stat-mini-val" id="stat-skannet">83</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-label">Snitt margin</div>
+      <div class="stat-mini-val green" id="stat-snitt">24 500 kr</div>
+    </div>
+    <div class="stat-mini">
+      <div class="stat-mini-label">Beste margin</div>
+      <div class="stat-mini-val green" id="stat-beste">38 000 kr</div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── MAIN ─── -->
+<main>
+  <div class="filter-row" id="filter-row">
+    <button class="chip active" data-filter="all">Alle</button>
+    <button class="chip" data-filter="performance">Performance</button>
+    <button class="chip" data-filter="longrange">Long Range</button>
+    <button class="chip" data-filter="margin25">Margin 25k+</button>
+  </div>
+
+  <div class="section-label">Topp flip-muligheter · sortert etter AI-score</div>
+
+  <div id="car-list"></div>
+
+  <!-- PAYWALL -->
+  <div class="paywall-card" id="paywall">
+    <div class="paywall-head">Få tilgang til alle analyser</div>
+    <div class="paywall-sub">Se alle biler, daglige Telegram-varsler og full kalkyle for hver kandidat.</div>
+
+    <div class="price-highlight">
+      <span class="price-big">299</span>
+      <span class="price-per">kr / måned</span>
+    </div>
+    <div class="trial-note">14 dager gratis — avslutt når som helst</div>
+
+    <ul class="feature-list">
+      <li>
+        <span class="feat-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Alle biler daglig, sortert etter margin
+      </li>
+      <li>
+        <span class="feat-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Full AI-analyse og flipping-kalkyle
+      </li>
+      <li>
+        <span class="feat-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Telegram-varsel når ny bil dukker opp
+      </li>
+      <li>
+        <span class="feat-icon">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Prishistorikk siste 30 dager
+      </li>
+    </ul>
+
+    <button class="btn-cta" onclick="alert('Betaling kommer snart!')">Prøv gratis i 14 dager</button>
+    <button class="btn-free">Fortsett gratis — se kun topp 1</button>
+    <div class="disclaimer">Ingen binding · Betaling via Vipps eller kort</div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">bilflip</div>
+  <div class="footer-disc">Bruker data fra Finn.no · Ikke tilknyttet Schibsted</div>
+</footer>
+
+<script>
+  /* ─── DATA ───────────────────────────────────────────────
+     TODO: Bytt ut denne arrayen med et fetch() mot Supabase
+     når du er klar. Format er det samme.
+  ──────────────────────────────────────────────────────── */
+  const BILER = [
+    {
+      rang: 1,
+      tittel: "Tesla Model 3 Performance",
+      undertype: "AWD",
+      aar: 2019,
+      km: 63000,
+      lokasjon: "Lørenskog",
+      dager: "7–14 dager",
+      pris: 235000,
+      estimert_salgspris: 265000,
+      omregistrering: 7000,
+      score: 94,
+      anbefaling: "KJØP",
+      type: ["performance"],
+      tags: [
+        { tekst: "Nytt hovedbatteri", farge: "green" },
+        { tekst: "1 eier", farge: "blue" },
+        { tekst: "15 min fra Oslo", farge: "" }
+      ],
+      ai_analyse: "Sterkeste kandidat. Nytt batteri fjerner største risiko. Én eier, moderat km, 15 min fra Oslo.",
+      finn_kode: "384608576"
+    },
+    {
+      rang: 2,
+      tittel: "Tesla Model 3 Standard Range",
+      undertype: "RWD",
+      aar: 2020,
+      km: 67750,
+      lokasjon: "Bergen",
+      dager: "3–7 dager",
+      pris: 199000,
+      estimert_salgspris: 230000,
+      omregistrering: 6020,
+      score: 85,
+      anbefaling: "KJØP",
+      type: [],
+      tags: [
+        { tekst: "1 eier", farge: "blue" },
+        { tekst: "Skinn", farge: "" },
+        { tekst: "Autopilot", farge: "" }
+      ],
+      ai_analyse: "Svært god pris for 2020-modell med lav km. 1 eier og godt utstyrt.",
+      finn_kode: "453918509",
+      laast: true
+    },
+    {
+      rang: 3,
+      tittel: "Tesla Model 3 SR+ Panorama",
+      undertype: "RWD",
+      aar: 2020,
+      km: 65000,
+      lokasjon: "Oslo",
+      dager: "1–3 dager",
+      pris: 199999,
+      estimert_salgspris: 225000,
+      omregistrering: 5545,
+      score: 80,
+      anbefaling: "KJØP",
+      type: [],
+      tags: [
+        { tekst: "Panoramatak", farge: "" },
+        { tekst: "Ryggekamera", farge: "" },
+        { tekst: "Hengerfeste", farge: "" }
+      ],
+      ai_analyse: "2020 SR+ med panorama og lav km. God pris, spesielt i Oslo.",
+      finn_kode: "455705152",
+      laast: true
+    },
+    {
+      rang: 4,
+      tittel: "Tesla Model 3 Long Range AWD",
+      undertype: "AWD",
+      aar: 2019,
+      km: 75000,
+      lokasjon: "Bønes",
+      dager: "5–10 dager",
+      pris: 214532,
+      estimert_salgspris: 235000,
+      omregistrering: 6020,
+      score: 80,
+      anbefaling: "KJØP",
+      type: ["longrange"],
+      tags: [
+        { tekst: "Long Range", farge: "blue" },
+        { tekst: "AWD", farge: "" }
+      ],
+      ai_analyse: "Long Range AWD til svært konkurransedyktig pris. Godt under markedsverdi.",
+      finn_kode: "457834284",
+      laast: true
+    },
+    {
+      rang: 5,
+      tittel: "Tesla Model 3 Performance AWD",
+      undertype: "AWD",
+      aar: 2019,
+      km: 74400,
+      lokasjon: "Sandefjord",
+      dager: "2–5 dager",
+      pris: 224990,
+      estimert_salgspris: 250000,
+      omregistrering: 3000,
+      score: 80,
+      anbefaling: "KJØP",
+      type: ["performance"],
+      tags: [
+        { tekst: "Performance", farge: "amber" },
+        { tekst: "Lav km for alderen", farge: "green" }
+      ],
+      ai_analyse: "Performance til svært god pris. Lav km for alderen.",
+      finn_kode: "453633037",
+      laast: true
+    }
+  ];
+
+  /* ─── BEREGN MARGIN ─── */
+  function margin(bil) {
+    return bil.estimert_salgspris - bil.pris - bil.omregistrering;
+  }
+
+  /* ─── FILTER STATE ─── */
+  let aktivFilter = "all";
+
+  /* ─── RENDER ─── */
+  function render() {
+    const liste = BILER.filter(b => {
+      if (aktivFilter === "all") return true;
+      if (aktivFilter === "performance") return b.type.includes("performance");
+      if (aktivFilter === "longrange") return b.type.includes("longrange");
+      if (aktivFilter === "margin25") return margin(b) >= 25000;
+      return true;
+    });
+
+    const container = document.getElementById("car-list");
+    container.innerHTML = "";
+
+    liste.forEach((bil, i) => {
+      if (bil.laast) {
+        container.appendChild(lagLaastKort(bil));
+      } else {
+        container.appendChild(lagKort(bil));
+      }
+    });
+  }
+
+  /* ─── LAG FULLT KORT ─── */
+  function lagKort(bil) {
+    const m = margin(bil);
+    const div = document.createElement("div");
+    div.className = "car-card featured";
+    div.innerHTML = `
+      <div class="card-header">
+        <div class="card-header-top">
+          <div class="card-left">
+            <div class="rank-row">
+              <span class="rank-pill">#${bil.rang}</span>
+            </div>
+            <div class="car-name">${bil.tittel}<span class="car-year">${bil.aar}</span></div>
+            <div class="car-sub">${bil.undertype}</div>
+          </div>
+          <div class="price-block">
+            <div class="price-main">${bil.pris.toLocaleString("no-NO")} kr</div>
+            <div class="price-margin">+${m.toLocaleString("no-NO")} kr margin</div>
+          </div>
+        </div>
+        <div class="car-meta">
+          <span class="meta-item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="#b5b2ac" stroke-width="1.4"/>
+              <path d="M8 5v3l2 2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            ${bil.km.toLocaleString("no-NO")} km
+          </span>
+          <span class="meta-item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="#b5b2ac" stroke-width="1.4"/>
+            </svg>
+            ${bil.lokasjon}
+          </span>
+          <span class="meta-item">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+              <rect x="2" y="3" width="12" height="11" rx="2" stroke="#b5b2ac" stroke-width="1.4"/>
+              <path d="M2 7h12M6 2v2M10 2v2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            ${bil.dager}
+          </span>
+        </div>
+        <div class="tags">
+          ${bil.tags.map(t => `<span class="tag ${t.farge}">${t.tekst}</span>`).join("")}
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-bar-track">
+            <div class="score-bar-fill" style="width:${bil.score}%"></div>
+          </div>
+          <span class="score-num">${bil.score}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-col">
+          <div class="col-label">AI-vurdering</div>
+          <div class="ai-text">${bil.ai_analyse}</div>
+        </div>
+        <div class="card-col">
+          <div class="col-label">Flipping-kalkyle</div>
+          <div class="kalkyle-row">
+            <span class="kalkyle-label">Kjøpspris</span>
+            <span>${bil.pris.toLocaleString("no-NO")} kr</span>
+          </div>
+          <div class="kalkyle-row">
+            <span class="kalkyle-label">Omreg. + klargjøring</span>
+            <span>~${bil.omregistrering.toLocaleString("no-NO")} kr</span>
+          </div>
+          <div class="kalkyle-row">
+            <span class="kalkyle-label">Est. salgspris</span>
+            <span>${bil.estimert_salgspris.toLocaleString("no-NO")} kr</span>
+          </div>
+          <div class="kalkyle-row total">
+            <span>Netto margin</span>
+            <span>${m.toLocaleString("no-NO")} kr</span>
+          </div>
+        </div>
+      </div>
+      <a class="btn-finn" href="https://www.finn.no/mobility/item/${bil.finn_kode}" target="_blank" rel="noopener">
+        Se annonsen på Finn.no
+      </a>
+    `;
+    return div;
+  }
+
+  /* ─── LAG LÅST KORT ─── */
+  function lagLaastKort(bil) {
+    const m = margin(bil);
+    const div = document.createElement("div");
+    div.className = "locked-card";
+    div.innerHTML = `
+      <div class="locked-left">
+        <div class="locked-rank">#${bil.rang}</div>
+        <div class="locked-title">${bil.tittel} ${bil.aar}</div>
+        <div class="locked-sub">${bil.km.toLocaleString("no-NO")} km · ${bil.lokasjon}</div>
+      </div>
+      <div class="locked-right">
+        <div class="locked-price">${bil.pris.toLocaleString("no-NO")} kr</div>
+        <div class="locked-margin">+${m.toLocaleString("no-NO")} kr</div>
+        <button class="btn-unlock" onclick="document.getElementById('paywall').scrollIntoView({behavior:'smooth'})">Lås opp</button>
+      </div>
+    `;
+    return div;
+  }
+
+  /* ─── FILTER KLIKK ─── */
+  document.getElementById("filter-row").addEventListener("click", e => {
+    if (!e.target.dataset.filter) return;
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+    e.target.classList.add("active");
+    aktivFilter = e.target.dataset.filter;
+    render();
+  });
+
+  /* ─── INIT ─── */
+  render();
+
+  /* ─── OPPDATER TIDSSTEMPEL ───────────────────────────────
+     TODO: Hent dette fra Supabase når du kobler til backend
+  ──────────────────────────────────────────────────────── */
+  const nå = new Date();
+  document.getElementById("oppdatert-tid").textContent =
+    "Oppdatert " + nå.getHours().toString().padStart(2,"0") + ":" + nå.getMinutes().toString().padStart(2,"0");
+</script>
+</body>
+</html>
