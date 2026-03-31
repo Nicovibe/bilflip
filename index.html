@@ -1,659 +1,946 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bilflip — finn undervurderte biler</title>
-  <meta name="description" content="AI-drevet bruktbilanalyse. Vi scanner Finn.no daglig og finner biler under markedsverdi." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>bilflip — finn undervurderte biler</title>
+<meta name="description" content="AI-drevet bruktbilanalyse. Vi scanner Finn.no daglig og finner biler under markedsverdi."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f5f4f1;--white:#fff;--border:#e4e2dd;--text:#1c1c1c;
+  --muted:#8a8880;--muted2:#b5b2ac;--tag:#f0ede8;--tag-t:#5a574f;
+  --g-bg:#eef6f0;--g-t:#2a7a4b;--g-m:#3d9960;
+  --b-bg:#eef3fb;--b-t:#1f5fa6;
+  --a-bg:#fdf5e6;--a-t:#8a5e00;
+  --r-bg:#fef0ee;--r-t:#c0391b;
+  --ff:'Figtree',system-ui,sans-serif;
+  --rad:18px;--rad-sm:12px;--rad-xs:8px;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);font-family:var(--ff);color:var(--text);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh;}
 
-    :root {
-      --bg:         #f5f4f1;
-      --white:      #ffffff;
-      --border:     #e4e2dd;
-      --text:       #1c1c1c;
-      --muted:      #8a8880;
-      --muted2:     #b5b2ac;
-      --tag-bg:     #f0ede8;
-      --tag-text:   #5a574f;
-      --green-bg:   #eef6f0;
-      --green-text: #2a7a4b;
-      --green-mid:  #3d9960;
-      --blue-bg:    #eef3fb;
-      --blue-text:  #1f5fa6;
-      --amber-bg:   #fdf5e6;
-      --amber-text: #8a5e00;
-      --radius-sm:  10px;
-      --radius-md:  14px;
-      --radius-lg:  20px;
-      --radius-xl:  28px;
-      --ff: 'Figtree', system-ui, sans-serif;
-    }
+/* ─── LAYOUT ─── */
+.app{max-width:480px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;}
+.page{display:none;flex:1;flex-direction:column;}
+.page.active{display:flex;}
 
-    html { scroll-behavior: smooth; }
+/* ─── TOP NAV ─── */
+.topbar{background:var(--white);border-bottom:1px solid var(--border);padding:0 18px;position:sticky;top:0;z-index:50;}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0 10px;}
+.logo{font-size:22px;font-weight:600;letter-spacing:-.4px;color:var(--text);text-decoration:none;cursor:pointer;}
+.live-pill{display:flex;align-items:center;gap:5px;background:var(--g-bg);border-radius:20px;padding:5px 11px;font-size:12px;font-weight:500;color:var(--g-t);}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--g-m);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 0 12px;}
+.sm{background:var(--tag);border-radius:var(--rad-xs);padding:9px 11px;}
+.sm-l{font-size:10px;color:var(--muted);margin-bottom:2px;font-weight:500;}
+.sm-v{font-size:16px;font-weight:600;letter-spacing:-.3px;}
+.sm-v.g{color:var(--g-t);}
 
-    body {
-      background: var(--bg);
-      font-family: var(--ff);
-      color: var(--text);
-      font-size: 15px;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
+/* ─── SEARCH ─── */
+.search-wrap{padding:10px 18px 8px;background:var(--white);border-bottom:1px solid var(--border);}
+.search-inner{position:relative;}
+.search-inner svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;opacity:.4;pointer-events:none;}
+.search-inner input{width:100%;padding:10px 12px 10px 34px;border-radius:var(--rad-xs);border:1.5px solid var(--border);background:var(--tag);font-size:14px;font-family:var(--ff);color:var(--text);outline:none;transition:border-color .15s;}
+.search-inner input:focus{border-color:var(--text);background:var(--white);}
+.search-inner input::placeholder{color:var(--muted2);}
 
-    /* ─── HEADER ─── */
-    .header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 0 20px;
-    }
-    .header-inner {
-      max-width: 680px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 0 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .logo { font-size: 22px; font-weight: 600; letter-spacing: -0.4px; color: var(--text); text-decoration: none; }
-    .live-pill {
-      display: flex; align-items: center; gap: 6px;
-      background: var(--green-bg); border-radius: 20px;
-      padding: 5px 12px; font-size: 12px; font-weight: 500; color: var(--green-text);
-    }
-    .live-dot {
-      width: 7px; height: 7px; border-radius: 50%; background: var(--green-mid);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+/* ─── MERKE FILTER ─── */
+.merke-row{display:flex;gap:7px;padding:10px 18px;overflow-x:auto;scrollbar-width:none;background:var(--white);border-bottom:1px solid var(--border);}
+.merke-row::-webkit-scrollbar{display:none;}
+.merke{display:flex;align-items:center;gap:5px;padding:7px 13px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);cursor:pointer;font-size:12px;font-weight:500;color:var(--muted);white-space:nowrap;transition:all .15s;flex-shrink:0;font-family:var(--ff);}
+.merke.on{background:var(--text);color:var(--white);border-color:var(--text);}
+.merke:hover:not(.on){border-color:var(--muted2);}
+.mdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
 
-    .stats-row {
-      max-width: 680px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 10px;
-      padding: 12px 0;
-    }
-    .stat-mini { background: var(--tag-bg); border-radius: var(--radius-sm); padding: 10px 13px; }
-    .stat-mini-label { font-size: 11px; color: var(--muted); margin-bottom: 3px; font-weight: 500; letter-spacing: 0.02em; }
-    .stat-mini-val { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
-    .stat-mini-val.green { color: var(--green-text); }
+/* ─── SORT / LABEL ─── */
+.sort-row{display:flex;align-items:center;justify-content:space-between;padding:10px 18px 6px;}
+.sort-label{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+.sort-select{font-size:13px;color:var(--text);font-weight:500;background:none;border:none;cursor:pointer;font-family:var(--ff);padding:0;}
 
-    /* ─── MAIN ─── */
-    main { max-width: 680px; margin: 0 auto; padding: 0 20px 60px; }
+/* ─── SCROLL AREA ─── */
+.scroll-area{flex:1;overflow-y:auto;padding:10px 14px 20px;}
 
-    /* ─── FILTERS ─── */
-    .filter-row { display: flex; gap: 8px; padding: 18px 0 4px; flex-wrap: wrap; }
-    .chip {
-      font-size: 13px; font-weight: 500; padding: 7px 16px;
-      border-radius: 20px; border: 1.5px solid var(--border);
-      background: var(--white); color: var(--muted);
-      cursor: pointer; transition: all 0.15s; white-space: nowrap;
-      font-family: var(--ff);
-    }
-    .chip.active { background: var(--text); color: var(--white); border-color: var(--text); }
-    .chip:hover:not(.active) { border-color: var(--muted2); color: var(--text); }
+/* ─── CAR CARD ─── */
+.ccard{background:var(--white);border-radius:var(--rad);border:1px solid var(--border);overflow:hidden;margin-bottom:12px;transition:border-color .15s;}
+.ccard.top{border:2px solid var(--text);}
+.ccard:hover{border-color:var(--muted2);}
+.ccard.top:hover{border-color:var(--text);}
+.ch{padding:16px 16px 12px;}
+.ch-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:9px;}
+.rnk{background:var(--text);color:var(--white);font-size:10px;font-weight:600;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:4px;}
+.rnk.g{background:var(--g-m);}
+.cn{font-size:15px;font-weight:600;letter-spacing:-.2px;}
+.cy{font-size:13px;color:var(--muted);font-weight:400;margin-left:4px;}
+.csub{font-size:12px;color:var(--muted);margin-top:1px;}
+.pb{text-align:right;flex-shrink:0;}
+.pm{font-size:17px;font-weight:600;letter-spacing:-.3px;white-space:nowrap;}
+.pgain{font-size:12px;font-weight:600;color:var(--g-t);white-space:nowrap;margin-top:2px;}
+.cmeta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:9px;}
+.mi{display:flex;align-items:center;gap:4px;font-size:12px;color:var(--muted);}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:10px;}
+.tag{font-size:11px;font-weight:500;padding:3px 10px;border-radius:7px;background:var(--tag);color:var(--tag-t);}
+.tag.g{background:var(--g-bg);color:var(--g-t);}
+.tag.b{background:var(--b-bg);color:var(--b-t);}
+.tag.a{background:var(--a-bg);color:var(--a-t);}
+.tag.r{background:var(--r-bg);color:var(--r-t);}
+.sbar{display:flex;align-items:center;gap:8px;}
+.st{flex:1;height:5px;background:var(--tag);border-radius:3px;overflow:hidden;}
+.sf{height:100%;border-radius:3px;background:var(--g-m);}
+.sn{font-size:13px;font-weight:600;min-width:22px;text-align:right;}
+.cbody{display:grid;grid-template-columns:1fr 1fr;}
+.cc{padding:13px 16px;}
+.cc:first-child{border-right:1px solid var(--border);border-top:1px solid var(--border);}
+.cc:last-child{border-top:1px solid var(--border);}
+.cl{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
+.ai-t{font-size:12px;color:var(--text);line-height:1.65;}
+.kr{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid var(--border);}
+.kr:last-of-type{border-bottom:none;}
+.kr.tot{font-weight:600;font-size:13px;color:var(--g-t);padding-top:8px;margin-top:4px;border-top:1.5px solid var(--border);}
+.kl{color:var(--muted);}
+.btn-finn{display:block;margin:12px 16px 16px;padding:13px;background:var(--text);color:var(--white);border-radius:var(--rad-xs);text-align:center;font-size:14px;font-weight:600;cursor:pointer;border:none;font-family:var(--ff);text-decoration:none;transition:opacity .15s;}
+.btn-finn:hover{opacity:.85;}
 
-    .section-label {
-      font-size: 12px; font-weight: 600; color: var(--muted);
-      letter-spacing: 0.06em; text-transform: uppercase;
-      padding: 16px 0 10px;
-    }
+/* ─── LOCKED ─── */
+.lcard{background:var(--white);border-radius:var(--rad);border:1px solid var(--border);padding:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;}
+.ll{flex:1;}
+.lr-rnk{font-size:10px;font-weight:600;color:var(--muted);margin-bottom:3px;}
+.lr-t{font-size:14px;font-weight:600;filter:blur(5px);user-select:none;}
+.lr-s{font-size:12px;color:var(--muted);filter:blur(4px);user-select:none;margin-top:1px;}
+.lr{text-align:right;}
+.lr-p{font-size:15px;font-weight:600;filter:blur(5px);user-select:none;}
+.lr-g{font-size:12px;color:var(--g-t);font-weight:600;filter:blur(4px);user-select:none;margin-top:1px;}
+.bunlock{font-size:12px;font-weight:600;padding:7px 14px;border-radius:var(--rad-xs);background:var(--tag);color:var(--text);border:1.5px solid var(--border);cursor:pointer;margin-top:8px;font-family:var(--ff);transition:all .15s;}
+.bunlock:hover{border-color:var(--text);}
 
-    /* ─── CAR CARD ─── */
-    .car-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      margin-bottom: 14px;
-      transition: border-color 0.2s;
-    }
-    .car-card.featured { border: 2px solid var(--text); }
-    .car-card:hover { border-color: var(--muted2); }
-    .car-card.featured:hover { border-color: var(--text); }
+/* ─── PAYWALL ─── */
+.paywall{background:var(--white);border-radius:var(--rad);border:1px solid var(--border);padding:22px 20px;margin-bottom:20px;}
+.pw-head{font-size:19px;font-weight:600;letter-spacing:-.3px;margin-bottom:5px;}
+.pw-sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.55;}
+.pw-price{display:flex;align-items:baseline;gap:4px;margin-bottom:4px;}
+.pw-num{font-size:34px;font-weight:600;letter-spacing:-1.5px;}
+.pw-per{font-size:14px;color:var(--muted);}
+.pw-trial{font-size:13px;color:var(--g-t);font-weight:500;margin-bottom:18px;}
+.feat-list{list-style:none;margin-bottom:20px;}
+.feat-list li{font-size:13px;padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:9px;}
+.feat-list li:last-child{border-bottom:none;}
+.feat-icon{width:18px;height:18px;border-radius:50%;background:var(--g-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.btn-main{display:block;width:100%;padding:15px;background:var(--text);color:var(--white);border-radius:var(--rad-sm);text-align:center;font-size:15px;font-weight:600;cursor:pointer;border:none;font-family:var(--ff);margin-bottom:10px;transition:opacity .15s;}
+.btn-main:hover{opacity:.85;}
+.btn-sec{display:block;width:100%;padding:12px;background:transparent;color:var(--muted);border-radius:var(--rad-sm);text-align:center;font-size:13px;cursor:pointer;border:1.5px solid var(--border);font-family:var(--ff);transition:all .15s;}
+.btn-sec:hover{border-color:var(--muted2);color:var(--text);}
+.disclaimer{font-size:12px;color:var(--muted);text-align:center;margin-top:10px;}
 
-    .card-header { padding: 18px 18px 14px; border-bottom: 1px solid var(--border); }
-    .card-header-top {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 12px; margin-bottom: 10px;
-    }
-    .card-left { flex: 1; min-width: 0; }
-    .rank-row { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
-    .rank-pill {
-      background: var(--text); color: var(--white);
-      font-size: 11px; font-weight: 600;
-      border-radius: 7px; padding: 3px 9px;
-    }
-    .rank-pill.green { background: var(--green-mid); }
-    .car-name { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; line-height: 1.25; }
-    .car-year { font-size: 14px; color: var(--muted); font-weight: 400; margin-left: 5px; }
-    .car-sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+/* ─── LOGIN ─── */
+.login-wrap{padding:36px 24px;}
+.login-logo{font-size:26px;font-weight:600;letter-spacing:-.4px;margin-bottom:5px;}
+.login-sub{font-size:14px;color:var(--muted);margin-bottom:28px;line-height:1.55;}
+.field{margin-bottom:14px;}
+.field label{font-size:12px;font-weight:500;color:var(--muted);display:block;margin-bottom:5px;}
+.field input{width:100%;padding:12px 14px;border-radius:var(--rad-xs);border:1.5px solid var(--border);background:var(--white);font-size:14px;font-family:var(--ff);color:var(--text);outline:none;transition:border-color .15s;}
+.field input:focus{border-color:var(--text);}
+.or-row{display:flex;align-items:center;gap:10px;margin:16px 0;}
+.or-line{flex:1;height:1px;background:var(--border);}
+.or-t{font-size:12px;color:var(--muted);}
+.btn-vipps{width:100%;padding:14px;background:#FF5B24;color:#fff;border-radius:var(--rad-sm);font-size:14px;font-weight:600;border:none;cursor:pointer;font-family:var(--ff);margin-bottom:10px;transition:opacity .15s;}
+.btn-vipps:hover{opacity:.9;}
+.login-footer{text-align:center;margin-top:16px;font-size:12px;color:var(--muted);}
+.login-footer span{color:var(--text);font-weight:500;cursor:pointer;}
 
-    .price-block { text-align: right; flex-shrink: 0; }
-    .price-main { font-size: 19px; font-weight: 600; letter-spacing: -0.4px; white-space: nowrap; }
-    .price-margin { font-size: 13px; font-weight: 600; color: var(--green-text); white-space: nowrap; margin-top: 2px; }
+/* ─── ANALYSE PAGE ─── */
+.sub-tabs{background:var(--white);display:flex;border-bottom:1px solid var(--border);}
+.stab{flex:1;padding:11px 0;text-align:center;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;}
+.stab.on{color:var(--text);border-bottom-color:var(--text);}
+.acard{background:var(--white);border-radius:var(--rad);border:1px solid var(--border);margin-bottom:12px;overflow:hidden;}
+.acard-header{padding:14px 16px 12px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.acard-title{font-size:15px;font-weight:600;letter-spacing:-.2px;}
+.acard-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+.score-ring{width:36px;height:36px;border-radius:50%;border:2px solid var(--g-m);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--g-t);flex-shrink:0;}
+.chevron{width:18px;height:18px;transition:transform .25s;opacity:.4;flex-shrink:0;}
+.chevron.open{transform:rotate(90deg);}
+.acard-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.acard-body.open{max-height:1200px;}
+.acard-inner{padding:14px 16px;border-top:1px solid var(--border);}
+.kstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.ks{background:var(--tag);border-radius:var(--rad-xs);padding:10px 11px;}
+.ks-l{font-size:10px;color:var(--muted);margin-bottom:3px;font-weight:500;}
+.ks-v{font-size:16px;font-weight:600;letter-spacing:-.3px;}
+.ks-v.g{color:var(--g-t);}
+.ks-v.b{color:var(--b-t);}
+.chart-block{margin-bottom:14px;}
+.chart-label{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
+.mini-chart{width:100%;position:relative;}
+.mini-chart svg{width:100%;display:block;}
+.chart-footer{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:3px;}
+.range-block{margin-bottom:14px;}
+.range-bar-wrap{position:relative;height:8px;background:var(--tag);border-radius:4px;margin-bottom:6px;}
+.range-fill{position:absolute;height:100%;border-radius:4px;}
+.range-marker{position:absolute;top:-4px;width:16px;height:16px;border-radius:50%;background:var(--white);border:2px solid var(--text);transform:translateX(-50%);}
+.range-nums{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);}
+.flip-block{margin-bottom:14px;}
+.flip-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.flip-label{font-size:12px;color:var(--text);min-width:88px;}
+.flip-track{flex:1;height:5px;background:var(--tag);border-radius:3px;overflow:hidden;}
+.flip-fill{height:100%;border-radius:3px;}
+.flip-val{font-size:12px;font-weight:600;min-width:28px;text-align:right;}
+.ai-box{background:var(--g-bg);border-radius:var(--rad-xs);padding:12px;border:1px solid rgba(61,153,96,.12);}
+.ai-box-label{font-size:10px;font-weight:600;color:var(--g-t);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+.ai-box-text{font-size:12px;color:var(--text);line-height:1.65;}
 
-    .car-meta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
-    .meta-item { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); }
+/* ─── BETALING ─── */
+.pay-wrap{padding:22px 20px;}
+.back-row{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);margin-bottom:20px;cursor:pointer;}
+.back-row svg{width:16px;height:16px;}
+.pay-head{font-size:20px;font-weight:600;letter-spacing:-.3px;margin-bottom:5px;}
+.pay-sub{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.55;}
+.plan-cards{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
+.plan-c{background:var(--white);border-radius:var(--rad-sm);border:1.5px solid var(--border);padding:16px;cursor:pointer;transition:border-color .15s;}
+.plan-c.sel{border-color:var(--text);}
+.plan-c-row{display:flex;align-items:center;justify-content:space-between;}
+.plan-n{font-size:14px;font-weight:600;}
+.plan-p{font-size:14px;font-weight:600;}
+.plan-d{font-size:12px;color:var(--muted);margin-top:3px;}
+.plan-badge{font-size:10px;font-weight:600;background:var(--g-bg);color:var(--g-t);padding:2px 8px;border-radius:4px;margin-left:8px;}
+.radio{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:border-color .15s;}
+.radio.on{border-color:var(--text);}
+.radio.on::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--text);}
+.pm-label{font-size:12px;font-weight:500;color:var(--muted);margin-bottom:8px;}
+.pm-row{display:flex;gap:8px;margin-bottom:20px;}
+.pm-opt{flex:1;padding:11px;border-radius:var(--rad-xs);border:1.5px solid var(--border);background:var(--white);text-align:center;cursor:pointer;font-size:13px;font-weight:500;transition:border-color .15s;font-family:var(--ff);}
+.pm-opt.sel{border-color:var(--text);}
 
-    .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-    .tag {
-      font-size: 12px; font-weight: 500; padding: 4px 11px;
-      border-radius: 8px; background: var(--tag-bg); color: var(--tag-text);
-    }
-    .tag.green { background: var(--green-bg); color: var(--green-text); }
-    .tag.blue  { background: var(--blue-bg);  color: var(--blue-text);  }
-    .tag.amber { background: var(--amber-bg); color: var(--amber-text); }
+/* ─── VARSLER ─── */
+.var-wrap{padding:20px 18px;}
+.var-head{font-size:18px;font-weight:600;letter-spacing:-.3px;margin-bottom:4px;}
+.var-sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.55;}
+.var-card{background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);margin-bottom:12px;overflow:hidden;}
+.var-row{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);}
+.var-row:last-child{border-bottom:none;}
+.var-label{font-size:14px;font-weight:500;}
+.var-desc{font-size:12px;color:var(--muted);margin-top:1px;}
+.toggle{width:44px;height:24px;border-radius:12px;background:var(--border);border:none;cursor:pointer;position:relative;transition:background .2s;flex-shrink:0;}
+.toggle.on{background:var(--text);}
+.toggle::after{content:'';position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:transform .2s;}
+.toggle.on::after{transform:translateX(20px);}
+.tg-input{display:flex;align-items:center;gap:8px;margin-top:14px;}
+.tg-input input{flex:1;padding:10px 12px;border-radius:var(--rad-xs);border:1.5px solid var(--border);font-size:13px;font-family:var(--ff);color:var(--text);outline:none;}
+.tg-input input:focus{border-color:var(--text);}
+.tg-input button{padding:10px 14px;background:var(--text);color:#fff;border-radius:var(--rad-xs);border:none;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--ff);}
+.history-item{font-size:13px;color:var(--text);padding:8px 16px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;}
+.history-item:last-child{border-bottom:none;}
+.history-item span{color:var(--muted);font-size:12px;}
+.section-h{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding:14px 18px 8px;}
 
-    .score-bar-wrap { display: flex; align-items: center; gap: 10px; }
-    .score-bar-track {
-      flex: 1; height: 6px; background: var(--tag-bg);
-      border-radius: 3px; overflow: hidden;
-    }
-    .score-bar-fill { height: 100%; border-radius: 3px; background: var(--green-mid); transition: width 0.6s ease; }
-    .score-num { font-size: 14px; font-weight: 600; min-width: 24px; text-align: right; }
+/* ─── BOTTOM TABS ─── */
+.bottom-tabs{background:var(--white);border-top:1px solid var(--border);display:flex;padding:8px 0 env(safe-area-inset-bottom,10px);position:sticky;bottom:0;z-index:50;}
+.ptab{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:4px 0;border:none;background:none;font-family:var(--ff);}
+.ptab svg{width:22px;height:22px;opacity:.35;}
+.ptab span{font-size:10px;font-weight:500;color:var(--muted);}
+.ptab.on svg{opacity:1;}
+.ptab.on span{color:var(--text);}
 
-    .card-body { display: grid; grid-template-columns: 1fr 1fr; }
-    .card-col { padding: 14px 18px; }
-    .card-col:first-child { border-right: 1px solid var(--border); }
-    .col-label {
-      font-size: 11px; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 10px;
-    }
-    .ai-text { font-size: 13px; color: var(--text); line-height: 1.6; }
+/* ─── DETAIL PAGE ─── */
+.detail-header{background:var(--white);padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:50;}
+.back-btn{width:30px;height:30px;border-radius:50%;background:var(--tag);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.detail-title{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.detail-body{padding:16px;}
+.det-price-block{background:var(--white);border-radius:var(--rad);border:1px solid var(--border);padding:18px;margin-bottom:12px;}
+.det-price{font-size:28px;font-weight:600;letter-spacing:-.8px;}
+.det-gain{font-size:15px;color:var(--g-t);font-weight:600;margin-top:4px;}
+.det-meta{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.det-mi{font-size:13px;color:var(--muted);}
+.det-mi strong{color:var(--text);font-weight:600;}
+.sparkline-block{background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;}
 
-    .kalkyle-row {
-      display: flex; justify-content: space-between;
-      align-items: center; font-size: 13px;
-      padding: 4px 0; border-bottom: 1px solid var(--border);
-    }
-    .kalkyle-row:last-of-type { border-bottom: none; }
-    .kalkyle-row.total {
-      font-weight: 600; font-size: 14px;
-      color: var(--green-text); padding-top: 10px;
-      margin-top: 4px; border-top: 1.5px solid var(--border);
-    }
-    .kalkyle-label { color: var(--muted); }
+/* ─── EMPTY / UTILITY ─── */
+.empty{text-align:center;padding:40px 20px;color:var(--muted);font-size:13px;}
+.info-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;}
+.itag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:7px;}
+.itag.g{background:var(--g-bg);color:var(--g-t);}
+.itag.b{background:var(--b-bg);color:var(--b-t);}
+.itag.a{background:var(--a-bg);color:var(--a-t);}
+.itag.r{background:var(--r-bg);color:var(--r-t);}
 
-    .btn-finn {
-      display: block; margin: 0 18px 18px;
-      padding: 14px; background: var(--text); color: var(--white);
-      border-radius: var(--radius-md); text-align: center;
-      font-size: 14px; font-weight: 600; cursor: pointer;
-      border: none; font-family: var(--ff);
-      text-decoration: none; transition: opacity 0.15s;
-    }
-    .btn-finn:hover { opacity: 0.85; }
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.ccard,.lcard,.acard,.paywall{animation:fadeUp .3s ease both;}
 
-    /* ─── LOCKED CARD ─── */
-    .locked-card {
-      background: var(--white); border-radius: var(--radius-lg);
-      border: 1px solid var(--border); padding: 18px;
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 12px;
-      margin-bottom: 14px;
-    }
-    .locked-left { flex: 1; min-width: 0; }
-    .locked-rank { font-size: 11px; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
-    .locked-title { font-size: 15px; font-weight: 600; filter: blur(6px); user-select: none; }
-    .locked-sub   { font-size: 13px; color: var(--muted); filter: blur(5px); user-select: none; margin-top: 2px; }
-    .locked-right { text-align: right; flex-shrink: 0; }
-    .locked-price  { font-size: 16px; font-weight: 600; filter: blur(6px); user-select: none; }
-    .locked-margin { font-size: 13px; color: var(--green-text); font-weight: 600; filter: blur(5px); user-select: none; margin-top: 2px; }
-    .btn-unlock {
-      font-size: 12px; font-weight: 600; padding: 7px 14px;
-      border-radius: var(--radius-sm); background: var(--tag-bg);
-      color: var(--text); border: 1.5px solid var(--border);
-      cursor: pointer; margin-top: 10px; font-family: var(--ff);
-      transition: all 0.15s;
-    }
-    .btn-unlock:hover { border-color: var(--text); }
-
-    /* ─── PAYWALL ─── */
-    .paywall-card {
-      background: var(--white); border-radius: var(--radius-lg);
-      border: 1px solid var(--border); padding: 26px 22px;
-      margin-top: 8px;
-    }
-    .paywall-head { font-size: 20px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 6px; }
-    .paywall-sub  { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.55; }
-
-    .price-highlight { display: flex; align-items: baseline; gap: 5px; margin-bottom: 6px; }
-    .price-big  { font-size: 36px; font-weight: 600; letter-spacing: -1.5px; }
-    .price-per  { font-size: 15px; color: var(--muted); }
-    .trial-note { font-size: 13px; color: var(--green-text); font-weight: 500; margin-bottom: 20px; }
-
-    .feature-list { list-style: none; margin-bottom: 22px; }
-    .feature-list li {
-      font-size: 14px; color: var(--text); padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .feature-list li:last-child { border-bottom: none; }
-    .feat-icon {
-      width: 20px; height: 20px; border-radius: 50%;
-      background: var(--green-bg); display: flex;
-      align-items: center; justify-content: center; flex-shrink: 0;
-    }
-
-    .btn-cta {
-      display: block; width: 100%; padding: 16px;
-      background: var(--text); color: var(--white);
-      border-radius: var(--radius-md); text-align: center;
-      font-size: 16px; font-weight: 600; cursor: pointer;
-      border: none; font-family: var(--ff);
-      margin-bottom: 10px; transition: opacity 0.15s;
-    }
-    .btn-cta:hover { opacity: 0.85; }
-    .btn-free {
-      display: block; width: 100%; padding: 13px;
-      background: transparent; color: var(--muted);
-      border-radius: var(--radius-md); text-align: center;
-      font-size: 14px; cursor: pointer;
-      border: 1.5px solid var(--border); font-family: var(--ff);
-      transition: border-color 0.15s;
-    }
-    .btn-free:hover { border-color: var(--muted2); color: var(--text); }
-    .disclaimer {
-      font-size: 12px; color: var(--muted);
-      text-align: center; margin-top: 12px; line-height: 1.5;
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      max-width: 680px; margin: 0 auto;
-      padding: 24px 20px; border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap; gap: 8px;
-    }
-    .footer-logo { font-size: 16px; font-weight: 600; color: var(--text); }
-    .footer-disc { font-size: 12px; color: var(--muted); }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 520px) {
-      .card-body { grid-template-columns: 1fr; }
-      .card-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
-      .stat-mini-val { font-size: 16px; }
-      .car-name { font-size: 15px; }
-      .price-main { font-size: 16px; }
-    }
-  </style>
+@media(max-width:480px){
+  .cbody{grid-template-columns:1fr;}
+  .cc:first-child{border-right:none;border-bottom:1px solid var(--border);}
+}
+</style>
 </head>
 <body>
 
-<!-- ─── HEADER ─── -->
-<header class="header">
-  <div class="header-inner">
-    <a class="logo" href="/">bilflip</a>
-    <div class="live-pill">
-      <span class="live-dot"></span>
-      <span id="oppdatert-tid">Oppdatert i dag</span>
+<div class="app" id="app">
+
+<!-- ══════════════════════════════════════
+     PAGE: FORSIDE (ikke innlogget)
+══════════════════════════════════════ -->
+<div class="page active" id="page-forside">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">bilflip</span>
+      <div class="live-pill"><span class="ldot"></span><span id="live-tid">Oppdatert 14:32</span></div>
+    </div>
+    <div class="stats-strip">
+      <div class="sm"><div class="sm-l">Skannet i dag</div><div class="sm-v">83</div></div>
+      <div class="sm"><div class="sm-l">Snitt margin</div><div class="sm-v g">24 500 kr</div></div>
+      <div class="sm"><div class="sm-l">Beste margin</div><div class="sm-v g">31 000 kr</div></div>
     </div>
   </div>
-  <div class="stats-row">
-    <div class="stat-mini">
-      <div class="stat-mini-label">Skannet i dag</div>
-      <div class="stat-mini-val" id="stat-skannet">83</div>
-    </div>
-    <div class="stat-mini">
-      <div class="stat-mini-label">Snitt margin</div>
-      <div class="stat-mini-val green" id="stat-snitt">24 500 kr</div>
-    </div>
-    <div class="stat-mini">
-      <div class="stat-mini-label">Beste margin</div>
-      <div class="stat-mini-val green" id="stat-beste">38 000 kr</div>
+
+  <div class="scroll-area">
+    <div id="forside-cars"></div>
+
+    <div class="paywall" id="paywall">
+      <div class="pw-head">Få tilgang til alle analyser</div>
+      <div class="pw-sub">Se alle 83 biler daglig, Telegram-varsler og full kalkyle for hver kandidat.</div>
+      <div class="pw-price"><span class="pw-num">299</span><span class="pw-per">kr / måned</span></div>
+      <div class="pw-trial">14 dager gratis — avslutt når som helst</div>
+      <ul class="feat-list">
+        <li><span class="feat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Alle biler daglig, sortert etter margin</li>
+        <li><span class="feat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Full AI-analyse og flipping-kalkyle</li>
+        <li><span class="feat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Telegram-varsel når ny bil dukker opp</li>
+        <li><span class="feat-icon"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Prishistorikk og markedsanalyse</li>
+      </ul>
+      <button class="btn-main" onclick="goTo('page-betaling')">Prøv gratis i 14 dager</button>
+      <button class="btn-sec" onclick="goTo('page-login')">Logg inn</button>
+      <div class="disclaimer">Ingen binding · Betaling via Vipps eller kort</div>
     </div>
   </div>
-</header>
+</div>
 
-<!-- ─── MAIN ─── -->
-<main>
-  <div class="filter-row" id="filter-row">
-    <button class="chip active" data-filter="all">Alle</button>
-    <button class="chip" data-filter="performance">Performance</button>
-    <button class="chip" data-filter="longrange">Long Range</button>
-    <button class="chip" data-filter="margin25">Margin 25k+</button>
-  </div>
-
-  <div class="section-label">Topp flip-muligheter · sortert etter AI-score</div>
-
-  <div id="car-list"></div>
-
-  <!-- PAYWALL -->
-  <div class="paywall-card" id="paywall">
-    <div class="paywall-head">Få tilgang til alle analyser</div>
-    <div class="paywall-sub">Se alle biler, daglige Telegram-varsler og full kalkyle for hver kandidat.</div>
-
-    <div class="price-highlight">
-      <span class="price-big">299</span>
-      <span class="price-per">kr / måned</span>
+<!-- ══════════════════════════════════════
+     PAGE: LOGIN
+══════════════════════════════════════ -->
+<div class="page" id="page-login">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo" onclick="goTo('page-forside')">bilflip</span>
+      <div style="font-size:13px;color:var(--muted);cursor:pointer;" onclick="goTo('page-forside')">Tilbake</div>
     </div>
-    <div class="trial-note">14 dager gratis — avslutt når som helst</div>
-
-    <ul class="feature-list">
-      <li>
-        <span class="feat-icon">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Alle biler daglig, sortert etter margin
-      </li>
-      <li>
-        <span class="feat-icon">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Full AI-analyse og flipping-kalkyle
-      </li>
-      <li>
-        <span class="feat-icon">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Telegram-varsel når ny bil dukker opp
-      </li>
-      <li>
-        <span class="feat-icon">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-            <path d="M2 5l2 2 4-4" stroke="#2a7a4b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        Prishistorikk siste 30 dager
-      </li>
-    </ul>
-
-    <button class="btn-cta" onclick="alert('Betaling kommer snart!')">Prøv gratis i 14 dager</button>
-    <button class="btn-free">Fortsett gratis — se kun topp 1</button>
-    <div class="disclaimer">Ingen binding · Betaling via Vipps eller kort</div>
   </div>
-</main>
+  <div class="scroll-area">
+    <div class="login-wrap">
+      <div class="login-logo">Logg inn</div>
+      <div class="login-sub">Få tilgang til alle analyser, varsler og prishistorikk.</div>
+      <div class="field"><label>E-post</label><input type="email" placeholder="deg@epost.no"/></div>
+      <div class="field"><label>Passord</label><input type="password" placeholder="••••••••"/></div>
+      <button class="btn-main" onclick="loggInn()">Logg inn</button>
+      <div class="or-row"><div class="or-line"></div><span class="or-t">eller</span><div class="or-line"></div></div>
+      <button class="btn-vipps" onclick="loggInn()">Fortsett med Vipps</button>
+      <div class="login-footer">Ingen konto? <span onclick="goTo('page-betaling')">Registrer deg</span></div>
+    </div>
+  </div>
+</div>
 
-<footer>
-  <div class="footer-logo">bilflip</div>
-  <div class="footer-disc">Bruker data fra Finn.no · Ikke tilknyttet Schibsted</div>
-</footer>
+<!-- ══════════════════════════════════════
+     PAGE: DASHBOARD (innlogget)
+══════════════════════════════════════ -->
+<div class="page" id="page-dashboard">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div>
+        <div style="font-size:17px;font-weight:600;letter-spacing:-.2px;">Hei, Nicolai</div>
+        <div style="font-size:12px;color:var(--muted);">Pro · <span id="dash-count">13</span> biler analysert i dag</div>
+      </div>
+      <div style="width:34px;height:34px;border-radius:50%;background:var(--b-bg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--b-t);">NA</div>
+    </div>
+    <div class="stats-strip">
+      <div class="sm"><div class="sm-l">Beste margin</div><div class="sm-v g">31 000 kr</div></div>
+      <div class="sm"><div class="sm-l">Snitt dager</div><div class="sm-v">14d</div></div>
+      <div class="sm"><div class="sm-l">Varsler i dag</div><div class="sm-v b">3</div></div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <div class="search-inner">
+      <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#1c1c1c" stroke-width="1.5"/><path d="M13.5 13.5L17 17" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input type="text" id="dash-search" placeholder="Søk på modell, sted, km..." oninput="renderDash()"/>
+    </div>
+  </div>
+
+  <div class="merke-row" id="dash-merke-row">
+    <div class="merke on" data-m="alle" onclick="setDashMerke('alle',this)">Alle</div>
+    <div class="merke" data-m="tesla" onclick="setDashMerke('tesla',this)"><span class="mdot" style="background:#e31937"></span>Tesla</div>
+    <div class="merke" data-m="toyota" onclick="setDashMerke('toyota',this)"><span class="mdot" style="background:#eb0a1e"></span>Toyota</div>
+    <div class="merke" data-m="volkswagen" onclick="setDashMerke('volkswagen',this)"><span class="mdot" style="background:#001e50"></span>VW</div>
+    <div class="merke" data-m="nissan" onclick="setDashMerke('nissan',this)"><span class="mdot" style="background:#c3002f"></span>Nissan</div>
+    <div class="merke" data-m="bmw" onclick="setDashMerke('bmw',this)"><span class="mdot" style="background:#1c69d3"></span>BMW</div>
+    <div class="merke" data-m="hyundai" onclick="setDashMerke('hyundai',this)"><span class="mdot" style="background:#002c5f"></span>Hyundai</div>
+  </div>
+
+  <div class="sort-row">
+    <span class="sort-label" id="dash-result-label">Alle biler</span>
+    <select class="sort-select" id="dash-sort" onchange="renderDash()">
+      <option value="score">Etter AI-score</option>
+      <option value="margin">Etter margin</option>
+      <option value="pris">Etter pris</option>
+    </select>
+  </div>
+
+  <div class="scroll-area" id="dash-cars"></div>
+
+  <div class="bottom-tabs">
+    <button class="ptab on" onclick="goTo('page-dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span>Oversikt</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-analyser')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <span>Analyser</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-varsler')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span>Varsler</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-betaling')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      <span>Konto</span>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: BILDETALJ
+══════════════════════════════════════ -->
+<div class="page" id="page-detalj">
+  <div class="detail-header">
+    <button class="back-btn" id="detalj-back" onclick="goBack()">
+      <svg width="14" height="14" fill="none" viewBox="0 0 16 16"><path d="M10 4L6 8l4 4" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="detail-title" id="detalj-tittel">Bildetalj</div>
+  </div>
+  <div class="scroll-area">
+    <div class="detail-body" id="detalj-body"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: ANALYSER
+══════════════════════════════════════ -->
+<div class="page" id="page-analyser">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">Markedsanalyse</span>
+      <div style="width:34px;height:34px;border-radius:50%;background:var(--b-bg);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--b-t);">NA</div>
+    </div>
+  </div>
+
+  <div class="sub-tabs">
+    <div class="stab on" id="stab-marked" onclick="setAnalyseTab('marked')">Marked</div>
+    <div class="stab" id="stab-flip" onclick="setAnalyseTab('flip')">Flip-rang</div>
+  </div>
+
+  <div class="search-wrap">
+    <div class="search-inner">
+      <svg viewBox="0 0 20 20" fill="none"><circle cx="9" cy="9" r="6" stroke="#1c1c1c" stroke-width="1.5"/><path d="M13.5 13.5L17 17" stroke="#1c1c1c" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input type="text" id="an-search" placeholder="Søk på modell..." oninput="renderAnalyser()"/>
+    </div>
+  </div>
+
+  <div class="merke-row" id="an-merke-row">
+    <div class="merke on" data-m="alle" onclick="setAnMerke('alle',this)">Alle</div>
+    <div class="merke" data-m="tesla" onclick="setAnMerke('tesla',this)"><span class="mdot" style="background:#e31937"></span>Tesla</div>
+    <div class="merke" data-m="toyota" onclick="setAnMerke('toyota',this)"><span class="mdot" style="background:#eb0a1e"></span>Toyota</div>
+    <div class="merke" data-m="volkswagen" onclick="setAnMerke('volkswagen',this)"><span class="mdot" style="background:#001e50"></span>VW</div>
+    <div class="merke" data-m="nissan" onclick="setAnMerke('nissan',this)"><span class="mdot" style="background:#c3002f"></span>Nissan</div>
+    <div class="merke" data-m="bmw" onclick="setAnMerke('bmw',this)"><span class="mdot" style="background:#1c69d3"></span>BMW</div>
+    <div class="merke" data-m="hyundai" onclick="setAnMerke('hyundai',this)"><span class="mdot" style="background:#002c5f"></span>Hyundai</div>
+  </div>
+
+  <div class="scroll-area" id="an-body"></div>
+
+  <div class="bottom-tabs">
+    <button class="ptab" onclick="goTo('page-dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span>Oversikt</span>
+    </button>
+    <button class="ptab on" onclick="goTo('page-analyser')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <span>Analyser</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-varsler')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span>Varsler</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-betaling')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      <span>Konto</span>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: VARSLER
+══════════════════════════════════════ -->
+<div class="page" id="page-varsler">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">Varsler</span>
+    </div>
+  </div>
+  <div class="scroll-area">
+    <div class="var-wrap">
+      <div class="var-head">Telegram-varsler</div>
+      <div class="var-sub">Få push-varsel med én gang en ny bil med høy score dukker opp.</div>
+
+      <div class="var-card">
+        <div class="var-row">
+          <div><div class="var-label">Alle nye biler</div><div class="var-desc">Varsler for biler med score 60+</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="var-row">
+          <div><div class="var-label">Kun topp 3 daglig</div><div class="var-desc">Sammendrag hver morgen kl. 08:00</div></div>
+          <button class="toggle" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="var-row">
+          <div><div class="var-label">Performance-modeller</div><div class="var-desc">Kun AWD Performance-utgaver</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+        <div class="var-row">
+          <div><div class="var-label">Margin over 25 000 kr</div><div class="var-desc">Kun biler med høy estimert gevinst</div></div>
+          <button class="toggle on" onclick="this.classList.toggle('on')"></button>
+        </div>
+      </div>
+
+      <div class="section-h">Telegram-kobling</div>
+      <div class="var-card" style="padding:16px;">
+        <div style="font-size:13px;color:var(--muted);margin-bottom:12px;">Skriv Telegram-brukernavn for å aktivere varsler.</div>
+        <div class="tg-input">
+          <input type="text" placeholder="@brukernavn"/>
+          <button onclick="this.textContent='Koblet ✓';this.style.background='var(--g-m)'">Koble til</button>
+        </div>
+      </div>
+
+      <div class="section-h">Siste varsler sendt</div>
+      <div class="var-card">
+        <div class="history-item">Model 3 Performance · Lørenskog<span>I dag 14:33</span></div>
+        <div class="history-item">Model 3 SR · Bergen<span>I går 09:12</span></div>
+        <div class="history-item">Model 3 LR AWD · Porsgrunn<span>2 dager siden</span></div>
+        <div class="history-item">VW ID.4 · Drammen<span>3 dager siden</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-tabs">
+    <button class="ptab" onclick="goTo('page-dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      <span>Oversikt</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-analyser')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      <span>Analyser</span>
+    </button>
+    <button class="ptab on">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+      <span>Varsler</span>
+    </button>
+    <button class="ptab" onclick="goTo('page-betaling')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
+      <span>Konto</span>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     PAGE: BETALING / KONTO
+══════════════════════════════════════ -->
+<div class="page" id="page-betaling">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span class="logo" onclick="goBack()">bilflip</span>
+      <div style="font-size:13px;color:var(--muted);cursor:pointer;" onclick="goBack()">Tilbake</div>
+    </div>
+  </div>
+  <div class="scroll-area">
+    <div class="pay-wrap">
+      <div class="pay-head">Velg abonnement</div>
+      <div class="pay-sub">14 dager gratis. Ingen binding. Avslutt når som helst.</div>
+
+      <div class="plan-cards" id="plan-cards">
+        <div class="plan-c" onclick="selPlan(this)">
+          <div class="plan-c-row">
+            <div><div class="plan-n">Gratis</div><div class="plan-d">Kun topp 1 bil daglig</div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="plan-p">0 kr</div><div class="radio"></div></div>
+          </div>
+        </div>
+        <div class="plan-c sel" onclick="selPlan(this)">
+          <div class="plan-c-row">
+            <div><div style="display:flex;align-items:center;"><div class="plan-n">Pro</div><span class="plan-badge">Anbefalt</span></div><div class="plan-d">Alle biler + Telegram-varsler</div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="plan-p">299 kr</div><div class="radio on"></div></div>
+          </div>
+        </div>
+        <div class="plan-c" onclick="selPlan(this)">
+          <div class="plan-c-row">
+            <div><div class="plan-n">Trader</div><div class="plan-d">Alle modeller + API-tilgang</div></div>
+            <div style="display:flex;align-items:center;gap:10px;"><div class="plan-p">699 kr</div><div class="radio"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pm-label">Betalingsmåte</div>
+      <div class="pm-row" id="pm-row">
+        <div class="pm-opt sel" onclick="selPay(this)">Vipps</div>
+        <div class="pm-opt" onclick="selPay(this)">Kort</div>
+        <div class="pm-opt" onclick="selPay(this)">Faktura</div>
+      </div>
+
+      <button class="btn-main" onclick="loggInn()">Start 14 dager gratis</button>
+      <div class="disclaimer">Ingen binding · Avslutt når som helst</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /app -->
 
 <script>
-  /* ─── DATA ───────────────────────────────────────────────
-     TODO: Bytt ut denne arrayen med et fetch() mot Supabase
-     når du er klar. Format er det samme.
-  ──────────────────────────────────────────────────────── */
-  const BILER = [
-    {
-      rang: 1,
-      tittel: "Tesla Model 3 Performance",
-      undertype: "AWD",
-      aar: 2019,
-      km: 63000,
-      lokasjon: "Lørenskog",
-      dager: "7–14 dager",
-      pris: 235000,
-      estimert_salgspris: 265000,
-      omregistrering: 7000,
-      score: 94,
-      anbefaling: "KJØP",
-      type: ["performance"],
-      tags: [
-        { tekst: "Nytt hovedbatteri", farge: "green" },
-        { tekst: "1 eier", farge: "blue" },
-        { tekst: "15 min fra Oslo", farge: "" }
-      ],
-      ai_analyse: "Sterkeste kandidat. Nytt batteri fjerner største risiko. Én eier, moderat km, 15 min fra Oslo.",
-      finn_kode: "384608576"
-    },
-    {
-      rang: 2,
-      tittel: "Tesla Model 3 Standard Range",
-      undertype: "RWD",
-      aar: 2020,
-      km: 67750,
-      lokasjon: "Bergen",
-      dager: "3–7 dager",
-      pris: 199000,
-      estimert_salgspris: 230000,
-      omregistrering: 6020,
-      score: 85,
-      anbefaling: "KJØP",
-      type: [],
-      tags: [
-        { tekst: "1 eier", farge: "blue" },
-        { tekst: "Skinn", farge: "" },
-        { tekst: "Autopilot", farge: "" }
-      ],
-      ai_analyse: "Svært god pris for 2020-modell med lav km. 1 eier og godt utstyrt.",
-      finn_kode: "453918509",
-      laast: true
-    },
-    {
-      rang: 3,
-      tittel: "Tesla Model 3 SR+ Panorama",
-      undertype: "RWD",
-      aar: 2020,
-      km: 65000,
-      lokasjon: "Oslo",
-      dager: "1–3 dager",
-      pris: 199999,
-      estimert_salgspris: 225000,
-      omregistrering: 5545,
-      score: 80,
-      anbefaling: "KJØP",
-      type: [],
-      tags: [
-        { tekst: "Panoramatak", farge: "" },
-        { tekst: "Ryggekamera", farge: "" },
-        { tekst: "Hengerfeste", farge: "" }
-      ],
-      ai_analyse: "2020 SR+ med panorama og lav km. God pris, spesielt i Oslo.",
-      finn_kode: "455705152",
-      laast: true
-    },
-    {
-      rang: 4,
-      tittel: "Tesla Model 3 Long Range AWD",
-      undertype: "AWD",
-      aar: 2019,
-      km: 75000,
-      lokasjon: "Bønes",
-      dager: "5–10 dager",
-      pris: 214532,
-      estimert_salgspris: 235000,
-      omregistrering: 6020,
-      score: 80,
-      anbefaling: "KJØP",
-      type: ["longrange"],
-      tags: [
-        { tekst: "Long Range", farge: "blue" },
-        { tekst: "AWD", farge: "" }
-      ],
-      ai_analyse: "Long Range AWD til svært konkurransedyktig pris. Godt under markedsverdi.",
-      finn_kode: "457834284",
-      laast: true
-    },
-    {
-      rang: 5,
-      tittel: "Tesla Model 3 Performance AWD",
-      undertype: "AWD",
-      aar: 2019,
-      km: 74400,
-      lokasjon: "Sandefjord",
-      dager: "2–5 dager",
-      pris: 224990,
-      estimert_salgspris: 250000,
-      omregistrering: 3000,
-      score: 80,
-      anbefaling: "KJØP",
-      type: ["performance"],
-      tags: [
-        { tekst: "Performance", farge: "amber" },
-        { tekst: "Lav km for alderen", farge: "green" }
-      ],
-      ai_analyse: "Performance til svært god pris. Lav km for alderen.",
-      finn_kode: "453633037",
-      laast: true
-    }
-  ];
+/* ══════════════════════════════════════
+   DATA
+══════════════════════════════════════ */
+const BILER=[
+  {id:1,merke:"tesla",tittel:"Tesla Model 3 Performance",sub:"AWD",aar:2019,km:63000,lok:"Lørenskog",pris:235000,gevinst:30000,omreg:7000,salgspris:265000,score:94,anbefaling:"KJØP",dager:"7–14 dager",tags:[{t:"Nytt batteri",c:"g"},{t:"1 eier",c:"b"},{t:"15 min fra Oslo",c:""}],ai:"Sterkeste kandidat. Nytt batteri fjerner størst risiko. Én eier, moderat km, 15 min fra Oslo. Autopilot og full utstyrspakke er viktige salgspunkter.",finn:"384608576"},
+  {id:2,merke:"tesla",tittel:"Tesla Model 3 Standard Range",sub:"RWD",aar:2020,km:67750,lok:"Bergen",pris:199000,gevinst:31000,omreg:6020,salgspris:230000,score:85,anbefaling:"KJØP",dager:"3–7 dager",tags:[{t:"1 eier",c:"b"},{t:"Autopilot",c:""},{t:"Skinn",c:""}],ai:"Svært god pris for 2020-modell med lav km. 1 eier og godt utstyrt. Tydelig under markedsverdi. Bergen gir noe høyere transportkostnad fra Asker.",finn:"453918509"},
+  {id:3,merke:"toyota",tittel:"Toyota RAV4 Plug-in",sub:"PHEV AWD",aar:2021,km:42000,lok:"Oslo",pris:389000,gevinst:28000,omreg:5545,salgspris:417000,score:80,anbefaling:"KJØP",dager:"10–18 dager",tags:[{t:"PHEV",c:"g"},{t:"1 eier",c:"b"},{t:"Lav km",c:"g"}],ai:"RAV4 PHEV er en trygg flip. Hybrid gir lav batteririsiko. Familiesegmentet er stabilt. Lav km er et sterkt salgsargument.",finn:"455705152"},
+  {id:4,merke:"tesla",tittel:"Tesla Model 3 Long Range",sub:"AWD",aar:2019,km:75000,lok:"Bønes",pris:214532,gevinst:20468,omreg:6020,salgspris:235000,score:80,anbefaling:"KJØP",dager:"5–10 dager",tags:[{t:"Long Range",c:"b"},{t:"AWD",c:""}],ai:"Long Range AWD til svært konkurransedyktig pris. Godt under markedsverdi for denne utstyrsgraden. Unngå over 85k km.",finn:"457834284"},
+  {id:5,merke:"volkswagen",tittel:"VW ID.4 Pro Performance",sub:"AWD",aar:2022,km:38000,lok:"Drammen",pris:349000,gevinst:26000,omreg:5545,salgspris:375000,score:79,anbefaling:"KJØP",dager:"14–21 dager",tags:[{t:"1 eier",c:"b"},{t:"Varmepumpe",c:"g"},{t:"Lav km",c:"g"}],ai:"ID.4 har hatt prisnedgang siste 60 dager. AWD-versjonene selger raskere enn RWD. Varmepumpe er viktig å ha med i annonsen.",finn:"453633037"},
+  {id:6,merke:"nissan",tittel:"Nissan Leaf e+ 62 kWh",sub:"40 kWh",aar:2020,km:55000,lok:"Stavanger",pris:189000,gevinst:22000,omreg:5545,salgspris:211000,score:76,anbefaling:"KJØP",dager:"18–28 dager",tags:[{t:"Lav inngang",c:"g"},{t:"Sjekk batteri",c:"a"}],ai:"Leaf faller i pris. Høyt volum gir muligheter men krymper marginen. Sjekk alltid batteristatus med LeafSpy. Best i laveste prisklasse med rask videresal.",finn:"456451850"},
+  {id:7,merke:"bmw",tittel:"BMW iX3 M Sport",sub:"RWD",aar:2021,km:61000,lok:"Sandvika",pris:449000,gevinst:35000,omreg:5545,salgspris:484000,score:75,anbefaling:"KJØP",dager:"15–25 dager",tags:[{t:"M Sport",c:"a"},{t:"1 eier",c:"b"},{t:"Premium",c:"b"}],ai:"iX3 er attraktiv i BMW-segmentet. M Sport trekker premium-kjøpere. Krever høy kapital men BMW-merket gir trygg etterspørsel.",finn:"454785584"},
+  {id:8,merke:"hyundai",tittel:"Hyundai IONIQ 5 AWD",sub:"Long Range",aar:2022,km:44000,lok:"Lillestrøm",pris:429000,gevinst:32000,omreg:5545,salgspris:461000,score:74,anbefaling:"KJØP",dager:"12–20 dager",tags:[{t:"800V lading",c:"g"},{t:"AWD",c:""},{t:"1 eier",c:"b"}],ai:"IONIQ 5 holder pris godt. 800V-lading er et sterkt salgsargument som nesten alltid nevnes av kjøpere. Lavt volum betyr færre muligheter, men god margin.",finn:"457645074"},
+];
 
-  /* ─── BEREGN MARGIN ─── */
-  function margin(bil) {
-    return bil.estimert_salgspris - bil.pris - bil.omregistrering;
-  }
+const MODELLER=[
+  {id:"tm3p",merke:"tesla",navn:"Tesla Model 3 Performance",sub:"2018–2021 · AWD",score:91,flipScore:88,snittPris:238000,minPris:195000,maxPris:285000,snittDager:11,antallAnnonser:38,prisEndring:4200,prisData:[255,252,248,251,246,243,240,238,241,237,235,238],volum:[8,11,7,14,9,12,10,13,8,15,11,14],tags:[{t:"Høy etterspørsel",c:"g"},{t:"Batteri-risiko",c:"a"},{t:"Rask omsetning",c:"b"}],ai:"Sterkeste flip-kandidat. Nytt batteri (+15k) gir stor prisforskjell. Etterspørselen stabil — snitt 11 dager på markedet. Pass på 2019-modeller med original batteri.",faktorer:[{l:"Etterspørsel",v:92,c:"#3d9960"},{l:"Prismargin",v:78,c:"#3d9960"},{l:"Likviditet",v:85,c:"#1f5fa6"},{l:"Batteririsiko",v:55,c:"#e8a020"}]},
+  {id:"tm3lr",merke:"tesla",navn:"Tesla Model 3 Long Range",sub:"2019–2022 · AWD",score:83,flipScore:79,snittPris:226000,minPris:190000,maxPris:265000,snittDager:14,antallAnnonser:52,prisEndring:1800,prisData:[235,233,231,228,230,227,225,224,226,224,222,226],volum:[12,9,14,11,16,10,13,12,9,14,11,15],tags:[{t:"God rekkevidde",c:"g"},{t:"Populær",c:"b"},{t:"Moderat margin",c:"a"}],ai:"Solid flip med jevn etterspørsel. Lavere margin enn Performance, men enklere å selge. Unngå over 85k km.",faktorer:[{l:"Etterspørsel",v:84,c:"#3d9960"},{l:"Prismargin",v:65,c:"#e8a020"},{l:"Likviditet",v:88,c:"#1f5fa6"},{l:"Batteririsiko",v:72,c:"#3d9960"}]},
+  {id:"rav4",merke:"toyota",navn:"Toyota RAV4 Plug-in",sub:"2021–2023 · PHEV AWD",score:80,flipScore:77,snittPris:392000,minPris:339000,maxPris:459000,snittDager:13,antallAnnonser:18,prisEndring:2100,prisData:[385,382,384,381,386,383,388,385,390,387,391,392],volum:[4,5,3,6,4,7,3,5,4,6,4,5],tags:[{t:"Stiger i pris",c:"g"},{t:"Lav risiko",c:"g"},{t:"Lavt volum",c:"a"}],ai:"RAV4 PHEV er trygg — hybrid gir lav batteririsiko. Prisen har steget svakt. Få annonser betyr gode kjøp er sjeldne men verd å vente på.",faktorer:[{l:"Etterspørsel",v:80,c:"#3d9960"},{l:"Prismargin",v:72,c:"#3d9960"},{l:"Likviditet",v:60,c:"#e8a020"},{l:"Batteririsiko",v:94,c:"#3d9960"}]},
+  {id:"vwid4",merke:"volkswagen",navn:"VW ID.4 Pro Performance",sub:"2021–2023 · AWD",score:76,flipScore:72,snittPris:358000,minPris:299000,maxPris:429000,snittDager:19,antallAnnonser:29,prisEndring:-3200,prisData:[380,376,372,368,365,362,358,355,360,357,354,358],volum:[6,8,5,9,7,10,6,8,5,9,7,8],tags:[{t:"Prisnedgang",c:"r"},{t:"God utstyr",c:"b"},{t:"Tregere marked",c:"a"}],ai:"ID.4 har opplevd prisnedgang siste 60 dager. Kjøpers marked — godt for innkjøp men vær obs på lang liggetid. Varmepumpe er et must.",faktorer:[{l:"Etterspørsel",v:62,c:"#e8a020"},{l:"Prismargin",v:58,c:"#e8a020"},{l:"Likviditet",v:55,c:"#e8a020"},{l:"Batteririsiko",v:88,c:"#3d9960"}]},
+  {id:"ioniq5",merke:"hyundai",navn:"Hyundai IONIQ 5 AWD",sub:"2022–2023 · Long Range",score:78,flipScore:74,snittPris:435000,minPris:379000,maxPris:499000,snittDager:16,antallAnnonser:21,prisEndring:900,prisData:[445,441,438,440,436,434,432,435,433,431,433,435],volum:[4,6,5,8,5,7,4,6,5,7,4,6],tags:[{t:"800V lading",c:"g"},{t:"Stabil pris",c:"b"},{t:"Lavt volum",c:"a"}],ai:"IONIQ 5 holder pris godt. 800V-lading er et sterkt argument. Lavere volum betyr færre muligheter, men marginen er god.",faktorer:[{l:"Etterspørsel",v:76,c:"#3d9960"},{l:"Prismargin",v:70,c:"#3d9960"},{l:"Likviditet",v:62,c:"#e8a020"},{l:"Batteririsiko",v:90,c:"#3d9960"}]},
+  {id:"leaf",merke:"nissan",navn:"Nissan Leaf e+",sub:"2019–2022 · 62 kWh",score:69,flipScore:65,snittPris:192000,minPris:155000,maxPris:239000,snittDager:22,antallAnnonser:44,prisEndring:-5600,prisData:[215,210,207,204,202,199,197,194,196,193,191,192],volum:[10,13,8,15,11,14,9,12,10,14,11,13],tags:[{t:"Prisnedgang",c:"r"},{t:"Lavprissegment",c:"a"},{t:"Sjekk batteri",c:"r"}],ai:"Leaf faller i pris. Høyt volum gir muligheter men marginen krymper. Alltid sjekk batteristatus med LeafSpy. Best egnet for rask videresal.",faktorer:[{l:"Etterspørsel",v:58,c:"#e8a020"},{l:"Prismargin",v:48,c:"#c0391b"},{l:"Likviditet",v:70,c:"#3d9960"},{l:"Batteririsiko",v:38,c:"#c0391b"}]},
+  {id:"i4",merke:"bmw",navn:"BMW i4 eDrive40",sub:"2022–2023 · Gran Coupé",score:74,flipScore:70,snittPris:498000,minPris:439000,maxPris:565000,snittDager:18,antallAnnonser:14,prisEndring:1400,prisData:[510,506,503,500,497,495,498,495,492,496,494,498],volum:[3,4,3,5,3,4,3,5,2,4,3,4],tags:[{t:"Premium",c:"b"},{t:"Lav risiko",c:"g"},{t:"Høy kapital",c:"a"}],ai:"i4 er en premium flip med moderat margin. Krever høy kapital, men BMW-merket gir trygg etterspørsel. Krev alltid full servicehistorikk.",faktorer:[{l:"Etterspørsel",v:72,c:"#3d9960"},{l:"Prismargin",v:62,c:"#e8a020"},{l:"Likviditet",v:58,c:"#e8a020"},{l:"Batteririsiko",v:88,c:"#3d9960"}]},
+];
 
-  /* ─── FILTER STATE ─── */
-  let aktivFilter = "all";
+/* ══════════════════════════════════════
+   STATE
+══════════════════════════════════════ */
+let innlogget=false, forrigeSide='page-forside';
+let dashMerke='alle', anMerke='alle', anTab='marked';
+let openAnalyser=new Set(), aktivDetaljId=null;
 
-  /* ─── RENDER ─── */
-  function render() {
-    const liste = BILER.filter(b => {
-      if (aktivFilter === "all") return true;
-      if (aktivFilter === "performance") return b.type.includes("performance");
-      if (aktivFilter === "longrange") return b.type.includes("longrange");
-      if (aktivFilter === "margin25") return margin(b) >= 25000;
-      return true;
-    });
+/* ══════════════════════════════════════
+   NAVIGASJON
+══════════════════════════════════════ */
+function goTo(side){
+  const curr=document.querySelector('.page.active');
+  if(curr) forrigeSide=curr.id;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(side).classList.add('active');
+  window.scrollTo(0,0);
+  if(side==='page-dashboard') renderDash();
+  if(side==='page-analyser') renderAnalyser();
+}
+function goBack(){goTo(forrigeSide||'page-forside');}
+function loggInn(){innlogget=true;goTo('page-dashboard');}
 
-    const container = document.getElementById("car-list");
-    container.innerHTML = "";
+/* ══════════════════════════════════════
+   HELPERS
+══════════════════════════════════════ */
+const fmt=n=>Math.round(n).toLocaleString('no-NO');
+function sparklineSVG(data,color,h){
+  const w=340,mn=Math.min(...data),mx=Math.max(...data),rng=mx-mn||1;
+  const pts=data.map((v,i)=>{
+    const x=Math.round((i/(data.length-1))*(w-4)+2);
+    const y=Math.round(h-4-((v-mn)/rng)*(h-8));
+    return x+','+y;
+  }).join(' ');
+  const last=pts.split(' ').slice(-1)[0].split(',');
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="height:${h}px"><polyline fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="${pts}"/><circle cx="${last[0]}" cy="${last[1]}" r="3.5" fill="${color}"/></svg>`;
+}
+function volBarSVG(data,h){
+  const w=340,mx=Math.max(...data),bw=Math.floor(w/data.length)-2;
+  return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="height:${h}px">${data.map((v,i)=>{const bh=Math.round((v/mx)*(h-4)),x=i*(bw+2)+1,y=h-bh;return `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="2" fill="${i===data.length-1?'#3d9960':'#d3d1c7'}"/>`;}).join('')}</svg>`;
+}
+function tagsHtml(tags){return tags.map(t=>`<span class="tag ${t.c}">${t.t||t.tekst}</span>`).join('');}
+function itagsHtml(tags){return tags.map(t=>`<span class="itag ${t.c}">${t.t}</span>`).join('');}
+function metaIkon(path){return `<svg width="12" height="12" fill="none" viewBox="0 0 16 16">${path}</svg>`;}
+const ikonKm=metaIkon('<circle cx="8" cy="8" r="6" stroke="#b5b2ac" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>');
+const ikonLok=metaIkon('<path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="#b5b2ac" stroke-width="1.4"/>');
+const ikonCal=metaIkon('<rect x="2" y="3" width="12" height="11" rx="2" stroke="#b5b2ac" stroke-width="1.4"/><path d="M2 7h12M6 2v2M10 2v2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>');
 
-    liste.forEach((bil, i) => {
-      if (bil.laast) {
-        container.appendChild(lagLaastKort(bil));
-      } else {
-        container.appendChild(lagKort(bil));
-      }
-    });
-  }
-
-  /* ─── LAG FULLT KORT ─── */
-  function lagKort(bil) {
-    const m = margin(bil);
-    const div = document.createElement("div");
-    div.className = "car-card featured";
-    div.innerHTML = `
-      <div class="card-header">
-        <div class="card-header-top">
-          <div class="card-left">
-            <div class="rank-row">
-              <span class="rank-pill">#${bil.rang}</span>
-            </div>
-            <div class="car-name">${bil.tittel}<span class="car-year">${bil.aar}</span></div>
-            <div class="car-sub">${bil.undertype}</div>
-          </div>
-          <div class="price-block">
-            <div class="price-main">${bil.pris.toLocaleString("no-NO")} kr</div>
-            <div class="price-margin">+${m.toLocaleString("no-NO")} kr margin</div>
-          </div>
+/* ══════════════════════════════════════
+   FORSIDE
+══════════════════════════════════════ */
+function renderForside(){
+  const el=document.getElementById('forside-cars');
+  const topBil=BILER[0];
+  const locked=BILER.slice(1,4);
+  let html=lagFulltKort(topBil,1,false);
+  locked.forEach((b,i)=>{html+=lagLaastKort(b,i+2);});
+  el.innerHTML=html;
+}
+function lagFulltKort(b,rang,isDash){
+  const margin=b.gevinst;
+  const rnkCls=rang===1?'rnk':'rnk g';
+  const cardCls=rang===1?'ccard top':'ccard';
+  return `<div class="${cardCls}">
+    <div class="ch">
+      <div class="ch-top">
+        <div>
+          <span class="${rnkCls}">#${rang}</span>
+          <div class="cn">${b.tittel}<span class="cy">${b.aar}</span></div>
+          <div class="csub">${b.sub}</div>
         </div>
-        <div class="car-meta">
-          <span class="meta-item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-              <circle cx="8" cy="8" r="6" stroke="#b5b2ac" stroke-width="1.4"/>
-              <path d="M8 5v3l2 2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            ${bil.km.toLocaleString("no-NO")} km
-          </span>
-          <span class="meta-item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-              <path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="#b5b2ac" stroke-width="1.4"/>
-            </svg>
-            ${bil.lokasjon}
-          </span>
-          <span class="meta-item">
-            <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-              <rect x="2" y="3" width="12" height="11" rx="2" stroke="#b5b2ac" stroke-width="1.4"/>
-              <path d="M2 7h12M6 2v2M10 2v2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>
-            </svg>
-            ${bil.dager}
-          </span>
-        </div>
-        <div class="tags">
-          ${bil.tags.map(t => `<span class="tag ${t.farge}">${t.tekst}</span>`).join("")}
-        </div>
-        <div class="score-bar-wrap">
-          <div class="score-bar-track">
-            <div class="score-bar-fill" style="width:${bil.score}%"></div>
-          </div>
-          <span class="score-num">${bil.score}</span>
+        <div class="pb">
+          <div class="pm">${fmt(b.pris)} kr</div>
+          <div class="pgain">+${fmt(margin)} kr margin</div>
         </div>
       </div>
-      <div class="card-body">
-        <div class="card-col">
-          <div class="col-label">AI-vurdering</div>
-          <div class="ai-text">${bil.ai_analyse}</div>
-        </div>
-        <div class="card-col">
-          <div class="col-label">Flipping-kalkyle</div>
-          <div class="kalkyle-row">
-            <span class="kalkyle-label">Kjøpspris</span>
-            <span>${bil.pris.toLocaleString("no-NO")} kr</span>
-          </div>
-          <div class="kalkyle-row">
-            <span class="kalkyle-label">Omreg. + klargjøring</span>
-            <span>~${bil.omregistrering.toLocaleString("no-NO")} kr</span>
-          </div>
-          <div class="kalkyle-row">
-            <span class="kalkyle-label">Est. salgspris</span>
-            <span>${bil.estimert_salgspris.toLocaleString("no-NO")} kr</span>
-          </div>
-          <div class="kalkyle-row total">
-            <span>Netto margin</span>
-            <span>${m.toLocaleString("no-NO")} kr</span>
-          </div>
-        </div>
+      <div class="cmeta">
+        <span class="mi">${ikonKm}${fmt(b.km)} km</span>
+        <span class="mi">${ikonLok}${b.lok}</span>
+        <span class="mi">${ikonCal}${b.dager}</span>
       </div>
-      <a class="btn-finn" href="https://www.finn.no/mobility/item/${bil.finn_kode}" target="_blank" rel="noopener">
-        Se annonsen på Finn.no
-      </a>
-    `;
-    return div;
-  }
+      <div class="tags">${tagsHtml(b.tags)}</div>
+      <div class="sbar"><div class="st"><div class="sf" style="width:${b.score}%"></div></div><span class="sn">${b.score}</span></div>
+    </div>
+    <div class="cbody">
+      <div class="cc"><div class="cl">AI-vurdering</div><div class="ai-t">${b.ai}</div></div>
+      <div class="cc"><div class="cl">Kalkyle</div>
+        <div class="kr"><span class="kl">Kjøpspris</span><span>${fmt(b.pris)} kr</span></div>
+        <div class="kr"><span class="kl">Omreg. + klargjøring</span><span>~${fmt(b.omreg)} kr</span></div>
+        <div class="kr"><span class="kl">Est. salgspris</span><span>${fmt(b.salgspris)} kr</span></div>
+        <div class="kr tot"><span>Netto margin</span><span>${fmt(b.salgspris-b.pris-b.omreg)} kr</span></div>
+      </div>
+    </div>
+    <a class="btn-finn" href="https://www.finn.no/mobility/item/${b.finn}" target="_blank" rel="noopener">Se annonsen på Finn.no</a>
+  </div>`;
+}
+function lagLaastKort(b,rang){
+  return `<div class="lcard">
+    <div class="ll"><div class="lr-rnk">#${rang}</div><div class="lr-t">${b.tittel} ${b.aar}</div><div class="lr-s">${fmt(b.km)} km · ${b.lok}</div></div>
+    <div class="lr"><div class="lr-p">${fmt(b.pris)} kr</div><div class="lr-g">+${fmt(b.gevinst)} kr</div>
+    <button class="bunlock" onclick="document.getElementById('paywall').scrollIntoView({behavior:'smooth'})">Lås opp</button></div>
+  </div>`;
+}
 
-  /* ─── LAG LÅST KORT ─── */
-  function lagLaastKort(bil) {
-    const m = margin(bil);
-    const div = document.createElement("div");
-    div.className = "locked-card";
-    div.innerHTML = `
-      <div class="locked-left">
-        <div class="locked-rank">#${bil.rang}</div>
-        <div class="locked-title">${bil.tittel} ${bil.aar}</div>
-        <div class="locked-sub">${bil.km.toLocaleString("no-NO")} km · ${bil.lokasjon}</div>
-      </div>
-      <div class="locked-right">
-        <div class="locked-price">${bil.pris.toLocaleString("no-NO")} kr</div>
-        <div class="locked-margin">+${m.toLocaleString("no-NO")} kr</div>
-        <button class="btn-unlock" onclick="document.getElementById('paywall').scrollIntoView({behavior:'smooth'})">Lås opp</button>
-      </div>
-    `;
-    return div;
-  }
-
-  /* ─── FILTER KLIKK ─── */
-  document.getElementById("filter-row").addEventListener("click", e => {
-    if (!e.target.dataset.filter) return;
-    document.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
-    e.target.classList.add("active");
-    aktivFilter = e.target.dataset.filter;
-    render();
+/* ══════════════════════════════════════
+   DASHBOARD
+══════════════════════════════════════ */
+function setDashMerke(m,el){
+  dashMerke=m;
+  document.querySelectorAll('#dash-merke-row .merke').forEach(d=>d.classList.remove('on'));
+  el.classList.add('on');
+  renderDash();
+}
+function renderDash(){
+  const q=(document.getElementById('dash-search')||{}).value||'';
+  const sort=(document.getElementById('dash-sort')||{}).value||'score';
+  let liste=BILER.filter(b=>{
+    const mOk=dashMerke==='alle'||b.merke===dashMerke;
+    const sOk=!q||b.tittel.toLowerCase().includes(q.toLowerCase())||b.lok.toLowerCase().includes(q.toLowerCase())||String(b.km).includes(q);
+    return mOk&&sOk;
   });
+  if(sort==='margin') liste.sort((a,b)=>b.gevinst-a.gevinst);
+  else if(sort==='pris') liste.sort((a,b)=>a.pris-b.pris);
+  else liste.sort((a,b)=>b.score-a.score);
+  const lbl=document.getElementById('dash-result-label');
+  if(lbl) lbl.textContent=liste.length===BILER.length?'Alle biler':liste.length===0?'Ingen treff':liste.length+' biler funnet';
+  const cnt=document.getElementById('dash-count');
+  if(cnt) cnt.textContent=liste.length;
+  const el=document.getElementById('dash-cars');
+  if(!el) return;
+  if(!liste.length){el.innerHTML='<div class="empty">Ingen biler funnet — prøv et annet søk</div>';return;}
+  el.innerHTML=liste.map((b,i)=>{
+    const rang=i+1;
+    const rnkCls=rang===1?'rnk':'rnk g';
+    const cardCls=rang===1?'ccard top':'ccard';
+    return `<div class="${cardCls}" style="cursor:pointer;" onclick="visDetalj(${b.id})">
+      <div class="ch">
+        <div class="ch-top">
+          <div><span class="${rnkCls}">#${rang}</span><div class="cn">${b.tittel}<span class="cy">${b.aar}</span></div><div class="csub">${b.sub}</div></div>
+          <div class="pb"><div class="pm">${fmt(b.pris)} kr</div><div class="pgain">+${fmt(b.gevinst)} kr</div></div>
+        </div>
+        <div class="cmeta">
+          <span class="mi">${ikonKm}${fmt(b.km)} km</span>
+          <span class="mi">${ikonLok}${b.lok}</span>
+        </div>
+        <div class="tags">${tagsHtml(b.tags)}</div>
+        <div class="sbar"><div class="st"><div class="sf" style="width:${b.score}%"></div></div><span class="sn">${b.score}</span></div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-  /* ─── INIT ─── */
-  render();
+/* ══════════════════════════════════════
+   BILDETALJ
+══════════════════════════════════════ */
+function visDetalj(id){
+  aktivDetaljId=id;
+  const b=BILER.find(x=>x.id===id);
+  if(!b) return;
+  document.getElementById('detalj-tittel').textContent=b.tittel+' · '+b.aar;
+  const margin=b.salgspris-b.pris-b.omreg;
+  const prisData=[b.pris*1.08,b.pris*1.06,b.pris*1.05,b.pris*1.04,b.pris*1.03,b.pris*1.02,b.pris*1.01,b.pris].map(Math.round);
+  document.getElementById('detalj-body').innerHTML=`
+    <div class="det-price-block">
+      <div class="det-price">${fmt(b.pris)} kr</div>
+      <div class="det-gain">+${fmt(b.gevinst)} kr estimert margin</div>
+      <div class="det-meta">
+        <span class="det-mi"><strong>${fmt(b.km)} km</strong></span>
+        <span class="det-mi"><strong>${b.lok}</strong></span>
+        <span class="det-mi"><strong>${b.sub}</strong></span>
+        <span class="det-mi"><strong>Score: ${b.score}</strong></span>
+      </div>
+      <div class="tags" style="margin-top:12px;">${tagsHtml(b.tags)}</div>
+    </div>
 
-  /* ─── OPPDATER TIDSSTEMPEL ───────────────────────────────
-     TODO: Hent dette fra Supabase når du kobler til backend
-  ──────────────────────────────────────────────────────── */
-  const nå = new Date();
-  document.getElementById("oppdatert-tid").textContent =
-    "Oppdatert " + nå.getHours().toString().padStart(2,"0") + ":" + nå.getMinutes().toString().padStart(2,"0");
+    <div class="sparkline-block">
+      <div class="cl" style="margin-bottom:10px;">Prishistorikk — siste 8 observasjoner</div>
+      <div class="mini-chart">${sparklineSVG(prisData,'#3d9960',70)}</div>
+      <div class="chart-footer" style="margin-top:4px;"><span>${fmt(prisData[0])} kr</span><span style="color:var(--g-t);font-weight:500;">Nå: ${fmt(b.pris)} kr</span></div>
+    </div>
+
+    <div style="background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;">
+      <div class="cl" style="margin-bottom:10px;">Full flipping-kalkyle</div>
+      <div class="kr"><span class="kl">Kjøpspris</span><span>${fmt(b.pris)} kr</span></div>
+      <div class="kr"><span class="kl">Omregistrering</span><span>5 545 kr</span></div>
+      <div class="kr"><span class="kl">Transport (estimert)</span><span>${fmt(b.omreg-5545)} kr</span></div>
+      <div class="kr"><span class="kl">Klargjøring est.</span><span>2 000 kr</span></div>
+      <div class="kr"><span class="kl">Est. salgspris</span><span>${fmt(b.salgspris)} kr</span></div>
+      <div class="kr tot"><span>Netto margin</span><span>${fmt(margin)} kr</span></div>
+    </div>
+
+    <div class="ai-box" style="margin-bottom:12px;">
+      <div class="ai-box-label">AI-vurdering</div>
+      <div class="ai-box-text">${b.ai}</div>
+    </div>
+
+    <a class="btn-finn" href="https://www.finn.no/mobility/item/${b.finn}" target="_blank" rel="noopener">Se annonsen på Finn.no</a>
+  `;
+  forrigeSide='page-dashboard';
+  goTo('page-detalj');
+}
+
+/* ══════════════════════════════════════
+   ANALYSER
+══════════════════════════════════════ */
+function setAnalyseTab(t){
+  anTab=t;
+  document.getElementById('stab-marked').classList.toggle('on',t==='marked');
+  document.getElementById('stab-flip').classList.toggle('on',t==='flip');
+  renderAnalyser();
+}
+function setAnMerke(m,el){
+  anMerke=m;
+  document.querySelectorAll('#an-merke-row .merke').forEach(d=>d.classList.remove('on'));
+  el.classList.add('on');
+  renderAnalyser();
+}
+function toggleAcard(id){
+  if(openAnalyser.has(id)) openAnalyser.delete(id);
+  else openAnalyser.add(id);
+  renderAnalyser();
+}
+function renderAnalyser(){
+  const q=(document.getElementById('an-search')||{}).value||'';
+  let liste=MODELLER.filter(m=>{
+    const mOk=anMerke==='alle'||m.merke===anMerke;
+    const sOk=!q||m.navn.toLowerCase().includes(q.toLowerCase());
+    return mOk&&sOk;
+  });
+  if(anTab==='flip') liste=[...liste].sort((a,b)=>b.flipScore-a.flipScore);
+  else liste=[...liste].sort((a,b)=>b.score-a.score);
+  const el=document.getElementById('an-body');
+  if(!el) return;
+  if(!liste.length){el.innerHTML='<div style="padding:12px;"><div class="empty">Ingen modeller funnet</div></div>';return;}
+  const html=liste.map(m=>{
+    const isOpen=openAnalyser.has(m.id);
+    const trendPos=m.prisEndring>=0;
+    const trendTxt=(trendPos?'+':'')+fmt(m.prisEndring)+' kr siste 30d';
+    const trendCol=trendPos?'var(--g-t)':'var(--r-t)';
+    const visScore=anTab==='flip'?m.flipScore:m.score;
+    const rangePos=Math.round(((m.snittPris-m.minPris)/(m.maxPris-m.minPris))*100);
+    return `<div class="acard">
+      <div class="acard-header" onclick="toggleAcard('${m.id}')">
+        <div style="flex:1;min-width:0;">
+          <div class="acard-title">${m.navn}</div>
+          <div class="acard-sub">${m.sub} · <span style="color:${trendCol};font-weight:500;">${trendTxt}</span></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+          <div class="score-ring">${visScore}</div>
+          <svg class="chevron ${isOpen?'open':''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div class="acard-body ${isOpen?'open':''}">
+        <div class="acard-inner">
+          <div class="kstats">
+            <div class="ks"><div class="ks-l">Snitt pris</div><div class="ks-v">${fmt(m.snittPris)}</div></div>
+            <div class="ks"><div class="ks-l">Snitt dager</div><div class="ks-v b">${m.snittDager}d</div></div>
+            <div class="ks"><div class="ks-l">Annonser</div><div class="ks-v">${m.antallAnnonser}</div></div>
+          </div>
+          <div class="chart-block">
+            <div class="chart-label">Prisutvikling — 30 dager</div>
+            <div class="mini-chart">${sparklineSVG(m.prisData,'#3d9960',72)}</div>
+            <div class="chart-footer"><span>${fmt(m.prisData[0])} kr</span><span style="color:${trendCol};font-weight:500;">${trendTxt}</span><span>${fmt(m.prisData[m.prisData.length-1])} kr</span></div>
+          </div>
+          <div class="chart-block">
+            <div class="chart-label">Annonse-volum — 12 uker</div>
+            <div class="mini-chart">${volBarSVG(m.volum,44)}</div>
+            <div class="chart-footer"><span>12 uker siden</span><span>Denne uka</span></div>
+          </div>
+          <div class="range-block">
+            <div class="chart-label">Prisklasse på markedet</div>
+            <div class="range-bar-wrap">
+              <div class="range-fill" style="left:0;width:100%;background:var(--g-m);opacity:.15;"></div>
+              <div class="range-fill" style="left:${Math.max(0,rangePos-8)}%;width:16%;background:var(--g-m);"></div>
+              <div class="range-marker" style="left:${rangePos}%;"></div>
+            </div>
+            <div class="range-nums"><span>${fmt(m.minPris)} kr</span><span style="font-weight:500;">Snitt: ${fmt(m.snittPris)} kr</span><span>${fmt(m.maxPris)} kr</span></div>
+          </div>
+          <div class="flip-block">
+            <div class="chart-label" style="margin-bottom:10px;">Flip-faktorer</div>
+            ${m.faktorer.map(f=>`<div class="flip-row"><span class="flip-label">${f.l}</span><div class="flip-track"><div class="flip-fill" style="width:${f.v}%;background:${f.c}"></div></div><span class="flip-val">${f.v}</span></div>`).join('')}
+          </div>
+          <div class="info-tags" style="margin-bottom:12px;">${itagsHtml(m.tags)}</div>
+          <div class="ai-box">
+            <div class="ai-box-label">AI-markedsanalyse</div>
+            <div class="ai-box-text">${m.ai}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  el.innerHTML=`<div style="padding:10px 12px 20px;">${html}</div>`;
+}
+
+/* ══════════════════════════════════════
+   BETALING
+══════════════════════════════════════ */
+function selPlan(el){
+  document.querySelectorAll('.plan-c').forEach(p=>{p.classList.remove('sel');p.querySelector('.radio').classList.remove('on');});
+  el.classList.add('sel');
+  el.querySelector('.radio').classList.add('on');
+}
+function selPay(el){
+  document.querySelectorAll('.pm-opt').forEach(p=>p.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+(function init(){
+  const naa=new Date();
+  const tid=naa.getHours().toString().padStart(2,'0')+':'+naa.getMinutes().toString().padStart(2,'0');
+  const liveTid=document.getElementById('live-tid');
+  if(liveTid) liveTid.textContent='Oppdatert '+tid;
+  renderForside();
+  renderDash();
+  renderAnalyser();
+})();
 </script>
 </body>
 </html>
