@@ -155,6 +155,7 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .tx-search input { background: transparent; border: 0; outline: none; color: var(--ink); width: 200px; }
 .tx-search input::placeholder { color: var(--ink-3); }
 
+.tx-table-wrap { overflow-x: auto; }
 .tx-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .tx-table thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--ink-3); text-align: left; padding: 12px 14px; background: var(--surface-2); border-bottom: 1px solid var(--line); text-transform: uppercase; font-weight: 500; }
 .tx-table thead th.r { text-align: right; }
@@ -351,4 +352,30 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
   .subhead { padding: 14px 16px; flex-direction: column; align-items: flex-start; gap: 10px; }
   .tx-toolbar { padding: 0; }
   .tx-search { margin-left: 0; flex: 1; }
+
+  /* User asked to fit the entire row on phone screens, even if it looks small.
+     Strategy: stop horizontal-scrolling the wrapper, force the table to a fixed
+     layout so columns share viewport width, then aggressively shrink padding,
+     font sizes, the thumbnail, and the sparkline so all 8–9 columns squeeze in. */
+  .tx-table-wrap { overflow-x: hidden; }
+  .tx-table { table-layout: fixed; }
+  .tx-table thead th { padding: 6px 3px; font-size: 8px; letter-spacing: 0.04em; }
+  .tx-table tbody td { padding: 6px 3px; font-size: 10px; }
+  .tx-table .car-row { gap: 6px; }
+  .tx-table .car-thumb { width: 32px; height: 24px; border-radius: 3px; }
+  .tx-table .car-name {
+    font-size: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tx-table .car-sub { font-size: 8px; margin-top: 1px; }
+  .tx-table .num { font-size: 9px; }
+  .tx-table .badge { padding: 1px 3px; font-size: 7px; margin-left: 4px; letter-spacing: 0.04em; }
+  .tx-table .score-pill { padding: 1px 4px; font-size: 9px; }
+  .tx-table .spark-mini, .spark-mini { width: 36px; height: 16px; }
+  /* Header row uses inline width:38 on the # column. Let everything else flex.
+     Suppress the lokasjon icon padding so the cell can fit on tiny phones. */
+  .tx-table tbody td:nth-child(8) { font-size: 9px; }
+  .tx-table tbody td:last-child { font-size: 8px; padding-right: 6px; }
 }

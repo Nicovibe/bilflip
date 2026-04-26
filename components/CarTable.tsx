@@ -16,7 +16,7 @@ const BRAND_OPTIONS = ['Alle', 'Tesla', 'Volkswagen', 'BMW', 'Audi', 'Toyota', '
 
 export function CarTable({ cars, compact = false, showSpark = true }: Props) {
   return (
-    <div style={{ overflowX: 'auto' }}>
+    <div className="tx-table-wrap">
       <table className="tx-table">
         <thead>
           <tr>
