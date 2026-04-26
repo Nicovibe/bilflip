@@ -233,6 +233,10 @@ body{background:var(--bg);font-family:var(--ff);color:var(--text);font-size:15px
 .history-item:last-child{border-bottom:none;}
 .history-item span{color:var(--muted);font-size:12px;}
 .section-h{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;padding:14px 18px 8px;}
+.feed-section-h{font-size:12px;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;padding:16px 4px 8px;display:flex;align-items:center;gap:7px;}
+.feed-section-h .fsh-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.feed-section-h .fsh-count{font-weight:400;color:var(--muted2);margin-left:2px;}
+.feed-section-sep{height:1px;background:var(--border);margin:8px 0 4px;}
 
 /* ─── BOTTOM TABS ─── */
 .bottom-tabs{background:var(--white);border-top:1px solid var(--border);display:flex;padding:8px 0 env(safe-area-inset-bottom,10px);position:sticky;bottom:0;z-index:50;}
@@ -263,6 +267,18 @@ body{background:var(--bg);font-family:var(--ff);color:var(--text);font-size:15px
 .itag.b{background:var(--b-bg);color:var(--b-t);}
 .itag.a{background:var(--a-bg);color:var(--a-t);}
 .itag.r{background:var(--r-bg);color:var(--r-t);}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;}
+.metric-card{background:var(--tag);border-radius:var(--rad-xs);padding:11px 12px;}
+.metric-card .mcl{font-size:10px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px;}
+.metric-card .mcv{font-size:15px;font-weight:600;letter-spacing:-.2px;}
+.metric-card .mcs{font-size:11px;color:var(--muted);margin-top:2px;line-height:1.45;}
+.insight-box{background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;}
+.insight-title{font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;margin-bottom:10px;}
+.insight-list{display:flex;flex-direction:column;gap:8px;}
+.insight-item{display:flex;justify-content:space-between;gap:10px;font-size:12px;}
+.insight-item span:first-child{color:var(--muted);}
+.insight-item strong{font-weight:600;color:var(--text);text-align:right;}
+.note-line{font-size:12px;color:var(--muted);line-height:1.6;}
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
@@ -378,9 +394,10 @@ body{background:var(--bg);font-family:var(--ff);color:var(--text);font-size:15px
   <div class="sort-row">
     <span class="sort-label" id="dash-result-label">Alle biler</span>
     <select class="sort-select" id="dash-sort" onchange="renderDash()">
-      <option value="score">Etter AI-score</option>
+      <option value="deal">Etter deal-score</option>
       <option value="margin">Etter margin</option>
       <option value="pris">Etter pris</option>
+      <option value="score">Etter AI-score</option>
     </select>
   </div>
 
@@ -604,16 +621,19 @@ body{background:var(--bg);font-family:var(--ff);color:var(--text);font-size:15px
 ══════════════════════════════════════ */
 let BILER=[];
 let MODELLER=[];
+let FEEDS=null;
 
 async function loadData(){
   try{
-    const [bRes,mRes]=await Promise.all([
+    const [bRes,mRes,fRes]=await Promise.all([
       fetch('/data/biler.json'),
-      fetch('/data/modeller.json')
+      fetch('/data/modeller.json'),
+      fetch('/data/feeds.json')
     ]);
     if(bRes.ok) BILER=await bRes.json();
     if(mRes.ok) MODELLER=await mRes.json();
-    console.log(`Loaded ${BILER.length} biler, ${MODELLER.length} modeller`);
+    if(fRes.ok) FEEDS=await fRes.json();
+    console.log(`Loaded ${BILER.length} biler, ${MODELLER.length} modeller`+(FEEDS?`, feeds: hot=${FEEDS.hot.length} review=${FEEDS.review.length} dealer=${FEEDS.dealer_picks.length}`:''));
   }catch(e){
     console.warn('Could not load data:',e);
   }
@@ -648,6 +668,12 @@ function loggInn(){innlogget=true;goTo('page-dashboard');}
    HELPERS
 ══════════════════════════════════════ */
 const fmt=n=>Math.round(n).toLocaleString('no-NO');
+const pctFmt=n=>Number.isFinite(n)?`${n}%`:'–';
+function toneLabel(value,goodHigh=true){
+  if(!Number.isFinite(value)) return 'Uklart';
+  if(goodHigh) return value>=70?'Sterk':value>=45?'OK':'Svak';
+  return value<=12?'Stramt':value<=20?'Normalt':'Bredt';
+}
 function sparklineSVG(data,color,h){
   const w=340,mn=Math.min(...data),mx=Math.max(...data),rng=mx-mn||1;
   const pts=data.map((v,i)=>{
@@ -662,8 +688,18 @@ function volBarSVG(data,h){
   const w=340,mx=Math.max(...data),bw=Math.floor(w/data.length)-2;
   return `<svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" style="height:${h}px">${data.map((v,i)=>{const bh=Math.round((v/mx)*(h-4)),x=i*(bw+2)+1,y=h-bh;return `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="2" fill="${i===data.length-1?'#3d9960':'#d3d1c7'}"/>`;}).join('')}</svg>`;
 }
-function tagsHtml(tags){return tags.map(t=>`<span class="tag ${t.c}">${t.t||t.tekst}</span>`).join('');}
+function confTag(level){if(!level)return '';const m={high:{t:'Høy tillit',c:'g'},medium:{t:'Medium tillit',c:'b'},low:{t:'Lav tillit',c:'r'}};const o=m[level]||m.low;return `<span class="tag ${o.c}">${o.t}</span>`;}
+function anbefalingTag(a){if(!a)return '';const m={'KJØP':{t:'Anbefalt kjøp',c:'g'},'VURDER':{t:'Vurder',c:'b'},'SKIP':{t:'Skip',c:'r'}};const o=m[a];return o?`<span class="tag ${o.c}">${o.t}</span>`:'';}
+function usikkerhetTag(u){if(!u)return '';const m={'lav':{t:'Lav usikkerhet',c:'g'},'middels':{t:'Middels usikkerhet',c:'a'},'høy':{t:'Høy usikkerhet',c:'r'},'hoy':{t:'Høy usikkerhet',c:'r'}};const k=String(u).toLowerCase();const o=m[k];return o?`<span class="tag ${o.c}">${o.t}</span>`:'';}
+function deltaLabel(p){if(p===null||p===undefined||!Number.isFinite(p))return null;const sign=p>0?'+':'';return `${sign}${p}% mot markedsanker`;}
+function deltaTone(p){if(p===null||p===undefined||!Number.isFinite(p))return '';if(p<=-8)return 'g';if(p>=8)return 'r';return 'b';}
+function honestyTags(b){const extra=[]; if(b.damageFlags&&b.damageFlags.length) extra.push({t:`Obs: ${b.damageFlags[0]}`,c:'r'}); if(b.duplicateCount>0) extra.push({t:'Duplikat-risiko',c:'a'}); if(b.gevinst<0) extra.push({t:'Negativ margin',c:'r'}); return extra;}
+function tagsHtml(tags,b){return [...(tags||[]),...honestyTags(b||{})].map(t=>`<span class="tag ${t.c}">${t.t||t.tekst}</span>`).join('');}
 function itagsHtml(tags){return tags.map(t=>`<span class="itag ${t.c}">${t.t}</span>`).join('');}
+function sellerClassLabel(v){return v==='private'?'Privat':v==='private_likely'?'Trolig privat':v==='dealer'?'Forhandler':v==='body_shop'?'Verksted/skade':'Uavklart';}
+function valuationSourceLabel(v){const m={comps_private:'Private komper',comps_private_fallback:'Private komper (fallback)',comps_dealer:'Forhandlerkomper',comps_dealer_fallback:'Dealer-komper som gulv',comps_mixed:'Miks av komper',ai_fallback:'AI-estimat',naive_fallback:'Enkel tommelfingerregel'};return m[v]||'Modellestimat';}
+function marketZoneLabel(b){if(b.damageFlags&&b.damageFlags.length) return 'Tilstandsrisko — ikke ren deal'; if(b.bucketP25Private&&b.pris<=b.bucketP25Private) return 'Under p25 · sterk inngang'; if(b.medianMargin!==null&&b.medianMargin>=30000) return 'Godt under median'; if(b.medianMargin!==null&&b.medianMargin>=10000) return 'Litt under median'; if(b.medianMargin!==null&&b.medianMargin<0) return 'Over median'; return 'Nær markedsmidten';}
+function hotWhy(b){const points=[]; if(b.damageFlags&&b.damageFlags.length) points.push(`tilstand: ${b.damageFlags[0]}`); if(b.bucketP25Private&&b.pris<=b.bucketP25Private) points.push('under privat p25'); if(b.medianMargin!==null&&b.medianMargin>=25000) points.push(`${fmt(b.medianMargin)} kr under bucket median`); if(b.lowballMargin!==null&&b.lowballMargin>=45000) points.push(`lavt bud kan åpne ${fmt(b.lowballMargin)} kr`); if((b.confidence==='high'||b.compConfidence==='high')) points.push('sterke komper'); if(['private','private_likely'].includes(b.selgerKlasse)) points.push(sellerClassLabel(b.selgerKlasse).toLowerCase()); return points.slice(0,2).join(' · ');}
 function metaIkon(path){return `<svg width="12" height="12" fill="none" viewBox="0 0 16 16">${path}</svg>`;}
 const ikonKm=metaIkon('<circle cx="8" cy="8" r="6" stroke="#b5b2ac" stroke-width="1.4"/><path d="M8 5v3l2 2" stroke="#b5b2ac" stroke-width="1.4" stroke-linecap="round"/>');
 const ikonLok=metaIkon('<path d="M8 2C5.8 2 4 3.8 4 6c0 3 4 8 4 8s4-5 4-8c0-2.2-1.8-4-4-4z" stroke="#b5b2ac" stroke-width="1.4"/>');
@@ -694,19 +730,19 @@ function lagFulltKort(b,rang,isDash){
         </div>
         <div class="pb">
           <div class="pm">${fmt(b.pris)} kr</div>
-          <div class="pgain">+${fmt(margin)} kr margin</div>
+          <div class="pgain">${margin>=0?'+':''}${fmt(margin)} kr margin</div>
         </div>
       </div>
       <div class="cmeta">
         <span class="mi">${ikonKm}${fmt(b.km)} km</span>
         <span class="mi">${ikonLok}${b.lok}</span>
-        <span class="mi">${ikonCal}${b.dager}</span>
+        <span class="mi">${ikonCal}${b.dager||''}</span>
       </div>
-      <div class="tags">${tagsHtml(b.tags)}</div>
-      <div class="sbar"><div class="st"><div class="sf" style="width:${b.score}%"></div></div><span class="sn">${b.score}</span></div>
+      <div class="tags">${anbefalingTag(b.anbefaling)}${usikkerhetTag(b.aiUsikkerhet)}${tagsHtml(b.tags,b)}${confTag(b.confidence)}</div>
+      <div class="sbar"><div class="st"><div class="sf" style="width:${b.dealScore||b.score}%"></div></div><span class="sn">${b.dealScore||b.score}</span></div>
     </div>
     <div class="cbody">
-      <div class="cc"><div class="cl">AI-vurdering</div><div class="ai-t">${b.ai}</div></div>
+      <div class="cc"><div class="cl">AI-vurdering</div><div class="ai-t">${b.ai}</div>${b.aiViktigsteRisiko?`<div class="ai-t" style="margin-top:8px;color:var(--r-t);"><strong>Viktigste risiko:</strong> ${b.aiViktigsteRisiko}</div>`:''}</div>
       <div class="cc"><div class="cl">Kalkyle</div>
         <div class="kr"><span class="kl">Kjøpspris</span><span>${fmt(b.pris)} kr</span></div>
         <div class="kr"><span class="kl">Omreg. + klargjøring</span><span>~${fmt(b.omreg)} kr</span></div>
@@ -720,7 +756,7 @@ function lagFulltKort(b,rang,isDash){
 function lagLaastKort(b,rang){
   return `<div class="lcard">
     <div class="ll"><div class="lr-rnk">#${rang}</div><div class="lr-t">${b.tittel} ${b.aar}</div><div class="lr-s">${fmt(b.km)} km · ${b.lok}</div></div>
-    <div class="lr"><div class="lr-p">${fmt(b.pris)} kr</div><div class="lr-g">+${fmt(b.gevinst)} kr</div>
+    <div class="lr"><div class="lr-p">${fmt(b.pris)} kr</div><div class="lr-g">${b.gevinst>=0?'+':''}${fmt(b.gevinst)} kr</div>
     <button class="bunlock" onclick="document.getElementById('paywall').scrollIntoView({behavior:'smooth'})">Lås opp</button></div>
   </div>`;
 }
@@ -734,9 +770,40 @@ function setDashMerke(m,el){
   el.classList.add('on');
   renderDash();
 }
+function lagDashKort(b,rang){
+  const rnkCls=rang===1?'rnk':'rnk g';
+  const cardCls=rang===1?'ccard top':'ccard';
+  const why=hotWhy(b)||marketZoneLabel(b);
+  const priceContext=b.bucketMedianPrivate?`Privat median ${fmt(b.bucketMedianPrivate)} kr`:b.expectedMarketPrice?`Marked ${fmt(b.expectedMarketPrice)} kr`:valuationSourceLabel(b.valuationSource);
+  return `<div class="${cardCls}" style="cursor:pointer;" onclick="visDetalj(${b.id})">
+    <div class="ch">
+      <div class="ch-top">
+        <div><span class="${rnkCls}">#${rang}</span><div class="cn">${b.tittel}<span class="cy">${b.aar}</span></div><div class="csub">${b.sub}</div></div>
+        <div class="pb"><div class="pm">${fmt(b.pris)} kr</div><div class="pgain">${b.gevinst>=0?'+':''}${fmt(b.gevinst)} kr</div></div>
+      </div>
+      <div class="cmeta">
+        <span class="mi">${ikonKm}${fmt(b.km)} km</span>
+        <span class="mi">${ikonLok}${b.lok}</span>
+        <span class="mi">${ikonCal}${b.dager||''}</span>
+      </div>
+      <div class="tags">${anbefalingTag(b.anbefaling)}${usikkerhetTag(b.aiUsikkerhet)}${tagsHtml(b.tags,b)}${confTag(b.confidence)}</div>
+      <div class="metric-grid" style="margin:0 0 10px;">
+        <div class="metric-card"><div class="mcl">Prisnivå</div><div class="mcv">${marketZoneLabel(b)}</div><div class="mcs">${priceContext}</div></div>
+        <div class="metric-card"><div class="mcl">Hvorfor nå</div><div class="mcv">${why||'Strukturert case'}</div><div class="mcs">${valuationSourceLabel(b.valuationSource)} · ${sellerClassLabel(b.selgerKlasse)}</div></div>
+      </div>
+      <div class="sbar"><div class="st"><div class="sf" style="width:${b.dealScore||b.score}%"></div></div><span class="sn">${b.dealScore||b.score}</span></div>
+    </div>
+  </div>`;
+}
+function feedSectionHeader(label,dotColor,count){
+  return `<div class="feed-section-h"><span class="fsh-dot" style="background:${dotColor}"></span>${label}<span class="fsh-count">(${count})</span></div>`;
+}
 function renderDash(){
   const q=(document.getElementById('dash-search')||{}).value||'';
-  const sort=(document.getElementById('dash-sort')||{}).value||'score';
+  const sort=(document.getElementById('dash-sort')||{}).value||'deal';
+  const filtering=q||dashMerke!=='alle';
+
+  // Filtered flat view — used when search/merke active or no feeds
   let liste=BILER.filter(b=>{
     const mOk=dashMerke==='alle'||b.merke===dashMerke;
     const sOk=!q||b.tittel.toLowerCase().includes(q.toLowerCase())||b.lok.toLowerCase().includes(q.toLowerCase())||String(b.km).includes(q);
@@ -744,33 +811,43 @@ function renderDash(){
   });
   if(sort==='margin') liste.sort((a,b)=>b.gevinst-a.gevinst);
   else if(sort==='pris') liste.sort((a,b)=>a.pris-b.pris);
-  else liste.sort((a,b)=>b.score-a.score);
+  else if(sort==='score') liste.sort((a,b)=>b.score-a.score);
+  else liste.sort((a,b)=>(b.dealScore||b.score)-(a.dealScore||a.score));
+
   const lbl=document.getElementById('dash-result-label');
-  if(lbl) lbl.textContent=liste.length===BILER.length?'Alle biler':liste.length===0?'Ingen treff':liste.length+' biler funnet';
   const cnt=document.getElementById('dash-count');
-  if(cnt) cnt.textContent=liste.length;
   const el=document.getElementById('dash-cars');
   if(!el) return;
+
+  // Sectioned feed view — when feeds available and no filter active
+  if(FEEDS&&!filtering){
+    if(lbl) lbl.textContent='Alle biler';
+    if(cnt) cnt.textContent=FEEDS.total;
+    let html='';
+    if(FEEDS.hot.length){
+      html+=feedSectionHeader('Hot — rene private cases med dokumentert margin','#3d9960',FEEDS.hot.length);
+      html+=FEEDS.hot.map((b,i)=>lagDashKort(b,i+1)).join('');
+    }
+    if(FEEDS.review.length){
+      html+='<div class="feed-section-sep"></div>';
+      html+=feedSectionHeader('Review — non-dealer men krever manuell sjekk','#e8a020',FEEDS.review.length);
+      html+=FEEDS.review.map((b,i)=>lagDashKort(b,i+1)).join('');
+    }
+    if(FEEDS.dealer_picks.length){
+      html+='<div class="feed-section-sep"></div>';
+      html+=feedSectionHeader('Dealer picks — sterke unntak, ikke hot','#1f5fa6',FEEDS.dealer_picks.length);
+      html+=FEEDS.dealer_picks.map((b,i)=>lagDashKort(b,i+1)).join('');
+    }
+    if(!html) html='<div class="empty">Ingen biler funnet</div>';
+    el.innerHTML=html;
+    return;
+  }
+
+  // Flat filtered fallback
+  if(lbl) lbl.textContent=liste.length===BILER.length?'Alle biler':liste.length===0?'Ingen treff':liste.length+' biler funnet';
+  if(cnt) cnt.textContent=liste.length;
   if(!liste.length){el.innerHTML='<div class="empty">Ingen biler funnet — prøv et annet søk</div>';return;}
-  el.innerHTML=liste.map((b,i)=>{
-    const rang=i+1;
-    const rnkCls=rang===1?'rnk':'rnk g';
-    const cardCls=rang===1?'ccard top':'ccard';
-    return `<div class="${cardCls}" style="cursor:pointer;" onclick="visDetalj(${b.id})">
-      <div class="ch">
-        <div class="ch-top">
-          <div><span class="${rnkCls}">#${rang}</span><div class="cn">${b.tittel}<span class="cy">${b.aar}</span></div><div class="csub">${b.sub}</div></div>
-          <div class="pb"><div class="pm">${fmt(b.pris)} kr</div><div class="pgain">+${fmt(b.gevinst)} kr</div></div>
-        </div>
-        <div class="cmeta">
-          <span class="mi">${ikonKm}${fmt(b.km)} km</span>
-          <span class="mi">${ikonLok}${b.lok}</span>
-        </div>
-        <div class="tags">${tagsHtml(b.tags)}</div>
-        <div class="sbar"><div class="st"><div class="sf" style="width:${b.score}%"></div></div><span class="sn">${b.score}</span></div>
-      </div>
-    </div>`;
-  }).join('');
+  el.innerHTML=liste.map((b,i)=>lagDashKort(b,i+1)).join('');
 }
 
 /* ══════════════════════════════════════
@@ -782,24 +859,45 @@ function visDetalj(id){
   if(!b) return;
   document.getElementById('detalj-tittel').textContent=b.tittel+' · '+b.aar;
   const margin=b.salgspris-b.pris-b.omreg;
-  const prisData=[b.pris*1.08,b.pris*1.06,b.pris*1.05,b.pris*1.04,b.pris*1.03,b.pris*1.02,b.pris*1.01,b.pris].map(Math.round);
+  const prisData=(b.prisData&&b.prisData.length?b.prisData:[b.pris]).map(Math.round);
   document.getElementById('detalj-body').innerHTML=`
     <div class="det-price-block">
       <div class="det-price">${fmt(b.pris)} kr</div>
-      <div class="det-gain">+${fmt(b.gevinst)} kr estimert margin</div>
+      <div class="det-gain">${b.gevinst>=0?'+':''}${fmt(b.gevinst)} kr estimert margin</div>
       <div class="det-meta">
         <span class="det-mi"><strong>${fmt(b.km)} km</strong></span>
         <span class="det-mi"><strong>${b.lok}</strong></span>
         <span class="det-mi"><strong>${b.sub}</strong></span>
-        <span class="det-mi"><strong>Score: ${b.score}</strong></span>
+        <span class="det-mi"><strong>Deal: ${b.dealScore||b.score}</strong></span>
+        <span class="det-mi">AI: ${b.score}</span>
+        <span class="det-mi">${b.dager||''}</span>
       </div>
-      <div class="tags" style="margin-top:12px;">${tagsHtml(b.tags)}</div>
+      <div class="tags" style="margin-top:12px;">${tagsHtml(b.tags,b)}${confTag(b.confidence)}</div>
+      <div class="metric-grid">
+        <div class="metric-card"><div class="mcl">Market zone</div><div class="mcv">${marketZoneLabel(b)}</div><div class="mcs">${b.bucketP25Private?`p25 ${fmt(b.bucketP25Private)} kr`:valuationSourceLabel(b.valuationSource)}</div></div>
+        <div class="metric-card"><div class="mcl">Valuation source</div><div class="mcv">${valuationSourceLabel(b.valuationSource)}</div><div class="mcs">${sellerClassLabel(b.selgerKlasse)} · comp confidence ${b.compConfidence||'ukjent'}</div></div>
+        <div class="metric-card"><div class="mcl">Bucket median</div><div class="mcv">${b.bucketMedianPrivate?fmt(b.bucketMedianPrivate)+' kr':'–'}</div><div class="mcs">Dealer ${b.bucketMedianDealer?fmt(b.bucketMedianDealer)+' kr':'–'}</div></div>
+        <div class="metric-card"><div class="mcl">Lowball target</div><div class="mcv">${b.lowballTarget?fmt(b.lowballTarget)+' kr':'–'}</div><div class="mcs">Lavt bud åpner ${b.lowballMargin?fmt(b.lowballMargin)+' kr':''}</div></div>
+        <div class="metric-card"><div class="mcl">Median margin</div><div class="mcv">${b.medianMargin!==null?fmt(b.medianMargin)+' kr':'–'}</div><div class="mcs">Gap mot bucket median</div></div>
+        <div class="metric-card"><div class="mcl">Comp confidence</div><div class="mcv">${b.compConfidence||'–'}</div><div class="mcs">${b.compCount||0} komper · spread ${b.compSpreadPct!==null?b.compSpreadPct+'%':'–'}</div></div>
+      </div>
+      <div class="note-line">Hvorfor den er interessant: ${hotWhy(b)||'pris og seller profile må vurderes manuelt'}.</div>
     </div>
 
     <div class="sparkline-block">
       <div class="cl" style="margin-bottom:10px;">Prishistorikk — siste 8 observasjoner</div>
       <div class="mini-chart">${sparklineSVG(prisData,'#3d9960',70)}</div>
       <div class="chart-footer" style="margin-top:4px;"><span>${fmt(prisData[0])} kr</span><span style="color:var(--g-t);font-weight:500;">Nå: ${fmt(b.pris)} kr</span></div>
+    </div>
+
+    <div class="insight-box">
+      <div class="insight-title">Pris-kontekst</div>
+      <div class="insight-list">
+        <div class="insight-item"><span>Privat bucket median</span><strong>${b.bucketMedianPrivate?fmt(b.bucketMedianPrivate)+' kr':'Ikke nok private komper'}</strong></div>
+        <div class="insight-item"><span>Privat p25</span><strong>${b.bucketP25Private?fmt(b.bucketP25Private)+' kr':'–'}</strong></div>
+        <div class="insight-item"><span>Markedskilde</span><strong>${valuationSourceLabel(b.valuationSource)}</strong></div>
+        <div class="insight-item"><span>Forventet salgspris</span><strong>${fmt(b.salgspris)} kr</strong></div>
+      </div>
     </div>
 
     <div style="background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;">
@@ -812,9 +910,39 @@ function visDetalj(id){
       <div class="kr tot"><span>Netto margin</span><span>${fmt(margin)} kr</span></div>
     </div>
 
-    <div class="ai-box" style="margin-bottom:12px;">
-      <div class="ai-box-label">AI-vurdering</div>
-      <div class="ai-box-text">${b.ai}</div>
+    ${b.reasons&&b.reasons.length?`<div style="background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;">
+      <div class="cl" style="margin-bottom:10px;">Hvorfor denne bilen scorer ${b.dealScore||b.score}</div>
+      <ul style="font-size:12px;line-height:1.7;padding-left:16px;color:var(--text);margin:0;">${b.reasons.map(r=>'<li>'+r+'</li>').join('')}</ul>
+    </div>`:''}
+
+    ${b.negotiation&&b.negotiation.length?`<div style="background:var(--b-bg);border-radius:var(--rad-sm);border:1px solid rgba(31,95,166,.12);padding:14px;margin-bottom:12px;">
+      <div class="cl" style="margin-bottom:10px;color:var(--b-t);">Forhandlingsargumenter</div>
+      <ul style="font-size:12px;line-height:1.7;padding-left:16px;color:var(--text);margin:0;">${b.negotiation.map(n=>'<li>'+n+'</li>').join('')}</ul>
+    </div>`:''}
+
+    <div style="background:var(--white);border-radius:var(--rad-sm);border:1px solid var(--border);padding:14px;margin-bottom:12px;">
+      <div class="cl" style="margin-bottom:10px;">AI-analyse</div>
+      <div class="tags" style="margin-bottom:10px;">${anbefalingTag(b.anbefaling)}${usikkerhetTag(b.aiUsikkerhet)}${b.aiCompConfidence?confTag(b.aiCompConfidence):''}${b.aiMarketDeltaPct!==null&&b.aiMarketDeltaPct!==undefined?`<span class="tag ${deltaTone(b.aiMarketDeltaPct)}">${deltaLabel(b.aiMarketDeltaPct)}</span>`:''}</div>
+      <div class="ai-box" style="margin-bottom:10px;">
+        <div class="ai-box-label">Vurdering</div>
+        <div class="ai-box-text">${b.ai||'AI-tekst ikke tilgjengelig'}</div>
+      </div>
+      ${b.aiViktigsteRisiko?`<div class="insight-box" style="margin-bottom:10px;background:var(--r-bg);border-color:rgba(192,57,27,.15);">
+        <div class="insight-title" style="color:var(--r-t);">Viktigste risiko</div>
+        <div class="ai-box-text">${b.aiViktigsteRisiko}</div>
+      </div>`:''}
+      ${b.aiMarkedsgrunnlag?`<div class="insight-box" style="margin-bottom:10px;">
+        <div class="insight-title">Markedsgrunnlag</div>
+        <div class="ai-box-text">${b.aiMarkedsgrunnlag}</div>
+      </div>`:''}
+      <div class="insight-list" style="font-size:12px;">
+        <div class="insight-item"><span>AI-anbefaling</span><strong>${b.anbefaling||'Ikke vurdert'}</strong></div>
+        <div class="insight-item"><span>AI-score</span><strong>${b.score||0}/100</strong></div>
+        <div class="insight-item"><span>Deterministisk score</span><strong>${b.deterministicScore||b.dealScore||0}/100</strong></div>
+        ${b.aiExpectedMarketPrice?`<div class="insight-item"><span>AI-anker (markedspris)</span><strong>${fmt(b.aiExpectedMarketPrice)} kr</strong></div>`:''}
+        ${b.aiCompCount?`<div class="insight-item"><span>AI brukte komper</span><strong>${b.aiCompCount} stk · ${b.aiCompConfidence||'ukjent'}</strong></div>`:''}
+        ${b.aiValuationSource?`<div class="insight-item"><span>Verdsettelseskilde</span><strong>${valuationSourceLabel(b.aiValuationSource)}</strong></div>`:''}
+      </div>
     </div>
 
     <a class="btn-finn" href="https://www.finn.no/mobility/item/${b.finn}" target="_blank" rel="noopener">Se annonsen på Finn.no</a>
@@ -855,13 +983,24 @@ function renderAnalyser(){
   const el=document.getElementById('an-body');
   if(!el) return;
   if(!liste.length){el.innerHTML='<div style="padding:12px;"><div class="empty">Ingen modeller funnet</div></div>';return;}
+  const topp=liste[0];
+  const leadBucket=topp.avgBucketMedianPrivate?`${fmt(topp.avgBucketMedianPrivate)} kr privat median`:'Bucket-data bygges opp';
+  const lead=`<div style="padding:10px 12px 0;"><div class="insight-box"><div class="insight-title">${anTab==='flip'?'Beste flip-lomme akkurat nå':'Markedsoverblikk'}</div><div class="metric-grid" style="margin:0 0 10px;"><div class="metric-card"><div class="mcl">Ledende modell</div><div class="mcv">${topp.navn}</div><div class="mcs">${topp.antallAnnonser} aktive annonser · ${topp.snittDager} dager i snitt</div></div><div class="metric-card"><div class="mcl">Strukturert prisbilde</div><div class="mcv">${leadBucket}</div><div class="mcs">${topp.avgMedianMargin!==null?`Typisk margin ${fmt(topp.avgMedianMargin)} kr`:`Valuation source ${valuationSourceLabel(topp.primaryValuationSource)}`}</div></div></div><div class="note-line">Kortene under viser bucket-median, p25/gulv, lowball-nivå, komp-sikkerhet og hvor stor andel av annonsene som faktisk ligger under strukturert marked.</div></div></div>`;
   const html=liste.map(m=>{
     const isOpen=openAnalyser.has(m.id);
     const trendPos=m.prisEndring>=0;
     const trendTxt=(trendPos?'+':'')+fmt(m.prisEndring)+' kr siste 30d';
     const trendCol=trendPos?'var(--g-t)':'var(--r-t)';
     const visScore=anTab==='flip'?m.flipScore:m.score;
-    const rangePos=Math.round(((m.snittPris-m.minPris)/(m.maxPris-m.minPris))*100);
+    const rangeBase=Math.max(1,m.maxPris-m.minPris);
+    const rangePos=Math.max(0,Math.min(100,Math.round(((m.snittPris-m.minPris)/rangeBase)*100)));
+    const bucketPos=m.avgBucketMedianPrivate!==null?Math.max(0,Math.min(100,Math.round(((m.avgBucketMedianPrivate-m.minPris)/rangeBase)*100))):null;
+    const marketPos=m.priceToBucketPct!==null?`${m.priceToBucketPct}% av bucket median`:valuationSourceLabel(m.primaryValuationSource);
+    const bucketCoverageTxt=`${m.bucketCoverage||0}/${m.antallAnnonser} med privat bucket`;
+    const lowballPct=m.avgLowballTarget&&m.snittPris?Math.max(0,Math.min(100,Math.round((m.avgLowballTarget/m.snittPris)*100))):0;
+    const factors=[...m.faktorer];
+    if(m.avgLowballTarget){factors.push({l:'Lowball-mål',v:lowballPct,c:'#1f5fa6'});}
+    if(m.bucketCoverage){factors.push({l:'Bucket-dekning',v:Math.round((m.bucketCoverage/m.antallAnnonser)*100),c:'#3d9960'});}
     return `<div class="acard">
       <div class="acard-header" onclick="toggleAcard('${m.id}')">
         <div style="flex:1;min-width:0;">
@@ -880,6 +1019,23 @@ function renderAnalyser(){
             <div class="ks"><div class="ks-l">Snitt dager</div><div class="ks-v b">${m.snittDager}d</div></div>
             <div class="ks"><div class="ks-l">Annonser</div><div class="ks-v">${m.antallAnnonser}</div></div>
           </div>
+          <div class="metric-grid" style="margin-top:0;">
+            <div class="metric-card"><div class="mcl">Flipability</div><div class="mcv">${m.flipScore}/100</div><div class="mcs">Beste deal ${m.bestDealScore||'–'} · toppmargin ${m.bestMargin?fmt(m.bestMargin)+' kr':'–'}</div></div>
+            <div class="metric-card"><div class="mcl">Likviditet</div><div class="mcv">${m.antallAnnonser>=8?'Høy':m.antallAnnonser>=4?'Medium':'Lav'}</div><div class="mcs">${m.snittDager<=21?'Rask omsetning':m.snittDager<=40?'Grei rotasjon':'Tregere marked'}</div></div>
+            <div class="metric-card"><div class="mcl">Privat bucket median</div><div class="mcv">${m.avgBucketMedianPrivate?fmt(m.avgBucketMedianPrivate)+' kr':'–'}</div><div class="mcs">${marketPos} · ${bucketCoverageTxt}</div></div>
+            <div class="metric-card"><div class="mcl">Typisk margin</div><div class="mcv">${m.avgMedianMargin!==null?fmt(m.avgMedianMargin)+' kr':'–'}</div><div class="mcs">p25 ${m.avgBucketP25Private?fmt(m.avgBucketP25Private)+' kr':'–'} · under median ${pctFmt(m.underBucketShare)}</div></div>
+            <div class="metric-card"><div class="mcl">Lowball / gulv</div><div class="mcv">${m.avgLowballTarget?fmt(m.avgLowballTarget)+' kr':'–'}</div><div class="mcs">Åpner ${m.avgLowballMargin?fmt(m.avgLowballMargin)+' kr':'–'} · ${pctFmt(m.p25DealShare)} under p25</div></div>
+            <div class="metric-card"><div class="mcl">Comp confidence</div><div class="mcv">${m.topCompConfidence||'–'}</div><div class="mcs">${m.avgCompCount?fmt(m.avgCompCount):0} komper i snitt · spread ${pctFmt(m.avgCompSpreadPct)} (${toneLabel(m.avgCompSpreadPct,false)})</div></div>
+          </div>
+          <div class="insight-box" style="margin-bottom:14px;">
+            <div class="insight-title">Strukturert oppsummering</div>
+            <div class="insight-list">
+              <div class="insight-item"><span>Primær valuation source</span><strong>${valuationSourceLabel(m.primaryValuationSource)}</strong></div>
+              <div class="insight-item"><span>Seller mix</span><strong>Privat ${m.sellerMix.private||0} · Trolig privat ${m.sellerMix.private_likely||0} · Dealer ${m.sellerMix.dealer||0}</strong></div>
+              <div class="insight-item"><span>Bucket coverage</span><strong>${bucketCoverageTxt}${m.bucketDealerCoverage?` · dealer ${m.bucketDealerCoverage}/${m.antallAnnonser}`:''}</strong></div>
+              <div class="insight-item"><span>Prisrom privat bucket</span><strong>${m.avgBucketP25Private?fmt(m.avgBucketP25Private)+' kr':'–'} til ${m.avgBucketP75Private?fmt(m.avgBucketP75Private)+' kr':'–'}</strong></div>
+            </div>
+          </div>
           <div class="chart-block">
             <div class="chart-label">Prisutvikling — 30 dager</div>
             <div class="mini-chart">${sparklineSVG(m.prisData,'#3d9960',72)}</div>
@@ -894,14 +1050,16 @@ function renderAnalyser(){
             <div class="chart-label">Prisklasse på markedet</div>
             <div class="range-bar-wrap">
               <div class="range-fill" style="left:0;width:100%;background:var(--g-m);opacity:.15;"></div>
+              ${m.avgBucketP25Private!==null&&m.avgBucketP75Private!==null?`<div class="range-fill" style="left:${Math.max(0,Math.min(100,Math.round(((m.avgBucketP25Private-m.minPris)/rangeBase)*100)))}%;width:${Math.max(4,Math.min(100,Math.round(((m.avgBucketP75Private-m.avgBucketP25Private)/rangeBase)*100)))}%;background:var(--b-t);opacity:.18;"></div>`:''}
               <div class="range-fill" style="left:${Math.max(0,rangePos-8)}%;width:16%;background:var(--g-m);"></div>
+              ${bucketPos!==null?`<div class="range-marker" style="left:${bucketPos}%;border-color:var(--b-t);"></div>`:''}
               <div class="range-marker" style="left:${rangePos}%;"></div>
             </div>
-            <div class="range-nums"><span>${fmt(m.minPris)} kr</span><span style="font-weight:500;">Snitt: ${fmt(m.snittPris)} kr</span><span>${fmt(m.maxPris)} kr</span></div>
+            <div class="range-nums"><span>${fmt(m.minPris)} kr</span><span style="font-weight:500;">Snitt: ${fmt(m.snittPris)} kr${m.avgBucketMedianPrivate?` · Bucket: ${fmt(m.avgBucketMedianPrivate)} kr`:''}</span><span>${fmt(m.maxPris)} kr</span></div>
           </div>
           <div class="flip-block">
             <div class="chart-label" style="margin-bottom:10px;">Flip-faktorer</div>
-            ${m.faktorer.map(f=>`<div class="flip-row"><span class="flip-label">${f.l}</span><div class="flip-track"><div class="flip-fill" style="width:${f.v}%;background:${f.c}"></div></div><span class="flip-val">${f.v}</span></div>`).join('')}
+            ${factors.map(f=>`<div class="flip-row"><span class="flip-label">${f.l}</span><div class="flip-track"><div class="flip-fill" style="width:${f.v}%;background:${f.c}"></div></div><span class="flip-val">${f.v}</span></div>`).join('')}
           </div>
           <div class="info-tags" style="margin-bottom:12px;">${itagsHtml(m.tags)}</div>
           <div class="ai-box">
@@ -912,7 +1070,7 @@ function renderAnalyser(){
       </div>
     </div>`;
   }).join('');
-  el.innerHTML=`<div style="padding:10px 12px 20px;">${html}</div>`;
+  el.innerHTML=`${lead}<div style="padding:10px 12px 20px;">${html}</div>`;
 }
 
 /* ══════════════════════════════════════
