@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { fmt, kr } from '@/lib/format';
 import type { Car } from '@/lib/mapping';
-import { CarThumbPlaceholder } from './CarThumbPlaceholder';
+import { CarImage } from './CarImage';
 
 export function LiveFeedPanel({ cars, lastUpdated }: { cars: Car[]; lastUpdated?: string }) {
   const top = cars.slice(0, 4);
@@ -26,8 +26,8 @@ export function LiveFeedPanel({ cars, lastUpdated }: { cars: Car[]; lastUpdated?
       </div>
       {top.map((c) => (
         <Link key={c.id} href={`/bil/${c.finnCode}`} className="tx-feed-row">
-          <div className="tx-feed-thumb" aria-hidden>
-            <CarThumbPlaceholder />
+          <div className="tx-feed-thumb">
+            <CarImage src={c.images[0]} alt={c.title} variant="thumb" />
           </div>
           <div>
             <div className="tx-feed-title">{c.title}</div>

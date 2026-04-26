@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { fmt, kr } from '@/lib/format';
 import type { Car } from '@/lib/mapping';
-import { CarThumbPlaceholder } from './CarThumbPlaceholder';
+import { CarImage } from './CarImage';
 import { MiniSpark } from './MiniSpark';
 
 type Props = {
@@ -61,9 +61,13 @@ function CarRow({ car, index, compact, showSpark }: { car: Car; index: number; c
       </td>
       <td>
         <div className="car-row">
-          <div className="car-thumb" aria-hidden>
-            {/* TODO(images): replace with <img src={car.img}/> when scraper supplies image */}
-            <CarThumbPlaceholder />
+          <div className="car-thumb">
+            <CarImage
+              src={car.images[0]}
+              alt={car.title}
+              variant="thumb"
+              priority={index < 8}
+            />
           </div>
           <div>
             <div className="car-name">

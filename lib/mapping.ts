@@ -51,6 +51,7 @@ export type RawCar = Record<string, unknown> & {
   tags?: Array<{ t: string; c: string }>;
   priceDrops?: number;
   drivstoff?: string | null;
+  images?: string[];
 };
 
 export type Tag = { label: string; tone: 'g' | 'b' | 'a' | 'r' | 'n' };
@@ -108,6 +109,9 @@ export type Car = {
   // raw tags (passed through for UI)
   tags: Tag[];
   badge: 'NY' | 'PRIS↓' | 'HOT' | null;
+  // images: ordered list from finn.no detail page (first = primary).
+  // Empty array = no images known yet (frontend falls back to placeholder).
+  images: string[];
   // placeholder fields — not in scraper data yet
   img: string | null;
   drivetrain: string | null;
@@ -186,7 +190,9 @@ export function mapCar(raw: RawCar): Car {
     duplicateCount: raw.duplicateCount ?? 0,
     tags,
     badge,
-    // TODO(images): scraper does not yet supply per-car images; placeholder is rendered.
+    // Images come from the post-scraper enrichment script (scripts/fetch-images.mjs).
+    images: Array.isArray(raw.images) ? raw.images : [],
+    // Legacy single-image field; kept null because all UI now reads `images[0]`.
     img: null,
     // TODO(specs): scraper does not yet supply drivetrain/battery/range; left null.
     drivetrain: null,

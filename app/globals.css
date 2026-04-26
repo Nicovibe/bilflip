@@ -127,7 +127,7 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .tx-feed-row { display: grid; grid-template-columns: 56px 1fr auto; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); align-items: center; cursor: pointer; transition: background .12s; }
 .tx-feed-row:hover { background: var(--surface-2); }
 .tx-feed-row:last-child { border-bottom: 0; }
-.tx-feed-thumb { width: 56px; height: 42px; border-radius: 4px; background-size: cover; background-position: center; background-color: var(--surface-2); }
+.tx-feed-thumb { width: 56px; height: 42px; border-radius: 4px; background-color: var(--surface-2); position: relative; overflow: hidden; flex-shrink: 0; }
 .tx-feed-title { font-size: 13px; font-weight: 500; color: var(--ink); }
 .tx-feed-meta { font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 3px; letter-spacing: 0.02em; }
 .tx-feed-margin { font-family: var(--mono); font-size: 14px; color: var(--green); font-weight: 600; text-align: right; }
@@ -163,7 +163,7 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .tx-table tbody tr:hover { background: var(--surface-2); }
 .tx-table tbody tr:last-child td { border-bottom: 0; }
 .tx-table .car-row { display: flex; align-items: center; gap: 12px; }
-.tx-table .car-thumb { width: 56px; height: 42px; border-radius: 4px; background-size: cover; background-position: center; background-color: var(--surface-2); flex-shrink: 0; }
+.tx-table .car-thumb { width: 56px; height: 42px; border-radius: 4px; background-color: var(--surface-2); flex-shrink: 0; position: relative; overflow: hidden; }
 .tx-table .car-name { font-weight: 500; font-size: 13px; }
 .tx-table .car-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px; letter-spacing: 0.02em; }
 .tx-table .num { font-family: var(--mono); font-feature-settings: "tnum"; font-size: 13px; }
@@ -193,10 +193,41 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 /* ── Detail (terminal) ─────────────────── */
 .detail-tx { padding: 28px 40px; max-width: 1480px; margin: 0 auto; }
 .detail-tx-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
-.detail-photo-tx { aspect-ratio: 16/10; background-size: cover; background-position: center; background-color: var(--surface-2); border-radius: 8px; border: 1px solid var(--line); position: relative; overflow: hidden; }
-.detail-thumbs-tx { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 8px; }
-.detail-thumb-tx { aspect-ratio: 16/10; background-size: cover; background-position: center; background-color: var(--surface-2); border-radius: 4px; border: 1px solid var(--line); cursor: pointer; opacity: 0.7; transition: opacity .12s; position: relative; overflow: hidden; }
+.detail-photo-tx { aspect-ratio: 16/10; background-color: var(--surface-2); border-radius: 8px; border: 1px solid var(--line); position: relative; overflow: hidden; }
+.detail-thumbs-tx {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin-top: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px; /* room for scrollbar */
+  scrollbar-color: var(--line) transparent;
+  scrollbar-width: thin;
+}
+.detail-thumbs-tx::-webkit-scrollbar { height: 6px; }
+.detail-thumbs-tx::-webkit-scrollbar-track { background: transparent; }
+.detail-thumbs-tx::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+.detail-thumb-tx {
+  width: 132px;
+  aspect-ratio: 16/10;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  background-color: var(--surface-2);
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity .12s, border-color .12s;
+  position: relative;
+  overflow: hidden;
+  padding: 0;        /* button reset */
+  font: inherit;     /* button reset */
+  color: inherit;    /* button reset */
+}
 .detail-thumb-tx:hover { opacity: 1; }
+.detail-thumb-tx:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
 .detail-thumb-tx.active { opacity: 1; border: 1.5px solid var(--green); }
 
 .tx-card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px; }

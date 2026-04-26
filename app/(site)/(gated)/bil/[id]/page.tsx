@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { loadCar } from '@/lib/data';
 import { fmt, kr } from '@/lib/format';
 import { valuationSourceLabel, anbefalingLabel } from '@/lib/mapping';
-import { CarThumbPlaceholder } from '@/components/CarThumbPlaceholder';
+import { CarGallery } from '@/components/CarGallery';
 import { BigSpark } from '@/components/BigSpark';
 import { DetailMap } from '@/components/DetailMap';
 
@@ -74,34 +74,8 @@ export default async function BilDetalj({ params }: Props) {
       <div className="detail-tx">
         <div className="detail-tx-grid">
           <div>
-            {/* Gallery — placeholders until scraper supplies images */}
-            <div className="detail-photo-tx" aria-label="Hovedbilde — placeholder">
-              <CarThumbPlaceholder />
-            </div>
-            <div className="detail-thumbs-tx">
-              {[0, 1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className={`detail-thumb-tx ${i === 0 ? 'active' : ''}`}
-                  aria-label={`Bilde ${i + 1} — kommer`}
-                  title="Bildebibliotek kommer"
-                >
-                  <CarThumbPlaceholder />
-                </div>
-              ))}
-            </div>
-            <div
-              style={{
-                marginTop: 6,
-                fontFamily: 'var(--mono)',
-                fontSize: 10,
-                color: 'var(--ink-3)',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-              }}
-            >
-              ◐ Bildegalleri kommer i v2.1
-            </div>
+            {/* Gallery — fetched from finn.no by scripts/fetch-images.mjs */}
+            <CarGallery images={car.images} alt={car.title} />
 
             {/* Specs */}
             <div className="tx-card" style={{ marginTop: 24 }}>

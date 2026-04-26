@@ -3,12 +3,14 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/copy-data.mjs",
+    "predev": "node scripts/copy-data.mjs && node scripts/fetch-images.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/copy-data.mjs",
+    "prebuild": "node scripts/copy-data.mjs && node scripts/fetch-images.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "images:refresh": "node scripts/copy-data.mjs && node scripts/fetch-images.mjs --commit",
+    "images:retry-empty": "node scripts/copy-data.mjs && node scripts/fetch-images.mjs --commit --retry-empty"
   },
   "dependencies": {
     "next": "^16.2.4",
