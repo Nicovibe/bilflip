@@ -21,9 +21,30 @@ async function readJson<T>(file: string, fallback: T): Promise<T> {
   }
 }
 
+/**
+ * images-cache.json shape (written by scripts/fetch-images.mjs):
+ *   { [finnCode: string]: { urls: string[]; fetchedAt: number; status: number } }
+ * Kept as a separate file so we never have to mutate scraper output (biler.json
+ * is owned by ~/projects/bilflip-scraper and we promised to leave it alone).
+ */
+type ImageCacheEntry = { urls?: string[]; fetchedAt?: number; status?: number };
+type ImageCache = Record<string, ImageCacheEntry | undefined>;
+
+async function loadImageCache(): Promise<ImageCache> {
+  return readJson<ImageCache>('images-cache.json', {});
+}
+
 export async function loadCars(): Promise<Car[]> {
-  const raw = await readJson<RawCar[]>('biler.json', []);
-  return raw.map(mapCar);
+  const [raw, imageCache] = await Promise.all([
+    readJson<RawCar[]>('biler.json', []),
+    loadImageCache(),
+  ]);
+  return raw.map((r) => {
+    const finn = r.finn != null ? String(r.finn) : '';
+    const entry = finn ? imageCache[finn] : undefined;
+    const images = Array.isArray(entry?.urls) ? entry.urls : [];
+    return mapCar({ ...r, images });
+  });
 }
 
 export async function loadCar(finnCode: string): Promise<Car | null> {
@@ -39,12 +60,21 @@ export type Feeds = {
 };
 
 export async function loadFeeds(): Promise<{ hot: Car[]; review: Car[]; dealerPicks: Car[]; generatedAt: string | null }> {
-  const f = await readJson<Feeds | null>('feeds.json', null);
+  const [f, imageCache] = await Promise.all([
+    readJson<Feeds | null>('feeds.json', null),
+    loadImageCache(),
+  ]);
   if (!f) return { hot: [], review: [], dealerPicks: [], generatedAt: null };
+  const enrich = (r: RawCar) => {
+    const finn = r.finn != null ? String(r.finn) : '';
+    const entry = finn ? imageCache[finn] : undefined;
+    const images = Array.isArray(entry?.urls) ? entry.urls : [];
+    return mapCar({ ...r, images });
+  };
   return {
-    hot: (f.hot || []).map(mapCar),
-    review: (f.review || []).map(mapCar),
-    dealerPicks: (f.dealer_picks || []).map(mapCar),
+    hot: (f.hot || []).map(enrich),
+    review: (f.review || []).map(enrich),
+    dealerPicks: (f.dealer_picks || []).map(enrich),
     generatedAt: f.generated_at || null,
   };
 }
