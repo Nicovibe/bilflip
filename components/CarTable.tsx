@@ -115,11 +115,13 @@ export function CarTableExplorer({ cars }: { cars: Car[] }) {
   const [sort, setSort] = useState<'margin' | 'price' | 'score' | 'days'>('margin');
   const [q, setQ] = useState('');
 
+  // Show every brand present in the dataset (user wants all car models as chips
+  // on /markedet — dashboard had a hardcoded subset before).
   const brands = useMemo(() => {
     const s = new Set<string>();
     cars.forEach((c) => s.add(c.brand));
-    const fromData = Array.from(s).slice(0, 12).map(capitalize);
-    return ['Alle', ...fromData.sort()];
+    const fromData = Array.from(s).map(capitalize).sort();
+    return ['Alle', ...fromData];
   }, [cars]);
 
   const filtered = useMemo(() => {

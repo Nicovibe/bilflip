@@ -6,6 +6,7 @@ import { valuationSourceLabel, anbefalingLabel } from '@/lib/mapping';
 import { CarGallery } from '@/components/CarGallery';
 import { BigSpark } from '@/components/BigSpark';
 import { DetailMap } from '@/components/DetailMap';
+import { FavoriteButton } from '@/components/FavoriteButton';
 
 type Props = { params: Promise<{ id: string }> };
 
@@ -57,9 +58,7 @@ export default async function BilDetalj({ params }: Props) {
           <Link href="/markedet" className="btn btn-secondary">
             ← Til markedet
           </Link>
-          <button className="btn btn-secondary" type="button" title="Watchlist kommer snart">
-            ★ Watch
-          </button>
+          <FavoriteButton finnCode={car.finnCode} variant="compact" />
           <a
             className="btn btn-primary"
             href={`https://www.finn.no/mobility/item/${car.finnCode}`}
@@ -252,14 +251,7 @@ export default async function BilDetalj({ params }: Props) {
               >
                 Åpne på finn.no →
               </a>
-              <button
-                className="btn btn-secondary btn-lg"
-                style={{ width: '100%', justifyContent: 'center', marginTop: 6 }}
-                type="button"
-                title="Prisalert kommer snart"
-              >
-                ★ Lagre · varsle ved prisfall
-              </button>
+              <FavoriteButton finnCode={car.finnCode} variant="wide" />
             </div>
 
             {/* AI score breakdown */}
