@@ -100,9 +100,75 @@ export const CITY_COORDS: Record<string, LatLng> = {
   narvik: [68.44, 17.43],
   harstad: [68.8, 16.55],
   tromsø: [69.65, 18.96],
+  tomasjord: [69.66, 18.99],
   alta: [69.97, 23.27],
   hammerfest: [70.66, 23.68],
   kirkenes: [69.73, 30.05],
+
+  // Bergen suburbs / Vestland
+  frekhaug: [60.51, 5.27],
+  isdalstø: [60.55, 5.21],
+  straume: [60.36, 5.13],
+  ulset: [60.47, 5.36],
+
+  // Trondheim region
+  malvik: [63.43, 10.66],
+  ranheim: [63.43, 10.51],
+
+  // Sørlandet (more)
+  mandal: [58.03, 7.45],
+  egersund: [58.45, 5.99],
+  nedenes: [58.43, 8.74],
+
+  // Vestfold / Telemark / Buskerud
+  holmestrand: [59.49, 10.31],
+  'sande i vestfold': [59.59, 10.21],
+  sande: [59.59, 10.21],
+  seljord: [59.49, 8.62],
+  kragerø: [58.87, 9.41],
+
+  // East / Akershus extras
+  rykkinn: [59.91, 10.46],
+  vøyenenga: [59.92, 10.46],
+  østerås: [59.94, 10.55],
+  nittedal: [60.06, 10.86],
+  finstadjordet: [59.93, 10.97],
+  årnes: [60.12, 11.47],
+  harestua: [60.18, 10.71],
+  råde: [59.34, 10.85],
+  grålum: [59.27, 11.05],
+  øyer: [61.27, 10.41],
+
+  // Trøndelag (more)
+  melhus: [63.29, 10.28],
+  levanger: [63.75, 11.3],
+
+  // Vestland (more)
+  vigra: [62.55, 6.13],
+  sogndal: [61.23, 7.1],
+  nesttun: [60.32, 5.36],
+  hjelmås: [60.61, 5.4],
+  bremnes: [59.78, 5.41],
+  ørsta: [62.2, 6.13],
+
+  // Eastern (long-tail)
+  stange: [60.71, 11.18],
+  roa: [60.27, 10.61],
+  fetsund: [59.93, 11.16],
+  oppegård: [59.79, 10.79],
+  borgen: [59.85, 11.17],
+
+  // Sørlandet (more)
+  åmli: [58.78, 8.49],
+  lillesand: [58.25, 8.38],
+
+  // Telemark
+  stathelle: [59.05, 9.69],
+  ramnes: [59.4, 10.21],
+
+  // Trøndelag (more)
+  storås: [63.15, 9.66],
+  flatåsen: [63.36, 10.32],
 };
 
 /** Strip diacritic-stable noise like "Kristiansand S" trailing letters. */
@@ -110,18 +176,41 @@ function normaliseLocation(loc: string): string {
   let key = loc.trim().toLowerCase();
   // Common scraper artefacts where finn appends a letter for "Sør/Nord".
   key = key.replace(/\s+s$/, '').replace(/\s+n$/, '');
-  // Try as-is first (handles "mo i rana"). Caller can also try a fallback.
   return key;
+}
+
+/**
+ * Some scraper rows are full street addresses like
+ *   "Industrivegen 39, 2212 Kongsvinger"
+ *   "Gamle Kragerøvei 24, 3770 Kragerø"
+ * Strategy: split on commas, take the last segment, strip a leading 4-digit
+ * postcode, and use what remains as the city. Returns null if nothing
+ * sensible falls out.
+ */
+function cityFromAddress(loc: string): string | null {
+  if (!loc.includes(',')) return null;
+  const segments = loc.split(',').map((s) => s.trim()).filter(Boolean);
+  const last = segments[segments.length - 1] || '';
+  // Remove a leading "1234 " postcode.
+  const stripped = last.replace(/^\d{4}\s+/, '').trim();
+  return stripped.toLowerCase() || null;
 }
 
 /** Look up coordinates by free-text location. Returns null if unknown. */
 export function lookupCoords(location: string | null | undefined): LatLng | null {
   if (!location) return null;
-  const key = normaliseLocation(location);
-  if (CITY_COORDS[key]) return CITY_COORDS[key];
-  // Try first word ("Bergen Sentrum" → "bergen").
-  const head = key.split(/\s+/)[0];
-  if (head && CITY_COORDS[head]) return CITY_COORDS[head];
+  const candidates: string[] = [];
+  // 1. The whole string normalised (handles "Kristiansand S" → "kristiansand").
+  candidates.push(normaliseLocation(location));
+  // 2. If it's a street-address-style, extract the city after the postcode.
+  const addrCity = cityFromAddress(location);
+  if (addrCity) candidates.push(addrCity);
+  // 3. First word ("Bergen Sentrum" → "bergen").
+  const head = candidates[0]?.split(/\s+/)[0];
+  if (head) candidates.push(head);
+  for (const k of candidates) {
+    if (k && CITY_COORDS[k]) return CITY_COORDS[k];
+  }
   return null;
 }
 
