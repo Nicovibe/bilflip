@@ -4,14 +4,13 @@ import { usePathname } from 'next/navigation';
 
 type Item = { id: string; label: string; icon: string; badge?: string | number; href: string; comingSoon?: boolean };
 
-export function Sidebar({ scannedToday = 0, alertsToday = 0, watchCount = 0 }: { scannedToday?: number; alertsToday?: number; watchCount?: number }) {
+export function Sidebar({ scannedToday = 0, alertsToday = 0 }: { scannedToday?: number; alertsToday?: number }) {
   const pathname = usePathname() || '/';
   const market: Item[] = [
     { id: 'overview', label: 'Oversikt', icon: '⌂', href: '/' },
     { id: 'inventory', label: 'Markedet', icon: '☰', badge: scannedToday || undefined, href: '/markedet' },
     { id: 'dashboard', label: 'Dashboard', icon: '⊟', href: '/dashboard' },
     { id: 'alerts', label: 'Varsler', icon: '◉', badge: alertsToday || undefined, href: '/varsler', comingSoon: true },
-    { id: 'watchlist', label: 'Watchlist', icon: '★', badge: watchCount || undefined, href: '/watchlist', comingSoon: true },
   ];
   const account: Item[] = [
     { id: 'plan', label: 'Plan', icon: '$', href: '/abonnement' },
