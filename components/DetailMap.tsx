@@ -1,4 +1,5 @@
 import { locationToSvg, googleMapsUrl } from '@/lib/locations';
+import { NORWAY_PATH } from '@/lib/norway-shape';
 
 /**
  * Stylised SVG map of Norway with a dot at the seller's city.
@@ -29,11 +30,12 @@ export function DetailMap({ location }: { location: string }) {
         </defs>
         <rect width="200" height="240" fill="url(#dotstx)" />
         <path
-          d="M 80 10 L 90 30 L 100 50 L 95 70 L 110 80 L 100 100 L 115 115 L 105 130 L 120 145 L 110 160 L 125 175 L 115 195 L 130 220 L 60 225 L 50 200 L 60 180 L 50 160 L 60 140 L 50 120 L 65 100 L 60 80 L 70 60 L 65 40 Z"
+          d={NORWAY_PATH}
           fill="rgba(95,200,143,0.08)"
           stroke="var(--green)"
-          strokeWidth="0.8"
-          strokeOpacity="0.5"
+          strokeWidth="0.6"
+          strokeOpacity="0.55"
+          strokeLinejoin="round"
         />
         {/* Pulse halo + dot. Halo radius widens slightly when we have a real
             match so confident locations look more anchored than the fallback. */}

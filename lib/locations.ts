@@ -1,30 +1,16 @@
 /**
- * City → coordinate lookup for the stylised Norway map on /bil/[id].
+ * City → coordinate lookup for the Norway map on /bil/[id].
  *
- * The DetailMap SVG uses viewBox 200×240 with a hand-drawn Norway path that
- * roughly occupies x:[50, 130], y:[10, 225]. We project (lat, lng) onto that
- * box with a simple linear transform — accurate enough for "place a dot in
- * roughly the right region" while staying in the same visual style.
+ * Coordinates are projected to SVG via projectLatLng() in lib/norway-shape,
+ * which uses the same cosine-corrected equirectangular projection that the
+ * Natural Earth-derived NORWAY_PATH was generated with — so a city's dot
+ * lands exactly on the country outline.
  *
  * Anything not in CITY_COORDS falls back to Oslo so the dot still renders.
- *
- * Add cities as the dataset grows. Lat/lng can be eyeballed from Wikipedia's
- * infobox — exact precision doesn't matter, the SVG isn't geographic.
+ * Add cities as the dataset grows; lat/lng can be eyeballed from Wikipedia.
  */
 
-// Bounding box of mainland Norway, used for the linear projection.
-// North/South are slightly inside Nordkapp/Lindesnes so most cities land
-// comfortably inside the SVG path.
-const NORWAY_LAT_NORTH = 71.5;
-const NORWAY_LAT_SOUTH = 57.5;
-const NORWAY_LNG_WEST = 4.0;
-const NORWAY_LNG_EAST = 31.5;
-
-// SVG path bounds inside viewBox 200×240.
-const SVG_X_MIN = 50;
-const SVG_X_MAX = 130;
-const SVG_Y_MIN = 10;
-const SVG_Y_MAX = 225;
+import { projectLatLng } from './norway-shape';
 
 export type LatLng = readonly [number, number];
 
@@ -139,25 +125,15 @@ export function lookupCoords(location: string | null | undefined): LatLng | null
   return null;
 }
 
-/** Linear projection of (lat, lng) onto the SVG path's bounding box. */
-export function latLngToSvg(lat: number, lng: number): { x: number; y: number } {
-  const xRatio = (lng - NORWAY_LNG_WEST) / (NORWAY_LNG_EAST - NORWAY_LNG_WEST);
-  const yRatio = (NORWAY_LAT_NORTH - lat) / (NORWAY_LAT_NORTH - NORWAY_LAT_SOUTH);
-  return {
-    x: SVG_X_MIN + xRatio * (SVG_X_MAX - SVG_X_MIN),
-    y: SVG_Y_MIN + yRatio * (SVG_Y_MAX - SVG_Y_MIN),
-  };
-}
-
 /** Map a free-text location string to SVG coords (with Oslo fallback). */
 export function locationToSvg(location: string | null | undefined): { x: number; y: number; matched: boolean } {
   const ll = lookupCoords(location);
   if (ll) {
-    const { x, y } = latLngToSvg(ll[0], ll[1]);
+    const { x, y } = projectLatLng(ll[0], ll[1]);
     return { x, y, matched: true };
   }
-  // Fallback: Oslo. Better than no dot at all and stays inside the path.
-  const { x, y } = latLngToSvg(59.91, 10.75);
+  // Fallback: Oslo. Better than no dot at all and stays on the country shape.
+  const { x, y } = projectLatLng(59.91, 10.75);
   return { x, y, matched: false };
 }
 
