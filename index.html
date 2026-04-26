@@ -822,22 +822,36 @@ function renderDash(){
   // Sectioned feed view — when feeds available and no filter active
   if(FEEDS&&!filtering){
     if(lbl) lbl.textContent='Alle biler';
-    if(cnt) cnt.textContent=FEEDS.total;
     let html='';
+    const seen=new Set();
+    const addSeen=arr=>arr.forEach(b=>{if(b&&b.finn) seen.add(b.finn);});
     if(FEEDS.hot.length){
       html+=feedSectionHeader('Hot — rene private cases med dokumentert margin','#3d9960',FEEDS.hot.length);
       html+=FEEDS.hot.map((b,i)=>lagDashKort(b,i+1)).join('');
+      addSeen(FEEDS.hot);
     }
     if(FEEDS.review.length){
       html+='<div class="feed-section-sep"></div>';
       html+=feedSectionHeader('Review — non-dealer men krever manuell sjekk','#e8a020',FEEDS.review.length);
       html+=FEEDS.review.map((b,i)=>lagDashKort(b,i+1)).join('');
+      addSeen(FEEDS.review);
     }
     if(FEEDS.dealer_picks.length){
       html+='<div class="feed-section-sep"></div>';
       html+=feedSectionHeader('Dealer picks — sterke unntak, ikke hot','#1f5fa6',FEEDS.dealer_picks.length);
       html+=FEEDS.dealer_picks.map((b,i)=>lagDashKort(b,i+1)).join('');
+      addSeen(FEEDS.dealer_picks);
     }
+    // Resterende biler — alt som ikke allerede er vist i feeds
+    const resterende=BILER.filter(b=>!seen.has(b.finn))
+      .sort((a,b)=>(b.dealScore||b.score)-(a.dealScore||a.score));
+    if(resterende.length){
+      html+='<div class="feed-section-sep"></div>';
+      html+=feedSectionHeader('Alle øvrige biler — sortert etter deal-score','#8a8880',resterende.length);
+      html+=resterende.map((b,i)=>lagDashKort(b,i+1)).join('');
+    }
+    const totalShown=BILER.length;
+    if(cnt) cnt.textContent=totalShown;
     if(!html) html='<div class="empty">Ingen biler funnet</div>';
     el.innerHTML=html;
     return;
