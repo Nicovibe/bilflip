@@ -134,7 +134,7 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .tx-feed-score { font-family: var(--mono); font-size: 10px; color: var(--ink-3); text-align: right; margin-top: 2px; }
 
 /* ── Section blocks ────────────────────── */
-.section-tx { padding: 60px 40px; max-width: 1480px; margin: 0 auto; }
+.section-tx { padding: 60px 24px; max-width: 1480px; margin: 0 auto; }
 .section-h { display: flex; align-items: end; justify-content: space-between; margin-bottom: 28px; gap: 16px; flex-wrap: wrap; }
 .section-h .left { display: flex; flex-direction: column; gap: 6px; }
 .section-h .num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; color: var(--green); text-transform: uppercase; }
@@ -157,15 +157,15 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 
 .tx-table-wrap { overflow-x: auto; }
 .tx-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-.tx-table thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; color: var(--ink-3); text-align: left; padding: 10px 8px; background: var(--surface-2); border-bottom: 1px solid var(--line); text-transform: uppercase; font-weight: 500; white-space: nowrap; }
+.tx-table thead th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; color: var(--ink-3); text-align: left; padding: 9px 6px; background: var(--surface-2); border-bottom: 1px solid var(--line); text-transform: uppercase; font-weight: 500; white-space: nowrap; }
 .tx-table thead th.r { text-align: right; }
-.tx-table tbody td { padding: 10px 8px; border-bottom: 1px solid var(--line); font-size: 12px; vertical-align: middle; white-space: nowrap; }
+.tx-table tbody td { padding: 9px 6px; border-bottom: 1px solid var(--line); font-size: 12px; vertical-align: middle; white-space: nowrap; }
 .tx-table tbody tr { cursor: pointer; transition: background .12s; }
 .tx-table tbody tr:hover { background: var(--surface-2); }
 .tx-table tbody tr:last-child td { border-bottom: 0; }
-.tx-table .car-row { display: flex; align-items: center; gap: 10px; }
-.tx-table .car-thumb { width: 48px; height: 36px; border-radius: 4px; background-color: var(--surface-2); flex-shrink: 0; position: relative; overflow: hidden; }
-.tx-table .car-name { font-weight: 500; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 280px; }
+.tx-table .car-row { display: flex; align-items: center; gap: 8px; }
+.tx-table .car-thumb { width: 44px; height: 32px; border-radius: 4px; background-color: var(--surface-2); flex-shrink: 0; position: relative; overflow: hidden; }
+.tx-table .car-name { font-weight: 500; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
 .tx-table .car-sub { font-family: var(--mono); font-size: 10px; color: var(--ink-3); margin-top: 2px; letter-spacing: 0.02em; white-space: nowrap; }
 .tx-table .num { font-family: var(--mono); font-feature-settings: "tnum"; font-size: 12px; }
 .tx-table .num.r { text-align: right; }
@@ -296,7 +296,7 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .field-tx textarea { resize: vertical; min-height: 100px; }
 
 /* ── Sparkline cell ────────────────────── */
-.spark-mini { width: 60px; height: 22px; }
+.spark-mini { width: 48px; height: 20px; }
 
 /* ── Login (custom — no shell) ─────────── */
 .login-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; background: radial-gradient(ellipse at top, rgba(95,200,143,0.08) 0%, transparent 60%), var(--bg); }
@@ -355,11 +355,10 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
   /* Free up more horizontal real estate for the table on small phones. */
   .section-tx { padding: 24px 12px; }
 
-  /* User wants every row to fit on phone screens without horizontal scroll.
-     Strategy: hide the two least-essential columns (Markedssnitt and 90d
-     sparkline), shrink the rest, ellipsis on long car names. Keeps:
-     #, Bil, Pris, Margin, Score, Lokasjon, Listet. */
-  .tx-table-wrap { overflow-x: hidden; }
+  /* Phone: shrink+drop two least-essential columns (Markedssnitt, 90d), but
+     KEEP overflow-x: auto on the wrap so the user can drag the table sideways
+     if a row still doesn't fit on a tiny screen. Earlier overflow-x: hidden
+     locked them out of the missing data. */
   .tx-table { width: 100%; }
   /* Column 4 = Markedssnitt, column 6 = 90d sparkline. Hide both. */
   .tx-table thead th:nth-child(4),
