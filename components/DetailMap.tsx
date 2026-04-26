@@ -1,10 +1,26 @@
+import { locationToSvg, googleMapsUrl } from '@/lib/locations';
+
 /**
- * Stylised SVG map placeholder showing seller location.
- * TODO(map): replace with real Mapbox/MapLibre when lat/lng land in the data.
+ * Stylised SVG map of Norway with a dot at the seller's city.
+ *
+ * The dot position comes from lib/locations (curated city → lat/lng table,
+ * linearly projected onto the SVG viewBox). The whole map is a link that
+ * opens Google Maps with the location pre-searched in a new tab.
  */
 export function DetailMap({ location }: { location: string }) {
+  const { x, y, matched } = locationToSvg(location);
+  const href = googleMapsUrl(location);
+
   return (
-    <div className="map-tx" style={{ aspectRatio: '4/3' }}>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="map-tx"
+      aria-label={`Åpne ${location} i Google Maps (ny fane)`}
+      title={`Åpne ${location} i Google Maps`}
+      style={{ aspectRatio: '4/3', display: 'block', cursor: 'pointer' }}
+    >
       <svg viewBox="0 0 200 240" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} aria-hidden>
         <defs>
           <pattern id="dotstx" width="14" height="14" patternUnits="userSpaceOnUse">
@@ -19,9 +35,11 @@ export function DetailMap({ location }: { location: string }) {
           strokeWidth="0.8"
           strokeOpacity="0.5"
         />
-        <circle cx="80" cy="170" r="14" fill="rgba(95,200,143,0.2)" />
-        <circle cx="80" cy="170" r="5" fill="var(--green)" />
-        <circle cx="80" cy="170" r="2" fill="var(--bg)" />
+        {/* Pulse halo + dot. Halo radius widens slightly when we have a real
+            match so confident locations look more anchored than the fallback. */}
+        <circle cx={x} cy={y} r={matched ? 14 : 10} fill="rgba(95,200,143,0.2)" />
+        <circle cx={x} cy={y} r="5" fill="var(--green)" />
+        <circle cx={x} cy={y} r="2" fill="var(--bg)" />
       </svg>
       <div
         style={{
@@ -40,6 +58,24 @@ export function DetailMap({ location }: { location: string }) {
       >
         ◉ {location.toUpperCase()}
       </div>
-    </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+          fontFamily: 'var(--mono)',
+          fontSize: 9,
+          letterSpacing: '0.08em',
+          color: 'var(--ink-3)',
+          background: 'var(--surface)',
+          padding: '4px 8px',
+          borderRadius: 3,
+          border: '1px solid var(--line)',
+          textTransform: 'uppercase',
+        }}
+      >
+        Google Maps ↗
+      </div>
+    </a>
   );
 }
