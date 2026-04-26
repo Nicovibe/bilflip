@@ -193,6 +193,11 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 /* ── Detail (terminal) ─────────────────── */
 .detail-tx { padding: 28px 40px; max-width: 1480px; margin: 0 auto; }
 .detail-tx-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; }
+/* Without min-width: 0, grid items default to min-content width, so a long
+   horizontal-scroll thumb strip pushes its column past its 1.4fr share and
+   the whole page overflows. This forces children to shrink and lets
+   overflow-x: auto on .detail-thumbs-tx actually scroll. */
+.detail-tx-grid > * { min-width: 0; }
 .detail-photo-tx { aspect-ratio: 16/10; background-color: var(--surface-2); border-radius: 8px; border: 1px solid var(--line); position: relative; overflow: hidden; }
 .detail-thumbs-tx {
   display: flex;
