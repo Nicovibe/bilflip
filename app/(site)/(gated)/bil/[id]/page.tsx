@@ -238,7 +238,16 @@ export default async function BilDetalj({ params }: Props) {
               <div className="kv-row"><span className="k">Klargjøring</span><span className="v">{kr(car.klargjoring)}</span></div>
               <div className="kv-row"><span className="k">Finans (60d, 1.2%)</span><span className="v">{kr(finans)}</span></div>
               <div className="kv-row"><span className="k">Sum kost</span><span className="v" style={{ color: 'var(--ink)' }}>{kr(totKost)}</span></div>
-              <div className="kv-row"><span className="k">Est. salgspris</span><span className="v" style={{ color: 'var(--ink)' }}>{kr(car.estSell)}</span></div>
+              <div className="kv-row">
+                <span className="k">Realistisk salgspris{car.dealerEstSell != null ? ' (privat)' : ''}</span>
+                <span className="v" style={{ color: 'var(--ink)' }}>{kr(car.estSell)}</span>
+              </div>
+              {car.dealerEstSell != null && (
+                <div className="kv-row" style={{ opacity: 0.7 }}>
+                  <span className="k" style={{ fontSize: 11 }}>Forhandler-estimat (ref)</span>
+                  <span className="v mono" style={{ fontSize: 11, color: 'var(--ink-3)' }}>{kr(car.dealerEstSell)}</span>
+                </div>
+              )}
               <div className="kv-row total"><span className="k">NETTO FORTJENESTE</span><span className="v">{netto >= 0 ? '+' : ''}{kr(netto)}</span></div>
               {car.lowballTarget && (
                 <div className="kv-row"><span className="k">Lavt bud-anker</span><span className="v" style={{ color: 'var(--gold)' }}>{kr(car.lowballTarget)}</span></div>

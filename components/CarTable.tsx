@@ -73,6 +73,7 @@ function CarRow({ car, index, compact, showSpark }: { car: Car; index: number; c
             <div className="car-name">
               {car.title}
               {car.badge && <span className={`badge ${car.badge === 'HOT' ? 'hot' : car.badge === 'NY' ? 'new' : ''}`}>{car.badge}</span>}
+              {car.sellerClass === 'Forhandler' && <span className="badge dealer">FORHANDLER</span>}
             </div>
             <div className="car-sub">
               {car.year} · {fmt(car.km)} KM · {car.sellerClass}

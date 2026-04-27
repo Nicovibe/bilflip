@@ -71,8 +71,9 @@ export type Car = {
   location: string;
   // money
   price: number;
-  estSell: number;
-  margin: number;
+  estSell: number;          // realistic resell price (forhandler-bil → privat-median)
+  margin: number;           // realistic gevinst basert på estSell
+  dealerEstSell: number | null; // scraperens originale salgspris hvis vi byttet den ut (kun for forhandler-biler)
   omreg: number;
   klargjoring: number;
   // scores
@@ -150,14 +151,30 @@ export function mapCar(raw: RawCar): Car {
   else if (raw.priceDrops && raw.priceDrops > 0) badge = 'PRIS↓';
   else if (raw.dagerRaw !== undefined && raw.dagerRaw <= 1) badge = 'NY';
 
+  // Realistic resell price: when buying from a dealer, you cannot resell at
+  // dealer prices — your ceiling is the private median. The scraper's
+  // `salgspris` often sits at or above the dealer median, which inflates
+  // margin for forhandler cars. We override it here so the score reflects
+  // real flip economics.
+  const omreg = raw.omreg ?? 5600;
+  const klargjoring = raw.klargjoring ?? 8500;
+  const isDealer = raw.selgerKlasse === 'dealer';
+  const privateMedian = raw.bucketMedianPrivate ?? null;
+  const useRealistic = isDealer && privateMedian != null && privateMedian > 0;
+  const estSellRealistic = useRealistic ? privateMedian : raw.salgspris;
+  const marginRealistic = useRealistic
+    ? estSellRealistic - raw.pris - omreg - klargjoring
+    : raw.gevinst;
+  const dealerEstSell = useRealistic ? raw.salgspris : null;
+
   // Composite scoring: bars.total replaces dealScore everywhere in the UI.
   // The "Pris vs marked" bar carries the original scraper dealScore.
   const bars = computeBars({
     pris: raw.pris,
-    gevinst: raw.gevinst,
-    salgspris: raw.salgspris,
-    omreg: raw.omreg,
-    klargjoring: raw.klargjoring,
+    gevinst: marginRealistic,
+    salgspris: estSellRealistic,
+    omreg,
+    klargjoring,
     medianMargin: raw.medianMargin ?? null,
     compConfidence: raw.compConfidence ?? null,
     damageFlags: raw.damageFlags || [],
@@ -175,10 +192,11 @@ export function mapCar(raw: RawCar): Car {
     km: raw.km,
     location: raw.lok,
     price: raw.pris,
-    estSell: raw.salgspris,
-    margin: raw.gevinst,
-    omreg: raw.omreg ?? 5600,
-    klargjoring: raw.klargjoring ?? 8500,
+    estSell: estSellRealistic,
+    margin: marginRealistic,
+    dealerEstSell,
+    omreg,
+    klargjoring,
     score: raw.score,
     dealScore: bars.total,
     prisVsMarkedScore: bars.prisVsMarked,
