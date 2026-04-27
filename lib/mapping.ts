@@ -259,14 +259,24 @@ export function mapCar(raw: RawCar): Car {
 export function valuationSourceLabel(v: string | null): string {
   if (!v) return 'Modellestimat';
   const map: Record<string, string> = {
+    // Strong-private path (subject genuinely is a private seller).
     comps_private: 'Private komper',
     comps_private_fallback: 'Private komper (fallback)',
     comps_private_thin: 'Private komper (få)',
     bucket_private: 'Privat bucket-median',
+
+    // Conservative-min path (suffix _min). Anchor was the LOWEST of available
+    // privat/dealer signals — used when subject isn't strongly-confirmed private.
+    comps_private_min: 'Privat komper (konservativ)',
+    comps_private_thin_min: 'Privat komper, få (konservativ)',
+    bucket_private_min: 'Privat bucket-median (konservativ)',
+    comps_dealer_min: 'Forhandler-komper (konservativ)',
+    bucket_dealer_min: 'Forhandler bucket (konservativ)',
+
+    // Single-anchor fallbacks (back-compat).
     comps_dealer: 'Forhandlerkomper',
+    bucket_dealer: 'Forhandler bucket-median',
     comps_dealer_fallback: 'Dealer-komper som gulv',
-    comps_dealer_anchor_uncertain: 'Forhandler-anker (usikker selger)',
-    bucket_dealer_anchor_uncertain: 'Forhandler bucket (usikker selger)',
     comps_mixed: 'Miks av komper',
     ai_fallback: 'AI-estimat',
     naive_fallback: 'Enkel tommelfingerregel',
