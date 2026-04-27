@@ -1,124 +1,5 @@
 [
   {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 PHEV",
-    "sub": "2021–2021 · AWD-i Active / ACC / BT / R. KAMERA / NY SERVICE",
-    "score": 85,
-    "flipScore": 72,
-    "snittPris": 384900,
-    "minPris": 384900,
-    "maxPris": 384900,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": -8996,
-    "prisData": [
-      525026,
-      527115,
-      525287,
-      524147,
-      516263,
-      419532,
-      516030
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota RAV4 PHEV 2021 med 48 000 km til 389 900 kr fra privat selger. Nylig service. Prisen er UNDER markedsverdi for en slik bil. God flip-margin mulig.",
-    "avgBucketMedianPrivate": 446766,
-    "avgBucketMedianDealer": 449000,
-    "avgBucketP25Private": 424899,
-    "avgBucketP75Private": 473725,
-    "avgLowballTarget": 365655,
-    "avgLowballMargin": 81111,
-    "avgMedianMargin": 64100,
-    "avgCompCount": 5,
-    "avgCompSpreadPct": 5,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 86,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 72,
-    "bestMargin": 54321,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 90,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 71,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen Golf-Serie 1,0",
@@ -565,6 +446,236 @@
     ]
   },
   {
+    "id": "hyundaiion",
+    "merke": "hyundai",
+    "navn": "Hyundai Ioniq 5",
+    "sub": "2022–2025 · AWD Premium",
+    "score": 68,
+    "flipScore": 63,
+    "snittPris": 326766,
+    "minPris": 254532,
+    "maxPris": 399000,
+    "snittDager": 23,
+    "antallAnnonser": 2,
+    "prisEndring": 13428,
+    "prisData": [
+      365702,
+      366897,
+      365879,
+      365808,
+      379206,
+      369920,
+      379130
+    ],
+    "volum": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Hyundai Ioniq 5 AWD 2022 med 78k km til 254 532 kr. Bakfanger byttet etter skade. Prisen er OK, men skadehistorikk reduserer verdi. Markedsverdi rundt 270k.",
+    "avgBucketMedianPrivate": 368016,
+    "avgBucketMedianDealer": 379450,
+    "avgBucketP25Private": 352325,
+    "avgBucketP75Private": 380826,
+    "avgLowballTarget": 305165,
+    "avgLowballMargin": 62851,
+    "avgMedianMargin": 41250,
+    "avgCompCount": 13,
+    "avgCompSpreadPct": 12,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 89,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1,
+      "low": 1
+    },
+    "primaryValuationSource": "comps_private_thin_min",
+    "valuationBreakdown": {
+      "comps_private_thin_min": 1,
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1,
+      "private_likely": 1
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 65,
+    "bestMargin": 26435,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 73,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 38,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 84,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "toyotarav4",
+    "merke": "toyota",
+    "navn": "Toyota RAV4 Plug-in",
+    "sub": "2020–2021 · AWD",
+    "score": 83,
+    "flipScore": 61,
+    "snittPris": 416766,
+    "minPris": 414000,
+    "maxPris": 419532,
+    "snittDager": 21,
+    "antallAnnonser": 2,
+    "prisEndring": -6662,
+    "prisData": [
+      514197,
+      513303,
+      512928,
+      512731,
+      506423,
+      484604,
+      507535
+    ],
+    "volum": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Toyota RAV4 PHEV Executive 2020 med 61 500 km til 424 900 kr. Privat selger (Høvik). Dette er toppmodell med alt utstyr. Prisen er GOD under markedsverdi for en Executive med lav km. RAV4 PHEV er svært etterspurt. Høy margin mulig.",
+    "avgBucketMedianPrivate": 465000,
+    "avgBucketMedianDealer": 435250,
+    "avgBucketP25Private": 446766,
+    "avgBucketP75Private": 482450,
+    "avgLowballTarget": 389690,
+    "avgLowballMargin": 75310,
+    "avgMedianMargin": 48234,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 9,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 90,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 2
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 2
+    },
+    "sellerMix": {
+      "private_likely": 1,
+      "unknown": 1
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 2,
+    "bestDealScore": 76,
+    "bestMargin": 8566,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 88,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 8,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen Golf-Serie 1,2",
@@ -773,6 +884,243 @@
       {
         "l": "Batteririsiko",
         "v": 92,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "teslamodel",
+    "merke": "tesla",
+    "navn": "Tesla Model Y",
+    "sub": "2024–2023 · Long Range AWD - Lav km!",
+    "score": 75,
+    "flipScore": 59,
+    "snittPris": 419708,
+    "minPris": 329900,
+    "maxPris": 479000,
+    "snittDager": 20,
+    "antallAnnonser": 21,
+    "prisEndring": -15775,
+    "prisData": [
+      431495,
+      413144,
+      409471,
+      420979,
+      425941,
+      423295,
+      422173,
+      415580,
+      419436,
+      415720
+    ],
+    "volum": [
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21,
+      21
+    ],
+    "tags": [
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Tesla Model Y LR 2024 med 15 200 km til 458 900 kr. Privatsalg. Tilsvarende biler hos forhandler koster 480-510 000 kr. Godt under markedsverdi. Mindre merker nevnt, men ikke alvorlige. Solid gevinstpotensial.",
+    "avgBucketMedianPrivate": 471717,
+    "avgBucketMedianDealer": 478543,
+    "avgBucketP25Private": 458361,
+    "avgBucketP75Private": 480819,
+    "avgLowballTarget": 394974,
+    "avgLowballMargin": 76742,
+    "avgMedianMargin": 52009,
+    "avgCompCount": 15,
+    "avgCompSpreadPct": 8,
+    "bucketCoverage": 14,
+    "bucketDealerCoverage": 14,
+    "priceToBucketPct": 89,
+    "underBucketShare": 100,
+    "p25DealShare": 93,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 14
+    },
+    "primaryValuationSource": "comps_private_thin_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 4,
+      "comps_private_min": 4,
+      "comps_private_thin_min": 5,
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 8,
+      "unknown": 13
+    },
+    "analysisBaseCount": 14,
+    "cohortFilteredCount": 14,
+    "bestDealScore": 92,
+    "bestMargin": 51835,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 80,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 25,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 100,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "teslamodel",
+    "merke": "tesla",
+    "navn": "Tesla Model 3",
+    "sub": "2020–2021 · AWD",
+    "score": 81,
+    "flipScore": 59,
+    "snittPris": 279634,
+    "minPris": 222129,
+    "maxPris": 417343,
+    "snittDager": 23,
+    "antallAnnonser": 16,
+    "prisEndring": 1946,
+    "prisData": [
+      337604,
+      306689,
+      331508,
+      278065,
+      336918,
+      336798,
+      339444,
+      338185,
+      344473,
+      339550
+    ],
+    "volum": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "tags": [
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
+    "avgBucketMedianPrivate": 319559,
+    "avgBucketMedianDealer": 327129,
+    "avgBucketP25Private": 310684,
+    "avgBucketP75Private": 334030,
+    "avgLowballTarget": 262604,
+    "avgLowballMargin": 56955,
+    "avgMedianMargin": 39925,
+    "avgCompCount": 7,
+    "avgCompSpreadPct": 11,
+    "bucketCoverage": 7,
+    "bucketDealerCoverage": 7,
+    "priceToBucketPct": 88,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 6,
+      "medium": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 3,
+      "comps_private_thin_min": 2,
+      "comps_private_min": 1,
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 6,
+      "unknown": 10
+    },
+    "analysisBaseCount": 7,
+    "cohortFilteredCount": 7,
+    "bestDealScore": 85,
+    "bestMargin": 30865,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 86,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 38,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 100,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
         "c": "#3d9960"
       }
     ]
@@ -1001,286 +1349,44 @@
     ]
   },
   {
-    "id": "teslamodel",
-    "merke": "tesla",
-    "navn": "Tesla Model 3",
-    "sub": "2020–2021 · AWD",
-    "score": 81,
-    "flipScore": 58,
-    "snittPris": 263073,
-    "minPris": 222129,
-    "maxPris": 417343,
-    "snittDager": 31,
-    "antallAnnonser": 18,
-    "prisEndring": 1946,
-    "prisData": [
-      337604,
-      306689,
-      331508,
-      278065,
-      336918,
-      336798,
-      339444,
-      338185,
-      344473,
-      339550
-    ],
-    "volum": [
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18,
-      18
-    ],
-    "tags": [
-      {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
-    "avgBucketMedianPrivate": 293152,
-    "avgBucketMedianDealer": 302150,
-    "avgBucketP25Private": 283473,
-    "avgBucketP75Private": 308285,
-    "avgLowballTarget": 246363,
-    "avgLowballMargin": 46789,
-    "avgMedianMargin": 30080,
-    "avgCompCount": 8,
-    "avgCompSpreadPct": 10,
-    "bucketCoverage": 6,
-    "bucketDealerCoverage": 6,
-    "priceToBucketPct": 90,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 6
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 2,
-      "comps_private_thin_min": 2,
-      "comps_private_min": 1,
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 6,
-      "unknown": 9,
-      "dealer": 3
-    },
-    "analysisBaseCount": 6,
-    "cohortFilteredCount": 6,
-    "bestDealScore": 85,
-    "bestMargin": 30865,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 86,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 23,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "teslamodel",
-    "merke": "tesla",
-    "navn": "Tesla Model Y",
-    "sub": "2024–2023 · Long Range AWD - Lav km!",
-    "score": 75,
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen Golf-Serie E-Golf",
+    "sub": "2018–2016 · Diverse",
+    "score": 41,
     "flipScore": 57,
-    "snittPris": 419708,
-    "minPris": 329900,
-    "maxPris": 479000,
-    "snittDager": 20,
-    "antallAnnonser": 25,
-    "prisEndring": -15775,
+    "snittPris": 99732,
+    "minPris": 89532,
+    "maxPris": 109932,
+    "snittDager": 16,
+    "antallAnnonser": 2,
+    "prisEndring": 3905,
     "prisData": [
-      431495,
-      413144,
-      409471,
-      420979,
-      425941,
-      423295,
-      422173,
-      415580,
-      419436,
-      415720
+      135774,
+      135010,
+      136029,
+      133359,
+      133529,
+      143083,
+      139679
     ],
     "volum": [
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25,
-      25
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
     ],
     "tags": [
       {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Tesla Model Y LR 2024 med 15 200 km til 458 900 kr. Privatsalg. Tilsvarende biler hos forhandler koster 480-510 000 kr. Godt under markedsverdi. Mindre merker nevnt, men ikke alvorlige. Solid gevinstpotensial.",
-    "avgBucketMedianPrivate": 471717,
-    "avgBucketMedianDealer": 478543,
-    "avgBucketP25Private": 458361,
-    "avgBucketP75Private": 480819,
-    "avgLowballTarget": 394974,
-    "avgLowballMargin": 76742,
-    "avgMedianMargin": 52009,
-    "avgCompCount": 15,
-    "avgCompSpreadPct": 8,
-    "bucketCoverage": 14,
-    "bucketDealerCoverage": 14,
-    "priceToBucketPct": 89,
-    "underBucketShare": 100,
-    "p25DealShare": 93,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 14
-    },
-    "primaryValuationSource": "comps_private_thin_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 4,
-      "comps_private_min": 4,
-      "comps_private_thin_min": 5,
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 8,
-      "unknown": 13,
-      "dealer": 4
-    },
-    "analysisBaseCount": 14,
-    "cohortFilteredCount": 14,
-    "bestDealScore": 92,
-    "bestMargin": 51835,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 80,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 25,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "hyundaikon",
-    "merke": "hyundai",
-    "navn": "Hyundai Kona Premium",
-    "sub": "2019–2020 · Diverse",
-    "score": 78,
-    "flipScore": 57,
-    "snittPris": 249266,
-    "minPris": 249000,
-    "maxPris": 249532,
-    "snittDager": 13,
-    "antallAnnonser": 6,
-    "prisEndring": 10055,
-    "prisData": [
-      295532,
-      291875,
-      292328,
-      291396,
-      307402,
-      262768,
-      305587
-    ],
-    "volum": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6
-    ],
-    "tags": [
-      {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris opp",
+        "t": "Lavt volum",
         "c": "a"
       },
       {
@@ -1288,29 +1394,25 @@
         "c": "g"
       },
       {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
         "t": "Mange under p25",
         "c": "g"
       }
     ],
-    "ai": "Hyundai Kona Premium — 6 annonser funnet.",
-    "avgBucketMedianPrivate": 298627,
-    "avgBucketMedianDealer": 279225,
-    "avgBucketP25Private": 286313,
-    "avgBucketP75Private": 310940,
-    "avgLowballTarget": 236803,
-    "avgLowballMargin": 61824,
-    "avgMedianMargin": 49361,
-    "avgCompCount": 6,
-    "avgCompSpreadPct": 13,
-    "bucketCoverage": 2,
+    "ai": "VW e-Golf 2018 med 76 000 km til 114 532 kr. Veldig god pris! Tilsvarende e-Golfer selges for 140-160 000 kr. AC/ladekontakt reparert - bra. God flip-mulighet.",
+    "avgBucketMedianPrivate": 109932,
+    "avgBucketMedianDealer": 131748,
+    "avgBucketP25Private": 109932,
+    "avgBucketP75Private": 109932,
+    "avgLowballTarget": 93748,
+    "avgLowballMargin": 30718,
+    "avgMedianMargin": 24734,
+    "avgCompCount": 7,
+    "avgCompSpreadPct": 19,
+    "bucketCoverage": 1,
     "bucketDealerCoverage": 2,
-    "priceToBucketPct": 83,
+    "priceToBucketPct": 91,
     "underBucketShare": 100,
-    "p25DealShare": 100,
+    "p25DealShare": 50,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
       "high": 1,
@@ -1318,36 +1420,36 @@
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_dealer_min": 2
+      "comps_dealer_min": 1,
+      "bucket_private_min": 1
     },
     "sellerMix": {
-      "private_likely": 4,
-      "dealer": 1,
+      "private_likely": 1,
       "unknown": 1
     },
     "analysisBaseCount": 2,
     "cohortFilteredCount": 2,
-    "bestDealScore": 73,
-    "bestMargin": 22737,
+    "bestDealScore": 76,
+    "bestMargin": 15439,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 83,
-        "c": "#3d9960"
+        "v": 46,
+        "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 9,
+        "v": 52,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 90,
-        "c": "#1f5fa6"
+        "v": 30,
+        "c": "#e8a020"
       },
       {
         "l": "Batteririsiko",
-        "v": 52,
+        "v": 28,
         "c": "#e8a020"
       }
     ]
@@ -1362,8 +1464,8 @@
     "snittPris": 289032,
     "minPris": 273532,
     "maxPris": 304532,
-    "snittDager": 8,
-    "antallAnnonser": 3,
+    "snittDager": 5,
+    "antallAnnonser": 2,
     "prisEndring": -3783,
     "prisData": [
       395047,
@@ -1375,20 +1477,24 @@
       391264
     ],
     "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
     ],
     "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
       {
         "t": "Under bucket",
         "c": "g"
@@ -1428,7 +1534,6 @@
     },
     "sellerMix": {
       "private_likely": 1,
-      "dealer": 1,
       "unknown": 1
     },
     "analysisBaseCount": 2,
@@ -1448,12 +1553,124 @@
       },
       {
         "l": "Likviditet",
-        "v": 45,
+        "v": 30,
         "c": "#e8a020"
       },
       {
         "l": "Batteririsiko",
         "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "toyotarav4",
+    "merke": "toyota",
+    "navn": "Toyota RAV4 Hybrid",
+    "sub": "2020–2021 · 2WD Style aut",
+    "score": 43,
+    "flipScore": 57,
+    "snittPris": 342233,
+    "minPris": 309532,
+    "maxPris": 374934,
+    "snittDager": 18,
+    "antallAnnonser": 2,
+    "prisEndring": -12004,
+    "prisData": [
+      481655,
+      484287,
+      480938,
+      475604,
+      469507,
+      469651
+    ],
+    "volum": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "RAV4 Hybrid 2020 privat selger, kun 66k km, fullt utstyr. Pris 319 532 kr er UNDER markedsverdi for privat – forhandlere tar 360k+. Ingen skader. Stor margin mulig.",
+    "avgBucketMedianPrivate": 446766,
+    "avgBucketMedianDealer": 373500,
+    "avgBucketP25Private": 424899,
+    "avgBucketP75Private": 473725,
+    "avgLowballTarget": 319825,
+    "avgLowballMargin": 126942,
+    "avgMedianMargin": 104533,
+    "avgCompCount": 11,
+    "avgCompSpreadPct": 7,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 77,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 2
+    },
+    "primaryValuationSource": "bucket_dealer_min",
+    "valuationBreakdown": {
+      "bucket_dealer_min": 1,
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1,
+      "private_likely": 1
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 62,
+    "bestMargin": 17923,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 48,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 24,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
         "c": "#3d9960"
       }
     ]
@@ -1787,14 +2004,14 @@
     "id": "hyundaikon",
     "merke": "hyundai",
     "navn": "Hyundai Kona Trend",
-    "sub": "2022–2022 · SR KLAR TIL LEVERING|VI TAR INNBYTTE|S+Vhjul",
-    "score": 77,
+    "sub": "2022–2022 · SR, nettopp EU-godkjent, lav km-stand",
+    "score": 60,
     "flipScore": 56,
-    "snittPris": 191633,
+    "snittPris": 185000,
     "minPris": 185000,
-    "maxPris": 199900,
-    "snittDager": 15,
-    "antallAnnonser": 3,
+    "maxPris": 185000,
+    "snittDager": 1,
+    "antallAnnonser": 1,
     "prisEndring": -6786,
     "prisData": [
       225662,
@@ -1806,20 +2023,28 @@
       218876
     ],
     "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
     ],
     "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
       {
         "t": "Pris ned",
         "c": "g"
@@ -1837,52 +2062,50 @@
         "c": "g"
       }
     ],
-    "ai": "Kona Trend SR 2022 med svært lav km (24 210) til 199 900 kr etter 20k prisreduksjon. Utmerket flip-mulighet. Lav innkjøpspris, men kortere rekkevidde (39kWh).",
-    "avgBucketMedianPrivate": 224199,
-    "avgBucketMedianDealer": 225617,
-    "avgBucketP25Private": 224032,
-    "avgBucketP75Private": 224365,
-    "avgLowballTarget": 181401,
-    "avgLowballMargin": 42797,
-    "avgMedianMargin": 32528,
-    "avgCompCount": 8,
-    "avgCompSpreadPct": 7,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 85,
+    "ai": "Pris på 185 000 kr er godt under markedsverdi på 221 343 kr, og gir estimert gevinst på 25 798 kr (14%) etter kostnader. Selger er ukjent, noe som øker risikoen. Ingen skader oppgitt.",
+    "avgBucketMedianPrivate": 224532,
+    "avgBucketMedianDealer": 228900,
+    "avgBucketP25Private": 224532,
+    "avgBucketP75Private": 224532,
+    "avgLowballTarget": 175750,
+    "avgLowballMargin": 48782,
+    "avgMedianMargin": 39532,
+    "avgCompCount": 9,
+    "avgCompSpreadPct": 6,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": 82,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 3
+      "high": 1
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "bucket_private_min": 1,
-      "comps_dealer_min": 2
+      "comps_dealer_min": 1
     },
     "sellerMix": {
-      "dealer": 2,
       "unknown": 1
     },
-    "analysisBaseCount": 3,
+    "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
-    "bestDealScore": 58,
-    "bestMargin": 14087,
+    "bestDealScore": 56,
+    "bestMargin": 25661,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 82,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 44,
+        "v": 65,
         "c": "#e8a020"
       },
       {
+        "l": "Prismargin",
+        "v": 69,
+        "c": "#3d9960"
+      },
+      {
         "l": "Likviditet",
-        "v": 45,
+        "v": 15,
         "c": "#e8a020"
       },
       {
@@ -1893,264 +2116,40 @@
     ]
   },
   {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.4 ID.4",
-    "sub": "2023–2023 · PRO Limited 77kwh 204hk",
-    "score": 65,
-    "flipScore": 56,
-    "snittPris": 369000,
-    "minPris": 369000,
-    "maxPris": 369000,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": -14833,
-    "prisData": [
-      349333,
-      339500,
-      312999,
-      329000,
-      334500,
-      334500
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Volkswagen ID.4 Pro 2023 med 15 663 km til 369 000 kr fra forhandler. Prisen er OK, men ikke spesielt attraktiv for flipping. ID.4 har god etterspørsel, men marginen vil være moderat etter klargjøringskostnader.",
-    "avgBucketMedianPrivate": 457505,
-    "avgBucketMedianDealer": 499750,
-    "avgBucketP25Private": 381019,
-    "avgBucketP75Private": 462505,
-    "avgLowballTarget": 354240,
-    "avgLowballMargin": 103265,
-    "avgMedianMargin": 130750,
-    "avgCompCount": 14,
-    "avgCompSpreadPct": 7,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 81,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 56,
-    "bestMargin": 77960,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 70,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 2021",
-    "sub": "2021–2021 · ∙ 49 552 km ∙ Plug-in Bensin ∙ Automat",
-    "score": 75,
+    "id": "hyundaikon",
+    "merke": "hyundai",
+    "navn": "Hyundai Kona Premium",
+    "sub": "2019–2020 · Diverse",
+    "score": 78,
     "flipScore": 55,
-    "snittPris": 274532,
-    "minPris": 274532,
-    "maxPris": 274532,
-    "snittDager": 38,
-    "antallAnnonser": 1,
-    "prisEndring": -3000,
+    "snittPris": 249266,
+    "minPris": 249000,
+    "maxPris": 249532,
+    "snittDager": 12,
+    "antallAnnonser": 5,
+    "prisEndring": 10055,
     "prisData": [
-      354532,
-      354532,
-      354532,
-      352032,
-      351532,
-      351532
+      295532,
+      291875,
+      292328,
+      291396,
+      307402,
+      262768,
+      305587
     ],
     "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "RAV4 Plug-in 2021 auksjon - ukjent sluttpris, men utgangspunkt 274k er VELDIG bra. Markedsverdi 340-360k. Potensial for 50-70k gevinst hvis kjøpt under 300k.",
-    "avgBucketMedianPrivate": 465000,
-    "avgBucketMedianDealer": 439000,
-    "avgBucketP25Private": 446766,
-    "avgBucketP75Private": 482450,
-    "avgLowballTarget": 263551,
-    "avgLowballMargin": 201449,
-    "avgMedianMargin": 164468,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 7,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 59,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_dealer_min",
-    "valuationBreakdown": {
-      "bucket_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 55,
-    "bestMargin": 134023,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 80,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Plug-in",
-    "sub": "2020–2021 · AWD",
-    "score": 83,
-    "flipScore": 54,
-    "snittPris": 416766,
-    "minPris": 414000,
-    "maxPris": 419532,
-    "snittDager": 22,
-    "antallAnnonser": 6,
-    "prisEndring": -6662,
-    "prisData": [
-      514197,
-      513303,
-      512928,
-      512731,
-      506423,
-      484604,
-      507535
-    ],
-    "volum": [
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6,
-      6
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
     ],
     "tags": [
       {
@@ -2158,12 +2157,8 @@
         "c": "b"
       },
       {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -2178,58 +2173,58 @@
         "c": "g"
       }
     ],
-    "ai": "Toyota RAV4 PHEV Executive 2020 med 61 500 km til 424 900 kr. Privat selger (Høvik). Dette er toppmodell med alt utstyr. Prisen er GOD under markedsverdi for en Executive med lav km. RAV4 PHEV er svært etterspurt. Høy margin mulig.",
-    "avgBucketMedianPrivate": 465000,
-    "avgBucketMedianDealer": 435250,
-    "avgBucketP25Private": 446766,
-    "avgBucketP75Private": 482450,
-    "avgLowballTarget": 389690,
-    "avgLowballMargin": 75310,
-    "avgMedianMargin": 48234,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 9,
+    "ai": "Hyundai Kona Premium — 5 annonser funnet.",
+    "avgBucketMedianPrivate": 298627,
+    "avgBucketMedianDealer": 279225,
+    "avgBucketP25Private": 286313,
+    "avgBucketP75Private": 310940,
+    "avgLowballTarget": 236803,
+    "avgLowballMargin": 61824,
+    "avgMedianMargin": 49361,
+    "avgCompCount": 6,
+    "avgCompSpreadPct": 13,
     "bucketCoverage": 2,
     "bucketDealerCoverage": 2,
-    "priceToBucketPct": 90,
+    "priceToBucketPct": 83,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 2
+      "high": 1,
+      "medium": 1
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
       "comps_dealer_min": 2
     },
     "sellerMix": {
-      "private_likely": 1,
-      "dealer": 4,
+      "private_likely": 4,
       "unknown": 1
     },
     "analysisBaseCount": 2,
     "cohortFilteredCount": 2,
-    "bestDealScore": 76,
-    "bestMargin": 8566,
+    "bestDealScore": 73,
+    "bestMargin": 22737,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 88,
+        "v": 83,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 8,
+        "v": 9,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 90,
+        "v": 75,
         "c": "#1f5fa6"
       },
       {
         "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
+        "v": 52,
+        "c": "#e8a020"
       }
     ]
   },
@@ -2563,122 +2558,6 @@
     ]
   },
   {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Hybrid",
-    "sub": "2020–2018 · 2WD Style aut",
-    "score": 61,
-    "flipScore": 53,
-    "snittPris": 298117,
-    "minPris": 248000,
-    "maxPris": 374934,
-    "snittDager": 30,
-    "antallAnnonser": 4,
-    "prisEndring": -12004,
-    "prisData": [
-      481655,
-      484287,
-      480938,
-      475604,
-      469507,
-      469651
-    ],
-    "volum": [
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "RAV4 Hybrid 2020 privat selger, kun 66k km, fullt utstyr. Pris 319 532 kr er UNDER markedsverdi for privat – forhandlere tar 360k+. Ingen skader. Stor margin mulig.",
-    "avgBucketMedianPrivate": 406750,
-    "avgBucketMedianDealer": 344988,
-    "avgBucketP25Private": 377625,
-    "avgBucketP75Private": 439270,
-    "avgLowballTarget": 280562,
-    "avgLowballMargin": 109250,
-    "avgMedianMargin": 83504,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 12,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 4,
-    "priceToBucketPct": 73,
-    "underBucketShare": 100,
-    "p25DealShare": 75,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 2,
-      "medium": 1,
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_dealer_min",
-    "valuationBreakdown": {
-      "bucket_dealer_min": 2,
-      "comps_dealer_min": 1,
-      "bucket_dealer": 1
-    },
-    "sellerMix": {
-      "unknown": 1,
-      "private_likely": 1,
-      "dealer": 2
-    },
-    "analysisBaseCount": 4,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 62,
-    "bestMargin": 17923,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 66,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 60,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 60,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 44,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen Golf-Serie 1,4",
@@ -2781,40 +2660,40 @@
     ]
   },
   {
-    "id": "hyundaiion",
-    "merke": "hyundai",
-    "navn": "Hyundai Ioniq 5",
-    "sub": "2022–2022 · AWD Premium",
-    "score": 69,
+    "id": "toyotayari",
+    "merke": "toyota",
+    "navn": "Toyota Yaris Cross",
+    "sub": "2022–2022 · 1,5 Hybrid AWD-i Active Tech",
+    "score": 82,
     "flipScore": 52,
-    "snittPris": 299819,
-    "minPris": 254532,
-    "maxPris": 399000,
-    "snittDager": 22,
-    "antallAnnonser": 7,
-    "prisEndring": 13428,
+    "snittPris": 305000,
+    "minPris": 305000,
+    "maxPris": 305000,
+    "snittDager": 2,
+    "antallAnnonser": 1,
+    "prisEndring": -8572,
     "prisData": [
-      365702,
-      366897,
-      365879,
-      365808,
-      379206,
-      369920,
-      379130
+      375608,
+      374227,
+      372041,
+      371559,
+      367208,
+      351071,
+      367036
     ],
     "volum": [
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
     ],
     "tags": [
       {
@@ -2822,185 +2701,72 @@
         "c": "g"
       },
       {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris opp",
+        "t": "Lavt volum",
         "c": "a"
       },
       {
-        "t": "Under bucket",
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
+        "t": "Pris ned",
         "c": "g"
       },
       {
         "t": "Sterk medianmargin",
         "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
       }
     ],
-    "ai": "Hyundai Ioniq 5 AWD 2022 med 78k km til 254 532 kr. Bakfanger byttet etter skade. Prisen er OK, men skadehistorikk reduserer verdi. Markedsverdi rundt 270k.",
-    "avgBucketMedianPrivate": 347126,
-    "avgBucketMedianDealer": 381114,
-    "avgBucketP25Private": 329370,
-    "avgBucketP75Private": 372632,
-    "avgLowballTarget": 283286,
-    "avgLowballMargin": 63840,
-    "avgMedianMargin": 78029,
-    "avgCompCount": 13,
-    "avgCompSpreadPct": 15,
-    "bucketCoverage": 7,
-    "bucketDealerCoverage": 7,
-    "priceToBucketPct": 86,
+    "ai": "Prisen er betydelig under markedsverdi og under privat bucket p25. Marginen er sterk (~42k) og markedsgrunnlaget er solid. Godt kjøp for bilflip.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 359000,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 289750,
+    "avgLowballMargin": 69250,
+    "avgMedianMargin": 54000,
+    "avgCompCount": 23,
+    "avgCompSpreadPct": 9,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": null,
     "underBucketShare": 100,
-    "p25DealShare": 86,
+    "p25DealShare": 0,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 4,
-      "low": 2,
-      "medium": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "comps_private_thin_min": 1,
-      "bucket_private_min": 5,
-      "bucket_dealer_min": 1
-    },
-    "sellerMix": {
-      "unknown": 1,
-      "dealer": 5,
-      "private_likely": 1
-    },
-    "analysisBaseCount": 7,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 65,
-    "bestMargin": 26435,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 74,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 57,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen Golf-Serie E-Golf",
-    "sub": "2018–2016 · Diverse",
-    "score": 41,
-    "flipScore": 51,
-    "snittPris": 99732,
-    "minPris": 89532,
-    "maxPris": 109932,
-    "snittDager": 31,
-    "antallAnnonser": 3,
-    "prisEndring": 3905,
-    "prisData": [
-      135774,
-      135010,
-      136029,
-      133359,
-      133529,
-      143083,
-      139679
-    ],
-    "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
-    ],
-    "tags": [
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "VW e-Golf 2018 med 76 000 km til 114 532 kr. Veldig god pris! Tilsvarende e-Golfer selges for 140-160 000 kr. AC/ladekontakt reparert - bra. God flip-mulighet.",
-    "avgBucketMedianPrivate": 109932,
-    "avgBucketMedianDealer": 131748,
-    "avgBucketP25Private": 109932,
-    "avgBucketP75Private": 109932,
-    "avgLowballTarget": 93748,
-    "avgLowballMargin": 30718,
-    "avgMedianMargin": 24734,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 19,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 2,
-    "priceToBucketPct": 91,
-    "underBucketShare": 100,
-    "p25DealShare": 50,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1,
-      "medium": 1
+      "high": 1
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_dealer_min": 1,
-      "bucket_private_min": 1
+      "comps_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 1,
-      "dealer": 1,
       "unknown": 1
     },
-    "analysisBaseCount": 2,
-    "cohortFilteredCount": 2,
-    "bestDealScore": 76,
-    "bestMargin": 15439,
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 52,
+    "bestMargin": 34161,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 46,
-        "c": "#e8a020"
+        "v": 87,
+        "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 52,
+        "v": 56,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 45,
+        "v": 15,
         "c": "#e8a020"
       },
       {
         "l": "Batteririsiko",
-        "v": 28,
-        "c": "#e8a020"
+        "v": 68,
+        "c": "#3d9960"
       }
     ]
   },
@@ -3118,226 +2884,6 @@
     ]
   },
   {
-    "id": "toyotayari",
-    "merke": "toyota",
-    "navn": "Toyota Yaris Cross",
-    "sub": "2022–2024 · 1,5 Hybrid AWD-i Active Tech",
-    "score": 79,
-    "flipScore": 50,
-    "snittPris": 306333,
-    "minPris": 255000,
-    "maxPris": 359000,
-    "snittDager": 21,
-    "antallAnnonser": 3,
-    "prisEndring": -8572,
-    "prisData": [
-      375608,
-      374227,
-      372041,
-      371559,
-      367208,
-      351071,
-      367036
-    ],
-    "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "Prisen er betydelig under markedsverdi og under privat bucket p25. Marginen er sterk (~42k) og markedsgrunnlaget er solid. Godt kjøp for bilflip.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 385667,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 293063,
-    "avgLowballMargin": 92603,
-    "avgMedianMargin": 79333,
-    "avgCompCount": 11,
-    "avgCompSpreadPct": 14,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 2,
-      "medium": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 3
-    },
-    "sellerMix": {
-      "unknown": 1,
-      "dealer": 2
-    },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 52,
-    "bestMargin": 34161,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 84,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 87,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 45,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "nissanleaf",
-    "merke": "nissan",
-    "navn": "Nissan Leaf 39kWh",
-    "sub": "2022–2022 · N-Connecta Auksjon! Les tekst!",
-    "score": 75,
-    "flipScore": 50,
-    "snittPris": 89000,
-    "minPris": 89000,
-    "maxPris": 89000,
-    "snittDager": 3,
-    "antallAnnonser": 1,
-    "prisEndring": -11563,
-    "prisData": [
-      208627,
-      207621,
-      204975,
-      204279,
-      199175,
-      169450,
-      197064
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Auksjon med startpris 89 000 kr for 2022-modell N-Connecta med 57 360 km. Dette er ekstremt lavt for en bil som har markedsverdi på 180-190 000 kr. Stort potensial for gevinst på 80-90 000 kr hvis du vinner auksjonen til en god pris. Vær oppmerksom på auksjonsvilkår.",
-    "avgBucketMedianPrivate": 174532,
-    "avgBucketMedianDealer": 199000,
-    "avgBucketP25Private": 164032,
-    "avgBucketP75Private": 179843,
-    "avgLowballTarget": 86330,
-    "avgLowballMargin": 88202,
-    "avgMedianMargin": 110000,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 22,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 51,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 50,
-    "bestMargin": 74987,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 80,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "nissanleaf",
     "merke": "nissan",
     "navn": "Nissan Leaf 40kWh",
@@ -3439,120 +2985,6 @@
         "l": "Batteririsiko",
         "v": 52,
         "c": "#e8a020"
-      }
-    ]
-  },
-  {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 |",
-    "sub": "2021–2021 · Executive | Hengerfeste |",
-    "score": 90,
-    "flipScore": 49,
-    "snittPris": 379900,
-    "minPris": 379900,
-    "maxPris": 379900,
-    "snittDager": 69,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      379900,
-      379900,
-      389900,
-      389900,
-      379900,
-      379900
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "2021 RAV4 Executive med kun 58k km til 379.900 kr. UTROLIG god pris! Tilsvarende Executive-modeller på Finn.no ligger 430-450k. Lav km, topputstyr, nylig servicet. Stor margin.",
-    "avgBucketMedianPrivate": 446766,
-    "avgBucketMedianDealer": 469900,
-    "avgBucketP25Private": 424899,
-    "avgBucketP75Private": 473725,
-    "avgLowballTarget": 360905,
-    "avgLowballMargin": 85861,
-    "avgMedianMargin": 90000,
-    "avgCompCount": 1,
-    "avgCompSpreadPct": 0,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 85,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 49,
-    "bestMargin": 49301,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 95,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 65,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
       }
     ]
   },
@@ -3659,120 +3091,6 @@
     ]
   },
   {
-    "id": "hyundaikon",
-    "merke": "hyundai",
-    "navn": "Hyundai Kona Long",
-    "sub": "2022–2022 · Range Premium / NORSK / SKINN / HUD / ACC / R.KAM",
-    "score": 75,
-    "flipScore": 48,
-    "snittPris": 279900,
-    "minPris": 279900,
-    "maxPris": 279900,
-    "snittDager": 3,
-    "antallAnnonser": 1,
-    "prisEndring": 30415,
-    "prisData": [
-      264876,
-      264876,
-      280373,
-      291291,
-      286434,
-      295291
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Priset under markedsverdi for en 2022 Kona Long Range Premium med 23 000 km. Godt utstyr (skinn, HUD, ACC). Privatsalg. Markedsverdi ca 300-310 000 kr. God margin.",
-    "avgBucketMedianPrivate": 369505,
-    "avgBucketMedianDealer": 359450,
-    "avgBucketP25Private": 369505,
-    "avgBucketP75Private": 369505,
-    "avgLowballTarget": 271503,
-    "avgLowballMargin": 98002,
-    "avgMedianMargin": 79550,
-    "avgCompCount": 4,
-    "avgCompSpreadPct": 6,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 76,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "medium",
-    "confidenceBreakdown": {
-      "medium": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 48,
-    "bestMargin": 51505,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 80,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 92,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "toyotayari",
     "merke": "toyota",
     "navn": "Toyota Yaris 1,5",
@@ -3868,231 +3186,6 @@
       {
         "l": "Batteririsiko",
         "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotayari",
-    "merke": "toyota",
-    "navn": "Toyota Yaris Strøken/Rustbehandlet/LAV-KM/EU-10-2027",
-    "sub": "2019–2019 · Diverse",
-    "score": 75,
-    "flipScore": 42,
-    "snittPris": 169999,
-    "minPris": 169999,
-    "maxPris": 169999,
-    "snittDager": 74,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      169999,
-      169999,
-      169999,
-      169999,
-      169999,
-      169999
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota Yaris hybrid med svært lav km (53k) og rustbehandlet. Prisen er god for en 2019-modell med Toyota Relax-garanti. God margin mulig ved videresalg.",
-    "avgBucketMedianPrivate": 222236,
-    "avgBucketMedianDealer": 228166,
-    "avgBucketP25Private": 186900,
-    "avgBucketP75Private": 223236,
-    "avgLowballTarget": 161499,
-    "avgLowballMargin": 60737,
-    "avgMedianMargin": 58167,
-    "avgCompCount": 5,
-    "avgCompSpreadPct": 9,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 76,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 42,
-    "bestMargin": 30696,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 80,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 90,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 44,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.3 1ST",
-    "sub": "2021–2021 · 204 HK/EU-23.03.2028/PARK SENSOR F+B/ACC/S+V DEKK/",
-    "score": 85,
-    "flipScore": 42,
-    "snittPris": 162000,
-    "minPris": 162000,
-    "maxPris": 162000,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": -2331,
-    "prisData": [
-      208571,
-      208769,
-      208096,
-      208656,
-      206183,
-      216199,
-      206240
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "ID.3 1st 2021 med kun 59 000 km til 169k fra auksjon er et svært godt kjøp. Prisen er langt under markedsverdi. Potensial for stor margin etter klargjøring.",
-    "avgBucketMedianPrivate": 206983,
-    "avgBucketMedianDealer": 209000,
-    "avgBucketP25Private": 203258,
-    "avgBucketP75Private": 210709,
-    "avgLowballTarget": 153900,
-    "avgLowballMargin": 53083,
-    "avgMedianMargin": 47000,
-    "avgCompCount": 14,
-    "avgCompSpreadPct": 15,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 78,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 42,
-    "bestMargin": 28990,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 90,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 89,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
         "c": "#3d9960"
       }
     ]
@@ -4404,333 +3497,6 @@
     ]
   },
   {
-    "id": "hyundaikon",
-    "merke": "hyundai",
-    "navn": "Hyundai Kona N",
-    "sub": "2025–2025 · Line LR SOM NY! LEVERINGSKLAR!",
-    "score": 80,
-    "flipScore": 40,
-    "snittPris": 389900,
-    "minPris": 389900,
-    "maxPris": 389900,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": -14058,
-    "prisData": [
-      290599,
-      279399,
-      276541,
-      276541,
-      276541,
-      276541
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "Hyundai Kona N Line LR 2025 med BARE 411 km til 429 900 kr. Dette er praktisk talt en nybil til en bruktbilpris. Hyundai Kona er populær, og N Line gir ekstra verdi. Størst marginpotensial på listen. Ingen skader oppgitt.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 459900,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 368455,
-    "avgLowballMargin": 91445,
-    "avgMedianMargin": 70000,
-    "avgCompCount": 0,
-    "avgCompSpreadPct": null,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "ai_fallback",
-    "valuationBreakdown": {
-      "ai_fallback": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 40,
-    "bestMargin": 64555,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 85,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 83,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 92,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotayari",
-    "merke": "toyota",
-    "navn": "Toyota Yaris 1.5",
-    "sub": "2018–2018 · VVT-i HYBRID | KEYLESS | NAVI | KAMERA | DAB |RELAX",
-    "score": 65,
-    "flipScore": 39,
-    "snittPris": 155000,
-    "minPris": 155000,
-    "maxPris": 155000,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": 4244,
-    "prisData": [
-      226909,
-      227989,
-      228697,
-      228614,
-      229916,
-      231153
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota Yaris Hybrid med lav km og Toyota Relax-garanti til 2027. Prisen på 165k er på nivå med forhandlere, men Yaris Hybrid er populær. Liten margin.",
-    "avgBucketMedianPrivate": 171118,
-    "avgBucketMedianDealer": 171850,
-    "avgBucketP25Private": 145559,
-    "avgBucketP75Private": 196677,
-    "avgLowballTarget": 145559,
-    "avgLowballMargin": 25559,
-    "avgMedianMargin": 16850,
-    "avgCompCount": 9,
-    "avgCompSpreadPct": 11,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 91,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 39,
-    "bestMargin": 2705,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 70,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 9,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 36,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Active",
-    "sub": "2021–2021 · AWD Hybrid/Lav km/En eier",
-    "score": 90,
-    "flipScore": 38,
-    "snittPris": 399000,
-    "minPris": 399000,
-    "maxPris": 399000,
-    "snittDager": 5,
-    "antallAnnonser": 1,
-    "prisEndring": -20998,
-    "prisData": [
-      392358,
-      366697,
-      366697,
-      366697,
-      373360,
-      379900,
-      371360
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Ekstremt lav km (21 600) for en 2021-modell, og prisen er svært attraktiv. Tilsvarende biler med denne km-standen koster 430-450k hos forhandler. En eier og ingen skader. Stor margin.",
-    "avgBucketMedianPrivate": 465000,
-    "avgBucketMedianDealer": 465000,
-    "avgBucketP25Private": 446766,
-    "avgBucketP75Private": 482450,
-    "avgLowballTarget": 387030,
-    "avgLowballMargin": 77970,
-    "avgMedianMargin": 66000,
-    "avgCompCount": 0,
-    "avgCompSpreadPct": null,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 86,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 38,
-    "bestMargin": 55455,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 95,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 69,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen ID.4 2021",
@@ -4925,238 +3691,6 @@
       {
         "l": "Batteririsiko",
         "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.4 Pure/ACC/Navi",
-    "sub": "2021–2021 · Pro/Varmepumpe/Lane assist/Vårsalg!",
-    "score": 85,
-    "flipScore": 36,
-    "snittPris": 217000,
-    "minPris": 217000,
-    "maxPris": 217000,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": 8000,
-    "prisData": [
-      209000,
-      209000,
-      209000,
-      208500,
-      217000,
-      217000
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "VW ID.4 Pure 2021 til 209k er en meget god pris. 52kWh-batteri, lav km, fra forhandler. Markedsverdi for tilsvarende er rundt 240-250k. God margin og populær modell.",
-    "avgBucketMedianPrivate": 259483,
-    "avgBucketMedianDealer": 259990,
-    "avgBucketP25Private": 236959,
-    "avgBucketP75Private": 282008,
-    "avgLowballTarget": 206150,
-    "avgLowballMargin": 53333,
-    "avgMedianMargin": 42990,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 12,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 84,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 36,
-    "bestMargin": 28918,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 90,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 67,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Style",
-    "sub": "2024–2024 · / AWD / Komplett historikk/Kampanje",
-    "score": 80,
-    "flipScore": 35,
-    "snittPris": 469000,
-    "minPris": 469000,
-    "maxPris": 469000,
-    "snittDager": 22,
-    "antallAnnonser": 1,
-    "prisEndring": -21000,
-    "prisData": [
-      518278,
-      518278,
-      518278,
-      518278,
-      497278,
-      497278
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "RAV4 Hybrid Style AWD med 52 826 km til 469 000 kr er en svært god deal. Bilen har full servicehistorikk, hengerfeste og mye utstyr. Markedsverdi for tilsvarende biler er høyere, og med kampanjeinnbytte kan marginen bli enda bedre.",
-    "avgBucketMedianPrivate": 514900,
-    "avgBucketMedianDealer": 499900,
-    "avgBucketP25Private": 491175,
-    "avgBucketP75Private": 529900,
-    "avgLowballTarget": 445550,
-    "avgLowballMargin": 69350,
-    "avgMedianMargin": 30900,
-    "avgCompCount": 16,
-    "avgCompSpreadPct": 14,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 91,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_dealer_min",
-    "valuationBreakdown": {
-      "bucket_dealer_min": 1
-    },
-    "sellerMix": {
-      "dealer": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 35,
-    "bestMargin": 23355,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 85,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 25,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 84,
         "c": "#3d9960"
       }
     ]
