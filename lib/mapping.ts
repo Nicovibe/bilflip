@@ -46,7 +46,7 @@ export type RawCar = Record<string, unknown> & {
   medianMargin?: number | null;
   valuationSource?: string | null;
   valuationGap?: number | null;
-  selgerKlasse?: 'private' | 'private_likely' | 'dealer' | 'dealer_likely' | 'body_shop' | 'unknown' | string;
+  selgerKlasse?: 'private' | 'private_likely' | 'dealer' | 'dealer_likely' | 'auction' | 'body_shop' | 'unknown' | string;
   selgerKonfidens?: number | null;
   dealerScore?: number | null;
   privateScore?: number | null;
@@ -108,7 +108,7 @@ export type Car = {
   daysListed: string;
   daysListedRaw: number;
   // seller
-  sellerClass: 'Privat' | 'Trolig privat' | 'Forhandler' | 'Trolig forhandler' | 'Verksted/skade' | 'Uavklart';
+  sellerClass: 'Privat' | 'Trolig privat' | 'Forhandler' | 'Trolig forhandler' | 'Auksjon' | 'Verksted/skade' | 'Uavklart';
   sellerType: string;
   sellerKortNavn: string | null;
   sellerKonfidens: number | null;  // 0-1 from cluster-aware classifier; null = legacy data
@@ -136,6 +136,7 @@ const sellerClassMap: Record<string, Car['sellerClass']> = {
   private_likely: 'Trolig privat',
   dealer: 'Forhandler',
   dealer_likely: 'Trolig forhandler',
+  auction: 'Auksjon',
   body_shop: 'Verksted/skade',
   unknown: 'Uavklart',
 };
@@ -314,6 +315,7 @@ export function sellerLabel(klasse: Car['sellerClass'], konfidens: number | null
   const lowConf = k < 0.5;
 
   if (klasse === 'Privat') return { label: 'Privat', tone: 'g', isUncertain: false };
+  if (klasse === 'Auksjon') return { label: 'Auksjon', tone: 'g', isUncertain: false };
   if (klasse === 'Forhandler') return { label: 'Forhandler', tone: 'b', isUncertain: false };
   if (klasse === 'Verksted/skade') return { label: 'Verksted/skade', tone: 'r', isUncertain: false };
 
