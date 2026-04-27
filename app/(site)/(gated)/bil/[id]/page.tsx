@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { loadCar } from '@/lib/data';
+import { loadPriceHistory } from '@/lib/database';
 import { fmt, kr } from '@/lib/format';
 import { valuationSourceLabel, anbefalingLabel } from '@/lib/mapping';
 import { CarGallery } from '@/components/CarGallery';
-import { BigSpark } from '@/components/BigSpark';
+import { PriceHistoryGraph } from '@/components/PriceHistoryGraph';
 import { DetailMap } from '@/components/DetailMap';
 import { FavoriteButton } from '@/components/FavoriteButton';
 
@@ -22,8 +23,9 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function BilDetalj({ params }: Props) {
   const { id } = await params;
-  const car = await loadCar(id);
+  const [car, allHistory] = await Promise.all([loadCar(id), loadPriceHistory()]);
   if (!car) notFound();
+  const history = allHistory[id] || [];
 
   // Calculation (uses real per-car omreg/klargj from scraper, plus a finance estimate)
   const finans = Math.round(car.price * 0.012);
@@ -123,30 +125,10 @@ export default async function BilDetalj({ params }: Props) {
             {/* Price history */}
             <div className="tx-card" style={{ marginTop: 16 }}>
               <div className="tx-card-h">
-                <h4>PRISHISTORIKK · {car.priceHistory.length} PUNKTER</h4>
-                {car.priceChange !== 0 && (
-                  <span className="mono" style={{ fontSize: 11, color: car.priceChange < 0 ? 'var(--green)' : 'var(--red)' }}>
-                    {car.priceChange < 0 ? '↘' : '↗'} {kr(Math.abs(car.priceChange))}
-                  </span>
-                )}
+                <h4>PRISHISTORIKK</h4>
               </div>
-              <BigSpark points={car.priceHistory} />
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  fontFamily: 'var(--mono)',
-                  fontSize: 10,
-                  color: 'var(--ink-3)',
-                  marginTop: 8,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                <span>FØRSTE PRIS · {kr(car.priceHistory[0])}</span>
-                <span>NÅ · {kr(car.priceHistory[car.priceHistory.length - 1])}</span>
-              </div>
-              <p className="note-line">{car.ai}</p>
+              <PriceHistoryGraph history={history} fallbackPrice={car.price} />
+              <p className="note-line" style={{ marginTop: 12 }}>{car.ai}</p>
               {car.aiViktigsteRisiko && (
                 <p className="note-line" style={{ color: 'var(--red)', borderTop: '1px solid var(--red-bg)' }}>
                   <strong>Viktigste risiko:</strong> {car.aiViktigsteRisiko}
@@ -239,12 +221,12 @@ export default async function BilDetalj({ params }: Props) {
               <div className="kv-row"><span className="k">Finans (60d, 1.2%)</span><span className="v">{kr(finans)}</span></div>
               <div className="kv-row"><span className="k">Sum kost</span><span className="v" style={{ color: 'var(--ink)' }}>{kr(totKost)}</span></div>
               <div className="kv-row">
-                <span className="k">Realistisk salgspris{car.dealerEstSell != null ? ' (privat)' : ''}</span>
+                <span className="k">Est. salgspris{car.dealerEstSell != null ? ' (privat)' : ''}</span>
                 <span className="v" style={{ color: 'var(--ink)' }}>{kr(car.estSell)}</span>
               </div>
               {car.dealerEstSell != null && (
                 <div className="kv-row" style={{ opacity: 0.7 }}>
-                  <span className="k" style={{ fontSize: 11 }}>Forhandler-estimat (ref)</span>
+                  <span className="k" style={{ fontSize: 11 }}>Forhandler-median (ref)</span>
                   <span className="v mono" style={{ fontSize: 11, color: 'var(--ink-3)' }}>{kr(car.dealerEstSell)}</span>
                 </div>
               )}

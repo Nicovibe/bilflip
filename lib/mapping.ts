@@ -151,28 +151,34 @@ export function mapCar(raw: RawCar): Car {
   else if (raw.priceDrops && raw.priceDrops > 0) badge = 'PRIS↓';
   else if (raw.dagerRaw !== undefined && raw.dagerRaw <= 1) badge = 'NY';
 
-  // Realistic resell price: when buying from a dealer, you cannot resell at
-  // dealer prices — your ceiling is the private median. The scraper's
-  // `salgspris` often sits at or above the dealer median, which inflates
-  // margin for forhandler cars. We override it here so the score reflects
-  // real flip economics.
+  // The scraper now anchors expectedMarketPrice to the private median for
+  // dealer-bucketed targets (valuationSource='bucket_private' or
+  // 'comps_private_fallback'), so raw.salgspris and raw.gevinst already
+  // reflect realistic flip economics. We trust them directly.
+  // dealerEstSell is preserved as a reference field — populated when the
+  // valuation source indicates the price was anchored to private comps,
+  // because that means the original dealer-asking-equivalent is hidden in
+  // the bucket-dealer-median (one click below in the data).
   const omreg = raw.omreg ?? 5600;
   const klargjoring = raw.klargjoring ?? 8500;
   const isDealer = raw.selgerKlasse === 'dealer';
-  const privateMedian = raw.bucketMedianPrivate ?? null;
-  const useRealistic = isDealer && privateMedian != null && privateMedian > 0;
-  const estSellRealistic = useRealistic ? privateMedian : raw.salgspris;
-  const marginRealistic = useRealistic
-    ? estSellRealistic - raw.pris - omreg - klargjoring
-    : raw.gevinst;
-  const dealerEstSell = useRealistic ? raw.salgspris : null;
+  const valuationSource = raw.valuationSource || '';
+  const privateAnchored = valuationSource === 'comps_private'
+    || valuationSource === 'comps_private_fallback'
+    || valuationSource === 'comps_private_thin'
+    || valuationSource === 'bucket_private';
+  // Show dealer-median as ref only when seller is a dealer AND we anchored
+  // to private (so user sees how dealer pricing differs from realistic resell).
+  const dealerEstSell = isDealer && privateAnchored && raw.bucketMedianDealer != null
+    ? raw.bucketMedianDealer
+    : null;
 
   // Composite scoring: bars.total replaces dealScore everywhere in the UI.
   // The "Pris vs marked" bar carries the original scraper dealScore.
   const bars = computeBars({
     pris: raw.pris,
-    gevinst: marginRealistic,
-    salgspris: estSellRealistic,
+    gevinst: raw.gevinst,
+    salgspris: raw.salgspris,
     omreg,
     klargjoring,
     medianMargin: raw.medianMargin ?? null,
@@ -192,8 +198,8 @@ export function mapCar(raw: RawCar): Car {
     km: raw.km,
     location: raw.lok,
     price: raw.pris,
-    estSell: estSellRealistic,
-    margin: marginRealistic,
+    estSell: raw.salgspris,
+    margin: raw.gevinst,
     dealerEstSell,
     omreg,
     klargjoring,

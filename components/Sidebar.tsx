@@ -9,6 +9,7 @@ export function Sidebar({ scannedToday = 0, alertsToday = 0 }: { scannedToday?: 
   const market: Item[] = [
     { id: 'overview', label: 'Oversikt', icon: '⌂', href: '/' },
     { id: 'inventory', label: 'Markedet', icon: '☰', badge: scannedToday || undefined, href: '/markedet' },
+    { id: 'database', label: 'Database', icon: '▤', href: '/database' },
     { id: 'dashboard', label: 'Dashboard', icon: '⊟', href: '/dashboard' },
     { id: 'alerts', label: 'Varsler', icon: '◉', badge: alertsToday || undefined, href: '/varsler', comingSoon: true },
   ];

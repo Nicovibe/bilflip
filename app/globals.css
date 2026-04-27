@@ -179,6 +179,11 @@ button:focus-visible, a:focus-visible { outline-offset: 3px; }
 .tx-table .badge.new { background: var(--blue-bg); color: var(--blue); }
 .tx-table .badge.dealer { background: var(--surface-3); color: var(--ink-2); }
 
+.status-pill { display: inline-block; padding: 2px 8px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; border-radius: 3px; background: var(--surface-3); color: var(--ink-2); }
+.status-pill.status-aktiv { background: var(--green-bg); color: var(--green); }
+.status-pill.status-solgt { background: var(--blue-bg); color: var(--blue); }
+.status-pill.status-fjernet { background: var(--surface-3); color: var(--ink-3); }
+
 /* Section header for the dashboard feeds (hot / review / dealer / other) */
 .feed-section-h { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; margin: 28px 0 12px; font-family: var(--mono); font-size: 11px; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.08em; }
 .feed-section-h .dot { width: 8px; height: 8px; border-radius: 50%; }
