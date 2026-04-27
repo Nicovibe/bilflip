@@ -40,9 +40,15 @@ export async function loadCars(): Promise<Car[]> {
     loadImageCache(),
   ]);
   return raw.map((r) => {
+    // Prefer images straight from biler.json (set by scraper detail.js as of
+    // the image-scraping rework). Fall back to images-cache.json for any car
+    // that hasn't been re-scraped yet — keeps the legacy cache useful during
+    // the transition.
+    const fromScraper = Array.isArray(r.images) ? (r.images as string[]) : null;
     const finn = r.finn != null ? String(r.finn) : '';
     const entry = finn ? imageCache[finn] : undefined;
-    const images = Array.isArray(entry?.urls) ? entry.urls : [];
+    const fromCache = Array.isArray(entry?.urls) ? entry.urls : [];
+    const images = fromScraper && fromScraper.length > 0 ? fromScraper : fromCache;
     return mapCar({ ...r, images });
   });
 }
@@ -66,9 +72,11 @@ export async function loadFeeds(): Promise<{ hot: Car[]; review: Car[]; dealerPi
   ]);
   if (!f) return { hot: [], review: [], dealerPicks: [], generatedAt: null };
   const enrich = (r: RawCar) => {
+    const fromScraper = Array.isArray(r.images) ? (r.images as string[]) : null;
     const finn = r.finn != null ? String(r.finn) : '';
     const entry = finn ? imageCache[finn] : undefined;
-    const images = Array.isArray(entry?.urls) ? entry.urls : [];
+    const fromCache = Array.isArray(entry?.urls) ? entry.urls : [];
+    const images = fromScraper && fromScraper.length > 0 ? fromScraper : fromCache;
     return mapCar({ ...r, images });
   };
   return {
