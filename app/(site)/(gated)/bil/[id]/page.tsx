@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { loadCar } from '@/lib/data';
 import { loadPriceHistory } from '@/lib/database';
 import { fmt, kr } from '@/lib/format';
-import { valuationSourceLabel, anbefalingLabel } from '@/lib/mapping';
+import { valuationSourceLabel, anbefalingLabel, sellerLabel } from '@/lib/mapping';
 import { CarGallery } from '@/components/CarGallery';
 import { PriceHistoryGraph } from '@/components/PriceHistoryGraph';
 import { DetailMap } from '@/components/DetailMap';
@@ -89,7 +89,17 @@ export default async function BilDetalj({ params }: Props) {
                 <div className="kv-row"><span className="k">Årgang</span><span className="v">{car.year}</span></div>
                 <div className="kv-row"><span className="k">Km</span><span className="v">{fmt(car.km)}</span></div>
                 <div className="kv-row"><span className="k">Lokasjon</span><span className="v">{car.location}</span></div>
-                <div className="kv-row"><span className="k">Selger</span><span className="v">{car.sellerClass}</span></div>
+                <div className="kv-row">
+                  <span className="k">Selger</span>
+                  <span className="v">
+                    {sellerLabel(car.sellerClass, car.sellerKonfidens).label}
+                    {car.sellerKonfidens != null && (
+                      <span style={{ color: 'var(--ink-3)', fontSize: 11, marginLeft: 6 }}>
+                        ({Math.round(car.sellerKonfidens * 100)} %)
+                      </span>
+                    )}
+                  </span>
+                </div>
                 {car.fuel && (
                   <div className="kv-row"><span className="k">Drivstoff</span><span className="v">{car.fuel}</span></div>
                 )}

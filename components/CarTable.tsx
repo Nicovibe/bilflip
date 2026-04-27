@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { fmt, kr } from '@/lib/format';
-import type { Car } from '@/lib/mapping';
+import { sellerLabel, type Car } from '@/lib/mapping';
 import { CarImage } from './CarImage';
 import { MiniSpark } from './MiniSpark';
 
@@ -73,10 +73,15 @@ function CarRow({ car, index, compact, showSpark }: { car: Car; index: number; c
             <div className="car-name">
               {car.title}
               {car.badge && <span className={`badge ${car.badge === 'HOT' ? 'hot' : car.badge === 'NY' ? 'new' : ''}`}>{car.badge}</span>}
-              {car.sellerClass === 'Forhandler' && <span className="badge dealer">FORHANDLER</span>}
+              {(() => {
+                const lbl = sellerLabel(car.sellerClass, car.sellerKonfidens);
+                if (lbl.tone === 'b') return <span className="badge dealer">{lbl.label.toUpperCase()}</span>;
+                if (lbl.isUncertain) return <span className="badge unknown">{lbl.label.toUpperCase()}</span>;
+                return null;
+              })()}
             </div>
             <div className="car-sub">
-              {car.year} · {fmt(car.km)} KM · {car.sellerClass}
+              {car.year} · {fmt(car.km)} KM · {sellerLabel(car.sellerClass, car.sellerKonfidens).label}
               {car.fuel ? ` · ${car.fuel}` : ''}
             </div>
           </div>
@@ -115,6 +120,10 @@ export function CarTableExplorer({ cars }: { cars: Car[] }) {
   const [filter, setFilter] = useState('Alle');
   const [sort, setSort] = useState<'margin' | 'price' | 'score' | 'days'>('margin');
   const [q, setQ] = useState('');
+  // Default ON: hide uncertain seller classifications. They're in biler.json
+  // for transparency, but they shouldn't dominate /markedet by default — most
+  // of them were misclassified dealers showing fake margins. Toggle off to see them.
+  const [hideUncertain, setHideUncertain] = useState(true);
 
   // Show every brand present in the dataset (user wants all car models as chips
   // on /markedet — dashboard had a hardcoded subset before).
@@ -130,6 +139,9 @@ export function CarTableExplorer({ cars }: { cars: Car[] }) {
     if (filter !== 'Alle') {
       const f = filter.toLowerCase();
       list = list.filter((c) => c.brand.toLowerCase() === f);
+    }
+    if (hideUncertain) {
+      list = list.filter((c) => !sellerLabel(c.sellerClass, c.sellerKonfidens).isUncertain);
     }
     if (q) {
       const qq = q.toLowerCase();
@@ -147,7 +159,7 @@ export function CarTableExplorer({ cars }: { cars: Car[] }) {
     if (sort === 'score') list.sort((a, b) => b.dealScore - a.dealScore);
     if (sort === 'days') list.sort((a, b) => a.daysListedRaw - b.daysListedRaw);
     return list;
-  }, [cars, filter, sort, q]);
+  }, [cars, filter, sort, q, hideUncertain]);
 
   return (
     <>
@@ -184,6 +196,14 @@ export function CarTableExplorer({ cars }: { cars: Car[] }) {
           <option value="score">Sortér: Score ↓</option>
           <option value="days">Sortér: Nyeste ↓</option>
         </select>
+        <button
+          className={`tx-chip ${hideUncertain ? 'active' : ''}`}
+          onClick={() => setHideUncertain((v) => !v)}
+          aria-pressed={hideUncertain}
+          title="Skjul biler hvor selger-klassifikasjonen er usikker (anbefalt)"
+        >
+          {hideUncertain ? '✓ Skjul usikker' : 'Inkluder usikker'}
+        </button>
       </div>
       <CarTable cars={filtered} />
     </>

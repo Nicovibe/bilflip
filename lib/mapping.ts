@@ -46,8 +46,12 @@ export type RawCar = Record<string, unknown> & {
   medianMargin?: number | null;
   valuationSource?: string | null;
   valuationGap?: number | null;
-  selgerKlasse?: 'private' | 'private_likely' | 'dealer' | 'body_shop' | 'unknown' | string;
+  selgerKlasse?: 'private' | 'private_likely' | 'dealer' | 'dealer_likely' | 'body_shop' | 'unknown' | string;
+  selgerKonfidens?: number | null;
+  dealerScore?: number | null;
+  privateScore?: number | null;
   selgerType?: string;
+  kortSelgerNavn?: string | null;
   dager?: string;
   dagerRaw?: number;
   tags?: Array<{ t: string; c: string }>;
@@ -104,8 +108,10 @@ export type Car = {
   daysListed: string;
   daysListedRaw: number;
   // seller
-  sellerClass: 'Privat' | 'Trolig privat' | 'Forhandler' | 'Verksted/skade' | 'Uavklart';
+  sellerClass: 'Privat' | 'Trolig privat' | 'Forhandler' | 'Trolig forhandler' | 'Verksted/skade' | 'Uavklart';
   sellerType: string;
+  sellerKortNavn: string | null;
+  sellerKonfidens: number | null;  // 0-1 from cluster-aware classifier; null = legacy data
   // narrative
   reasons: string[];
   negotiation: string[];
@@ -129,6 +135,7 @@ const sellerClassMap: Record<string, Car['sellerClass']> = {
   private: 'Privat',
   private_likely: 'Trolig privat',
   dealer: 'Forhandler',
+  dealer_likely: 'Trolig forhandler',
   body_shop: 'Verksted/skade',
   unknown: 'Uavklart',
 };
@@ -161,7 +168,7 @@ export function mapCar(raw: RawCar): Car {
   // the bucket-dealer-median (one click below in the data).
   const omreg = raw.omreg ?? 5600;
   const klargjoring = raw.klargjoring ?? 8500;
-  const isDealer = raw.selgerKlasse === 'dealer';
+  const isDealerSide = raw.selgerKlasse === 'dealer' || raw.selgerKlasse === 'dealer_likely';
   const valuationSource = raw.valuationSource || '';
   const privateAnchored = valuationSource === 'comps_private'
     || valuationSource === 'comps_private_fallback'
@@ -169,7 +176,7 @@ export function mapCar(raw: RawCar): Car {
     || valuationSource === 'bucket_private';
   // Show dealer-median as ref only when seller is a dealer AND we anchored
   // to private (so user sees how dealer pricing differs from realistic resell).
-  const dealerEstSell = isDealer && privateAnchored && raw.bucketMedianDealer != null
+  const dealerEstSell = isDealerSide && privateAnchored && raw.bucketMedianDealer != null
     ? raw.bucketMedianDealer
     : null;
 
@@ -229,6 +236,8 @@ export function mapCar(raw: RawCar): Car {
     daysListedRaw: raw.dagerRaw ?? 0,
     sellerClass: sellerClassMap[raw.selgerKlasse || 'unknown'] || 'Uavklart',
     sellerType: raw.selgerType || '',
+    sellerKortNavn: raw.kortSelgerNavn ?? null,
+    sellerKonfidens: typeof raw.selgerKonfidens === 'number' ? raw.selgerKonfidens : null,
     reasons: raw.reasons || [],
     negotiation: raw.negotiation || [],
     damageFlags: raw.damageFlags || [],
@@ -252,8 +261,12 @@ export function valuationSourceLabel(v: string | null): string {
   const map: Record<string, string> = {
     comps_private: 'Private komper',
     comps_private_fallback: 'Private komper (fallback)',
+    comps_private_thin: 'Private komper (få)',
+    bucket_private: 'Privat bucket-median',
     comps_dealer: 'Forhandlerkomper',
     comps_dealer_fallback: 'Dealer-komper som gulv',
+    comps_dealer_anchor_uncertain: 'Forhandler-anker (usikker selger)',
+    bucket_dealer_anchor_uncertain: 'Forhandler bucket (usikker selger)',
     comps_mixed: 'Miks av komper',
     ai_fallback: 'AI-estimat',
     naive_fallback: 'Enkel tommelfingerregel',
@@ -267,4 +280,43 @@ export function anbefalingLabel(a: Car['anbefaling']): { label: string; tone: 'g
   if (a === 'VURDER') return { label: 'Vurder', tone: 'b' };
   if (a === 'SKIP') return { label: 'Skip', tone: 'r' };
   return null;
+}
+
+/**
+ * Konfidens-aware seller label. Combines klasse and konfidens into a single
+ * user-facing string. Konfidens < 0.5 adds "(usikker)" so the user knows the
+ * classifier wasn't sure. Used by /bil/[id], CarTable, and the markedet feed.
+ *
+ * Returns:
+ *   { label, tone, isUncertain }
+ *
+ *   tone — color for the pill: g=green/private, b=blue/dealer, r=red/body, n=neutral/unknown
+ *   isUncertain — true when konfidens < 0.5 OR klasse === 'Uavklart'
+ */
+export function sellerLabel(klasse: Car['sellerClass'], konfidens: number | null): {
+  label: string;
+  tone: 'g' | 'b' | 'r' | 'n';
+  isUncertain: boolean;
+} {
+  // Treat missing konfidens (legacy data) as "trust the klasse string" — old DB rows
+  // didn't have it, but the klasse was still computed by the deterministic rules.
+  const k = konfidens ?? 1;
+  const lowConf = k < 0.5;
+
+  if (klasse === 'Privat') return { label: 'Privat', tone: 'g', isUncertain: false };
+  if (klasse === 'Forhandler') return { label: 'Forhandler', tone: 'b', isUncertain: false };
+  if (klasse === 'Verksted/skade') return { label: 'Verksted/skade', tone: 'r', isUncertain: false };
+
+  if (klasse === 'Trolig privat') {
+    return lowConf
+      ? { label: 'Privat (usikker)', tone: 'n', isUncertain: true }
+      : { label: 'Trolig privat', tone: 'g', isUncertain: false };
+  }
+  if (klasse === 'Trolig forhandler') {
+    return lowConf
+      ? { label: 'Forhandler (usikker)', tone: 'n', isUncertain: true }
+      : { label: 'Trolig forhandler', tone: 'b', isUncertain: false };
+  }
+  // Uavklart / unknown
+  return { label: 'Ukjent selger', tone: 'n', isUncertain: true };
 }
