@@ -3,6 +3,8 @@
  * that the UI components consume. Keeps UI decoupled from scraper changes.
  */
 
+import { computeBars, type Bars } from './scoring';
+
 export type RawCar = Record<string, unknown> & {
   id: number;
   merke: string;
@@ -75,7 +77,9 @@ export type Car = {
   klargjoring: number;
   // scores
   score: number;
-  dealScore: number;
+  dealScore: number;          // overwritten with composite total (see scoring.ts)
+  prisVsMarkedScore: number;  // raw scraper dealScore (kept for the pris-vs-marked bar)
+  bars: Bars;                 // four-bar breakdown shown on the detail page
   anbefaling: 'KJØP' | 'VURDER' | 'SKIP' | null;
   confidence: 'high' | 'medium' | 'low' | null;
   compConfidence: 'high' | 'medium' | 'low' | null;
@@ -146,6 +150,21 @@ export function mapCar(raw: RawCar): Car {
   else if (raw.priceDrops && raw.priceDrops > 0) badge = 'PRIS↓';
   else if (raw.dagerRaw !== undefined && raw.dagerRaw <= 1) badge = 'NY';
 
+  // Composite scoring: bars.total replaces dealScore everywhere in the UI.
+  // The "Pris vs marked" bar carries the original scraper dealScore.
+  const bars = computeBars({
+    pris: raw.pris,
+    gevinst: raw.gevinst,
+    salgspris: raw.salgspris,
+    omreg: raw.omreg,
+    klargjoring: raw.klargjoring,
+    medianMargin: raw.medianMargin ?? null,
+    compConfidence: raw.compConfidence ?? null,
+    damageFlags: raw.damageFlags || [],
+    dealScore: raw.dealScore ?? raw.score,
+    score: raw.score,
+  });
+
   return {
     id: raw.id,
     finnCode: raw.finn,
@@ -161,7 +180,9 @@ export function mapCar(raw: RawCar): Car {
     omreg: raw.omreg ?? 5600,
     klargjoring: raw.klargjoring ?? 8500,
     score: raw.score,
-    dealScore: raw.dealScore ?? raw.score,
+    dealScore: bars.total,
+    prisVsMarkedScore: bars.prisVsMarked,
+    bars,
     anbefaling: (raw.anbefaling as Car['anbefaling']) || null,
     confidence: raw.confidence ?? null,
     compConfidence: raw.compConfidence ?? null,

@@ -37,12 +37,13 @@ export default async function BilDetalj({ params }: Props) {
   };
   const anb = anbefalingLabel(car.anbefaling);
 
-  // AI score breakdown (derived from the rich data we have)
+  // AI score breakdown — composite total = mean of these four bars (lib/scoring.ts)
+  const marginSubtitle = `${car.bars.marginPct >= 0 ? '+' : ''}${car.bars.marginPct.toFixed(1)}%`;
   const aiBars = [
-    { label: 'Pris vs marked', value: clamp(car.dealScore) },
-    { label: 'Comp-tillit', value: car.compConfidence === 'high' ? 90 : car.compConfidence === 'medium' ? 65 : 40 },
-    { label: 'Selger-profil', value: car.sellerClass === 'Privat' ? 88 : car.sellerClass === 'Forhandler' ? 60 : 50 },
-    { label: 'Tilstand-flagg', value: car.damageFlags.length === 0 ? 84 : 40 },
+    { label: 'Margin', value: car.bars.margin, sub: marginSubtitle },
+    { label: 'Comp-tillit', value: car.bars.comp },
+    { label: 'Tilstand-flagg', value: car.bars.tilstand },
+    { label: 'Pris vs marked', value: car.bars.prisVsMarked },
   ];
 
   return (
@@ -264,7 +265,14 @@ export default async function BilDetalj({ params }: Props) {
                 {aiBars.map((b) => (
                   <div key={b.label} className="ai-bar-row">
                     <div className="lbl">
-                      <span>{b.label}</span>
+                      <span>
+                        {b.label}
+                        {b.sub && (
+                          <span style={{ marginLeft: 8, color: 'var(--ink-3)', fontFamily: 'var(--mono)', fontSize: 10 }}>
+                            {b.sub}
+                          </span>
+                        )}
+                      </span>
                       <span className="v">{b.value}</span>
                     </div>
                     <div className="ai-bar-track">
@@ -350,6 +358,4 @@ export default async function BilDetalj({ params }: Props) {
   );
 }
 
-function clamp(n: number): number {
-  return Math.max(0, Math.min(100, Math.round(n)));
-}
+
