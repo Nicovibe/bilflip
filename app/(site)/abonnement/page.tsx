@@ -1,18 +1,39 @@
 import Link from 'next/link';
+import { auth } from '@/auth';
+import { isEntitled } from '@/lib/plans';
 
 export const metadata = {
   title: 'Abonnement — bilvipp',
-  description: 'Velg plan. 14 dager gratis. Ingen binding.',
+  description: 'Velg plan. 14 dager gratis Pro. Ingen binding.',
 };
 
-export default function AbonnementPage() {
+export const dynamic = 'force-dynamic';
+
+/**
+ * Pricing page. CTAs POST to /api/billing/checkout for paid plans, which
+ * redirects to Stripe Checkout. The Gratis CTA just bounces unauthenticated
+ * visitors to /login (Gratis is the default after registration).
+ */
+export default async function AbonnementPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ paywall?: string; canceled?: string; error?: string }>;
+}) {
+  const session = await auth();
+  const params = await searchParams;
+  const paywallNotice = params.paywall === '1';
+  const canceled = params.canceled === '1';
+  const error = params.error;
+  const isLoggedIn = !!session?.user?.id;
+  const isPaid = isEntitled(session?.plan, session?.status);
+
   return (
     <>
       <div className="subhead">
         <div className="subhead-left">
           <div className="subhead-crumb">/ KONTO / PLANS</div>
           <div className="subhead-title">
-            Velg plan — <em>14 dager gratis</em>
+            Velg plan — <em>14 dager gratis Pro</em>
           </div>
         </div>
         <span
@@ -22,6 +43,47 @@ export default function AbonnementPage() {
           INGEN BINDING · BYTT NÅR DU VIL
         </span>
       </div>
+
+      {paywallNotice && (
+        <div
+          style={{
+            margin: '16px 24px 0',
+            padding: '12px 16px',
+            border: '1px solid var(--gold)',
+            color: 'var(--gold)',
+            fontSize: 13,
+          }}
+        >
+          Den siden krever aktivt abonnement. Velg en plan under for å fortsette.
+        </div>
+      )}
+      {canceled && (
+        <div
+          style={{
+            margin: '16px 24px 0',
+            padding: '12px 16px',
+            border: '1px solid var(--ink-3)',
+            color: 'var(--ink-2)',
+            fontSize: 13,
+          }}
+        >
+          Du avbrøt betalingen. Ingen belastning. Du kan prøve igjen når du vil.
+        </div>
+      )}
+      {error && (
+        <div
+          style={{
+            margin: '16px 24px 0',
+            padding: '12px 16px',
+            border: '1px solid var(--red)',
+            color: 'var(--red)',
+            fontSize: 13,
+          }}
+        >
+          Kunne ikke starte betalingen ({error}). Prøv igjen, eller kontakt
+          support.
+        </div>
+      )}
 
       <div className="section-tx">
         <div className="tx-prices">
@@ -43,13 +105,23 @@ export default function AbonnementPage() {
               <div className="tx-feat muted">Prishistorikk</div>
               <div className="tx-feat muted">API-tilgang</div>
             </div>
-            <Link
-              href="/login"
-              className="btn btn-secondary"
-              style={{ justifyContent: 'center', marginTop: 'auto' }}
-            >
-              Velg Gratis
-            </Link>
+            {isLoggedIn ? (
+              <Link
+                href="/markedet"
+                className="btn btn-secondary"
+                style={{ justifyContent: 'center', marginTop: 'auto' }}
+              >
+                Til markedet →
+              </Link>
+            ) : (
+              <Link
+                href="/login?next=/markedet"
+                className="btn btn-secondary"
+                style={{ justifyContent: 'center', marginTop: 'auto' }}
+              >
+                Registrer Gratis
+              </Link>
+            )}
           </div>
 
           <div className="tx-price-card featured">
@@ -75,13 +147,29 @@ export default function AbonnementPage() {
               </div>
               <div className="tx-feat muted">API-tilgang</div>
             </div>
-            <Link
-              href="/login"
-              className="btn btn-primary"
-              style={{ justifyContent: 'center', marginTop: 'auto' }}
-            >
-              Start 14 dager gratis
-            </Link>
+            {isLoggedIn ? (
+              isPaid && session?.plan === 'pro' ? (
+                <form method="post" action="/api/billing/portal" style={{ marginTop: 'auto' }}>
+                  <button type="submit" className="btn btn-secondary" style={{ justifyContent: 'center', width: '100%' }}>
+                    Administrer abonnement
+                  </button>
+                </form>
+              ) : (
+                <form method="post" action="/api/billing/checkout?plan=pro" style={{ marginTop: 'auto' }}>
+                  <button type="submit" className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+                    {isPaid ? 'Bytt til Pro' : 'Start 14 dager gratis'}
+                  </button>
+                </form>
+              )
+            ) : (
+              <Link
+                href="/login?next=/abonnement"
+                className="btn btn-primary"
+                style={{ justifyContent: 'center', marginTop: 'auto' }}
+              >
+                Start 14 dager gratis
+              </Link>
+            )}
           </div>
 
           <div className="tx-price-card">
@@ -104,13 +192,29 @@ export default function AbonnementPage() {
               <div className="tx-feat">Prioritert support</div>
               <div className="tx-feat">Faktura mot org.nr</div>
             </div>
-            <Link
-              href="/login"
-              className="btn btn-secondary"
-              style={{ justifyContent: 'center', marginTop: 'auto' }}
-            >
-              Velg Trader
-            </Link>
+            {isLoggedIn ? (
+              isPaid && session?.plan === 'trader' ? (
+                <form method="post" action="/api/billing/portal" style={{ marginTop: 'auto' }}>
+                  <button type="submit" className="btn btn-secondary" style={{ justifyContent: 'center', width: '100%' }}>
+                    Administrer abonnement
+                  </button>
+                </form>
+              ) : (
+                <form method="post" action="/api/billing/checkout?plan=trader" style={{ marginTop: 'auto' }}>
+                  <button type="submit" className="btn btn-secondary" style={{ justifyContent: 'center', width: '100%' }}>
+                    Velg Trader
+                  </button>
+                </form>
+              )
+            ) : (
+              <Link
+                href="/login?next=/abonnement"
+                className="btn btn-secondary"
+                style={{ justifyContent: 'center', marginTop: 'auto' }}
+              >
+                Velg Trader
+              </Link>
+            )}
           </div>
         </div>
 
@@ -132,7 +236,7 @@ export default function AbonnementPage() {
             ],
             [
               'Kan jeg avslutte når som helst?',
-              'Ja. Logg inn → Konto → Avslutt. Ingen oppsigelsestid. Avslutter du i prøveperioden blir du aldri belastet.',
+              'Ja. Logg inn → Administrer abonnement → Avslutt. Ingen oppsigelsestid. Avslutter du i prøveperioden blir du aldri belastet.',
             ],
             [
               'Tar dere provisjon?',

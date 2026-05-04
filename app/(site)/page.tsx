@@ -7,8 +7,10 @@ import { CarTable } from '@/components/CarTable';
 export default async function LandingPage() {
   const [cars, feeds, stats] = await Promise.all([loadCars(), loadFeeds(), loadStats()]);
 
-  const liveFeedCars = feeds.hot.length > 0 ? feeds.hot.slice(0, 4) : cars.slice(0, 4);
-  const topMovers = [...cars].sort((a, b) => b.margin - a.margin).slice(0, 6);
+  // Marketing landing — keep both lists short. Anyone who wants the full
+  // /markedet has to subscribe; this is a teaser, not the product.
+  const liveFeedCars = feeds.hot.length > 0 ? feeds.hot.slice(0, 3) : cars.slice(0, 3);
+  const topMovers = [...cars].sort((a, b) => b.margin - a.margin).slice(0, 3);
 
   return (
     <>

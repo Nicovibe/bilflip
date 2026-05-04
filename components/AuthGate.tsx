@@ -1,28 +1,8 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { usePathname, useRouter } from 'next/navigation';
-import { isAuthed } from '@/lib/auth';
-
+/**
+ * @deprecated The real auth gate now lives in middleware.ts and the server
+ * `requirePaid()` helper. This component is kept only so old imports don't
+ * break — it's a no-op pass-through. Safe to delete after auditing imports.
+ */
 export function AuthGate({ children }: { children: React.ReactNode }) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    if (isAuthed()) {
-      setReady(true);
-    } else {
-      const next = encodeURIComponent(pathname || '/dashboard');
-      router.replace(`/login?next=${next}`);
-    }
-  }, [router, pathname]);
-
-  if (!ready) {
-    return (
-      <div style={{ padding: '120px 24px', textAlign: 'center', color: 'var(--ink-3)', fontFamily: 'var(--mono)', fontSize: 12, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-        Verifiserer tilgang…
-      </div>
-    );
-  }
   return <>{children}</>;
 }

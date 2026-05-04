@@ -1,35 +1,34 @@
 /**
- * Mock client-side auth — localStorage-only.
+ * Server-side auth helpers. Use these in server components, route handlers
+ * and server actions to enforce login / paid-tier guards. They throw via
+ * `redirect()` so the call site doesn't need branching.
  *
- * Replace with real auth (Auth.js + Vipps Login) when ready. The API surface
- * (`isAuthed`, `signIn`, `signOut`) should stay stable so callers don't change.
+ * For client components, import from 'next-auth/react' directly:
+ *   import { useSession, signIn, signOut } from 'next-auth/react';
  */
+import { redirect } from 'next/navigation';
+import { auth } from '@/auth';
+import { isEntitled } from '@/lib/plans';
 
-const KEY = 'bilvipp_auth';
-
-export function isAuthed(): boolean {
-  if (typeof window === 'undefined') return false;
-  try {
-    return window.localStorage.getItem(KEY) === '1';
-  } catch {
-    return false;
+/** Asserts a logged-in user. Redirects to /login otherwise. */
+export async function requireUser() {
+  const session = await auth();
+  if (!session?.user?.id) {
+    redirect('/login');
   }
+  return session;
 }
 
-export function signIn(): void {
-  if (typeof window === 'undefined') return;
-  try {
-    window.localStorage.setItem(KEY, '1');
-  } catch {
-    /* ignore */
+/** Asserts logged-in + paid (Pro or Trader). Redirects to /abonnement otherwise. */
+export async function requirePaid() {
+  const session = await requireUser();
+  if (!isEntitled(session.plan, session.status)) {
+    redirect('/abonnement?paywall=1');
   }
+  return session;
 }
 
-export function signOut(): void {
-  if (typeof window === 'undefined') return;
-  try {
-    window.localStorage.removeItem(KEY);
-  } catch {
-    /* ignore */
-  }
+/** Returns the session if any, else null. Doesn't redirect. */
+export async function getSession() {
+  return auth();
 }

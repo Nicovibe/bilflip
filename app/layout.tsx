@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import { auth } from '@/auth';
+import { Providers } from '@/components/Providers';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,10 +33,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const session = await auth();
   return (
     <html lang="nb" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Providers session={session}>{children}</Providers>
+      </body>
     </html>
   );
 }
