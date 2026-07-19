@@ -5,11 +5,11 @@
     "navn": "Toyota RAV4 2021",
     "sub": "2021–2021 · ∙ 57 000 km ∙ Plug-in Bensin ∙ 75 km rekkevidde",
     "score": 75,
-    "flipScore": 97,
+    "flipScore": 93,
     "snittPris": 399532,
     "minPris": 399532,
     "maxPris": 399532,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -44,6 +44,7 @@
       399532,
       399532,
       399532,
+      399532,
       399532
     ],
     "volum": [
@@ -66,6 +67,10 @@
         "c": "a"
       },
       {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
         "t": "Sterk medianmargin",
         "c": "g"
       },
@@ -75,35 +80,35 @@
       }
     ],
     "ai": "RAV4 Plug-in Hybrid 2021 privat selger til 434 532 kr med 53 250 km. Dette er under markedsverdi for en PHEV. Forhandlere tar ofte 470-500k for tilsvarende. God margin mulig, men sjekk servicehistorikk da det er privat.",
-    "avgBucketMedianPrivate": 431253,
-    "avgBucketMedianDealer": 429000,
-    "avgBucketP25Private": 408012,
-    "avgBucketP75Private": 447133,
+    "avgBucketMedianPrivate": 445000,
+    "avgBucketMedianDealer": 434000,
+    "avgBucketP25Private": 417505,
+    "avgBucketP75Private": 453532,
     "avgLowballTarget": 365572,
-    "avgLowballMargin": 65681,
-    "avgMedianMargin": 29468,
+    "avgLowballMargin": 79428,
+    "avgMedianMargin": 29586,
     "avgCompCount": 25,
     "avgCompSpreadPct": 9,
     "bucketCoverage": 1,
     "bucketDealerCoverage": 1,
-    "priceToBucketPct": 93,
+    "priceToBucketPct": 90,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
       "high": 1
     },
-    "primaryValuationSource": "bucket_dealer_min",
+    "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "bucket_dealer_min": 1
+      "comps_dealer_min": 1
     },
     "sellerMix": {
       "private_likely": 1
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
-    "bestDealScore": 97,
-    "bestMargin": 21923,
+    "bestDealScore": 93,
+    "bestMargin": 22041,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -112,7 +117,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 27,
+        "v": 28,
         "c": "#e8a020"
       },
       {
@@ -137,9 +142,9 @@
     "snittPris": 50000,
     "minPris": 50000,
     "maxPris": 50000,
-    "snittDager": 43,
+    "snittDager": 44,
     "antallAnnonser": 1,
-    "prisEndring": -3500,
+    "prisEndring": 1000,
     "prisData": [
       62971,
       27532,
@@ -181,7 +186,8 @@
       49667,
       54500,
       54500,
-      54500
+      54500,
+      59000
     ],
     "volum": [
       1,
@@ -221,14 +227,14 @@
     ],
     "ai": "Nissan Leaf Nordic — 1 annonser funnet.",
     "avgBucketMedianPrivate": 98532,
-    "avgBucketMedianDealer": 124000,
+    "avgBucketMedianDealer": 124266,
     "avgBucketP25Private": 70757,
     "avgBucketP75Private": 119532,
     "avgLowballTarget": 46250,
     "avgLowballMargin": 52282,
     "avgMedianMargin": 42693,
-    "avgCompCount": 23,
-    "avgCompSpreadPct": 38,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 37,
     "bucketCoverage": 1,
     "bucketDealerCoverage": 1,
     "priceToBucketPct": 51,
@@ -278,13 +284,13 @@
     "navn": "Toyota Yaris Hybrid",
     "sub": "2016–2016 · Active S m/ garanti, ny service, bremser og dekk",
     "score": 0,
-    "flipScore": 80,
+    "flipScore": 79,
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
-    "prisEndring": 40900,
+    "prisEndring": -21835,
     "prisData": [
       229169,
       246022,
@@ -349,7 +355,8 @@
       196190,
       193850,
       193850,
-      209900
+      209900,
+      193182
     ],
     "volum": [
       1,
@@ -371,8 +378,8 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Sterk medianmargin",
@@ -386,9 +393,9 @@
     "avgBucketP75Private": null,
     "avgLowballTarget": 111600,
     "avgLowballMargin": 42350,
-    "avgMedianMargin": 26590,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 3,
+    "avgMedianMargin": 25668,
+    "avgCompCount": 8,
+    "avgCompSpreadPct": 4,
     "bucketCoverage": 0,
     "bucketDealerCoverage": 1,
     "priceToBucketPct": null,
@@ -407,8 +414,8 @@
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
-    "bestDealScore": 80,
-    "bestMargin": 16045,
+    "bestDealScore": 79,
+    "bestMargin": 15123,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -417,7 +424,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 67,
+        "v": 63,
         "c": "#3d9960"
       },
       {
@@ -433,110 +440,6 @@
     ]
   },
   {
-    "id": "nissanleaf",
-    "merke": "nissan",
-    "navn": "Nissan Leaf N-Connecta.",
-    "sub": "2023–2023 · Fin bil. Fortsatt garanti. Ny type!",
-    "score": 0,
-    "flipScore": 78,
-    "snittPris": 159532,
-    "minPris": 159532,
-    "maxPris": 159532,
-    "snittDager": 11,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      159532,
-      159532,
-      159532,
-      159532
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Nissan Leaf N-Connecta. — 1 annonser funnet.",
-    "avgBucketMedianPrivate": 218753,
-    "avgBucketMedianDealer": 192450,
-    "avgBucketP25Private": 203876,
-    "avgBucketP75Private": 233629,
-    "avgLowballTarget": 151555,
-    "avgLowballMargin": 67198,
-    "avgMedianMargin": 32574,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 23,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 73,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 78,
-    "bestMargin": 22029,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 69,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "toyotayari",
     "merke": "toyota",
     "navn": "Toyota Yaris 2012",
@@ -546,7 +449,7 @@
     "snittPris": 69942,
     "minPris": 69942,
     "maxPris": 69942,
-    "snittDager": 60,
+    "snittDager": 61,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -570,6 +473,7 @@
       80942,
       80942,
       80942,
+      69942,
       69942,
       69942,
       69942,
@@ -672,6 +576,270 @@
     ]
   },
   {
+    "id": "toyotarav4",
+    "merke": "toyota",
+    "navn": "Toyota RAV4 PHEV",
+    "sub": "2023–2023 · AWD-i Active Tech",
+    "score": 0,
+    "flipScore": 77,
+    "snittPris": 417505,
+    "minPris": 417505,
+    "maxPris": 417505,
+    "snittDager": 21,
+    "antallAnnonser": 1,
+    "prisEndring": -13129,
+    "prisData": [
+      522852,
+      419532,
+      522602,
+      519543,
+      521738,
+      521238,
+      429355,
+      514828,
+      514828,
+      514828,
+      429900,
+      512898,
+      512670,
+      404532,
+      509611,
+      509611,
+      419000,
+      512822,
+      500167,
+      512455,
+      512455,
+      505955,
+      549000,
+      514964,
+      516154,
+      444532,
+      506813,
+      518978,
+      434532,
+      510222,
+      538000,
+      512270,
+      514714,
+      515128,
+      521428,
+      513132,
+      523571,
+      511740,
+      505730,
+      512747,
+      486200,
+      502902,
+      528067,
+      511991,
+      442811,
+      511460,
+      508541,
+      513190,
+      505983,
+      511108,
+      514793,
+      439900,
+      513128,
+      512994,
+      510527,
+      384434,
+      518998,
+      515229,
+      504335,
+      515229,
+      491307,
+      512474,
+      512236,
+      498862
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      }
+    ],
+    "ai": "Toyota RAV4 PHEV — 1 annonser funnet.",
+    "avgBucketMedianPrivate": 445000,
+    "avgBucketMedianDealer": 469000,
+    "avgBucketP25Private": 399532,
+    "avgBucketP75Private": 453532,
+    "avgLowballTarget": 388280,
+    "avgLowballMargin": 56720,
+    "avgMedianMargin": 27495,
+    "avgCompCount": 9,
+    "avgCompSpreadPct": 13,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": 94,
+    "underBucketShare": 100,
+    "p25DealShare": 0,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1
+    },
+    "primaryValuationSource": "bucket_private_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 77,
+    "bestMargin": 19950,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 24,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "nissanleaf",
+    "merke": "nissan",
+    "navn": "Nissan Leaf N-Connecta.",
+    "sub": "2023–2023 · Fin bil. Fortsatt garanti. Ny type!",
+    "score": 0,
+    "flipScore": 76,
+    "snittPris": 159532,
+    "minPris": 159532,
+    "maxPris": 159532,
+    "snittDager": 12,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      159532,
+      159532,
+      159532,
+      159532
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Nissan Leaf N-Connecta. — 1 annonser funnet.",
+    "avgBucketMedianPrivate": 218753,
+    "avgBucketMedianDealer": 189900,
+    "avgBucketP25Private": 203876,
+    "avgBucketP75Private": 233629,
+    "avgLowballTarget": 151555,
+    "avgLowballMargin": 67198,
+    "avgMedianMargin": 30368,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 17,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": 73,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1
+    },
+    "primaryValuationSource": "bucket_dealer_min",
+    "valuationBreakdown": {
+      "bucket_dealer_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 76,
+    "bestMargin": 19823,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 62,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "nissanleaf",
     "merke": "nissan",
     "navn": "Nissan Leaf 62",
@@ -681,9 +849,9 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
-    "prisEndring": -31491,
+    "prisEndring": -3484,
     "prisData": [
       195736,
       229900,
@@ -753,7 +921,8 @@
       202348,
       202191,
       202159,
-      166266
+      166266,
+      201198
     ],
     "volum": [
       1,
@@ -773,10 +942,6 @@
       {
         "t": "Lavt volum",
         "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -850,7 +1015,7 @@
     "snittPris": 214532,
     "minPris": 214532,
     "maxPris": 214532,
-    "snittDager": 53,
+    "snittDager": 54,
     "antallAnnonser": 1,
     "prisEndring": -19000,
     "prisData": [
@@ -881,6 +1046,7 @@
       233532,
       233532,
       233532,
+      214532,
       214532,
       214532,
       214532,
@@ -986,22 +1152,22 @@
     "merke": "tesla",
     "navn": "Tesla Model 3",
     "sub": "2020–2019 · AWD",
-    "score": 22,
-    "flipScore": 69,
-    "snittPris": 318288,
+    "score": 27,
+    "flipScore": 68,
+    "snittPris": 323136,
     "minPris": 214532,
     "maxPris": 412505,
-    "snittDager": 53,
-    "antallAnnonser": 22,
-    "prisEndring": -32933,
+    "snittDager": 55,
+    "antallAnnonser": 23,
+    "prisEndring": -4128,
     "prisData": [
-      336966,
+      337147,
       341259,
-      338498,
-      344911,
+      338678,
+      345138,
       341012,
-      343141,
-      345309,
+      343363,
+      345547,
       350384,
       350363,
       348936,
@@ -1045,40 +1211,41 @@
       337592,
       354982,
       352333,
-      351593,
-      351792,
-      353409,
-      351352,
+      351858,
+      351677,
+      353306,
+      351231,
       327758,
-      350024,
+      349892,
       371156,
-      354563,
-      353509,
+      353806,
+      353029,
       336262,
-      357231,
-      354905,
+      356761,
+      354442,
       319094,
-      354512,
-      354746,
-      360161,
-      353223,
-      352791,
-      351602,
-      310430
+      353778,
+      354291,
+      367386,
+      353160,
+      352721,
+      351513,
+      310430,
+      348798
     ],
     "volum": [
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22,
-      22
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23,
+      23
     ],
     "tags": [
       {
@@ -1086,15 +1253,7 @@
         "c": "b"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
         "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
         "c": "g"
       },
       {
@@ -1103,49 +1262,50 @@
       }
     ],
     "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
-    "avgBucketMedianPrivate": 359471,
-    "avgBucketMedianDealer": 363916,
-    "avgBucketP25Private": 346423,
-    "avgBucketP75Private": 366222,
-    "avgLowballTarget": 295234,
-    "avgLowballMargin": 64238,
-    "avgMedianMargin": 28365,
-    "avgCompCount": 12,
-    "avgCompSpreadPct": 10,
-    "bucketCoverage": 11,
-    "bucketDealerCoverage": 11,
-    "priceToBucketPct": 89,
+    "avgBucketMedianPrivate": 360388,
+    "avgBucketMedianDealer": 364294,
+    "avgBucketP25Private": 346588,
+    "avgBucketP75Private": 367315,
+    "avgLowballTarget": 300134,
+    "avgLowballMargin": 60253,
+    "avgMedianMargin": 24141,
+    "avgCompCount": 13,
+    "avgCompSpreadPct": 8,
+    "bucketCoverage": 12,
+    "bucketDealerCoverage": 12,
+    "priceToBucketPct": 90,
     "underBucketShare": 100,
-    "p25DealShare": 91,
+    "p25DealShare": 92,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 10,
+      "high": 11,
       "medium": 1
     },
     "primaryValuationSource": "comps_private_min",
     "valuationBreakdown": {
-      "comps_private_min": 5,
-      "bucket_private_min": 3,
+      "comps_private_min": 4,
+      "bucket_private_min": 4,
       "comps_dealer_min": 2,
+      "bucket_dealer_min": 1,
       "comps_private_thin_min": 1
     },
     "sellerMix": {
-      "private_likely": 14,
+      "private_likely": 15,
       "unknown": 8
     },
-    "analysisBaseCount": 11,
-    "cohortFilteredCount": 11,
+    "analysisBaseCount": 12,
+    "cohortFilteredCount": 12,
     "bestDealScore": 94,
     "bestMargin": 34723,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 27,
+        "v": 32,
         "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 31,
+        "v": 24,
         "c": "#e8a020"
       },
       {
@@ -1170,9 +1330,9 @@
     "snittPris": 282505,
     "minPris": 282505,
     "maxPris": 282505,
-    "snittDager": 4,
+    "snittDager": 5,
     "antallAnnonser": 1,
-    "prisEndring": 50902,
+    "prisEndring": 10797,
     "prisData": [
       260578,
       299900,
@@ -1232,7 +1392,8 @@
       290377,
       281716,
       281716,
-      291875
+      291875,
+      281792
     ],
     "volum": [
       1,
@@ -1325,7 +1486,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 115,
+    "snittDager": 116,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1434,9 +1595,9 @@
     "snittPris": 236532,
     "minPris": 229532,
     "maxPris": 243532,
-    "snittDager": 31,
+    "snittDager": 32,
     "antallAnnonser": 2,
-    "prisEndring": 63723,
+    "prisEndring": -17614,
     "prisData": [
       323757,
       323757,
@@ -1500,7 +1661,8 @@
       299646,
       297882,
       294979,
-      314900
+      314900,
+      296603
     ],
     "volum": [
       2,
@@ -1522,8 +1684,8 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Mange under p25",
@@ -1586,6 +1748,170 @@
     ]
   },
   {
+    "id": "toyotarav4",
+    "merke": "toyota",
+    "navn": "Toyota RAV4 Hybrid",
+    "sub": "2022–2024 · AWD-i Style",
+    "score": 0,
+    "flipScore": 64,
+    "snittPris": 403523,
+    "minPris": 384532,
+    "maxPris": 426505,
+    "snittDager": 29,
+    "antallAnnonser": 4,
+    "prisEndring": -9994,
+    "prisData": [
+      476080,
+      476375,
+      472528,
+      474029,
+      473443,
+      456295,
+      475100,
+      475058,
+      475474,
+      372766,
+      476119,
+      475130,
+      338000,
+      473572,
+      472729,
+      396766,
+      475319,
+      472317,
+      462811,
+      473642,
+      472767,
+      473256,
+      341153,
+      473925,
+      397883,
+      472062,
+      349074,
+      468667,
+      468667,
+      351641,
+      470473,
+      471158,
+      515667,
+      473479,
+      474403,
+      475275,
+      329482,
+      478669,
+      476026,
+      476054,
+      401633,
+      480206,
+      397106,
+      480474,
+      358458,
+      476056,
+      476056,
+      473983,
+      473983,
+      473426,
+      475355,
+      442000,
+      474480,
+      469866,
+      469866,
+      445900,
+      470591,
+      470984,
+      402511,
+      471931,
+      471931,
+      239532,
+      472209,
+      470629,
+      470629,
+      340725,
+      470480
+    ],
+    "volum": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "tags": [
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Toyota RAV4 Hybrid — 4 annonser funnet.",
+    "avgBucketMedianPrivate": 435835,
+    "avgBucketMedianDealer": 480817,
+    "avgBucketP25Private": 413101,
+    "avgBucketP75Private": 454188,
+    "avgLowballTarget": 374566,
+    "avgLowballMargin": 61270,
+    "avgMedianMargin": 32312,
+    "avgCompCount": 19,
+    "avgCompSpreadPct": 13,
+    "bucketCoverage": 3,
+    "bucketDealerCoverage": 3,
+    "priceToBucketPct": 93,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 3
+    },
+    "primaryValuationSource": "bucket_private_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 3
+    },
+    "sellerMix": {
+      "unknown": 3,
+      "private_likely": 1
+    },
+    "analysisBaseCount": 3,
+    "cohortFilteredCount": 3,
+    "bestDealScore": 71,
+    "bestMargin": 39176,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 31,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 60,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen ID.4 495",
@@ -1595,7 +1921,7 @@
     "snittPris": 249995,
     "minPris": 249995,
     "maxPris": 249995,
-    "snittDager": 18,
+    "snittDager": 19,
     "antallAnnonser": 1,
     "prisEndring": -50000,
     "prisData": [
@@ -1613,6 +1939,7 @@
       259995,
       259995,
       259995,
+      249995,
       249995
     ],
     "volum": [
@@ -1718,7 +2045,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1833,14 +2160,14 @@
     "merke": "tesla",
     "navn": "Tesla Model Y",
     "sub": "2024–2024 · Long Range AWD - Lav km!",
-    "score": 19,
-    "flipScore": 62,
-    "snittPris": 388235,
+    "score": 23,
+    "flipScore": 61,
+    "snittPris": 388027,
     "minPris": 299532,
     "maxPris": 468505,
     "snittDager": 50,
-    "antallAnnonser": 26,
-    "prisEndring": 686,
+    "antallAnnonser": 28,
+    "prisEndring": 4160,
     "prisData": [
       418323,
       422725,
@@ -1898,34 +2225,35 @@
       412865,
       397269,
       416517,
-      416159,
-      417074,
-      417476,
+      415276,
+      417010,
+      417414,
       395365,
-      418954,
-      417624,
+      418893,
+      417320,
       439719,
-      419013,
-      419370,
+      418719,
+      419081,
       438082,
-      419611,
-      419048,
-      419551,
-      411882
+      419464,
+      418897,
+      419407,
+      413350,
+      418980
     ],
     "volum": [
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26,
-      26
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28,
+      28
     ],
     "tags": [
       {
@@ -1946,48 +2274,48 @@
       }
     ],
     "ai": "Tesla Model Y LR 2024 med 15 200 km til 458 900 kr. Privatsalg. Tilsvarende biler hos forhandler koster 480-510 000 kr. Godt under markedsverdi. Mindre merker nevnt, men ikke alvorlige. Solid gevinstpotensial.",
-    "avgBucketMedianPrivate": 443353,
-    "avgBucketMedianDealer": 434382,
-    "avgBucketP25Private": 429537,
-    "avgBucketP75Private": 452699,
-    "avgLowballTarget": 362875,
-    "avgLowballMargin": 80478,
-    "avgMedianMargin": 33518,
+    "avgBucketMedianPrivate": 441098,
+    "avgBucketMedianDealer": 432416,
+    "avgBucketP25Private": 426261,
+    "avgBucketP75Private": 451052,
+    "avgLowballTarget": 362148,
+    "avgLowballMargin": 78950,
+    "avgMedianMargin": 32176,
     "avgCompCount": 19,
     "avgCompSpreadPct": 7,
-    "bucketCoverage": 17,
-    "bucketDealerCoverage": 17,
+    "bucketCoverage": 18,
+    "bucketDealerCoverage": 18,
     "priceToBucketPct": 88,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 17
+      "high": 18
     },
     "primaryValuationSource": "comps_private_min",
     "valuationBreakdown": {
-      "comps_private_min": 5,
+      "comps_private_min": 8,
       "bucket_private_min": 2,
-      "bucket_dealer_min": 5,
-      "comps_dealer_min": 5
+      "bucket_dealer_min": 4,
+      "comps_dealer_min": 4
     },
     "sellerMix": {
       "private_likely": 10,
-      "unknown": 16
+      "unknown": 18
     },
-    "analysisBaseCount": 17,
-    "cohortFilteredCount": 17,
+    "analysisBaseCount": 18,
+    "cohortFilteredCount": 18,
     "bestDealScore": 99,
     "bestMargin": 54270,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 24,
+        "v": 28,
         "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 31,
+        "v": 29,
         "c": "#e8a020"
       },
       {
@@ -2003,340 +2331,6 @@
     ]
   },
   {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.3 1st",
-    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
-    "score": 44,
-    "flipScore": 60,
-    "snittPris": 188032,
-    "minPris": 186532,
-    "maxPris": 189532,
-    "snittDager": 63,
-    "antallAnnonser": 2,
-    "prisEndring": -78734,
-    "prisData": [
-      208274,
-      216199,
-      208414,
-      205614,
-      199532,
-      207388,
-      208612,
-      212216,
-      208158,
-      207570,
-      208572,
-      202899,
-      207517,
-      209691,
-      193916,
-      207335,
-      206960,
-      189482,
-      208288,
-      208240,
-      212811,
-      207044,
-      208852,
-      208852,
-      213434,
-      208965,
-      208669,
-      201199,
-      208054,
-      207866,
-      209434,
-      211371,
-      210594,
-      207177,
-      209568,
-      209293,
-      209372,
-      209368,
-      208822,
-      208811,
-      269000,
-      205711,
-      269000,
-      208913,
-      183532,
-      207990,
-      207348,
-      207411,
-      207274,
-      208688,
-      209198,
-      207992,
-      239000,
-      212368,
-      211025,
-      199900,
-      213200,
-      216078,
-      199532,
-      211544,
-      211864,
-      201266,
-      211372,
-      211372,
-      210261,
-      190266
-    ],
-    "volum": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
-    "avgBucketMedianPrivate": 219717,
-    "avgBucketMedianDealer": 219725,
-    "avgBucketP25Private": 209304,
-    "avgBucketP75Private": 230555,
-    "avgLowballTarget": 174404,
-    "avgLowballMargin": 45314,
-    "avgMedianMargin": 25410,
-    "avgCompCount": 9,
-    "avgCompSpreadPct": 14,
-    "bucketCoverage": 2,
-    "bucketDealerCoverage": 2,
-    "priceToBucketPct": 86,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1,
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_dealer_min",
-    "valuationBreakdown": {
-      "bucket_dealer_min": 1,
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 1,
-      "unknown": 1
-    },
-    "analysisBaseCount": 2,
-    "cohortFilteredCount": 2,
-    "bestDealScore": 83,
-    "bestMargin": 15373,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 49,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 48,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 30,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen Golf Sportsvan",
-    "sub": "2015–2015 · 2015 ∙ 58 000 km ∙ Bensin ∙ Automat",
-    "score": 0,
-    "flipScore": 60,
-    "snittPris": 93237,
-    "minPris": 91942,
-    "maxPris": 94532,
-    "snittDager": 13,
-    "antallAnnonser": 2,
-    "prisEndring": -14567,
-    "prisData": [
-      156414,
-      156414,
-      153926,
-      149861,
-      145853,
-      134532,
-      143413,
-      143413,
-      143413,
-      149333,
-      142666,
-      134500,
-      134500,
-      139330,
-      146722,
-      146722,
-      146722,
-      146722,
-      145472,
-      145472,
-      145472,
-      145472,
-      145472,
-      145608,
-      145608,
-      142286,
-      142286,
-      139286,
-      139225,
-      139225,
-      129333,
-      129333,
-      154999,
-      127666,
-      127666,
-      123735,
-      130788,
-      132079,
-      131412,
-      131412,
-      131412,
-      129746,
-      126412,
-      125788,
-      144999,
-      129490,
-      129490,
-      159000,
-      138118,
-      135497,
-      135391,
-      114766
-    ],
-    "volum": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Volkswagen Golf Sportsvan — 2 annonser funnet.",
-    "avgBucketMedianPrivate": 134434,
-    "avgBucketMedianDealer": 139500,
-    "avgBucketP25Private": 134434,
-    "avgBucketP75Private": 134434,
-    "avgLowballTarget": 86251,
-    "avgLowballMargin": 48183,
-    "avgMedianMargin": 41197,
-    "avgCompCount": 6,
-    "avgCompSpreadPct": 12,
-    "bucketCoverage": 2,
-    "bucketDealerCoverage": 2,
-    "priceToBucketPct": 69,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1,
-      "medium": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 2
-    },
-    "sellerMix": {
-      "unknown": 2
-    },
-    "analysisBaseCount": 2,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 61,
-    "bestMargin": 34947,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 30,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 20,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
     "id": "nissanleaf",
     "merke": "nissan",
     "navn": "Nissan Leaf 2017",
@@ -2346,7 +2340,7 @@
     "snittPris": 79932,
     "minPris": 79932,
     "maxPris": 79932,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -2369,6 +2363,7 @@
       79000,
       79000,
       79000,
+      79932,
       79932,
       79932,
       79932,
@@ -2462,15 +2457,15 @@
     "id": "hyundaiion",
     "merke": "hyundai",
     "navn": "Hyundai Ioniq 5",
-    "sub": "2022–2022 · AWD Premium",
-    "score": 30,
-    "flipScore": 59,
-    "snittPris": 294147,
+    "sub": "2022–2022 · LR RWD Premium",
+    "score": 27,
+    "flipScore": 58,
+    "snittPris": 292945,
     "minPris": 244532,
     "maxPris": 399000,
-    "snittDager": 58,
-    "antallAnnonser": 7,
-    "prisEndring": -34097,
+    "snittDager": 59,
+    "antallAnnonser": 8,
+    "prisEndring": -7959,
     "prisData": [
       377244,
       374900,
@@ -2485,76 +2480,77 @@
       399051,
       530601,
       406459,
-      403875,
+      404912,
       434965,
-      403502,
-      403502,
+      404508,
+      404508,
       377826,
-      405476,
-      404914,
+      406455,
+      405838,
       376768,
-      405026,
-      405042,
-      404028,
-      404088,
+      405976,
+      405930,
+      404901,
+      404983,
       379886,
-      403061,
+      403874,
       408630,
-      405410,
-      406210,
+      406229,
+      407028,
       382374,
-      406288,
+      407131,
       421499,
-      407218,
+      408164,
       438949,
-      408957,
-      407841,
-      410265,
+      409846,
+      408702,
+      411124,
       442670,
-      406593,
-      409969,
-      411917,
+      407463,
+      410802,
+      412741,
       382072,
-      413738,
+      414610,
       396633,
-      412115,
-      374780,
-      412762,
-      414196,
-      412720,
-      412385,
-      409832,
-      409684,
+      412903,
+      386015,
+      413587,
+      415019,
+      413509,
+      413153,
+      410563,
+      410414,
       357720,
-      405970,
+      407014,
       400872,
-      407967,
-      409622,
+      408978,
+      410645,
       423995,
-      410403,
-      408172,
+      411439,
+      409111,
       361338,
-      406454,
-      405833,
+      407376,
+      406727,
       407933,
-      403832,
-      403791,
-      404206,
-      362536
+      405178,
+      405068,
+      405895,
+      370221,
+      404944
     ],
     "volum": [
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
     ],
     "tags": [
       {
@@ -2578,50 +2574,50 @@
         "c": "g"
       }
     ],
-    "ai": "Hyundai Ioniq 5 AWD 2022 med 78k km til 254 532 kr. Bakfanger byttet etter skade. Prisen er OK, men skadehistorikk reduserer verdi. Markedsverdi rundt 270k.",
-    "avgBucketMedianPrivate": 333770,
-    "avgBucketMedianDealer": 340221,
-    "avgBucketP25Private": 327504,
-    "avgBucketP75Private": 343307,
-    "avgLowballTarget": 271726,
-    "avgLowballMargin": 72920,
-    "avgMedianMargin": 32483,
-    "avgCompCount": 14,
-    "avgCompSpreadPct": 13,
-    "bucketCoverage": 6,
-    "bucketDealerCoverage": 7,
-    "priceToBucketPct": 88,
+    "ai": "Hyundai Ioniq 5 — 8 annonser funnet.",
+    "avgBucketMedianPrivate": 328131,
+    "avgBucketMedianDealer": 338413,
+    "avgBucketP25Private": 322044,
+    "avgBucketP75Private": 336696,
+    "avgLowballTarget": 269948,
+    "avgLowballMargin": 68404,
+    "avgMedianMargin": 29410,
+    "avgCompCount": 15,
+    "avgCompSpreadPct": 12,
+    "bucketCoverage": 7,
+    "bucketDealerCoverage": 8,
+    "priceToBucketPct": 89,
     "underBucketShare": 100,
-    "p25DealShare": 86,
+    "p25DealShare": 88,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 5,
+      "high": 6,
       "low": 2
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 1,
       "comps_dealer_min": 2,
+      "comps_private_min": 2,
       "bucket_private_min": 2,
       "bucket_dealer_min": 2
     },
     "sellerMix": {
-      "unknown": 4,
-      "private_likely": 3
+      "private_likely": 3,
+      "unknown": 5
     },
-    "analysisBaseCount": 7,
+    "analysisBaseCount": 8,
     "cohortFilteredCount": 2,
-    "bestDealScore": 69,
-    "bestMargin": 27977,
+    "bestDealScore": 76,
+    "bestMargin": 21023,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 35,
+        "v": 32,
         "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 38,
+        "v": 35,
         "c": "#e8a020"
       },
       {
@@ -2642,13 +2638,13 @@
     "navn": "Volkswagen ID.4 Pro",
     "sub": "2025–2022 · 77kWh 286hk Exclusive",
     "score": 18,
-    "flipScore": 56,
+    "flipScore": 57,
     "snittPris": 373345,
     "minPris": 269532,
     "maxPris": 419000,
-    "snittDager": 37,
+    "snittDager": 38,
     "antallAnnonser": 4,
-    "prisEndring": -46072,
+    "prisEndring": -13865,
     "prisData": [
       411141,
       331925,
@@ -2711,15 +2707,16 @@
       426440,
       435160,
       424523,
-      421537,
+      421348,
       384538,
-      421773,
-      421773,
+      421587,
+      421587,
       401777,
-      413101,
-      410904,
-      411245,
-      395634
+      412879,
+      411154,
+      411496,
+      395634,
+      410744
     ],
     "volum": [
       4,
@@ -2755,7 +2752,7 @@
     ],
     "ai": "Volkswagen ID.4 Pro — 4 annonser funnet.",
     "avgBucketMedianPrivate": 408134,
-    "avgBucketMedianDealer": 418425,
+    "avgBucketMedianDealer": 419563,
     "avgBucketP25Private": 396073,
     "avgBucketP75Private": 420194,
     "avgLowballTarget": 348700,
@@ -2794,7 +2791,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 26,
+        "v": 27,
         "c": "#e8a020"
       },
       {
@@ -2810,170 +2807,6 @@
     ]
   },
   {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Hybrid",
-    "sub": "2022–2019 · AWD-i Style",
-    "score": 0,
-    "flipScore": 56,
-    "snittPris": 366199,
-    "minPris": 314532,
-    "maxPris": 399532,
-    "snittDager": 23,
-    "antallAnnonser": 4,
-    "prisEndring": -56381,
-    "prisData": [
-      476080,
-      476375,
-      472528,
-      474029,
-      473443,
-      456295,
-      475100,
-      475058,
-      475474,
-      372766,
-      476119,
-      475130,
-      338000,
-      473572,
-      472729,
-      396766,
-      475319,
-      472317,
-      462811,
-      473642,
-      472767,
-      473256,
-      341153,
-      473925,
-      397883,
-      472062,
-      349074,
-      468667,
-      468667,
-      351641,
-      470473,
-      471158,
-      515667,
-      473479,
-      474403,
-      475275,
-      329482,
-      478669,
-      476026,
-      476054,
-      401633,
-      480206,
-      397106,
-      480474,
-      358458,
-      476056,
-      476056,
-      473983,
-      473983,
-      473426,
-      475355,
-      442000,
-      474480,
-      469866,
-      469866,
-      402900,
-      470591,
-      470191,
-      402511,
-      471136,
-      471136,
-      239532,
-      471401,
-      469849,
-      469849,
-      340725
-    ],
-    "volum": [
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4
-    ],
-    "tags": [
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota RAV4 Hybrid — 4 annonser funnet.",
-    "avgBucketMedianPrivate": 391514,
-    "avgBucketMedianDealer": 435333,
-    "avgBucketP25Private": 369532,
-    "avgBucketP75Private": 419844,
-    "avgLowballTarget": 342662,
-    "avgLowballMargin": 48852,
-    "avgMedianMargin": 25315,
-    "avgCompCount": 12,
-    "avgCompSpreadPct": 14,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 94,
-    "underBucketShare": 100,
-    "p25DealShare": 67,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 2,
-      "medium": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 3
-    },
-    "sellerMix": {
-      "unknown": 3,
-      "private_likely": 1
-    },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 3,
-    "bestDealScore": 64,
-    "bestMargin": 25428,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 24,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 60,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 52,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen ID.4 77kWH",
@@ -2983,9 +2816,9 @@
     "snittPris": 256532,
     "minPris": 243532,
     "maxPris": 269532,
-    "snittDager": 17,
+    "snittDager": 18,
     "antallAnnonser": 2,
-    "prisEndring": -13578,
+    "prisEndring": 6500,
     "prisData": [
       291144,
       291144,
@@ -3039,7 +2872,8 @@
       277844,
       277844,
       277844,
-      270688
+      270688,
+      271266
     ],
     "volum": [
       2,
@@ -3065,8 +2899,8 @@
         "c": "a"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -3146,9 +2980,9 @@
     "snittPris": 311782,
     "minPris": 309532,
     "maxPris": 314032,
-    "snittDager": 11,
+    "snittDager": 12,
     "antallAnnonser": 2,
-    "prisEndring": -12219,
+    "prisEndring": -1999,
     "prisData": [
       369492,
       344675,
@@ -3201,25 +3035,26 @@
       361439,
       360766,
       359917,
-      359150,
-      359481,
-      359785,
+      359245,
+      359576,
+      359880,
       330483,
-      359973,
+      360068,
       310383,
-      359646,
-      359646,
+      359736,
+      359736,
       403250,
-      359678,
-      359641,
+      359769,
+      359729,
       334112,
-      359815,
-      359957,
+      359904,
+      360046,
       323146,
-      359953,
-      360203,
-      359609,
-      342301
+      360041,
+      360290,
+      359692,
+      342301,
+      359578
     ],
     "volum": [
       2,
@@ -3245,21 +3080,17 @@
         "c": "a"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
     ],
     "ai": "Toyota Yaris Cross — 2 annonser funnet.",
     "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 352975,
+    "avgBucketMedianDealer": 351950,
     "avgBucketP25Private": null,
     "avgBucketP75Private": null,
     "avgLowballTarget": 292324,
-    "avgLowballMargin": 60652,
+    "avgLowballMargin": 59627,
     "avgMedianMargin": 36708,
     "avgCompCount": 11,
     "avgCompSpreadPct": 11,
@@ -3282,8 +3113,8 @@
     },
     "analysisBaseCount": 2,
     "cohortFilteredCount": 1,
-    "bestDealScore": 60,
-    "bestMargin": 27903,
+    "bestDealScore": 61,
+    "bestMargin": 30903,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -3292,7 +3123,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 44,
+        "v": 47,
         "c": "#e8a020"
       },
       {
@@ -3308,171 +3139,18 @@
     ]
   },
   {
-    "id": "nissanleaf",
-    "merke": "nissan",
-    "navn": "Nissan Leaf LEAF",
-    "sub": "2022–2022 · 40Visia",
-    "score": 0,
-    "flipScore": 56,
-    "snittPris": 159500,
-    "minPris": 159500,
-    "maxPris": 159500,
-    "snittDager": 40,
-    "antallAnnonser": 1,
-    "prisEndring": 229901,
-    "prisData": [
-      206370,
-      206370,
-      204704,
-      204704,
-      204704,
-      200884,
-      200884,
-      200884,
-      200884,
-      200884,
-      200884,
-      200884,
-      200884,
-      200884,
-      225868,
-      169900,
-      197884,
-      197884,
-      197884,
-      197884,
-      197884,
-      197884,
-      197884,
-      379900,
-      197884,
-      379900,
-      241889,
-      238889,
-      238889,
-      238889,
-      236433,
-      236433,
-      236433,
-      44999,
-      188575,
-      188575,
-      188575,
-      220357,
-      217857,
-      217857,
-      217857,
-      16942,
-      181561,
-      149500,
-      181561,
-      236433,
-      236433,
-      236433,
-      274900,
-      274900,
-      274900,
-      274900,
-      274900
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Nissan Leaf LEAF — 1 annonser funnet.",
-    "avgBucketMedianPrivate": 189532,
-    "avgBucketMedianDealer": 179000,
-    "avgBucketP25Private": 187032,
-    "avgBucketP75Private": 204519,
-    "avgLowballTarget": 147537,
-    "avgLowballMargin": 41995,
-    "avgMedianMargin": 19500,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 13,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 84,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_dealer_min",
-    "valuationBreakdown": {
-      "bucket_dealer_min": 1
-    },
-    "sellerMix": {
-      "unknown": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 56,
-    "bestMargin": 8955,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 28,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen e-Golf VII",
-    "sub": "2019–2015 · 136hk, 300 km, skinn, active display, keyless, vpumpe",
+    "sub": "2019–2014 · 136hk, 300 km, skinn, active display, keyless, vpumpe",
     "score": 0,
     "flipScore": 55,
-    "snittPris": 120532,
-    "minPris": 103532,
+    "snittPris": 112782,
+    "minPris": 72532,
     "maxPris": 129532,
     "snittDager": 27,
-    "antallAnnonser": 9,
-    "prisEndring": 12631,
+    "antallAnnonser": 8,
+    "prisEndring": 3112,
     "prisData": [
       129998,
       136187,
@@ -3524,47 +3202,44 @@
       126218,
       126443,
       126956,
-      129229,
-      129985,
+      129905,
+      130701,
       130170,
-      130174,
+      130882,
       127843,
-      126793,
-      125858,
-      117874,
+      127493,
+      126577,
+      132199,
       129116,
-      126441,
+      127259,
       129532,
-      126360,
-      127721,
+      127247,
+      128587,
       129265,
-      128519,
-      127555,
-      127803,
-      138227
+      129428,
+      128463,
+      128715,
+      138227,
+      129232
     ],
     "volum": [
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
     ],
     "tags": [
       {
         "t": "Høyt volum",
         "c": "b"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -3575,19 +3250,19 @@
         "c": "g"
       }
     ],
-    "ai": "Volkswagen e-Golf VII — 9 annonser funnet.",
-    "avgBucketMedianPrivate": 141532,
-    "avgBucketMedianDealer": 145000,
-    "avgBucketP25Private": 136157,
-    "avgBucketP75Private": 144282,
-    "avgLowballTarget": 112982,
-    "avgLowballMargin": 28550,
-    "avgMedianMargin": 17406,
-    "avgCompCount": 13,
-    "avgCompSpreadPct": 11,
+    "ai": "Volkswagen e-Golf VII — 8 annonser funnet.",
+    "avgBucketMedianPrivate": 138907,
+    "avgBucketMedianDealer": 133000,
+    "avgBucketP25Private": 131720,
+    "avgBucketP75Private": 142970,
+    "avgLowballTarget": 105244,
+    "avgLowballMargin": 33663,
+    "avgMedianMargin": 16423,
+    "avgCompCount": 10,
+    "avgCompSpreadPct": 12,
     "bucketCoverage": 4,
     "bucketDealerCoverage": 4,
-    "priceToBucketPct": 85,
+    "priceToBucketPct": 81,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
@@ -3597,12 +3272,11 @@
     "primaryValuationSource": "comps_private_min",
     "valuationBreakdown": {
       "comps_private_min": 2,
-      "bucket_private_min": 1,
-      "comps_dealer_min": 1
+      "comps_dealer_min": 2
     },
     "sellerMix": {
       "private_likely": 3,
-      "unknown": 6
+      "unknown": 5
     },
     "analysisBaseCount": 4,
     "cohortFilteredCount": 4,
@@ -3616,7 +3290,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 41,
+        "v": 39,
         "c": "#e8a020"
       },
       {
@@ -3632,18 +3306,184 @@
     ]
   },
   {
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen ID.3 1st",
+    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
+    "score": 44,
+    "flipScore": 54,
+    "snittPris": 187032,
+    "minPris": 184532,
+    "maxPris": 189532,
+    "snittDager": 45,
+    "antallAnnonser": 3,
+    "prisEndring": 1222,
+    "prisData": [
+      208274,
+      216199,
+      208414,
+      205614,
+      199532,
+      207388,
+      208612,
+      212216,
+      208158,
+      207570,
+      208572,
+      202899,
+      207517,
+      209691,
+      193916,
+      207335,
+      206960,
+      189482,
+      208288,
+      208240,
+      212811,
+      207044,
+      208852,
+      208852,
+      213434,
+      208965,
+      208669,
+      201199,
+      208054,
+      207866,
+      209434,
+      211371,
+      210594,
+      207177,
+      209568,
+      209293,
+      209372,
+      209368,
+      208822,
+      208811,
+      269000,
+      205711,
+      269000,
+      208913,
+      183532,
+      207990,
+      207348,
+      207411,
+      207274,
+      208688,
+      209198,
+      207992,
+      239000,
+      212368,
+      211025,
+      199900,
+      213200,
+      216078,
+      199532,
+      211544,
+      211864,
+      201266,
+      211372,
+      211372,
+      210261,
+      190266,
+      210135
+    ],
+    "volum": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "tags": [
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
+    "avgBucketMedianPrivate": 219717,
+    "avgBucketMedianDealer": 219725,
+    "avgBucketP25Private": 209304,
+    "avgBucketP75Private": 230555,
+    "avgLowballTarget": 173479,
+    "avgLowballMargin": 46239,
+    "avgMedianMargin": 26410,
+    "avgCompCount": 9,
+    "avgCompSpreadPct": 14,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 85,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1,
+      "low": 1
+    },
+    "primaryValuationSource": "bucket_dealer_min",
+    "valuationBreakdown": {
+      "bucket_dealer_min": 1,
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1,
+      "unknown": 2
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 2,
+    "bestDealScore": 83,
+    "bestMargin": 15373,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 49,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 50,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 45,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "toyotayari",
     "merke": "toyota",
     "navn": "Toyota Yaris 1,5",
     "sub": "2019–2012 · Hybrid Y20 e-CVT aut/ Toyota Relax Garanti",
-    "score": 23,
-    "flipScore": 50,
-    "snittPris": 149157,
-    "minPris": 100000,
-    "maxPris": 188236,
-    "snittDager": 61,
-    "antallAnnonser": 3,
-    "prisEndring": 14082,
+    "score": 35,
+    "flipScore": 53,
+    "snittPris": 196618,
+    "minPris": 188236,
+    "maxPris": 205000,
+    "snittDager": 56,
+    "antallAnnonser": 4,
+    "prisEndring": 1316,
     "prisData": [
       268592,
       142618,
@@ -3682,115 +3522,106 @@
       260903,
       194105,
       260055,
-      258731,
-      257853,
+      258947,
+      258057,
       219873,
-      258911,
-      258014,
-      256447,
+      259126,
+      258220,
+      256641,
       194941,
-      256232,
+      256427,
       221918,
-      255693,
+      255878,
       193937,
-      255229,
-      253652,
-      255145,
-      255968,
-      255872,
-      255470,
+      255410,
+      253822,
+      255322,
+      256146,
+      256050,
+      255644,
       216559,
-      257952,
+      258139,
       228500,
-      259205,
-      259301,
+      259395,
+      259490,
       242000,
-      259681,
-      258646,
+      259876,
+      258820,
       239000,
-      259370,
-      259036,
+      259548,
+      259211,
       165492,
-      255827,
-      256585,
-      256554,
-      236000
+      255983,
+      256745,
+      256711,
+      236000,
+      257194
     ],
     "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
     ],
-    "tags": [
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota Yaris 1,5 — 3 annonser funnet.",
-    "avgBucketMedianPrivate": 151295,
-    "avgBucketMedianDealer": 169780,
-    "avgBucketP25Private": 146942,
-    "avgBucketP75Private": 155648,
-    "avgLowballTarget": 137108,
-    "avgLowballMargin": 30238,
-    "avgMedianMargin": 13756,
-    "avgCompCount": 10,
+    "tags": [],
+    "ai": "Toyota Yaris 1,5 — 4 annonser funnet.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 214450,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 181443,
+    "avgLowballMargin": 33007,
+    "avgMedianMargin": 17832,
+    "avgCompCount": 19,
     "avgCompSpreadPct": 10,
-    "bucketCoverage": 2,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 99,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": null,
     "underBucketShare": 100,
-    "p25DealShare": 67,
+    "p25DealShare": 0,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 3
+      "high": 2
     },
     "primaryValuationSource": "bucket_dealer_min",
     "valuationBreakdown": {
-      "bucket_dealer_min": 2,
-      "comps_dealer_min": 1
+      "bucket_dealer_min": 2
     },
     "sellerMix": {
       "private_likely": 1,
-      "unknown": 2
+      "unknown": 3
     },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 67,
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 2,
+    "bestDealScore": 66,
     "bestMargin": 13119,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 28,
+        "v": 40,
         "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 21,
+        "v": 26,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 45,
-        "c": "#e8a020"
+        "v": 60,
+        "c": "#1f5fa6"
       },
       {
         "l": "Batteririsiko",
-        "v": 28,
+        "v": 36,
         "c": "#e8a020"
       }
     ]
@@ -3801,13 +3632,13 @@
     "navn": "Volkswagen ID.4 77kWh",
     "sub": "2021–2021 · 204hk 1st Max Pro Performance",
     "score": 0,
-    "flipScore": 49,
+    "flipScore": 50,
     "snittPris": 265000,
     "minPris": 265000,
     "maxPris": 265000,
-    "snittDager": 19,
+    "snittDager": 20,
     "antallAnnonser": 1,
-    "prisEndring": -13578,
+    "prisEndring": 6500,
     "prisData": [
       291144,
       291144,
@@ -3861,7 +3692,8 @@
       277844,
       277844,
       277844,
-      270688
+      270688,
+      271266
     ],
     "volum": [
       1,
@@ -3883,8 +3715,8 @@
         "c": "a"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -3897,14 +3729,14 @@
     ],
     "ai": "Volkswagen ID.4 77kWh — 1 annonser funnet.",
     "avgBucketMedianPrivate": 290019,
-    "avgBucketMedianDealer": 296950,
+    "avgBucketMedianDealer": 319900,
     "avgBucketP25Private": 286775,
     "avgBucketP75Private": 293262,
     "avgLowballTarget": 251750,
     "avgLowballMargin": 38269,
-    "avgMedianMargin": 8628,
-    "avgCompCount": 8,
-    "avgCompSpreadPct": 8,
+    "avgMedianMargin": 8715,
+    "avgCompCount": 9,
+    "avgCompSpreadPct": 6,
     "bucketCoverage": 1,
     "bucketDealerCoverage": 1,
     "priceToBucketPct": 91,
@@ -3923,8 +3755,8 @@
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
-    "bestDealScore": 49,
-    "bestMargin": 1083,
+    "bestDealScore": 50,
+    "bestMargin": 1170,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -3958,7 +3790,7 @@
     "snittPris": 244432,
     "minPris": 244432,
     "maxPris": 244432,
-    "snittDager": 23,
+    "snittDager": 24,
     "antallAnnonser": 1,
     "prisEndring": 8477,
     "prisData": [
@@ -3988,6 +3820,7 @@
       279000,
       279000,
       279000,
+      287477,
       287477,
       287477,
       287477,
@@ -4091,6 +3924,164 @@
   {
     "id": "volkswagen",
     "merke": "volkswagen",
+    "navn": "Volkswagen Golf Sportsvan",
+    "sub": "2015–2015 · 2015 ∙ 58 000 km ∙ Bensin ∙ Automat",
+    "score": 0,
+    "flipScore": 48,
+    "snittPris": 93237,
+    "minPris": 91942,
+    "maxPris": 94532,
+    "snittDager": 14,
+    "antallAnnonser": 2,
+    "prisEndring": 768,
+    "prisData": [
+      156414,
+      156414,
+      153926,
+      149861,
+      145853,
+      134532,
+      143413,
+      143413,
+      143413,
+      149333,
+      142666,
+      134500,
+      134500,
+      139330,
+      146722,
+      146722,
+      146722,
+      146722,
+      145472,
+      145472,
+      145472,
+      145472,
+      145472,
+      145608,
+      145608,
+      142286,
+      142286,
+      139286,
+      139225,
+      139225,
+      129333,
+      129333,
+      154999,
+      127666,
+      127666,
+      123735,
+      130788,
+      132079,
+      131412,
+      131412,
+      131412,
+      129746,
+      126412,
+      125788,
+      144999,
+      129490,
+      129490,
+      159000,
+      138118,
+      135497,
+      135391,
+      114766,
+      130101
+    ],
+    "volum": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Volkswagen Golf Sportsvan — 2 annonser funnet.",
+    "avgBucketMedianPrivate": 134434,
+    "avgBucketMedianDealer": 139500,
+    "avgBucketP25Private": 134434,
+    "avgBucketP75Private": 134434,
+    "avgLowballTarget": 86251,
+    "avgLowballMargin": 48183,
+    "avgMedianMargin": 41197,
+    "avgCompCount": 5,
+    "avgCompSpreadPct": 35,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 69,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1,
+      "low": 1
+    },
+    "primaryValuationSource": "bucket_private_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 2
+    },
+    "sellerMix": {
+      "unknown": 2
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 59,
+    "bestMargin": 32357,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 100,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 20,
+        "c": "#e8a020"
+      }
+    ]
+  },
+  {
+    "id": "volkswagen",
+    "merke": "volkswagen",
     "navn": "Volkswagen Golf VII",
     "sub": "2014–2014 · 2014 ∙ 79 000 km ∙ Bensin ∙ Manuell",
     "score": 0,
@@ -4098,9 +4089,9 @@
     "snittPris": 93942,
     "minPris": 93942,
     "maxPris": 93942,
-    "snittDager": 0,
+    "snittDager": 1,
     "antallAnnonser": 1,
-    "prisEndring": 25861,
+    "prisEndring": -14281,
     "prisData": [
       268522,
       268522,
@@ -4166,7 +4157,8 @@
       246685,
       249736,
       247471,
-      259661
+      259661,
+      244041
     ],
     "volum": [
       1,
@@ -4188,33 +4180,25 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
+        "t": "Pris ned",
         "c": "g"
       }
     ],
     "ai": "Volkswagen Golf VII — 1 annonser funnet.",
-    "avgBucketMedianPrivate": 137500,
+    "avgBucketMedianPrivate": null,
     "avgBucketMedianDealer": 109990,
-    "avgBucketP25Private": 137500,
-    "avgBucketP75Private": 137500,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
     "avgLowballTarget": 89245,
-    "avgLowballMargin": 48255,
+    "avgLowballMargin": 20745,
     "avgMedianMargin": 13423,
-    "avgCompCount": 6,
-    "avgCompSpreadPct": 24,
-    "bucketCoverage": 1,
+    "avgCompCount": 5,
+    "avgCompSpreadPct": 21,
+    "bucketCoverage": 0,
     "bucketDealerCoverage": 1,
-    "priceToBucketPct": 68,
+    "priceToBucketPct": null,
     "underBucketShare": 100,
-    "p25DealShare": 100,
+    "p25DealShare": 0,
     "topCompConfidence": "medium",
     "confidenceBreakdown": {
       "medium": 1
@@ -4229,7 +4213,7 @@
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
     "bestDealScore": 48,
-    "bestMargin": 2878,
+    "bestMargin": 5878,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -4238,7 +4222,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 15,
+        "v": 31,
         "c": "#e8a020"
       },
       {
@@ -4263,9 +4247,9 @@
     "snittPris": 104355,
     "minPris": 59532,
     "maxPris": 180000,
-    "snittDager": 19,
+    "snittDager": 20,
     "antallAnnonser": 3,
-    "prisEndring": -74300,
+    "prisEndring": 19302,
     "prisData": [
       150989,
       150989,
@@ -4326,7 +4310,8 @@
       154059,
       159189,
       154101,
-      54532
+      54532,
+      164589
     ],
     "volum": [
       3,
@@ -4344,8 +4329,8 @@
     ],
     "tags": [
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -4365,7 +4350,7 @@
     "avgLowballMargin": 33495,
     "avgMedianMargin": 17223,
     "avgCompCount": 17,
-    "avgCompSpreadPct": 28,
+    "avgCompSpreadPct": 30,
     "bucketCoverage": 3,
     "bucketDealerCoverage": 3,
     "priceToBucketPct": 80,
@@ -4415,6 +4400,179 @@
   {
     "id": "nissanleaf",
     "merke": "nissan",
+    "navn": "Nissan Leaf 40kWh",
+    "sub": "2020–2020 · N-Connecta",
+    "score": 0,
+    "flipScore": 46,
+    "snittPris": 141532,
+    "minPris": 133532,
+    "maxPris": 149532,
+    "snittDager": 10,
+    "antallAnnonser": 5,
+    "prisEndring": -5097,
+    "prisData": [
+      161140,
+      114532,
+      160255,
+      157922,
+      144699,
+      157643,
+      157851,
+      143144,
+      157173,
+      158175,
+      158694,
+      140741,
+      158565,
+      158414,
+      144532,
+      158341,
+      158613,
+      132149,
+      158675,
+      156940,
+      144705,
+      158291,
+      157961,
+      157949,
+      155510,
+      157676,
+      171467,
+      159237,
+      131719,
+      159457,
+      158603,
+      179000,
+      160016,
+      134699,
+      162041,
+      143841,
+      158600,
+      158867,
+      158782,
+      131573,
+      158263,
+      157077,
+      157788,
+      133900,
+      159667,
+      151416,
+      160749,
+      145333,
+      160654,
+      160321,
+      158740,
+      158127,
+      158786,
+      158808,
+      156287,
+      158328,
+      140913,
+      156468,
+      156213,
+      141575,
+      157317,
+      156844,
+      118111,
+      156510,
+      156510,
+      146357,
+      155727,
+      156097,
+      156539,
+      145309,
+      155652
+    ],
+    "volum": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ],
+    "tags": [
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Nissan Leaf 40kWh — 5 annonser funnet.",
+    "avgBucketMedianPrivate": 184266,
+    "avgBucketMedianDealer": 185748,
+    "avgBucketP25Private": 154716,
+    "avgBucketP75Private": 207956,
+    "avgLowballTarget": 132786,
+    "avgLowballMargin": 51480,
+    "avgMedianMargin": 18511,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 19,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 77,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 2
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 1,
+      "comps_private_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1,
+      "unknown": 4
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 2,
+    "bestDealScore": 61,
+    "bestMargin": 13455,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 75,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 52,
+        "c": "#e8a020"
+      }
+    ]
+  },
+  {
+    "id": "nissanleaf",
+    "merke": "nissan",
     "navn": "Nissan Leaf 2020",
     "sub": "2020–2020 · ∙ 46 500 km ∙ El ∙ 270 km rekkevidde",
     "score": 0,
@@ -4422,7 +4580,7 @@
     "snittPris": 129532,
     "minPris": 129532,
     "maxPris": 129532,
-    "snittDager": 1,
+    "snittDager": 3,
     "antallAnnonser": 1,
     "prisEndring": 4734,
     "prisData": [
@@ -4468,6 +4626,7 @@
       159000,
       159000,
       159000,
+      144266,
       144266
     ],
     "volum": [
@@ -4554,184 +4713,16 @@
   {
     "id": "nissanleaf",
     "merke": "nissan",
-    "navn": "Nissan Leaf 40kWh",
-    "sub": "2020–2020 · N-Connecta",
-    "score": 0,
-    "flipScore": 44,
-    "snittPris": 134016,
-    "minPris": 125000,
-    "maxPris": 143532,
-    "snittDager": 11,
-    "antallAnnonser": 4,
-    "prisEndring": -6107,
-    "prisData": [
-      161140,
-      114532,
-      160255,
-      157922,
-      144699,
-      157643,
-      157851,
-      143144,
-      157173,
-      158175,
-      158694,
-      140741,
-      158565,
-      158414,
-      144532,
-      158341,
-      158613,
-      132149,
-      158675,
-      156940,
-      144705,
-      158291,
-      157961,
-      157949,
-      155510,
-      157676,
-      171467,
-      159237,
-      131719,
-      159457,
-      158603,
-      179000,
-      160016,
-      134699,
-      162041,
-      143841,
-      158600,
-      158867,
-      158782,
-      131573,
-      158263,
-      157077,
-      157788,
-      133900,
-      159667,
-      151416,
-      160749,
-      145333,
-      160654,
-      160321,
-      158740,
-      158127,
-      158786,
-      158808,
-      156287,
-      158328,
-      140913,
-      156468,
-      156213,
-      141575,
-      157317,
-      156844,
-      118111,
-      156510,
-      156510,
-      146357,
-      155727,
-      156097,
-      156539,
-      145309
-    ],
-    "volum": [
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4,
-      4
-    ],
-    "tags": [
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Nissan Leaf 40kWh — 4 annonser funnet.",
-    "avgBucketMedianPrivate": 156532,
-    "avgBucketMedianDealer": 174121,
-    "avgBucketP25Private": 144657,
-    "avgBucketP75Private": 171216,
-    "avgLowballTarget": 125162,
-    "avgLowballMargin": 31370,
-    "avgMedianMargin": 16729,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 20,
-    "bucketCoverage": 4,
-    "bucketDealerCoverage": 4,
-    "priceToBucketPct": 86,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 4
-    },
-    "primaryValuationSource": "comps_private_min",
-    "valuationBreakdown": {
-      "comps_private_min": 3,
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 1,
-      "unknown": 3
-    },
-    "analysisBaseCount": 4,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 54,
-    "bestMargin": 7795,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 29,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 60,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 52,
-        "c": "#e8a020"
-      }
-    ]
-  },
-  {
-    "id": "nissanleaf",
-    "merke": "nissan",
     "navn": "Nissan Leaf 39kWh",
     "sub": "2024–2022 · N-Connecta",
     "score": 0,
-    "flipScore": 44,
+    "flipScore": 45,
     "snittPris": 183019,
     "minPris": 159532,
     "maxPris": 206505,
-    "snittDager": 19,
+    "snittDager": 20,
     "antallAnnonser": 2,
-    "prisEndring": 12883,
+    "prisEndring": -2588,
     "prisData": [
       197885,
       172633,
@@ -4799,7 +4790,8 @@
       187897,
       188087,
       187925,
-      195967
+      195967,
+      187484
     ],
     "volum": [
       2,
@@ -4821,10 +4813,6 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
         "t": "Under bucket",
         "c": "g"
       },
@@ -4835,7 +4823,7 @@
     ],
     "ai": "Nissan Leaf 39kWh — 2 annonser funnet.",
     "avgBucketMedianPrivate": 207133,
-    "avgBucketMedianDealer": 211175,
+    "avgBucketMedianDealer": 209900,
     "avgBucketP25Private": 194642,
     "avgBucketP75Private": 231688,
     "avgLowballTarget": 168893,
@@ -4862,7 +4850,7 @@
     },
     "analysisBaseCount": 2,
     "cohortFilteredCount": 0,
-    "bestDealScore": 48,
+    "bestDealScore": 50,
     "bestMargin": 15640,
     "faktorer": [
       {
@@ -4897,9 +4885,9 @@
     "snittPris": 106532,
     "minPris": 106532,
     "maxPris": 106532,
-    "snittDager": 30,
+    "snittDager": 31,
     "antallAnnonser": 1,
-    "prisEndring": 14507,
+    "prisEndring": 4843,
     "prisData": [
       186592,
       183532,
@@ -4957,7 +4945,8 @@
       194470,
       197279,
       197279,
-      192500
+      192500,
+      197557
     ],
     "volum": [
       1,
@@ -4979,10 +4968,6 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
         "t": "Under bucket",
         "c": "g"
       },
@@ -4993,14 +4978,14 @@
     ],
     "ai": "Nissan Leaf N-Connecta — 1 annonser funnet.",
     "avgBucketMedianPrivate": 119532,
-    "avgBucketMedianDealer": 129000,
+    "avgBucketMedianDealer": 128950,
     "avgBucketP25Private": 119532,
     "avgBucketP75Private": 124532,
     "avgLowballTarget": 99075,
     "avgLowballMargin": 20457,
     "avgMedianMargin": 11643,
     "avgCompCount": 25,
-    "avgCompSpreadPct": 9,
+    "avgCompSpreadPct": 8,
     "bucketCoverage": 1,
     "bucketDealerCoverage": 1,
     "priceToBucketPct": 89,
@@ -5045,242 +5030,18 @@
     ]
   },
   {
-    "id": "nissanleaf",
-    "merke": "nissan",
-    "navn": "Nissan Leaf 2021",
-    "sub": "2021–2021 · ∙ 56 000 km ∙ El ∙ 270 km rekkevidde",
-    "score": 0,
-    "flipScore": 43,
-    "snittPris": 139532,
-    "minPris": 139532,
-    "maxPris": 139532,
-    "snittDager": 34,
-    "antallAnnonser": 1,
-    "prisEndring": -10000,
-    "prisData": [
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      149532,
-      139532,
-      139532,
-      139532,
-      139532,
-      139532,
-      139532,
-      139532
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Nissan Leaf 2021 — 1 annonser funnet.",
-    "avgBucketMedianPrivate": 159532,
-    "avgBucketMedianDealer": 179000,
-    "avgBucketP25Private": 156532,
-    "avgBucketP75Private": 174266,
-    "avgLowballTarget": 128369,
-    "avgLowballMargin": 31163,
-    "avgMedianMargin": 20000,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 13,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 87,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "unknown": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 43,
-    "bestMargin": 6695,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 24,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.4 1.st",
-    "sub": "2021–2021 · PRO LED | R.Kamera | H.Feste | Cruise control",
-    "score": 0,
-    "flipScore": 41,
-    "snittPris": 329000,
-    "minPris": 329000,
-    "maxPris": 329000,
-    "snittDager": 23,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000,
-      329000
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Volkswagen ID.4 1.st — 1 annonser funnet.",
-    "avgBucketMedianPrivate": 343532,
-    "avgBucketMedianDealer": 344850,
-    "avgBucketP25Private": 343532,
-    "avgBucketP75Private": 343532,
-    "avgLowballTarget": 309260,
-    "avgLowballMargin": 34272,
-    "avgMedianMargin": 14532,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 6,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": 96,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "bucket_private_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "unknown": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 41,
-    "bestMargin": 6987,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 11,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "hyundaikon",
     "merke": "hyundai",
     "navn": "Hyundai Kona Premium",
     "sub": "2020–2020 · Diverse",
     "score": 0,
-    "flipScore": 39,
+    "flipScore": 43,
     "snittPris": 169532,
     "minPris": 169532,
     "maxPris": 169532,
-    "snittDager": 8,
+    "snittDager": 9,
     "antallAnnonser": 1,
-    "prisEndring": -26327,
+    "prisEndring": -1387,
     "prisData": [
       309327,
       262768,
@@ -5350,7 +5111,8 @@
       317699,
       317202,
       316949,
-      296356
+      296356,
+      314637
     ],
     "volum": [
       1,
@@ -5370,10 +5132,6 @@
       {
         "t": "Lavt volum",
         "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -5412,7 +5170,7 @@
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
-    "bestDealScore": 39,
+    "bestDealScore": 43,
     "bestMargin": 12823,
     "faktorer": [
       {
@@ -5440,6 +5198,231 @@
   {
     "id": "nissanleaf",
     "merke": "nissan",
+    "navn": "Nissan Leaf 2021",
+    "sub": "2021–2021 · ∙ 56 000 km ∙ El ∙ 270 km rekkevidde",
+    "score": 0,
+    "flipScore": 43,
+    "snittPris": 139532,
+    "minPris": 139532,
+    "maxPris": 139532,
+    "snittDager": 35,
+    "antallAnnonser": 1,
+    "prisEndring": -10000,
+    "prisData": [
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      149532,
+      139532,
+      139532,
+      139532,
+      139532,
+      139532,
+      139532,
+      139532
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Nissan Leaf 2021 — 1 annonser funnet.",
+    "avgBucketMedianPrivate": 159532,
+    "avgBucketMedianDealer": 179000,
+    "avgBucketP25Private": 156532,
+    "avgBucketP75Private": 174266,
+    "avgLowballTarget": 128369,
+    "avgLowballMargin": 31163,
+    "avgMedianMargin": 20000,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 12,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": 87,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1
+    },
+    "primaryValuationSource": "bucket_private_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 43,
+    "bestMargin": 6695,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 24,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen ID.4 1.st",
+    "sub": "2021–2021 · PRO LED | R.Kamera | H.Feste | Cruise control",
+    "score": 0,
+    "flipScore": 41,
+    "snittPris": 329000,
+    "minPris": 329000,
+    "maxPris": 329000,
+    "snittDager": 24,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000,
+      329000
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Volkswagen ID.4 1.st — 1 annonser funnet.",
+    "avgBucketMedianPrivate": 343532,
+    "avgBucketMedianDealer": 349800,
+    "avgBucketP25Private": 343532,
+    "avgBucketP75Private": 343532,
+    "avgLowballTarget": 309260,
+    "avgLowballMargin": 34272,
+    "avgMedianMargin": 14532,
+    "avgCompCount": 7,
+    "avgCompSpreadPct": 6,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": 96,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1
+    },
+    "primaryValuationSource": "bucket_private_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 41,
+    "bestMargin": 6987,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 11,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "nissanleaf",
+    "merke": "nissan",
     "navn": "Nissan Leaf 2018",
     "sub": "2018–2018 · ∙ 48 000 km ∙ El ∙ 270 km rekkevidde",
     "score": 0,
@@ -5447,7 +5430,7 @@
     "snittPris": 109532,
     "minPris": 109532,
     "maxPris": 109532,
-    "snittDager": 7,
+    "snittDager": 8,
     "antallAnnonser": 1,
     "prisEndring": 45000,
     "prisData": [
@@ -5474,6 +5457,7 @@
       144532,
       109532,
       109532,
+      154532,
       154532,
       154532
     ],
@@ -5568,10 +5552,11 @@
     "snittPris": 343532,
     "minPris": 343532,
     "maxPris": 343532,
-    "snittDager": 18,
+    "snittDager": 19,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
+      343532,
       343532,
       343532,
       343532,
@@ -5666,6 +5651,107 @@
     ]
   },
   {
+    "id": "hyundaikon",
+    "merke": "hyundai",
+    "navn": "Hyundai Kona 2020",
+    "sub": "2020–2020 · ∙ 76 500 km ∙ El ∙ 484 km rekkevidde",
+    "score": 0,
+    "flipScore": 36,
+    "snittPris": 173532,
+    "minPris": 173532,
+    "maxPris": 173532,
+    "snittDager": 14,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      184532,
+      175000,
+      175000,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532,
+      173532
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      }
+    ],
+    "ai": "Hyundai Kona 2020 — 1 annonser funnet.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": null,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 164855,
+    "avgLowballMargin": -164855,
+    "avgMedianMargin": null,
+    "avgCompCount": 0,
+    "avgCompSpreadPct": null,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 0,
+    "priceToBucketPct": null,
+    "underBucketShare": 0,
+    "p25DealShare": 0,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 1
+    },
+    "primaryValuationSource": "naive_fallback",
+    "valuationBreakdown": {
+      "naive_fallback": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 36,
+    "bestMargin": 18485,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 53,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 52,
+        "c": "#e8a020"
+      }
+    ]
+  },
+  {
     "id": "toyotayari",
     "merke": "toyota",
     "navn": "Toyota Yaris 2005",
@@ -5675,7 +5761,7 @@
     "snittPris": 26842,
     "minPris": 26842,
     "maxPris": 26842,
-    "snittDager": 104,
+    "snittDager": 105,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
