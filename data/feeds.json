@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-01T05:59:36.770Z",
-  "total": 126,
+  "generated_at": "2026-08-02T05:59:10.282Z",
+  "total": 129,
   "hot": [],
   "review": [
     {
@@ -58,8 +58,8 @@
       "canonicalModel": "model y",
       "canonicalVariant": "long range awd",
       "drivetrainBucket": "awd",
-      "dager": "123 dager",
-      "dagerRaw": 123,
+      "dager": "124 dager",
+      "dagerRaw": 124,
       "selgerKlasse": "private_likely",
       "selgerKonfidens": 0.5,
       "dealerScore": 0,
@@ -81,7 +81,7 @@
           "c": "g"
         },
         {
-          "t": "123d på markedet",
+          "t": "124d på markedet",
           "c": "g"
         }
       ],
@@ -94,28 +94,29 @@
       "reasons": [
         "Sterk margin: ~51k etter alle kostnader",
         "Privatselger — typisk lavere pris enn forhandler",
-        "Har ligget 123 dager — selger trolig motivert",
+        "Har ligget 124 dager — selger trolig motivert",
         "Komper: 11 aktive sammenlignbare annonser (high)",
         "Privat bucket median: 538k (4 stk, strict)",
         "Pris er under privat bucket p25"
       ],
       "negotiation": [
-        "Annonsen har ligget i 123 dager, bruk dette som argument for lavere pris",
+        "Annonsen har ligget i 124 dager, bruk dette som argument for lavere pris",
         "Foreslå 422k for å sikre 15%+ margin",
         "Strukturert budanker: ca 427k basert på bucket p25/forhandlingsrom",
         "Privatselger — tilby rask oppgjør mot prisavslag"
       ],
       "damageFlags": [],
       "priceDrops": 0,
-      "duplicateCount": 0,
-      "duplicateRisk": "low",
+      "duplicateCount": 1,
+      "duplicateRisk": "elevated",
       "confidence": "medium",
       "confidenceScore": 51,
       "confidenceFactors": [
         "seller:likely_private",
         "history:none",
         "damage:no_info",
-        "value:comps:high"
+        "value:comps:high",
+        "duplicate:1"
       ],
       "trustBucket": "likely_trusted"
     },
@@ -126,14 +127,14 @@
       "sub": "RWD",
       "aar": 2023,
       "km": 66000,
-      "lok": "Sammenlign biler",
+      "lok": "Fredrikstad",
       "pris": 287505,
-      "gevinst": 26942,
-      "omreg": 5545,
+      "gevinst": 23942,
+      "omreg": 8545,
       "klargjoring": 2000,
       "salgspris": 321992,
       "score": 65,
-      "dealScore": 96,
+      "dealScore": 95,
       "anbefaling": "VURDER",
       "aiUsikkerhet": null,
       "aiViktigsteRisiko": null,
@@ -143,7 +144,7 @@
       "aiCompConfidence": null,
       "aiValuationSource": null,
       "aiExpectedMarketPrice": null,
-      "deterministicScore": 96,
+      "deterministicScore": 95,
       "expectedPrivatePrice": 321992,
       "expectedDealerPrice": 337312,
       "expectedMarketPrice": 321992,
@@ -174,15 +175,22 @@
       "canonicalModel": "model y",
       "canonicalVariant": "standard rwd",
       "drivetrainBucket": "rwd",
-      "dager": "99 dager",
-      "dagerRaw": 99,
+      "dager": "100 dager",
+      "dagerRaw": 100,
       "selgerKlasse": "private_likely",
       "selgerKonfidens": 0.5,
-      "dealerScore": 1,
+      "dealerScore": 0,
       "privateScore": 3,
       "selgerType": "",
       "kortSelgerNavn": null,
-      "images": [],
+      "images": [
+        "https://images.finncdn.no/dynamic/default/item/460775777/01ab663b-5640-47e4-9f94-95512c7b4ccd",
+        "https://images.finncdn.no/dynamic/default/item/460775777/2412d750-6f04-4ca0-9965-50ce70c595ec",
+        "https://images.finncdn.no/dynamic/default/item/460775777/511fd9d8-3433-46d1-b166-73a83f5b6495",
+        "https://images.finncdn.no/dynamic/default/item/460775777/ed3fbb5d-b1c8-482b-b7e7-df1b3b3674f5",
+        "https://images.finncdn.no/dynamic/default/item/460775777/4fd90439-6ee2-4dc4-8af8-cb05d8e58651",
+        "https://images.finncdn.no/dynamic/default/item/460775777/5e7f4e10-6d46-4858-86e5-155abad88a62"
+      ],
       "tags": [
         {
           "t": "Elbil",
@@ -193,7 +201,7 @@
           "c": "g"
         },
         {
-          "t": "99d på markedet",
+          "t": "100d på markedet",
           "c": "g"
         }
       ],
@@ -213,20 +221,21 @@
         335505,
         312505,
         312505,
+        287505,
         287505
       ],
       "prisEndring": 0,
       "reasons": [
-        "Sterk margin: ~27k etter alle kostnader",
+        "Brukbar margin: ~24k etter kostnader",
         "Privatselger — typisk lavere pris enn forhandler",
-        "Har ligget 99 dager — selger trolig motivert",
+        "Har ligget 100 dager — selger trolig motivert",
         "Prisjustert 2 ganger, ned totalt 48k",
         "Komper: 5 aktive sammenlignbare annonser (high)",
         "Privat bucket median: 328k (3 stk, year_km_relaxed)",
         "Pris er under privat bucket p25"
       ],
       "negotiation": [
-        "Annonsen har ligget i 99 dager, bruk dette som argument for lavere pris",
+        "Annonsen har ligget i 100 dager, bruk dette som argument for lavere pris",
         "Prisen er allerede satt ned 2 ganger — selger er villig til å forhandle",
         "Foreslå 265k for å sikre 15%+ margin",
         "Strukturert budanker: ca 263k basert på bucket p25/forhandlingsrom",
@@ -301,8 +310,8 @@
       "canonicalModel": "model 3",
       "canonicalVariant": "long range awd",
       "drivetrainBucket": "awd",
-      "dager": "22 dager",
-      "dagerRaw": 22,
+      "dager": "23 dager",
+      "dagerRaw": 23,
       "selgerKlasse": "private_likely",
       "selgerKonfidens": 0.5,
       "dealerScore": 1,
@@ -373,7 +382,7 @@
       "reasons": [
         "Brukbar margin: ~24k etter kostnader",
         "Privatselger — typisk lavere pris enn forhandler",
-        "22 dager på markedet",
+        "23 dager på markedet",
         "Prisjustert 3 ganger, ned totalt 14k",
         "Komper: 12 aktive sammenlignbare annonser (high)",
         "Privat bucket median: 410k (4 stk, year_relaxed)",
