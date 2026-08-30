@@ -9,11 +9,10 @@
     "snittPris": 397193,
     "minPris": 319532,
     "maxPris": 459000,
-    "snittDager": 154,
+    "snittDager": 155,
     "antallAnnonser": 9,
-    "prisEndring": 36352,
+    "prisEndring": 48159,
     "prisData": [
-      411301,
       411264,
       409807,
       418546,
@@ -88,6 +87,7 @@
       523935,
       504787,
       474363,
+      463572,
       463572
     ],
     "volum": [
@@ -197,11 +197,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 1,
     "prisEndring": -26126,
     "prisData": [
-      191115,
       211448,
       197003,
       208622,
@@ -352,11 +351,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 1,
-    "prisEndring": 12031,
+    "prisEndring": -6578,
     "prisData": [
-      495334,
       503100,
       496960,
       466624,
@@ -430,6 +428,7 @@
       509338,
       509338,
       509338,
+      499300,
       499300
     ],
     "volum": [
@@ -456,8 +455,8 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Sterk medianmargin",
@@ -527,11 +526,10 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 3,
     "prisEndring": 79380,
     "prisData": [
-      412352,
       366081,
       405690,
       363740,
@@ -601,6 +599,7 @@
       402633,
       402633,
       399225,
+      429280,
       429280,
       429280
     ],
@@ -698,16 +697,15 @@
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2014 · 18 Nissan Leaf",
-    "score": 2,
-    "flipScore": 64,
-    "snittPris": 235040,
+    "score": 1,
+    "flipScore": 63,
+    "snittPris": 236951,
     "minPris": 64532,
-    "maxPris": 407505,
-    "snittDager": 27,
-    "antallAnnonser": 162,
-    "prisEndring": 1379,
+    "maxPris": 417000,
+    "snittDager": 26,
+    "antallAnnonser": 170,
+    "prisEndring": 25643,
     "prisData": [
-      385866,
       358499,
       384115,
       411485,
@@ -785,21 +783,22 @@
       352535,
       353241,
       352277,
-      381770
+      382050,
+      352496
     ],
     "volum": [
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162,
-      162
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170,
+      170
     ],
     "tags": [
       {
@@ -809,6 +808,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -823,46 +826,46 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 162 annonser funnet.",
-    "avgBucketMedianPrivate": 336482,
-    "avgBucketMedianDealer": 315280,
-    "avgBucketP25Private": 299662,
-    "avgBucketP75Private": 368739,
-    "avgLowballTarget": 220585,
-    "avgLowballMargin": 115897,
-    "avgMedianMargin": 63485,
+    "ai": "Bilde 1 av — 170 annonser funnet.",
+    "avgBucketMedianPrivate": 329470,
+    "avgBucketMedianDealer": 315725,
+    "avgBucketP25Private": 293469,
+    "avgBucketP75Private": 367501,
+    "avgLowballTarget": 222417,
+    "avgLowballMargin": 107054,
+    "avgMedianMargin": 61247,
     "avgCompCount": 25,
-    "avgCompSpreadPct": 31,
-    "bucketCoverage": 111,
-    "bucketDealerCoverage": 111,
-    "priceToBucketPct": 70,
+    "avgCompSpreadPct": 30,
+    "bucketCoverage": 114,
+    "bucketDealerCoverage": 114,
+    "priceToBucketPct": 72,
     "underBucketShare": 100,
-    "p25DealShare": 91,
+    "p25DealShare": 86,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
       "high": 93,
-      "medium": 18
+      "medium": 21
     },
     "primaryValuationSource": "bucket_dealer_min",
     "valuationBreakdown": {
-      "comps_dealer_min": 31,
+      "comps_dealer_min": 30,
       "bucket_dealer_min": 49,
-      "comps_private_min": 16,
-      "bucket_private_min": 12,
+      "comps_private_min": 18,
+      "bucket_private_min": 14,
       "comps_private_thin_min": 3
     },
     "sellerMix": {
-      "private_likely": 69,
-      "unknown": 93
+      "private_likely": 75,
+      "unknown": 95
     },
-    "analysisBaseCount": 111,
-    "cohortFilteredCount": 111,
+    "analysisBaseCount": 114,
+    "cohortFilteredCount": 114,
     "bestDealScore": 100,
-    "bestMargin": 103015,
+    "bestMargin": 127205,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 7,
+        "v": 6,
         "c": "#e8a020"
       },
       {
@@ -892,11 +895,10 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 1,
     "prisEndring": 9234,
     "prisData": [
-      206233,
       209434,
       209972,
       209058,
@@ -1042,11 +1044,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      174532,
       174532,
       174532
     ],
@@ -1141,11 +1142,10 @@
     "snittPris": 224483,
     "minPris": 224434,
     "maxPris": 224532,
-    "snittDager": 150,
+    "snittDager": 151,
     "antallAnnonser": 2,
-    "prisEndring": 70782,
+    "prisEndring": -35252,
     "prisData": [
-      348440,
       383331,
       352793,
       339823,
@@ -1215,7 +1215,7 @@
       329450,
       329300,
       329000,
-      409505
+      329000
     ],
     "volum": [
       2,
@@ -1241,8 +1241,8 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -1322,11 +1322,10 @@
     "snittPris": 284532,
     "minPris": 269532,
     "maxPris": 299532,
-    "snittDager": 76,
+    "snittDager": 77,
     "antallAnnonser": 2,
-    "prisEndring": 108214,
+    "prisEndring": -26410,
     "prisData": [
-      434717,
       418017,
       423908,
       451203,
@@ -1399,6 +1398,7 @@
       299532,
       435844,
       435844,
+      399358,
       399358
     ],
     "volum": [
@@ -1425,8 +1425,8 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Sterk medianmargin",
@@ -1612,11 +1612,10 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 146,
+    "snittDager": 147,
     "antallAnnonser": 1,
-    "prisEndring": 129000,
+    "prisEndring": 0,
     "prisData": [
-      211327,
       189450,
       207717,
       207467,
@@ -1678,10 +1677,6 @@
     "tags": [
       {
         "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris opp",
         "c": "a"
       }
     ],
