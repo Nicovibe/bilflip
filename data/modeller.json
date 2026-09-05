@@ -9,9 +9,9 @@
     "snittPris": 397193,
     "minPris": 319532,
     "maxPris": 459000,
-    "snittDager": 145,
+    "snittDager": 146,
     "antallAnnonser": 11,
-    "prisEndring": 27825,
+    "prisEndring": 56618,
     "prisData": [
       410002,
       411891,
@@ -196,9 +196,9 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 1,
-    "prisEndring": -25179,
+    "prisEndring": -25792,
     "prisData": [
       198741,
       200934,
@@ -345,9 +345,9 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 1,
-    "prisEndring": -3975,
+    "prisEndring": -8255,
     "prisData": [
       207439,
       207854,
@@ -419,6 +419,10 @@
         "c": "g"
       },
       {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
@@ -486,9 +490,9 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 1,
-    "prisEndring": -3259,
+    "prisEndring": -5193,
     "prisData": [
       494992,
       494277,
@@ -586,6 +590,10 @@
         "c": "a"
       },
       {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
@@ -647,15 +655,15 @@
     "id": "bilde1av",
     "merke": "bilde",
     "navn": "Bilde 1 av",
-    "sub": "2024–2022 · 10 Volkswagen ID.3",
-    "score": 3,
+    "sub": "2024–2018 · 10 Volkswagen ID.3",
+    "score": 2,
     "flipScore": 65,
-    "snittPris": 247333,
+    "snittPris": 255274,
     "minPris": 60000,
     "maxPris": 407505,
-    "snittDager": 26,
-    "antallAnnonser": 175,
-    "prisEndring": -1771,
+    "snittDager": 24,
+    "antallAnnonser": 188,
+    "prisEndring": 29402,
     "prisData": [
       380772,
       380718,
@@ -735,21 +743,22 @@
       346707,
       353554,
       354807,
-      353737
+      353737,
+      341479
     ],
     "volum": [
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175,
-      175
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188,
+      188
     ],
     "tags": [
       {
@@ -759,6 +768,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -773,46 +786,46 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 175 annonser funnet.",
-    "avgBucketMedianPrivate": 338960,
-    "avgBucketMedianDealer": 342199,
-    "avgBucketP25Private": 304551,
-    "avgBucketP75Private": 378128,
-    "avgLowballTarget": 231196,
-    "avgLowballMargin": 107764,
-    "avgMedianMargin": 71936,
+    "ai": "Bilde 1 av — 188 annonser funnet.",
+    "avgBucketMedianPrivate": 352767,
+    "avgBucketMedianDealer": 353346,
+    "avgBucketP25Private": 318319,
+    "avgBucketP75Private": 389067,
+    "avgLowballTarget": 239461,
+    "avgLowballMargin": 113306,
+    "avgMedianMargin": 72466,
     "avgCompCount": 24,
     "avgCompSpreadPct": 31,
-    "bucketCoverage": 116,
-    "bucketDealerCoverage": 116,
-    "priceToBucketPct": 73,
+    "bucketCoverage": 131,
+    "bucketDealerCoverage": 131,
+    "priceToBucketPct": 72,
     "underBucketShare": 100,
-    "p25DealShare": 91,
+    "p25DealShare": 94,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 92,
-      "medium": 24
+      "high": 100,
+      "medium": 31
     },
     "primaryValuationSource": "bucket_private_min",
     "valuationBreakdown": {
       "comps_private_min": 25,
-      "bucket_dealer_min": 27,
-      "bucket_private_min": 31,
-      "comps_dealer_min": 31,
-      "comps_private_thin_min": 2
+      "comps_dealer_min": 41,
+      "bucket_private_min": 46,
+      "bucket_dealer_min": 15,
+      "comps_private_thin_min": 4
     },
     "sellerMix": {
-      "private_likely": 78,
-      "unknown": 97
+      "private_likely": 75,
+      "unknown": 113
     },
-    "analysisBaseCount": 116,
-    "cohortFilteredCount": 116,
+    "analysisBaseCount": 131,
+    "cohortFilteredCount": 131,
     "bestDealScore": 100,
-    "bestMargin": 127895,
+    "bestMargin": 124833,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 8,
+        "v": 7,
         "c": "#e8a020"
       },
       {
@@ -842,7 +855,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -939,9 +952,9 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 3,
-    "prisEndring": 80258,
+    "prisEndring": 137859,
     "prisData": [
       408695,
       403752,
@@ -1114,9 +1127,9 @@
     "snittPris": 257987,
     "minPris": 224434,
     "maxPris": 332990,
-    "snittDager": 155,
+    "snittDager": 156,
     "antallAnnonser": 4,
-    "prisEndring": 12870,
+    "prisEndring": 13387,
     "prisData": [
       349090,
       347864,
@@ -1287,7 +1300,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1396,9 +1409,9 @@
     "snittPris": 284532,
     "minPris": 269532,
     "maxPris": 299532,
-    "snittDager": 82,
+    "snittDager": 83,
     "antallAnnonser": 2,
-    "prisEndring": 25326,
+    "prisEndring": 28359,
     "prisData": [
       425207,
       417329,
@@ -1571,13 +1584,13 @@
     "navn": "Volkswagen ID.3 Pure",
     "sub": "2026–2026 · Businessline 52kWh 170hk",
     "score": 0,
-    "flipScore": 35,
+    "flipScore": 37,
     "snittPris": 280000,
     "minPris": 280000,
     "maxPris": 280000,
-    "snittDager": 6,
+    "snittDager": 7,
     "antallAnnonser": 1,
-    "prisEndring": 26675,
+    "prisEndring": 34250,
     "prisData": [
       286982,
       286982,
@@ -1693,7 +1706,7 @@
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 0,
-    "bestDealScore": 35,
+    "bestDealScore": 37,
     "bestMargin": 31455,
     "faktorer": [
       {
@@ -1728,7 +1741,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 152,
+    "snittDager": 153,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
