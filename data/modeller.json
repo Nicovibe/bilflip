@@ -9,11 +9,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      198152,
       204280,
       239253,
       204882,
@@ -146,10 +145,9 @@
     "minPris": 319532,
     "maxPris": 466505,
     "snittDager": 175,
-    "antallAnnonser": 9,
-    "prisEndring": -122252,
+    "antallAnnonser": 10,
+    "prisEndring": -90267,
     "prisData": [
-      411849,
       413829,
       398693,
       412168,
@@ -223,21 +221,22 @@
       466253,
       466253,
       466253,
-      405253
+      405253,
+      452168
     ],
     "volum": [
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9,
-      9
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10,
+      10
     ],
     "tags": [
       {
@@ -267,7 +266,7 @@
     ],
     "ai": "Tesla Model Y LR 2021 med 75k km og hengerfeste. Prisen 319.532kr er god for en Long Range med hvit interiør. Tilsvarende biler selges for 340-360k hos forhandlere. God margin mulig.",
     "avgBucketMedianPrivate": 434663,
-    "avgBucketMedianDealer": 459380,
+    "avgBucketMedianDealer": 457260,
     "avgBucketP25Private": 421066,
     "avgBucketP75Private": 446684,
     "avgLowballTarget": 369871,
@@ -293,7 +292,7 @@
       "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 4,
+      "private_likely": 5,
       "unknown": 5
     },
     "analysisBaseCount": 5,
@@ -333,11 +332,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
-    "prisEndring": 3950,
+    "prisEndring": 57450,
     "prisData": [
-      468089,
       493581,
       449100,
       493691,
@@ -424,6 +422,10 @@
         "c": "a"
       },
       {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
@@ -486,16 +488,15 @@
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2016 · 10 Volkswagen ID.3",
-    "score": 2,
+    "score": 4,
     "flipScore": 65,
-    "snittPris": 238999,
+    "snittPris": 241621,
     "minPris": 36942,
     "maxPris": 457505,
-    "snittDager": 26,
-    "antallAnnonser": 201,
-    "prisEndring": -21326,
+    "snittDager": 30,
+    "antallAnnonser": 198,
+    "prisEndring": 4517,
     "prisData": [
-      350651,
       379606,
       340410,
       377872,
@@ -575,21 +576,22 @@
       343577,
       354612,
       354468,
-      330233
+      331207,
+      356326
     ],
     "volum": [
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198
     ],
     "tags": [
       {
@@ -599,10 +601,6 @@
       {
         "t": "Høyt volum",
         "c": "b"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -617,46 +615,46 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 201 annonser funnet.",
-    "avgBucketMedianPrivate": 327010,
-    "avgBucketMedianDealer": 320643,
-    "avgBucketP25Private": 292675,
-    "avgBucketP75Private": 362162,
-    "avgLowballTarget": 223621,
-    "avgLowballMargin": 103389,
-    "avgMedianMargin": 62850,
+    "ai": "Bilde 1 av — 198 annonser funnet.",
+    "avgBucketMedianPrivate": 330989,
+    "avgBucketMedianDealer": 321131,
+    "avgBucketP25Private": 291507,
+    "avgBucketP75Private": 364338,
+    "avgLowballTarget": 225914,
+    "avgLowballMargin": 105075,
+    "avgMedianMargin": 60392,
     "avgCompCount": 24,
     "avgCompSpreadPct": 31,
-    "bucketCoverage": 125,
-    "bucketDealerCoverage": 125,
+    "bucketCoverage": 124,
+    "bucketDealerCoverage": 124,
     "priceToBucketPct": 73,
     "underBucketShare": 100,
-    "p25DealShare": 91,
+    "p25DealShare": 90,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 106,
-      "medium": 19
+      "high": 103,
+      "medium": 21
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 29,
-      "bucket_dealer_min": 33,
-      "bucket_private_min": 19,
-      "comps_dealer_min": 40,
-      "comps_private_thin_min": 4
+      "comps_private_min": 26,
+      "bucket_private_min": 22,
+      "bucket_dealer_min": 35,
+      "comps_dealer_min": 39,
+      "comps_private_thin_min": 2
     },
     "sellerMix": {
-      "private_likely": 83,
-      "unknown": 118
+      "private_likely": 90,
+      "unknown": 108
     },
-    "analysisBaseCount": 125,
-    "cohortFilteredCount": 125,
+    "analysisBaseCount": 124,
+    "cohortFilteredCount": 124,
     "bestDealScore": 100,
-    "bestMargin": 118887,
+    "bestMargin": 122270,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 7,
+        "v": 9,
         "c": "#e8a020"
       },
       {
@@ -677,6 +675,178 @@
     ]
   },
   {
+    "id": "hyundaiion",
+    "merke": "hyundai",
+    "navn": "Hyundai Ioniq 5",
+    "sub": "2025–2022 · RWD",
+    "score": 68,
+    "flipScore": 65,
+    "snittPris": 316021,
+    "minPris": 254532,
+    "maxPris": 399000,
+    "snittDager": 164,
+    "antallAnnonser": 3,
+    "prisEndring": 22825,
+    "prisData": [
+      407696,
+      376046,
+      409099,
+      413204,
+      413321,
+      412447,
+      407985,
+      407705,
+      343812,
+      403331,
+      349111,
+      404969,
+      406989,
+      382811,
+      408097,
+      402471,
+      354225,
+      400915,
+      398748,
+      432400,
+      398100,
+      399799,
+      400093,
+      348106,
+      401475,
+      403992,
+      327672,
+      401011,
+      397395,
+      450213,
+      401632,
+      405884,
+      407474,
+      401053,
+      349900,
+      349900,
+      349900,
+      416724,
+      352777,
+      381918,
+      321716,
+      392749,
+      384801,
+      374431,
+      299532,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      459350,
+      502800,
+      502800,
+      502800,
+      471850,
+      471850,
+      502800,
+      442505,
+      461825
+    ],
+    "volum": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
+    "avgBucketMedianPrivate": 334026,
+    "avgBucketMedianDealer": 395917,
+    "avgBucketP25Private": 315529,
+    "avgBucketP75Private": 352522,
+    "avgLowballTarget": 291588,
+    "avgLowballMargin": 114079,
+    "avgMedianMargin": 70686,
+    "avgCompCount": 3,
+    "avgCompSpreadPct": 26,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 3,
+    "priceToBucketPct": 95,
+    "underBucketShare": 100,
+    "p25DealShare": 67,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 2,
+      "medium": 1
+    },
+    "primaryValuationSource": "bucket_dealer",
+    "valuationBreakdown": {
+      "bucket_dealer": 1,
+      "comps_private_thin_min": 1,
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 2,
+      "unknown": 1
+    },
+    "analysisBaseCount": 3,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 73,
+    "bestMargin": 136385,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 73,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 94,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 45,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen ID.3 1st",
@@ -686,11 +856,10 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      269000,
       207610,
       183532,
       206189,
@@ -819,7 +988,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -910,17 +1079,16 @@
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model 3",
-    "sub": "2020–2021 · AWD",
-    "score": 81,
-    "flipScore": 57,
-    "snittPris": 260652,
+    "sub": "2021–2021 · Long Range AWD/Hengerfeste/Varmepumpe/Nye Vinterdekk",
+    "score": 78,
+    "flipScore": 59,
+    "snittPris": 257987,
     "minPris": 224434,
     "maxPris": 332990,
     "snittDager": 167,
-    "antallAnnonser": 3,
-    "prisEndring": 78405,
+    "antallAnnonser": 4,
+    "prisEndring": 24653,
     "prisData": [
-      346135,
       351415,
       332648,
       353400,
@@ -984,27 +1152,24 @@
       368203,
       407405,
       407405,
-      407405
+      407405,
+      353653
     ],
     "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
     ],
     "tags": [
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
       {
         "t": "Pris opp",
         "c": "a"
@@ -1022,236 +1187,59 @@
         "c": "g"
       }
     ],
-    "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
-    "avgBucketMedianPrivate": 303969,
-    "avgBucketMedianDealer": 297722,
-    "avgBucketP25Private": 288346,
-    "avgBucketP75Private": 323357,
-    "avgLowballTarget": 240910,
-    "avgLowballMargin": 63059,
-    "avgMedianMargin": 34516,
+    "ai": "Tesla Model 3 Long Range til 249 990 kr privat. 2021 facelift, AWD, hengerfeste. Liten kosmetisk skade. Tilsvarende selges for 280-300 000 kr. God margin, men høy kjøpspris krever mer kapital.",
+    "avgBucketMedianPrivate": 295360,
+    "avgBucketMedianDealer": 303042,
+    "avgBucketP25Private": 282893,
+    "avgBucketP75Private": 313651,
+    "avgLowballTarget": 238805,
+    "avgLowballMargin": 56555,
+    "avgMedianMargin": 30772,
     "avgCompCount": 2,
-    "avgCompSpreadPct": 11,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 86,
+    "avgCompSpreadPct": 13,
+    "bucketCoverage": 4,
+    "bucketDealerCoverage": 4,
+    "priceToBucketPct": 87,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "low",
     "confidenceBreakdown": {
+      "medium": 1,
       "low": 3
     },
-    "primaryValuationSource": "comps_dealer_min",
+    "primaryValuationSource": "bucket_private_min",
     "valuationBreakdown": {
+      "bucket_private_min": 2,
       "comps_dealer_min": 1,
-      "bucket_dealer_min": 1,
-      "bucket_private_min": 1
+      "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 2,
+      "private_likely": 3,
       "unknown": 1
     },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 0,
+    "analysisBaseCount": 4,
+    "cohortFilteredCount": 1,
     "bestDealScore": 65,
     "bestMargin": 18760,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 86,
+        "v": 83,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 45,
+        "v": 37,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 45,
-        "c": "#e8a020"
+        "v": 60,
+        "c": "#1f5fa6"
       },
       {
         "l": "Batteririsiko",
         "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "hyundaiion",
-    "merke": "hyundai",
-    "navn": "Hyundai Ioniq 5",
-    "sub": "2025–2022 · RWD",
-    "score": 68,
-    "flipScore": 56,
-    "snittPris": 326766,
-    "minPris": 254532,
-    "maxPris": 399000,
-    "snittDager": 164,
-    "antallAnnonser": 2,
-    "prisEndring": 57003,
-    "prisData": [
-      380386,
-      407696,
-      376046,
-      409099,
-      413204,
-      413321,
-      412447,
-      407985,
-      407705,
-      343812,
-      403331,
-      349111,
-      404969,
-      406989,
-      382811,
-      408097,
-      402471,
-      354225,
-      400915,
-      398748,
-      432400,
-      398100,
-      399799,
-      400093,
-      348106,
-      401475,
-      403992,
-      327672,
-      401011,
-      397395,
-      450213,
-      401632,
-      405884,
-      407474,
-      401053,
-      349900,
-      349900,
-      349900,
-      416724,
-      352777,
-      381918,
-      321716,
-      392749,
-      384801,
-      374431,
-      299532,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      459350,
-      502800,
-      502800,
-      502800,
-      471850,
-      471850,
-      502800,
-      496003
-    ],
-    "volum": [
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Over bucket",
-        "c": "a"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
-    "avgBucketMedianPrivate": 297032,
-    "avgBucketMedianDealer": 424450,
-    "avgBucketP25Private": 295782,
-    "avgBucketP75Private": 298282,
-    "avgLowballTarget": 301898,
-    "avgLowballMargin": 121119,
-    "avgMedianMargin": 94261,
-    "avgCompCount": 2,
-    "avgCompSpreadPct": 3,
-    "bucketCoverage": 1,
-    "bucketDealerCoverage": 2,
-    "priceToBucketPct": 110,
-    "underBucketShare": 100,
-    "p25DealShare": 50,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 2
-    },
-    "primaryValuationSource": "bucket_dealer",
-    "valuationBreakdown": {
-      "bucket_dealer": 1,
-      "comps_private_thin_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 1,
-      "unknown": 1
-    },
-    "analysisBaseCount": 2,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 73,
-    "bestMargin": 136435,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 73,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 30,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 84,
         "c": "#3d9960"
       }
     ]
@@ -1266,7 +1254,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 174,
+    "snittDager": 175,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1371,11 +1359,10 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 163,
+    "snittDager": 164,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      169000,
       201800,
       259450,
       209063,
