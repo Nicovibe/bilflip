@@ -1,5 +1,138 @@
 [
   {
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen ID.3 1st",
+    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
+    "score": 88,
+    "flipScore": 70,
+    "snittPris": 189532,
+    "minPris": 189532,
+    "maxPris": 189532,
+    "snittDager": 167,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      205639,
+      203250,
+      203348,
+      205377,
+      205957,
+      206563,
+      211083,
+      208688,
+      211083,
+      218013,
+      199532,
+      211018,
+      211237,
+      201266,
+      210208,
+      210208,
+      210208,
+      186532,
+      208333,
+      205173,
+      208138,
+      213661,
+      213661,
+      211827,
+      211827,
+      198644,
+      179532,
+      191321,
+      188266,
+      192741,
+      197021,
+      197021,
+      188766
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      }
+    ],
+    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 230000,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 176265,
+    "avgLowballMargin": 53735,
+    "avgMedianMargin": 37515,
+    "avgCompCount": 2,
+    "avgCompSpreadPct": 10,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": null,
+    "underBucketShare": 100,
+    "p25DealShare": 0,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 70,
+    "bestMargin": 29970,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 93,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 79,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "nissanleaf",
     "merke": "nissan",
     "navn": "Nissan Leaf 62",
@@ -9,11 +142,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 166,
+    "snittDager": 167,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      204882,
       204750,
       207737,
       205396,
@@ -50,6 +182,7 @@
       192319,
       198617,
       169900,
+      179000,
       179000
     ],
     "volum": [
@@ -134,203 +267,6 @@
     ]
   },
   {
-    "id": "bilde1av",
-    "merke": "bilde",
-    "navn": "Bilde 1 av",
-    "sub": "2024–2015 · 10 Volkswagen ID.3",
-    "score": 4,
-    "flipScore": 66,
-    "snittPris": 249955,
-    "minPris": 36942,
-    "maxPris": 467505,
-    "snittDager": 29,
-    "antallAnnonser": 212,
-    "prisEndring": 11169,
-    "prisData": [
-      377921,
-      376821,
-      375752,
-      373101,
-      373045,
-      373061,
-      334214,
-      373638,
-      330220,
-      370992,
-      370934,
-      337196,
-      371413,
-      369322,
-      322955,
-      367237,
-      367489,
-      334311,
-      365288,
-      366916,
-      367050,
-      325535,
-      363975,
-      364958,
-      344713,
-      363898,
-      360878,
-      372765,
-      361426,
-      360839,
-      359839,
-      359048,
-      371322,
-      380848,
-      326719,
-      360928,
-      384622,
-      353700,
-      366336,
-      355646,
-      312077,
-      353874,
-      351658,
-      350205,
-      330508,
-      352482,
-      331264,
-      351905,
-      351721,
-      351559,
-      351809,
-      320964,
-      352239,
-      338405,
-      353208,
-      353641,
-      317112,
-      352718,
-      353414,
-      352304,
-      381129,
-      352523,
-      353112,
-      346677,
-      353613,
-      354886,
-      353767,
-      342116,
-      361651,
-      354644,
-      343716,
-      353318,
-      337329,
-      354801,
-      343577,
-      354611,
-      354467,
-      331207,
-      356324,
-      355787,
-      332133
-    ],
-    "volum": [
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212,
-      212
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Bilde 1 av — 212 annonser funnet.",
-    "avgBucketMedianPrivate": 336723,
-    "avgBucketMedianDealer": 324611,
-    "avgBucketP25Private": 295051,
-    "avgBucketP75Private": 368505,
-    "avgLowballTarget": 234078,
-    "avgLowballMargin": 102645,
-    "avgMedianMargin": 57982,
-    "avgCompCount": 24,
-    "avgCompSpreadPct": 30,
-    "bucketCoverage": 130,
-    "bucketDealerCoverage": 130,
-    "priceToBucketPct": 74,
-    "underBucketShare": 100,
-    "p25DealShare": 86,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 113,
-      "medium": 16,
-      "low": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_private_min": 32,
-      "bucket_private_min": 17,
-      "bucket_dealer_min": 36,
-      "comps_dealer_min": 42,
-      "comps_private_thin_min": 3
-    },
-    "sellerMix": {
-      "private_likely": 95,
-      "unknown": 116,
-      "auction": 1
-    },
-    "analysisBaseCount": 130,
-    "cohortFilteredCount": 130,
-    "bestDealScore": 100,
-    "bestMargin": 124614,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 9,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 99,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model Y",
@@ -340,11 +276,10 @@
     "snittPris": 398714,
     "minPris": 319532,
     "maxPris": 466505,
-    "snittDager": 177,
-    "antallAnnonser": 10,
-    "prisEndring": -27239,
+    "snittDager": 179,
+    "antallAnnonser": 9,
+    "prisEndring": -86322,
     "prisData": [
-      412088,
       409563,
       408862,
       408371,
@@ -418,21 +353,22 @@
       405253,
       452168,
       449485,
-      381266
+      333532,
+      435881
     ],
     "volum": [
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10,
-      10
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
     ],
     "tags": [
       {
@@ -462,13 +398,13 @@
     ],
     "ai": "Tesla Model Y LR 2021 med 75k km og hengerfeste. Prisen 319.532kr er god for en Long Range med hvit interiør. Tilsvarende biler selges for 340-360k hos forhandlere. God margin mulig.",
     "avgBucketMedianPrivate": 434663,
-    "avgBucketMedianDealer": 455580,
+    "avgBucketMedianDealer": 457260,
     "avgBucketP25Private": 421066,
     "avgBucketP75Private": 446684,
     "avgLowballTarget": 369871,
     "avgLowballMargin": 64792,
     "avgMedianMargin": 32188,
-    "avgCompCount": 7,
+    "avgCompCount": 6,
     "avgCompSpreadPct": 10,
     "bucketCoverage": 5,
     "bucketDealerCoverage": 5,
@@ -488,7 +424,7 @@
       "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 5,
+      "private_likely": 4,
       "unknown": 5
     },
     "analysisBaseCount": 5,
@@ -528,11 +464,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 166,
+    "snittDager": 167,
     "antallAnnonser": 1,
-    "prisEndring": 0,
+    "prisEndring": 32450,
     "prisData": [
-      493691,
       493049,
       491099,
       492318,
@@ -616,6 +551,10 @@
         "c": "a"
       },
       {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
@@ -674,6 +613,199 @@
     ]
   },
   {
+    "id": "bilde1av",
+    "merke": "bilde",
+    "navn": "Bilde 1 av",
+    "sub": "2024–2023 · 10 Volkswagen ID.3",
+    "score": 4,
+    "flipScore": 65,
+    "snittPris": 250521,
+    "minPris": 36942,
+    "maxPris": 467505,
+    "snittDager": 29,
+    "antallAnnonser": 201,
+    "prisEndring": 4258,
+    "prisData": [
+      376821,
+      375752,
+      373101,
+      373045,
+      373061,
+      334214,
+      373638,
+      330220,
+      370992,
+      370934,
+      337196,
+      371413,
+      369322,
+      322955,
+      367237,
+      367489,
+      334311,
+      365288,
+      366916,
+      367050,
+      325535,
+      363975,
+      364958,
+      344713,
+      363898,
+      360878,
+      372765,
+      361426,
+      360839,
+      359839,
+      359048,
+      371322,
+      380848,
+      326719,
+      360928,
+      384622,
+      353700,
+      366336,
+      355646,
+      312077,
+      353874,
+      351658,
+      350205,
+      330508,
+      352482,
+      331264,
+      351905,
+      351721,
+      351559,
+      351809,
+      320964,
+      352239,
+      338405,
+      353208,
+      353641,
+      317112,
+      352718,
+      353414,
+      352304,
+      381129,
+      352523,
+      353112,
+      346677,
+      353613,
+      354893,
+      353774,
+      342116,
+      361651,
+      354651,
+      343716,
+      353325,
+      337329,
+      354808,
+      343139,
+      354569,
+      354426,
+      331207,
+      356279,
+      355745,
+      332553,
+      356497
+    ],
+    "volum": [
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Bilde 1 av — 201 annonser funnet.",
+    "avgBucketMedianPrivate": 337571,
+    "avgBucketMedianDealer": 328809,
+    "avgBucketP25Private": 293667,
+    "avgBucketP75Private": 369389,
+    "avgLowballTarget": 234518,
+    "avgLowballMargin": 103052,
+    "avgMedianMargin": 56891,
+    "avgCompCount": 24,
+    "avgCompSpreadPct": 31,
+    "bucketCoverage": 126,
+    "bucketDealerCoverage": 126,
+    "priceToBucketPct": 74,
+    "underBucketShare": 100,
+    "p25DealShare": 85,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 108,
+      "medium": 17,
+      "low": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_private_min": 24,
+      "bucket_private_min": 19,
+      "bucket_dealer_min": 37,
+      "comps_dealer_min": 39,
+      "comps_private_thin_min": 7
+    },
+    "sellerMix": {
+      "private_likely": 90,
+      "unknown": 110,
+      "auction": 1
+    },
+    "analysisBaseCount": 126,
+    "cohortFilteredCount": 126,
+    "bestDealScore": 100,
+    "bestMargin": 122447,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 9,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 96,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 100,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "hyundaiion",
     "merke": "hyundai",
     "navn": "Hyundai Ioniq 5",
@@ -683,11 +815,10 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 166,
+    "snittDager": 167,
     "antallAnnonser": 3,
-    "prisEndring": 18961,
+    "prisEndring": 38476,
     "prisData": [
-      409099,
       413204,
       413321,
       412447,
@@ -744,16 +875,17 @@
       439000,
       439000,
       439000,
-      459350,
-      502800,
-      502800,
-      502800,
-      471850,
-      471850,
-      502800,
+      485833,
+      564250,
+      564250,
+      564250,
+      502500,
+      502500,
+      564250,
       442505,
-      461825,
-      457961
+      489133,
+      477476,
+      477476
     ],
     "volum": [
       3,
@@ -847,136 +979,6 @@
   {
     "id": "volkswagen",
     "merke": "volkswagen",
-    "navn": "Volkswagen ID.3 1st",
-    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
-    "score": 88,
-    "flipScore": 63,
-    "snittPris": 189532,
-    "minPris": 189532,
-    "maxPris": 189532,
-    "snittDager": 166,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      206189,
-      205639,
-      203250,
-      203348,
-      205377,
-      205957,
-      206563,
-      211083,
-      208688,
-      211083,
-      218013,
-      199532,
-      211018,
-      211237,
-      201266,
-      210208,
-      210208,
-      210208,
-      186532,
-      208333,
-      205173,
-      208138,
-      213661,
-      213661,
-      211827,
-      211827,
-      198644,
-      179532,
-      191321,
-      188266,
-      192741,
-      197021,
-      197021,
-      188766
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 215000,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 176265,
-    "avgLowballMargin": 38735,
-    "avgMedianMargin": 25468,
-    "avgCompCount": 1,
-    "avgCompSpreadPct": 0,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_dealer",
-    "valuationBreakdown": {
-      "bucket_dealer": 1
-    },
-    "sellerMix": {
-      "private_likely": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 63,
-    "bestMargin": 17923,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 93,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 47,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "volkswagen",
-    "merke": "volkswagen",
     "navn": "Volkswagen Golf-Serie 2020",
     "sub": "2020–2020 · ∙ 57 000 km ∙ El ∙ 229 km rekkevidde",
     "score": 85,
@@ -984,7 +986,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 166,
+    "snittDager": 167,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1077,15 +1079,14 @@
     "navn": "Tesla Model 3",
     "sub": "2020–2021 · AWD",
     "score": 74,
-    "flipScore": 52,
+    "flipScore": 58,
     "snittPris": 255436,
     "minPris": 224434,
     "maxPris": 317343,
-    "snittDager": 168,
+    "snittDager": 169,
     "antallAnnonser": 3,
-    "prisEndring": 23505,
+    "prisEndring": 4946,
     "prisData": [
-      353400,
       350701,
       348517,
       348761,
@@ -1149,7 +1150,8 @@
       407405,
       353653,
       353653,
-      352505
+      352505,
+      333946
     ],
     "volum": [
       3,
@@ -1167,10 +1169,6 @@
     ],
     "tags": [
       {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
         "t": "Under bucket",
         "c": "g"
       },
@@ -1184,28 +1182,30 @@
       }
     ],
     "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
-    "avgBucketMedianPrivate": 294174,
+    "avgBucketMedianPrivate": 302341,
     "avgBucketMedianDealer": 291055,
-    "avgBucketP25Private": 280556,
-    "avgBucketP75Private": 309310,
+    "avgBucketP25Private": 291268,
+    "avgBucketP75Private": 310521,
     "avgLowballTarget": 236059,
-    "avgLowballMargin": 58115,
-    "avgMedianMargin": 30761,
+    "avgLowballMargin": 66282,
+    "avgMedianMargin": 32173,
     "avgCompCount": 2,
     "avgCompSpreadPct": 7,
     "bucketCoverage": 3,
     "bucketDealerCoverage": 3,
-    "priceToBucketPct": 87,
+    "priceToBucketPct": 84,
     "underBucketShare": 100,
     "p25DealShare": 67,
     "topCompConfidence": "low",
     "confidenceBreakdown": {
-      "low": 3
+      "high": 1,
+      "low": 2
     },
-    "primaryValuationSource": "bucket_private_min",
+    "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
       "comps_dealer_min": 1,
-      "bucket_private_min": 2
+      "bucket_private_min": 1,
+      "bucket_dealer_min": 1
     },
     "sellerMix": {
       "private_likely": 2,
@@ -1213,7 +1213,7 @@
     },
     "analysisBaseCount": 3,
     "cohortFilteredCount": 0,
-    "bestDealScore": 65,
+    "bestDealScore": 85,
     "bestMargin": 18760,
     "faktorer": [
       {
@@ -1223,7 +1223,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 43,
+        "v": 46,
         "c": "#e8a020"
       },
       {
@@ -1248,7 +1248,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 177,
+    "snittDager": 178,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1353,11 +1353,10 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 166,
+    "snittDager": 167,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      209063,
       209063,
       213229,
       213229,
