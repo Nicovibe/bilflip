@@ -9,7 +9,7 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -142,7 +142,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -182,6 +182,7 @@
       192319,
       198617,
       169900,
+      179000,
       179000,
       179000
     ],
@@ -276,9 +277,9 @@
     "snittPris": 398714,
     "minPris": 319532,
     "maxPris": 466505,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 9,
-    "prisEndring": -86322,
+    "prisEndring": -117558,
     "prisData": [
       409563,
       408862,
@@ -353,8 +354,8 @@
       405253,
       452168,
       449485,
-      333532,
-      435881
+      435881,
+      427384
     ],
     "volum": [
       9,
@@ -464,9 +465,9 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 1,
-    "prisEndring": 32450,
+    "prisEndring": 0,
     "prisData": [
       493049,
       491099,
@@ -551,10 +552,6 @@
         "c": "a"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
         "t": "Sterk medianmargin",
         "c": "g"
       }
@@ -617,14 +614,14 @@
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2023 · 10 Volkswagen ID.3",
-    "score": 4,
+    "score": 3,
     "flipScore": 65,
-    "snittPris": 250521,
+    "snittPris": 250001,
     "minPris": 36942,
-    "maxPris": 467505,
-    "snittDager": 29,
-    "antallAnnonser": 201,
-    "prisEndring": 4258,
+    "maxPris": 457505,
+    "snittDager": 30,
+    "antallAnnonser": 193,
+    "prisEndring": 17063,
     "prisData": [
       376821,
       375752,
@@ -705,22 +702,23 @@
       331207,
       356279,
       355745,
-      332553,
-      356497
+      332557,
+      356492,
+      355468
     ],
     "volum": [
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201,
-      201
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193,
+      193
     ],
     "tags": [
       {
@@ -730,6 +728,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -744,53 +746,53 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 201 annonser funnet.",
-    "avgBucketMedianPrivate": 337571,
-    "avgBucketMedianDealer": 328809,
-    "avgBucketP25Private": 293667,
-    "avgBucketP75Private": 369389,
-    "avgLowballTarget": 234518,
-    "avgLowballMargin": 103052,
-    "avgMedianMargin": 56891,
+    "ai": "Bilde 1 av — 193 annonser funnet.",
+    "avgBucketMedianPrivate": 339400,
+    "avgBucketMedianDealer": 329307,
+    "avgBucketP25Private": 295283,
+    "avgBucketP75Private": 372483,
+    "avgLowballTarget": 233737,
+    "avgLowballMargin": 105664,
+    "avgMedianMargin": 57510,
     "avgCompCount": 24,
-    "avgCompSpreadPct": 31,
-    "bucketCoverage": 126,
-    "bucketDealerCoverage": 126,
+    "avgCompSpreadPct": 34,
+    "bucketCoverage": 119,
+    "bucketDealerCoverage": 119,
     "priceToBucketPct": 74,
     "underBucketShare": 100,
-    "p25DealShare": 85,
+    "p25DealShare": 87,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 108,
-      "medium": 17,
+      "high": 106,
+      "medium": 12,
       "low": 1
     },
-    "primaryValuationSource": "comps_dealer_min",
+    "primaryValuationSource": "bucket_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 24,
-      "bucket_private_min": 19,
+      "comps_private_min": 28,
+      "bucket_private_min": 13,
       "bucket_dealer_min": 37,
-      "comps_dealer_min": 39,
-      "comps_private_thin_min": 7
+      "comps_dealer_min": 35,
+      "comps_private_thin_min": 6
     },
     "sellerMix": {
-      "private_likely": 90,
-      "unknown": 110,
+      "private_likely": 86,
+      "unknown": 106,
       "auction": 1
     },
-    "analysisBaseCount": 126,
-    "cohortFilteredCount": 126,
+    "analysisBaseCount": 119,
+    "cohortFilteredCount": 119,
     "bestDealScore": 100,
     "bestMargin": 122447,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 9,
+        "v": 8,
         "c": "#e8a020"
       },
       {
         "l": "Prismargin",
-        "v": 96,
+        "v": 97,
         "c": "#3d9960"
       },
       {
@@ -815,7 +817,7 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 3,
     "prisEndring": 38476,
     "prisData": [
@@ -885,6 +887,7 @@
       442505,
       489133,
       477476,
+      477476,
       477476
     ],
     "volum": [
@@ -921,12 +924,12 @@
     ],
     "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
     "avgBucketMedianPrivate": 334026,
-    "avgBucketMedianDealer": 395917,
+    "avgBucketMedianDealer": 395933,
     "avgBucketP25Private": 315529,
     "avgBucketP75Private": 352522,
     "avgLowballTarget": 291588,
-    "avgLowballMargin": 114079,
-    "avgMedianMargin": 70686,
+    "avgLowballMargin": 114096,
+    "avgMedianMargin": 70703,
     "avgCompCount": 3,
     "avgCompSpreadPct": 26,
     "bucketCoverage": 2,
@@ -952,7 +955,7 @@
     "analysisBaseCount": 3,
     "cohortFilteredCount": 0,
     "bestDealScore": 73,
-    "bestMargin": 136385,
+    "bestMargin": 136435,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -986,7 +989,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1083,9 +1086,9 @@
     "snittPris": 255436,
     "minPris": 224434,
     "maxPris": 317343,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 3,
-    "prisEndring": 4946,
+    "prisEndring": 9586,
     "prisData": [
       350701,
       348517,
@@ -1151,7 +1154,8 @@
       353653,
       353653,
       352505,
-      333946
+      333946,
+      338586
     ],
     "volum": [
       3,
@@ -1168,6 +1172,10 @@
       3
     ],
     "tags": [
+      {
+        "t": "Pris opp",
+        "c": "a"
+      },
       {
         "t": "Under bucket",
         "c": "g"
@@ -1248,7 +1256,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 178,
+    "snittDager": 179,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1353,7 +1361,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 167,
+    "snittDager": 168,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
