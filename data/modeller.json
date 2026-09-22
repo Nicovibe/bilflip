@@ -9,7 +9,7 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -141,7 +141,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -271,14 +271,14 @@
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2023 · 10 Volkswagen ID.3",
-    "score": 3,
+    "score": 4,
     "flipScore": 66,
-    "snittPris": 245941,
+    "snittPris": 247680,
     "minPris": 36942,
     "maxPris": 467505,
     "snittDager": 30,
-    "antallAnnonser": 193,
-    "prisEndring": 2983,
+    "antallAnnonser": 201,
+    "prisEndring": -22687,
     "prisData": [
       375838,
       373189,
@@ -336,46 +336,47 @@
       353641,
       317112,
       352718,
-      353414,
-      352304,
+      353419,
+      352309,
       381129,
-      352523,
-      353112,
+      352528,
+      353117,
       346677,
-      353613,
-      354893,
-      353774,
+      353618,
+      354897,
+      353778,
       342116,
       361651,
-      354651,
+      354655,
       343716,
-      353325,
+      353330,
       337329,
-      354808,
+      354813,
       343139,
-      354569,
-      354426,
+      354573,
+      354430,
       331207,
-      356279,
-      355745,
-      332557,
-      356492,
-      355468,
-      356191
+      356304,
+      355769,
+      332198,
+      356517,
+      355463,
+      356185,
+      330954
     ],
     "volum": [
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193,
-      193
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201,
+      201
     ],
     "tags": [
       {
@@ -385,6 +386,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -399,48 +404,48 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 193 annonser funnet.",
-    "avgBucketMedianPrivate": 337425,
-    "avgBucketMedianDealer": 328755,
-    "avgBucketP25Private": 291255,
-    "avgBucketP75Private": 370380,
-    "avgLowballTarget": 229416,
-    "avgLowballMargin": 108009,
-    "avgMedianMargin": 61032,
+    "ai": "Bilde 1 av — 201 annonser funnet.",
+    "avgBucketMedianPrivate": 335036,
+    "avgBucketMedianDealer": 329456,
+    "avgBucketP25Private": 291580,
+    "avgBucketP75Private": 369362,
+    "avgLowballTarget": 230989,
+    "avgLowballMargin": 104047,
+    "avgMedianMargin": 61103,
     "avgCompCount": 24,
-    "avgCompSpreadPct": 33,
-    "bucketCoverage": 118,
-    "bucketDealerCoverage": 118,
-    "priceToBucketPct": 73,
+    "avgCompSpreadPct": 32,
+    "bucketCoverage": 128,
+    "bucketDealerCoverage": 128,
+    "priceToBucketPct": 74,
     "underBucketShare": 100,
-    "p25DealShare": 85,
+    "p25DealShare": 81,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 103,
-      "medium": 14,
+      "high": 111,
+      "medium": 16,
       "low": 1
     },
-    "primaryValuationSource": "bucket_dealer_min",
+    "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 27,
-      "bucket_private_min": 13,
-      "bucket_dealer_min": 40,
-      "comps_dealer_min": 36,
+      "comps_private_min": 31,
+      "bucket_private_min": 17,
+      "bucket_dealer_min": 36,
+      "comps_dealer_min": 42,
       "comps_private_thin_min": 2
     },
     "sellerMix": {
-      "private_likely": 85,
-      "unknown": 107,
+      "private_likely": 90,
+      "unknown": 110,
       "auction": 1
     },
-    "analysisBaseCount": 118,
-    "cohortFilteredCount": 118,
+    "analysisBaseCount": 128,
+    "cohortFilteredCount": 128,
     "bestDealScore": 100,
     "bestMargin": 123840,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 8,
+        "v": 9,
         "c": "#e8a020"
       },
       {
@@ -455,7 +460,7 @@
       },
       {
         "l": "Batteririsiko",
-        "v": 60,
+        "v": 68,
         "c": "#3d9960"
       }
     ]
@@ -470,7 +475,7 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -623,9 +628,9 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 3,
-    "prisEndring": 38476,
+    "prisEndring": -39100,
     "prisData": [
       411989,
       411121,
@@ -694,7 +699,8 @@
       477476,
       477476,
       477476,
-      477476
+      477476,
+      399900
     ],
     "volum": [
       3,
@@ -716,8 +722,8 @@
         "c": "g"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Sterk medianmargin",
@@ -795,7 +801,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -892,9 +898,9 @@
     "snittPris": 364266,
     "minPris": 319532,
     "maxPris": 399000,
-    "snittDager": 177,
+    "snittDager": 178,
     "antallAnnonser": 8,
-    "prisEndring": -117558,
+    "prisEndring": -72437,
     "prisData": [
       408862,
       408371,
@@ -966,11 +972,12 @@
       466253,
       466253,
       405253,
-      452168,
-      449485,
-      435881,
-      427384,
-      427384
+      463753,
+      453582,
+      437601,
+      427061,
+      427061,
+      472505
     ],
     "volum": [
       8,
@@ -1002,13 +1009,13 @@
     ],
     "ai": "Tesla Model Y LR 2021 med 75k km og hengerfeste. Prisen 319.532kr er god for en Long Range med hvit interiør. Tilsvarende biler selges for 340-360k hos forhandlere. God margin mulig.",
     "avgBucketMedianPrivate": 392728,
-    "avgBucketMedianDealer": 405925,
+    "avgBucketMedianDealer": 408575,
     "avgBucketP25Private": 385995,
     "avgBucketP75Private": 399867,
     "avgLowballTarget": 338768,
     "avgLowballMargin": 53960,
     "avgMedianMargin": 24764,
-    "avgCompCount": 7,
+    "avgCompCount": 6,
     "avgCompSpreadPct": 8,
     "bucketCoverage": 4,
     "bucketDealerCoverage": 4,
@@ -1236,7 +1243,7 @@
     "snittPris": 299532,
     "minPris": 299532,
     "maxPris": 299532,
-    "snittDager": 28,
+    "snittDager": 29,
     "antallAnnonser": 1,
     "prisEndring": -181489,
     "prisData": [
@@ -1401,7 +1408,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 180,
+    "snittDager": 181,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1506,7 +1513,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 169,
+    "snittDager": 170,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
