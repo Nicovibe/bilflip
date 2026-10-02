@@ -9,9 +9,9 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 3,
-    "prisEndring": -24287,
+    "prisEndring": -61732,
     "prisData": [
       403648,
       406355,
@@ -77,11 +77,10 @@
       399900,
       461961,
       461961,
-      349000,
-      443134,
-      443134,
-      421244,
-      414713
+      461961,
+      461961,
+      433284,
+      424101
     ],
     "volum": [
       3,
@@ -182,7 +181,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -317,7 +316,7 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -457,15 +456,15 @@
     "id": "bilde1av",
     "merke": "bilde",
     "navn": "Bilde 1 av",
-    "sub": "2024–2018 · 10 Volkswagen ID.3",
-    "score": 5,
-    "flipScore": 65,
-    "snittPris": 245181,
+    "sub": "2024–2020 · 21 Nissan Leaf",
+    "score": 4,
+    "flipScore": 64,
+    "snittPris": 238844,
     "minPris": 14942,
     "maxPris": 472505,
     "snittDager": 31,
-    "antallAnnonser": 176,
-    "prisEndring": 2441,
+    "antallAnnonser": 174,
+    "prisEndring": -38272,
     "prisData": [
       370971,
       370896,
@@ -517,55 +516,56 @@
       317112,
       352709,
       353409,
-      352309,
+      352300,
       381129,
-      352528,
-      353116,
+      352519,
+      353107,
       346677,
-      353618,
-      354936,
-      353778,
+      353608,
+      354926,
+      353769,
       342600,
       361926,
-      354678,
+      354668,
       343716,
-      353352,
+      353343,
       337329,
-      354869,
+      354854,
       342704,
-      354620,
-      354437,
+      354605,
+      354422,
       331207,
-      356277,
-      355739,
+      356260,
+      355723,
       331281,
-      356432,
-      355324,
-      356058,
-      329789,
-      355429,
+      356386,
+      355281,
+      356014,
+      330911,
+      355425,
       344280,
-      355268,
-      320504,
-      356690,
-      355306,
-      355499,
+      355264,
+      320085,
+      356637,
+      355258,
+      355450,
       342134,
-      356059
+      355999,
+      316654
     ],
     "volum": [
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176,
-      176
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174,
+      174
     ],
     "tags": [
       {
@@ -575,6 +575,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -589,46 +593,46 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 176 annonser funnet.",
-    "avgBucketMedianPrivate": 340699,
-    "avgBucketMedianDealer": 330822,
-    "avgBucketP25Private": 303123,
-    "avgBucketP75Private": 374816,
-    "avgLowballTarget": 229630,
-    "avgLowballMargin": 111068,
-    "avgMedianMargin": 58456,
+    "ai": "Bilde 1 av — 174 annonser funnet.",
+    "avgBucketMedianPrivate": 329382,
+    "avgBucketMedianDealer": 321741,
+    "avgBucketP25Private": 295220,
+    "avgBucketP75Private": 364637,
+    "avgLowballTarget": 223445,
+    "avgLowballMargin": 105937,
+    "avgMedianMargin": 57205,
     "avgCompCount": 24,
-    "avgCompSpreadPct": 31,
-    "bucketCoverage": 109,
-    "bucketDealerCoverage": 109,
-    "priceToBucketPct": 72,
+    "avgCompSpreadPct": 32,
+    "bucketCoverage": 108,
+    "bucketDealerCoverage": 108,
+    "priceToBucketPct": 73,
     "underBucketShare": 100,
-    "p25DealShare": 93,
+    "p25DealShare": 85,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 93,
-      "medium": 16
+      "high": 88,
+      "medium": 20
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 20,
-      "comps_dealer_min": 40,
-      "bucket_private_min": 21,
-      "bucket_dealer_min": 21,
-      "comps_private_thin_min": 7
+      "bucket_private_min": 28,
+      "comps_private_min": 17,
+      "comps_dealer_min": 37,
+      "bucket_dealer_min": 20,
+      "comps_private_thin_min": 6
     },
     "sellerMix": {
-      "private_likely": 76,
-      "unknown": 100
+      "private_likely": 75,
+      "unknown": 99
     },
-    "analysisBaseCount": 109,
-    "cohortFilteredCount": 109,
+    "analysisBaseCount": 108,
+    "cohortFilteredCount": 108,
     "bestDealScore": 100,
-    "bestMargin": 126085,
+    "bestMargin": 149965,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 10,
+        "v": 9,
         "c": "#e8a020"
       },
       {
@@ -658,7 +662,7 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -781,7 +785,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -872,15 +876,15 @@
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model Y",
-    "sub": "2021–2023 · Long Range AWD, hengerfeste, nye sommerdekk",
-    "score": 78,
-    "flipScore": 62,
-    "snittPris": 364266,
-    "minPris": 319532,
+    "sub": "2023–2023 · RWD",
+    "score": 81,
+    "flipScore": 59,
+    "snittPris": 360633,
+    "minPris": 305000,
     "maxPris": 399000,
-    "snittDager": 187,
+    "snittDager": 188,
     "antallAnnonser": 9,
-    "prisEndring": -116982,
+    "prisEndring": -117110,
     "prisData": [
       420197,
       420486,
@@ -955,7 +959,8 @@
       399367,
       399367,
       402724,
-      392319
+      392319,
+      362216
     ],
     "volum": [
       9,
@@ -977,6 +982,10 @@
         "c": "b"
       },
       {
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
         "t": "Pris ned",
         "c": "g"
       },
@@ -985,19 +994,19 @@
         "c": "g"
       }
     ],
-    "ai": "Tesla Model Y LR 2021 med 75k km og hengerfeste. Prisen 319.532kr er god for en Long Range med hvit interiør. Tilsvarende biler selges for 340-360k hos forhandlere. God margin mulig.",
-    "avgBucketMedianPrivate": 392728,
-    "avgBucketMedianDealer": 410400,
-    "avgBucketP25Private": 385995,
-    "avgBucketP75Private": 399867,
-    "avgLowballTarget": 338768,
-    "avgLowballMargin": 53960,
-    "avgMedianMargin": 24764,
-    "avgCompCount": 7,
-    "avgCompSpreadPct": 8,
+    "ai": "2023 Standard Range med 56 000 km. Prisen på 307 505 kr er konkurransedyktig, men bilen har byttet bakluke pga. bulk og steinsprut. Dette påvirker videresalgsverdi. Fra privatperson, så prisen er lavere enn forhandler.",
+    "avgBucketMedianPrivate": 385361,
+    "avgBucketMedianDealer": 410125,
+    "avgBucketP25Private": 381061,
+    "avgBucketP75Private": 391436,
+    "avgLowballTarget": 335389,
+    "avgLowballMargin": 49972,
+    "avgMedianMargin": 20504,
+    "avgCompCount": 5,
+    "avgCompSpreadPct": 7,
     "bucketCoverage": 4,
     "bucketDealerCoverage": 4,
-    "priceToBucketPct": 93,
+    "priceToBucketPct": 94,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
@@ -1011,22 +1020,22 @@
       "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 5,
-      "unknown": 4
+      "private_likely": 4,
+      "unknown": 5
     },
     "analysisBaseCount": 4,
     "cohortFilteredCount": 4,
-    "bestDealScore": 82,
-    "bestMargin": 18348,
+    "bestDealScore": 80,
+    "bestMargin": 70390,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 83,
+        "v": 86,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 20,
+        "v": 16,
         "c": "#e8a020"
       },
       {
@@ -1051,9 +1060,9 @@
     "snittPris": 260652,
     "minPris": 224434,
     "maxPris": 332990,
-    "snittDager": 183,
+    "snittDager": 184,
     "antallAnnonser": 3,
-    "prisEndring": -25100,
+    "prisEndring": -50698,
     "prisData": [
       352336,
       350045,
@@ -1118,7 +1127,7 @@
       330969,
       330969,
       330969,
-      331203
+      317505
     ],
     "volum": [
       3,
@@ -1158,12 +1167,12 @@
     ],
     "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
     "avgBucketMedianPrivate": 303969,
-    "avgBucketMedianDealer": 297722,
+    "avgBucketMedianDealer": 296144,
     "avgBucketP25Private": 288346,
     "avgBucketP75Private": 323357,
     "avgLowballTarget": 240910,
     "avgLowballMargin": 63059,
-    "avgMedianMargin": 34516,
+    "avgMedianMargin": 34349,
     "avgCompCount": 2,
     "avgCompSpreadPct": 11,
     "bucketCoverage": 3,
@@ -1175,11 +1184,10 @@
     "confidenceBreakdown": {
       "low": 3
     },
-    "primaryValuationSource": "comps_dealer_min",
+    "primaryValuationSource": "bucket_dealer_min",
     "valuationBreakdown": {
       "comps_dealer_min": 1,
-      "bucket_dealer_min": 1,
-      "bucket_private_min": 1
+      "bucket_dealer_min": 2
     },
     "sellerMix": {
       "private_likely": 2,
@@ -1222,9 +1230,9 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 179,
+    "snittDager": 180,
     "antallAnnonser": 1,
-    "prisEndring": -35000,
+    "prisEndring": 0,
     "prisData": [
       199675,
       199675,
@@ -1248,11 +1256,10 @@
       229900,
       279900,
       279900,
-      209900,
-      244900,
-      244900,
-      244900,
-      244900
+      279900,
+      279900,
+      279900,
+      279900
     ],
     "volum": [
       1,
@@ -1272,10 +1279,6 @@
       {
         "t": "Lavt volum",
         "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
       }
     ],
     "ai": "Toyota Yaris Hybrid — 1 annonser funnet.",
