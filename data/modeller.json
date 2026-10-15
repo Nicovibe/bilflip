@@ -1,5 +1,135 @@
 [
   {
+    "id": "toyotayari",
+    "merke": "toyota",
+    "navn": "Toyota Yaris Hybrid",
+    "sub": "2016–2016 · Active S m/ garanti, ny service, bremser og dekk",
+    "score": 0,
+    "flipScore": 82,
+    "snittPris": 120000,
+    "minPris": 120000,
+    "maxPris": 120000,
+    "snittDager": 193,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      199450,
+      199450,
+      194450,
+      194450,
+      194450,
+      194450,
+      170967,
+      194450,
+      100900,
+      100900,
+      229900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900,
+      279900
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Toyota Yaris Hybrid — 1 annonser funnet.",
+    "avgBucketMedianPrivate": 160236,
+    "avgBucketMedianDealer": null,
+    "avgBucketP25Private": 160236,
+    "avgBucketP75Private": 160236,
+    "avgLowballTarget": 111600,
+    "avgLowballMargin": 48636,
+    "avgMedianMargin": 40236,
+    "avgCompCount": 0,
+    "avgCompSpreadPct": null,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 0,
+    "priceToBucketPct": 75,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 1
+    },
+    "primaryValuationSource": "bucket_private",
+    "valuationBreakdown": {
+      "bucket_private": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 82,
+    "bestMargin": 29691,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 100,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 20,
+        "c": "#e8a020"
+      }
+    ]
+  },
+  {
     "id": "nissanleaf",
     "merke": "nissan",
     "navn": "Nissan Leaf 62",
@@ -9,11 +139,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 192,
+    "snittDager": 193,
     "antallAnnonser": 1,
     "prisEndring": -9468,
     "prisData": [
-      197170,
       173532,
       196207,
       195652,
@@ -146,11 +275,10 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 192,
+    "snittDager": 193,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      210208,
       186532,
       208333,
       205173,
@@ -263,11 +391,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 192,
+    "snittDager": 193,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      491719,
       479000,
       493485,
       493485,
@@ -396,24 +523,23 @@
     "sub": "2024–2010 · 21 Nissan Leaf",
     "score": 2,
     "flipScore": 65,
-    "snittPris": 242814,
+    "snittPris": 241791,
     "minPris": 29942,
     "maxPris": 462505,
     "snittDager": 25,
-    "antallAnnonser": 234,
-    "prisEndring": 22131,
+    "antallAnnonser": 236,
+    "prisEndring": 4938,
     "prisData": [
-      367210,
       325535,
       364147,
       365135,
       344630,
       363975,
-      360955,
+      360950,
       372765,
-      361500,
-      360903,
-      359905,
+      361495,
+      360898,
+      359901,
       359032,
       371322,
       380848,
@@ -470,40 +596,41 @@
       331544,
       355459,
       344280,
-      355271,
+      355280,
       320085,
-      356641,
-      355265,
-      355418,
+      356651,
+      355275,
+      355428,
       342134,
-      355960,
-      317192,
-      357318,
-      355071,
-      355506,
+      355970,
+      317036,
+      357328,
+      355059,
+      355494,
       329529,
-      356422,
-      354753,
-      353755,
+      356409,
+      354742,
+      353744,
       319647,
-      352775,
-      352323,
-      331171,
-      353338
+      352765,
+      352281,
+      331789,
+      353293,
+      336145
     ],
     "volum": [
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234,
-      234
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236,
+      236
     ],
     "tags": [
       {
@@ -513,10 +640,6 @@
       {
         "t": "Høyt volum",
         "c": "b"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -531,42 +654,42 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 234 annonser funnet.",
-    "avgBucketMedianPrivate": 334526,
-    "avgBucketMedianDealer": 330824,
-    "avgBucketP25Private": 296399,
-    "avgBucketP75Private": 371459,
-    "avgLowballTarget": 227637,
-    "avgLowballMargin": 106889,
-    "avgMedianMargin": 65459,
+    "ai": "Bilde 1 av — 236 annonser funnet.",
+    "avgBucketMedianPrivate": 324304,
+    "avgBucketMedianDealer": 326874,
+    "avgBucketP25Private": 288594,
+    "avgBucketP75Private": 365738,
+    "avgLowballTarget": 226494,
+    "avgLowballMargin": 97810,
+    "avgMedianMargin": 61532,
     "avgCompCount": 25,
-    "avgCompSpreadPct": 30,
-    "bucketCoverage": 151,
-    "bucketDealerCoverage": 151,
-    "priceToBucketPct": 73,
+    "avgCompSpreadPct": 32,
+    "bucketCoverage": 158,
+    "bucketDealerCoverage": 158,
+    "priceToBucketPct": 75,
     "underBucketShare": 100,
-    "p25DealShare": 87,
+    "p25DealShare": 83,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 131,
-      "medium": 20
+      "high": 146,
+      "medium": 12
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "comps_private_min": 34,
-      "bucket_dealer_min": 27,
-      "comps_dealer_min": 56,
-      "bucket_private_min": 29,
-      "comps_private_thin_min": 5
+      "bucket_private_min": 32,
+      "comps_private_min": 36,
+      "bucket_dealer_min": 29,
+      "comps_dealer_min": 49,
+      "comps_private_thin_min": 12
     },
     "sellerMix": {
-      "private_likely": 100,
-      "unknown": 134
+      "private_likely": 108,
+      "unknown": 128
     },
-    "analysisBaseCount": 151,
-    "cohortFilteredCount": 151,
+    "analysisBaseCount": 158,
+    "cohortFilteredCount": 158,
     "bestDealScore": 100,
-    "bestMargin": 145860,
+    "bestMargin": 145965,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -585,7 +708,7 @@
       },
       {
         "l": "Batteririsiko",
-        "v": 68,
+        "v": 60,
         "c": "#3d9960"
       }
     ]
@@ -600,11 +723,10 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 192,
+    "snittDager": 193,
     "antallAnnonser": 3,
-    "prisEndring": -41264,
+    "prisEndring": -929,
     "prisData": [
-      399229,
       348106,
       400655,
       403214,
@@ -670,7 +792,7 @@
       418061,
       418061,
       417061,
-      401241
+      441576
     ],
     "volum": [
       3,
@@ -689,10 +811,6 @@
     "tags": [
       {
         "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Pris ned",
         "c": "g"
       },
       {
@@ -771,7 +889,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 192,
+    "snittDager": 193,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -859,184 +977,19 @@
     ]
   },
   {
-    "id": "toyotayari",
-    "merke": "toyota",
-    "navn": "Toyota Yaris 1,5",
-    "sub": "2022–2022 · Hybrid Active Tech",
-    "score": 0,
-    "flipScore": 62,
-    "snittPris": 238236,
-    "minPris": 238236,
-    "maxPris": 238236,
-    "snittDager": 3,
-    "antallAnnonser": 1,
-    "prisEndring": -29955,
-    "prisData": [
-      231218,
-      224500,
-      234008,
-      234008,
-      239240,
-      235836,
-      201950,
-      234267,
-      232101,
-      231873,
-      227418,
-      299000,
-      220667,
-      284450,
-      197450,
-      284450,
-      236874,
-      284450,
-      243424,
-      246714,
-      222368,
-      222368,
-      239000,
-      239000,
-      239000,
-      239000,
-      239000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      299000,
-      269900,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      284450,
-      269045,
-      269045
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota Yaris 1,5 — 1 annonser funnet.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 274900,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 226324,
-    "avgLowballMargin": 48576,
-    "avgMedianMargin": 36664,
-    "avgCompCount": 0,
-    "avgCompSpreadPct": null,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "bucket_dealer",
-    "valuationBreakdown": {
-      "bucket_dealer": 1
-    },
-    "sellerMix": {
-      "private_likely": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 62,
-    "bestMargin": 29119,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 61,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model Y",
-    "sub": "2023–2023 · RWD",
+    "sub": "2022–2023 · AWD",
     "score": 78,
-    "flipScore": 61,
+    "flipScore": 62,
     "snittPris": 356021,
     "minPris": 319532,
     "maxPris": 399000,
-    "snittDager": 200,
-    "antallAnnonser": 8,
-    "prisEndring": -13800,
+    "snittDager": 201,
+    "antallAnnonser": 7,
+    "prisEndring": -10200,
     "prisData": [
-      426010,
       420951,
       426149,
       425810,
@@ -1094,36 +1047,35 @@
       457468,
       457468,
       457468,
-      410802,
-      401734,
-      401734,
-      405288,
-      393286,
-      417572,
-      417572,
-      428276,
+      421253,
+      405679,
+      405679,
+      409136,
+      394133,
+      423106,
+      423106,
+      434672,
       442505,
-      416405,
-      420134,
-      410105,
-      410105,
-      410105,
-      469505,
-      418705
+      421706,
+      425173,
+      412991,
+      412991,
+      412991,
+      422305
     ],
     "volum": [
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7,
+      7
     ],
     "tags": [
       {
@@ -1147,40 +1099,40 @@
         "c": "g"
       }
     ],
-    "ai": "2023 Standard Range med 56 000 km. Prisen på 307 505 kr er konkurransedyktig, men bilen har byttet bakluke pga. bulk og steinsprut. Dette påvirker videresalgsverdi. Fra privatperson, så prisen er lavere enn forhandler.",
+    "ai": "Tesla Model Y Long Range 2022 med 39 000 km til 349 532 kr. Dette er privatpris og UNDER markedsverdi. Tilsvarende biler fra forhandlere koster 380-410 000 kr. Svært godt kjøp for flip.",
     "avgBucketMedianPrivate": 390637,
-    "avgBucketMedianDealer": 406800,
+    "avgBucketMedianDealer": 404283,
     "avgBucketP25Private": 381909,
     "avgBucketP75Private": 396738,
     "avgLowballTarget": 331100,
     "avgLowballMargin": 59537,
-    "avgMedianMargin": 27869,
-    "avgCompCount": 5,
-    "avgCompSpreadPct": 11,
+    "avgMedianMargin": 25815,
+    "avgCompCount": 4,
+    "avgCompSpreadPct": 9,
     "bucketCoverage": 3,
     "bucketDealerCoverage": 3,
     "priceToBucketPct": 91,
     "underBucketShare": 100,
     "p25DealShare": 100,
-    "topCompConfidence": "medium",
+    "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "medium": 2,
-      "high": 1
+      "high": 2,
+      "medium": 1
     },
-    "primaryValuationSource": "bucket_private_min",
+    "primaryValuationSource": "comps_private_min",
     "valuationBreakdown": {
-      "bucket_private_min": 1,
+      "comps_private_min": 1,
       "comps_dealer_min": 1,
       "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 5,
-      "unknown": 3
+      "unknown": 3,
+      "private_likely": 4
     },
     "analysisBaseCount": 3,
     "cohortFilteredCount": 3,
     "bestDealScore": 80,
-    "bestMargin": 76490,
+    "bestMargin": 74743,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -1189,7 +1141,7 @@
       },
       {
         "l": "Prismargin",
-        "v": 23,
+        "v": 20,
         "c": "#e8a020"
       },
       {
@@ -1218,7 +1170,6 @@
     "antallAnnonser": 2,
     "prisEndring": -76436,
     "prisData": [
-      351339,
       318214,
       350480,
       350319,
@@ -1363,121 +1314,6 @@
         "l": "Batteririsiko",
         "v": 60,
         "c": "#3d9960"
-      }
-    ]
-  },
-  {
-    "id": "toyotayari",
-    "merke": "toyota",
-    "navn": "Toyota Yaris Hybrid",
-    "sub": "2016–2016 · Active S m/ garanti, ny service, bremser og dekk",
-    "score": 0,
-    "flipScore": 35,
-    "snittPris": 120000,
-    "minPris": 120000,
-    "maxPris": 120000,
-    "snittDager": 192,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      222933,
-      199450,
-      199450,
-      194450,
-      194450,
-      194450,
-      194450,
-      170967,
-      194450,
-      100900,
-      100900,
-      229900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900,
-      279900
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      }
-    ],
-    "ai": "Toyota Yaris Hybrid — 1 annonser funnet.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": null,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 111600,
-    "avgLowballMargin": -111600,
-    "avgMedianMargin": null,
-    "avgCompCount": 0,
-    "avgCompSpreadPct": null,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 0,
-    "priceToBucketPct": null,
-    "underBucketShare": 0,
-    "p25DealShare": 0,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "naive_fallback",
-    "valuationBreakdown": {
-      "naive_fallback": 1
-    },
-    "sellerMix": {
-      "private_likely": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 35,
-    "bestMargin": 7455,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 5,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 31,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 20,
-        "c": "#e8a020"
       }
     ]
   }
