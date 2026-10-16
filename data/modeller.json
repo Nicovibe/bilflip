@@ -9,7 +9,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 193,
+    "snittDager": 194,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -24,6 +24,7 @@
       100900,
       100900,
       229900,
+      279900,
       279900,
       279900,
       279900,
@@ -139,11 +140,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 193,
+    "snittDager": 194,
     "antallAnnonser": 1,
     "prisEndring": -9468,
     "prisData": [
-      173532,
       196207,
       195652,
       174177,
@@ -178,6 +178,7 @@
       179000,
       179000,
       179000,
+      169532,
       169532
     ],
     "volum": [
@@ -275,11 +276,10 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 193,
+    "snittDager": 194,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      186532,
       208333,
       205173,
       208138,
@@ -382,155 +382,19 @@
     ]
   },
   {
-    "id": "toyotarav4",
-    "merke": "toyota",
-    "navn": "Toyota RAV4 Plug-in",
-    "sub": "2022–2022 · Hybrid PHEV AWD-i Executive, Bitone, Panorama toppmodell",
-    "score": 65,
-    "flipScore": 66,
-    "snittPris": 469532,
-    "minPris": 469532,
-    "maxPris": 469532,
-    "snittDager": 193,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      479000,
-      493485,
-      493485,
-      467360,
-      495082,
-      492538,
-      409000,
-      494212,
-      492517,
-      493144,
-      488052,
-      529000,
-      484712,
-      505878,
-      517411,
-      484225,
-      493548,
-      467676,
-      493159,
-      495093,
-      495093,
-      495093,
-      474900,
-      506267,
-      485950,
-      485950,
-      485950,
-      432450,
-      489900,
-      457450,
-      489900,
-      489900,
-      489900,
-      489900,
-      489900,
-      489900,
-      489900,
-      489900,
-      519900
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "Toyota RAV4 PHEV Executive toppmodell med lav km og 12 mnd garanti igjen. Prisen er høy (469 532 kr), men dette er en ettertraktet modell. Markedsverdi er høy, men marginen blir moderat.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 544000,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 436665,
-    "avgLowballMargin": 107335,
-    "avgMedianMargin": 52466,
-    "avgCompCount": 16,
-    "avgCompSpreadPct": 10,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "unknown": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 1,
-    "bestDealScore": 66,
-    "bestMargin": 38501,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 70,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 41,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "bilde1av",
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2010 · 21 Nissan Leaf",
     "score": 2,
-    "flipScore": 65,
-    "snittPris": 241791,
+    "flipScore": 66,
+    "snittPris": 245791,
     "minPris": 29942,
     "maxPris": 462505,
-    "snittDager": 25,
-    "antallAnnonser": 236,
-    "prisEndring": 4938,
+    "snittDager": 27,
+    "antallAnnonser": 219,
+    "prisEndring": -972,
     "prisData": [
-      325535,
       364147,
       365135,
       344630,
@@ -616,21 +480,22 @@
       352281,
       331789,
       353293,
-      336145
+      336145,
+      355304
     ],
     "volum": [
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236,
-      236
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219,
+      219
     ],
     "tags": [
       {
@@ -654,40 +519,40 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 236 annonser funnet.",
-    "avgBucketMedianPrivate": 324304,
-    "avgBucketMedianDealer": 326874,
-    "avgBucketP25Private": 288594,
-    "avgBucketP75Private": 365738,
-    "avgLowballTarget": 226494,
-    "avgLowballMargin": 97810,
-    "avgMedianMargin": 61532,
-    "avgCompCount": 25,
+    "ai": "Bilde 1 av — 219 annonser funnet.",
+    "avgBucketMedianPrivate": 329413,
+    "avgBucketMedianDealer": 334084,
+    "avgBucketP25Private": 295628,
+    "avgBucketP75Private": 377498,
+    "avgLowballTarget": 229763,
+    "avgLowballMargin": 99650,
+    "avgMedianMargin": 64404,
+    "avgCompCount": 24,
     "avgCompSpreadPct": 32,
-    "bucketCoverage": 158,
-    "bucketDealerCoverage": 158,
+    "bucketCoverage": 146,
+    "bucketDealerCoverage": 146,
     "priceToBucketPct": 75,
     "underBucketShare": 100,
-    "p25DealShare": 83,
+    "p25DealShare": 82,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 146,
-      "medium": 12
+      "high": 131,
+      "medium": 15
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "bucket_private_min": 32,
-      "comps_private_min": 36,
+      "bucket_private_min": 34,
+      "comps_private_min": 26,
       "bucket_dealer_min": 29,
-      "comps_dealer_min": 49,
-      "comps_private_thin_min": 12
+      "comps_dealer_min": 46,
+      "comps_private_thin_min": 11
     },
     "sellerMix": {
-      "private_likely": 108,
-      "unknown": 128
+      "private_likely": 98,
+      "unknown": 121
     },
-    "analysisBaseCount": 158,
-    "cohortFilteredCount": 158,
+    "analysisBaseCount": 146,
+    "cohortFilteredCount": 146,
     "bestDealScore": 100,
     "bestMargin": 145965,
     "faktorer": [
@@ -714,6 +579,141 @@
     ]
   },
   {
+    "id": "toyotarav4",
+    "merke": "toyota",
+    "navn": "Toyota RAV4 Plug-in",
+    "sub": "2022–2022 · Hybrid PHEV AWD-i Executive, Bitone, Panorama toppmodell",
+    "score": 65,
+    "flipScore": 66,
+    "snittPris": 469532,
+    "minPris": 469532,
+    "maxPris": 469532,
+    "snittDager": 194,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      493485,
+      493485,
+      467360,
+      495082,
+      492538,
+      409000,
+      494212,
+      492517,
+      493144,
+      488052,
+      529000,
+      484712,
+      505878,
+      517411,
+      484225,
+      493548,
+      467676,
+      493159,
+      495093,
+      495093,
+      495093,
+      474900,
+      506267,
+      485950,
+      485950,
+      485950,
+      432450,
+      489900,
+      457450,
+      489900,
+      489900,
+      489900,
+      489900,
+      489900,
+      489900,
+      489900,
+      489900,
+      519900,
+      519900
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      }
+    ],
+    "ai": "Toyota RAV4 PHEV Executive toppmodell med lav km og 12 mnd garanti igjen. Prisen er høy (469 532 kr), men dette er en ettertraktet modell. Markedsverdi er høy, men marginen blir moderat.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 544000,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 436665,
+    "avgLowballMargin": 107335,
+    "avgMedianMargin": 52466,
+    "avgCompCount": 16,
+    "avgCompSpreadPct": 10,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": null,
+    "underBucketShare": 100,
+    "p25DealShare": 0,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 66,
+    "bestMargin": 38501,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 70,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 41,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 68,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "hyundaiion",
     "merke": "hyundai",
     "navn": "Hyundai Ioniq 5",
@@ -723,11 +723,10 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 193,
+    "snittDager": 194,
     "antallAnnonser": 3,
-    "prisEndring": -929,
+    "prisEndring": -1017,
     "prisData": [
-      348106,
       400655,
       403214,
       327672,
@@ -792,7 +791,8 @@
       418061,
       418061,
       417061,
-      441576
+      441576,
+      442933
     ],
     "volum": [
       3,
@@ -889,7 +889,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 193,
+    "snittDager": 194,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -981,16 +981,15 @@
     "merke": "tesla",
     "navn": "Tesla Model Y",
     "sub": "2022–2023 · AWD",
-    "score": 78,
-    "flipScore": 62,
-    "snittPris": 356021,
+    "score": 74,
+    "flipScore": 59,
+    "snittPris": 358892,
     "minPris": 319532,
     "maxPris": 399000,
     "snittDager": 201,
-    "antallAnnonser": 7,
-    "prisEndring": -10200,
+    "antallAnnonser": 8,
+    "prisEndring": -43316,
     "prisData": [
-      420951,
       426149,
       425810,
       450247,
@@ -1061,21 +1060,22 @@
       412991,
       412991,
       412991,
-      422305
+      422305,
+      420437
     ],
     "volum": [
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7,
-      7
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
     ],
     "tags": [
       {
@@ -1091,57 +1091,53 @@
         "c": "g"
       },
       {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
         "t": "Mange under p25",
         "c": "g"
       }
     ],
     "ai": "Tesla Model Y Long Range 2022 med 39 000 km til 349 532 kr. Dette er privatpris og UNDER markedsverdi. Tilsvarende biler fra forhandlere koster 380-410 000 kr. Svært godt kjøp for flip.",
-    "avgBucketMedianPrivate": 390637,
-    "avgBucketMedianDealer": 404283,
-    "avgBucketP25Private": 381909,
-    "avgBucketP75Private": 396738,
-    "avgLowballTarget": 331100,
-    "avgLowballMargin": 59537,
-    "avgMedianMargin": 25815,
-    "avgCompCount": 4,
-    "avgCompSpreadPct": 9,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 91,
+    "avgBucketMedianPrivate": 391103,
+    "avgBucketMedianDealer": 406251,
+    "avgBucketP25Private": 382432,
+    "avgBucketP75Private": 396647,
+    "avgLowballTarget": 333770,
+    "avgLowballMargin": 57333,
+    "avgMedianMargin": 23630,
+    "avgCompCount": 5,
+    "avgCompSpreadPct": 10,
+    "bucketCoverage": 4,
+    "bucketDealerCoverage": 4,
+    "priceToBucketPct": 92,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 2,
+      "high": 3,
       "medium": 1
     },
-    "primaryValuationSource": "comps_private_min",
+    "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
       "comps_private_min": 1,
-      "comps_dealer_min": 1,
-      "bucket_dealer_min": 1
+      "comps_dealer_min": 2,
+      "bucket_private_min": 1
     },
     "sellerMix": {
-      "unknown": 3,
+      "unknown": 4,
       "private_likely": 4
     },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 3,
+    "analysisBaseCount": 4,
+    "cohortFilteredCount": 4,
     "bestDealScore": 80,
     "bestMargin": 74743,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 83,
+        "v": 79,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 20,
+        "v": 16,
         "c": "#e8a020"
       },
       {
@@ -1162,15 +1158,14 @@
     "navn": "Tesla Model 3",
     "sub": "2020–2021 · AWD",
     "score": 79,
-    "flipScore": 53,
+    "flipScore": 54,
     "snittPris": 224483,
     "minPris": 224434,
     "maxPris": 224532,
-    "snittDager": 196,
+    "snittDager": 197,
     "antallAnnonser": 2,
-    "prisEndring": -76436,
+    "prisEndring": -37505,
     "prisData": [
-      318214,
       350480,
       350319,
       356640,
@@ -1220,7 +1215,8 @@
       330969,
       330969,
       330969,
-      330969
+      330969,
+      369900
     ],
     "volum": [
       2,
@@ -1264,12 +1260,12 @@
     ],
     "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
     "avgBucketMedianPrivate": 274766,
-    "avgBucketMedianDealer": 264266,
+    "avgBucketMedianDealer": 266633,
     "avgBucketP25Private": 262590,
     "avgBucketP75Private": 292591,
     "avgLowballTarget": 206524,
     "avgLowballMargin": 68242,
-    "avgMedianMargin": 38069,
+    "avgMedianMargin": 38319,
     "avgCompCount": 3,
     "avgCompSpreadPct": 11,
     "bucketCoverage": 2,
@@ -1284,7 +1280,7 @@
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
       "comps_dealer_min": 1,
-      "bucket_dealer_min": 1
+      "bucket_private_min": 1
     },
     "sellerMix": {
       "private_likely": 1,
