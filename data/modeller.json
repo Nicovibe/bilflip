@@ -9,11 +9,10 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 198,
+    "snittDager": 199,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      194450,
       194450,
       194450,
       170967,
@@ -21,6 +20,7 @@
       100900,
       100900,
       229900,
+      279900,
       279900,
       279900,
       279900,
@@ -130,132 +130,19 @@
     ]
   },
   {
-    "id": "volkswagen",
-    "merke": "volkswagen",
-    "navn": "Volkswagen ID.3 1st",
-    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
-    "score": 88,
-    "flipScore": 68,
-    "snittPris": 189532,
-    "minPris": 189532,
-    "maxPris": 189532,
-    "snittDager": 198,
-    "antallAnnonser": 1,
-    "prisEndring": 0,
-    "prisData": [
-      213661,
-      213661,
-      211827,
-      211827,
-      198644,
-      179532,
-      191321,
-      188266,
-      192741,
-      197021,
-      197021,
-      188766
-    ],
-    "volum": [
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Lavt volum",
-        "c": "a"
-      },
-      {
-        "t": "Høy score",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      }
-    ],
-    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
-    "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 226950,
-    "avgBucketP25Private": null,
-    "avgBucketP75Private": null,
-    "avgLowballTarget": 176265,
-    "avgLowballMargin": 50685,
-    "avgMedianMargin": 32844,
-    "avgCompCount": 2,
-    "avgCompSpreadPct": 6,
-    "bucketCoverage": 0,
-    "bucketDealerCoverage": 1,
-    "priceToBucketPct": null,
-    "underBucketShare": 100,
-    "p25DealShare": 0,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 1
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "comps_dealer_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 1
-    },
-    "analysisBaseCount": 1,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 68,
-    "bestMargin": 25299,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 93,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 67,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 15,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 60,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "bilde1av",
     "merke": "bilde",
     "navn": "Bilde 1 av",
     "sub": "2024–2010 · 9 Tesla Model 3",
     "score": 2,
-    "flipScore": 66,
-    "snittPris": 246408,
+    "flipScore": 67,
+    "snittPris": 243117,
     "minPris": 26942,
     "maxPris": 447505,
     "snittDager": 24,
-    "antallAnnonser": 231,
-    "prisEndring": -11968,
+    "antallAnnonser": 225,
+    "prisEndring": 21974,
     "prisData": [
-      360950,
       372765,
       361495,
       360898,
@@ -340,22 +227,23 @@
       355281,
       334503,
       353731,
-      352946,
-      344039
+      352956,
+      344281,
+      353518
     ],
     "volum": [
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231,
-      231
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225,
+      225
     ],
     "tags": [
       {
@@ -367,8 +255,8 @@
         "c": "b"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -383,40 +271,40 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 231 annonser funnet.",
-    "avgBucketMedianPrivate": 326876,
-    "avgBucketMedianDealer": 333642,
-    "avgBucketP25Private": 292927,
-    "avgBucketP75Private": 367753,
-    "avgLowballTarget": 230554,
-    "avgLowballMargin": 96322,
-    "avgMedianMargin": 61543,
+    "ai": "Bilde 1 av — 225 annonser funnet.",
+    "avgBucketMedianPrivate": 323440,
+    "avgBucketMedianDealer": 330466,
+    "avgBucketP25Private": 290565,
+    "avgBucketP75Private": 366731,
+    "avgLowballTarget": 227587,
+    "avgLowballMargin": 95853,
+    "avgMedianMargin": 61942,
     "avgCompCount": 24,
-    "avgCompSpreadPct": 31,
-    "bucketCoverage": 163,
-    "bucketDealerCoverage": 163,
+    "avgCompSpreadPct": 32,
+    "bucketCoverage": 161,
+    "bucketDealerCoverage": 161,
     "priceToBucketPct": 75,
     "underBucketShare": 100,
-    "p25DealShare": 82,
+    "p25DealShare": 84,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 135,
-      "medium": 28
+      "high": 139,
+      "medium": 22
     },
-    "primaryValuationSource": "comps_private_min",
+    "primaryValuationSource": "bucket_private_min",
     "valuationBreakdown": {
       "comps_private_min": 45,
-      "bucket_dealer_min": 34,
-      "comps_dealer_min": 39,
-      "bucket_private_min": 37,
+      "bucket_private_min": 47,
+      "comps_dealer_min": 34,
+      "bucket_dealer_min": 27,
       "comps_private_thin_min": 8
     },
     "sellerMix": {
       "private_likely": 113,
-      "unknown": 118
+      "unknown": 112
     },
-    "analysisBaseCount": 163,
-    "cohortFilteredCount": 163,
+    "analysisBaseCount": 161,
+    "cohortFilteredCount": 161,
     "bestDealScore": 100,
     "bestMargin": 84825,
     "faktorer": [
@@ -443,6 +331,293 @@
     ]
   },
   {
+    "id": "teslamodel",
+    "merke": "tesla",
+    "navn": "Tesla Model Y",
+    "sub": "2022–2023 · AWD",
+    "score": 78,
+    "flipScore": 63,
+    "snittPris": 356021,
+    "minPris": 319532,
+    "maxPris": 399000,
+    "snittDager": 207,
+    "antallAnnonser": 8,
+    "prisEndring": -27317,
+    "prisData": [
+      410330,
+      423527,
+      421863,
+      420543,
+      416514,
+      446397,
+      427220,
+      415413,
+      418280,
+      424963,
+      412533,
+      445724,
+      422522,
+      393344,
+      424931,
+      414112,
+      405771,
+      424972,
+      527505,
+      527505,
+      527505,
+      527505,
+      542435,
+      408505,
+      522203,
+      544942,
+      544942,
+      519102,
+      517421,
+      509301,
+      509301,
+      509301,
+      430000,
+      509301,
+      479326,
+      479326,
+      505802,
+      539900,
+      502468,
+      466253,
+      539900,
+      466253,
+      466253,
+      466253,
+      432505,
+      463753,
+      472478,
+      457468,
+      457468,
+      457468,
+      457468,
+      421253,
+      421253,
+      421253,
+      420670,
+      400667,
+      435250,
+      435250,
+      446700,
+      442505,
+      433500,
+      435301,
+      419401,
+      419401,
+      419401,
+      419401,
+      425483,
+      464900,
+      430529,
+      432651,
+      437505,
+      430151
+    ],
+    "volum": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "tags": [
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Tesla Model Y Long Range 2022 med 39 000 km til 349 532 kr. Dette er privatpris og UNDER markedsverdi. Tilsvarende biler fra forhandlere koster 380-410 000 kr. Svært godt kjøp for flip.",
+    "avgBucketMedianPrivate": 390637,
+    "avgBucketMedianDealer": 405501,
+    "avgBucketP25Private": 381909,
+    "avgBucketP75Private": 396738,
+    "avgLowballTarget": 331100,
+    "avgLowballMargin": 59537,
+    "avgMedianMargin": 26150,
+    "avgCompCount": 5,
+    "avgCompSpreadPct": 9,
+    "bucketCoverage": 3,
+    "bucketDealerCoverage": 3,
+    "priceToBucketPct": 91,
+    "underBucketShare": 100,
+    "p25DealShare": 100,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 2,
+      "medium": 1
+    },
+    "primaryValuationSource": "comps_private_min",
+    "valuationBreakdown": {
+      "comps_private_min": 1,
+      "comps_dealer_min": 1,
+      "bucket_private_min": 1
+    },
+    "sellerMix": {
+      "unknown": 3,
+      "private_likely": 5
+    },
+    "analysisBaseCount": 3,
+    "cohortFilteredCount": 3,
+    "bestDealScore": 80,
+    "bestMargin": 74743,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 83,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 21,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 100,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 68,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen ID.3 1st",
+    "sub": "2021–2021 · Plus Pro 204hk, 1 eier",
+    "score": 88,
+    "flipScore": 63,
+    "snittPris": 189532,
+    "minPris": 189532,
+    "maxPris": 189532,
+    "snittDager": 199,
+    "antallAnnonser": 1,
+    "prisEndring": 0,
+    "prisData": [
+      213661,
+      211827,
+      211827,
+      198644,
+      179532,
+      191321,
+      188266,
+      192741,
+      197021,
+      197021,
+      188766
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Høy score",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      }
+    ],
+    "ai": "VW ID.3 1st Plus Pro til 189 532 kr privat. Kun 56 639 km, 1 eier, garasjebilt. Veldig god pris. Tilsvarende selges for 230-250 000 kr hos forhandler. Svært god margin, populær elbil.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 226950,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 176265,
+    "avgLowballMargin": 50685,
+    "avgMedianMargin": 26294,
+    "avgCompCount": 3,
+    "avgCompSpreadPct": 6,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": null,
+    "underBucketShare": 100,
+    "p25DealShare": 0,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 63,
+    "bestMargin": 18749,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 93,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 49,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 60,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "volkswagen",
     "merke": "volkswagen",
     "navn": "Volkswagen Golf-Serie 2020",
@@ -452,7 +627,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 198,
+    "snittDager": 199,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -540,186 +715,6 @@
     ]
   },
   {
-    "id": "teslamodel",
-    "merke": "tesla",
-    "navn": "Tesla Model Y",
-    "sub": "2022–2023 · AWD",
-    "score": 78,
-    "flipScore": 62,
-    "snittPris": 356021,
-    "minPris": 319532,
-    "maxPris": 399000,
-    "snittDager": 206,
-    "antallAnnonser": 8,
-    "prisEndring": 25037,
-    "prisData": [
-      425236,
-      410330,
-      423527,
-      421863,
-      420543,
-      416514,
-      446397,
-      427220,
-      415413,
-      418280,
-      424963,
-      412533,
-      445724,
-      422522,
-      393344,
-      424931,
-      414112,
-      405771,
-      424972,
-      527505,
-      527505,
-      527505,
-      527505,
-      542435,
-      408505,
-      522203,
-      544942,
-      544942,
-      519102,
-      517421,
-      509301,
-      509301,
-      509301,
-      430000,
-      509301,
-      479326,
-      479326,
-      505802,
-      539900,
-      502468,
-      466253,
-      539900,
-      466253,
-      466253,
-      466253,
-      432505,
-      463753,
-      472478,
-      457468,
-      457468,
-      457468,
-      457468,
-      421253,
-      421253,
-      421253,
-      420670,
-      400667,
-      435250,
-      435250,
-      446700,
-      442505,
-      433500,
-      435301,
-      419401,
-      419401,
-      419401,
-      419401,
-      425483,
-      464900,
-      430529,
-      427901,
-      482505
-    ],
-    "volum": [
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8,
-      8
-    ],
-    "tags": [
-      {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Tesla Model Y Long Range 2022 med 39 000 km til 349 532 kr. Dette er privatpris og UNDER markedsverdi. Tilsvarende biler fra forhandlere koster 380-410 000 kr. Svært godt kjøp for flip.",
-    "avgBucketMedianPrivate": 390637,
-    "avgBucketMedianDealer": 405501,
-    "avgBucketP25Private": 381909,
-    "avgBucketP75Private": 396738,
-    "avgLowballTarget": 331100,
-    "avgLowballMargin": 59537,
-    "avgMedianMargin": 26150,
-    "avgCompCount": 5,
-    "avgCompSpreadPct": 10,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 91,
-    "underBucketShare": 100,
-    "p25DealShare": 100,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 2,
-      "medium": 1
-    },
-    "primaryValuationSource": "comps_private_min",
-    "valuationBreakdown": {
-      "comps_private_min": 1,
-      "comps_dealer_min": 1,
-      "bucket_private_min": 1
-    },
-    "sellerMix": {
-      "unknown": 3,
-      "private_likely": 5
-    },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 3,
-    "bestDealScore": 80,
-    "bestMargin": 74743,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 83,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 21,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 68,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "hyundaiion",
     "merke": "hyundai",
     "navn": "Hyundai Ioniq 5",
@@ -729,11 +724,10 @@
     "snittPris": 326766,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 199,
+    "snittDager": 200,
     "antallAnnonser": 2,
-    "prisEndring": -535,
+    "prisEndring": 32050,
     "prisData": [
-      398072,
       450213,
       401632,
       405884,
@@ -796,7 +790,8 @@
       441576,
       442933,
       442933,
-      442933
+      442933,
+      431950
     ],
     "volum": [
       2,
@@ -822,6 +817,10 @@
         "c": "a"
       },
       {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
         "t": "Over bucket",
         "c": "a"
       },
@@ -836,12 +835,12 @@
     ],
     "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
     "avgBucketMedianPrivate": 297032,
-    "avgBucketMedianDealer": 421900,
+    "avgBucketMedianDealer": 407150,
     "avgBucketP25Private": 295782,
     "avgBucketP75Private": 298282,
     "avgLowballTarget": 301898,
-    "avgLowballMargin": 121069,
-    "avgMedianMargin": 94211,
+    "avgLowballMargin": 106319,
+    "avgMedianMargin": 79461,
     "avgCompCount": 2,
     "avgCompSpreadPct": 3,
     "bucketCoverage": 1,
@@ -865,7 +864,7 @@
     "analysisBaseCount": 2,
     "cohortFilteredCount": 0,
     "bestDealScore": 73,
-    "bestMargin": 136335,
+    "bestMargin": 106835,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -894,16 +893,15 @@
     "merke": "tesla",
     "navn": "Tesla Model 3",
     "sub": "2020–2021 · AWD",
-    "score": 52,
+    "score": 79,
     "flipScore": 52,
-    "snittPris": 226166,
+    "snittPris": 224483,
     "minPris": 224434,
-    "maxPris": 229532,
-    "snittDager": 134,
-    "antallAnnonser": 3,
-    "prisEndring": -177873,
+    "maxPris": 224532,
+    "snittDager": 202,
+    "antallAnnonser": 2,
+    "prisEndring": -162405,
     "prisData": [
-      351984,
       311128,
       348728,
       346708,
@@ -952,23 +950,31 @@
       245000,
       245000,
       245000,
-      229532
+      245000
     ],
     "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
     ],
     "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
       {
         "t": "Pris ned",
         "c": "g"
@@ -987,59 +993,57 @@
       }
     ],
     "ai": "Tesla Model 3 Performance 2020 til 224k privat. Performance-modell til vanlig LR-pris. Mangler sommerdekk og har noen feil, men STOR verdi for pengene.",
-    "avgBucketMedianPrivate": 265275,
-    "avgBucketMedianDealer": 268599,
-    "avgBucketP25Private": 253376,
-    "avgBucketP75Private": 280148,
-    "avgLowballTarget": 209603,
-    "avgLowballMargin": 55672,
-    "avgMedianMargin": 30167,
-    "avgCompCount": 4,
+    "avgBucketMedianPrivate": 274766,
+    "avgBucketMedianDealer": 261899,
+    "avgBucketP25Private": 262590,
+    "avgBucketP75Private": 292591,
+    "avgLowballTarget": 206524,
+    "avgLowballMargin": 68242,
+    "avgMedianMargin": 35702,
+    "avgCompCount": 3,
     "avgCompSpreadPct": 11,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 85,
+    "bucketCoverage": 2,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 82,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "low",
     "confidenceBreakdown": {
-      "low": 2,
-      "high": 1
+      "low": 2
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
       "comps_dealer_min": 1,
-      "comps_private_min": 1,
-      "bucket_private_min": 1
+      "bucket_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 2,
+      "private_likely": 1,
       "unknown": 1
     },
-    "analysisBaseCount": 3,
+    "analysisBaseCount": 2,
     "cohortFilteredCount": 0,
     "bestDealScore": 65,
     "bestMargin": 18760,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 57,
-        "c": "#e8a020"
+        "v": 84,
+        "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 44,
+        "v": 59,
         "c": "#e8a020"
       },
       {
         "l": "Likviditet",
-        "v": 45,
+        "v": 30,
         "c": "#e8a020"
       },
       {
         "l": "Batteririsiko",
-        "v": 52,
-        "c": "#e8a020"
+        "v": 60,
+        "c": "#3d9960"
       }
     ]
   },
@@ -1053,11 +1057,10 @@
     "snittPris": 124532,
     "minPris": 124532,
     "maxPris": 124532,
-    "snittDager": 1,
+    "snittDager": 2,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      149604,
       150549,
       150379,
       148865,
@@ -1168,11 +1171,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 198,
+    "snittDager": 199,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      492538,
       409000,
       494212,
       492517,
@@ -1205,6 +1207,7 @@
       489900,
       489900,
       489900,
+      519900,
       519900
     ],
     "volum": [
