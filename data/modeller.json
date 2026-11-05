@@ -9,7 +9,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 212,
+    "snittDager": 214,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -114,11 +114,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 212,
+    "snittDager": 214,
     "antallAnnonser": 1,
     "prisEndring": 20000,
     "prisData": [
-      195079,
       195692,
       192319,
       198617,
@@ -141,6 +140,7 @@
       179000,
       179000,
       179000,
+      199000,
       199000,
       199000,
       199000,
@@ -235,18 +235,16 @@
     "id": "bilde1av",
     "merke": "bilde",
     "navn": "Bilde 1 av",
-    "sub": "2023–2021 · 9 Nissan Leaf",
+    "sub": "2023–2018 · 9 Hyundai Kona",
     "score": 1,
-    "flipScore": 68,
-    "snittPris": 250661,
+    "flipScore": 67,
+    "snittPris": 255916,
     "minPris": 39942,
-    "maxPris": 469505,
+    "maxPris": 459999,
     "snittDager": 22,
-    "antallAnnonser": 190,
-    "prisEndring": -3937,
+    "antallAnnonser": 198,
+    "prisEndring": -5970,
     "prisData": [
-      355616,
-      311911,
       353993,
       351772,
       350322,
@@ -321,32 +319,33 @@
       344281,
       353275,
       329791,
-      355445,
+      355446,
       325159,
-      352037,
-      351896,
-      352397,
-      353109,
-      338241,
-      353477,
+      352038,
+      351898,
+      352427,
+      353139,
+      338246,
+      353503,
       348585,
-      352870,
-      351702,
-      351480
+      352896,
+      351729,
+      351472,
+      350355
     ],
     "volum": [
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190,
-      190
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198,
+      198
     ],
     "tags": [
       {
@@ -356,6 +355,10 @@
       {
         "t": "Høyt volum",
         "c": "b"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Under bucket",
@@ -370,43 +373,43 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 190 annonser funnet.",
-    "avgBucketMedianPrivate": 341941,
-    "avgBucketMedianDealer": 339451,
-    "avgBucketP25Private": 301592,
-    "avgBucketP75Private": 376374,
-    "avgLowballTarget": 234351,
-    "avgLowballMargin": 107590,
-    "avgMedianMargin": 65905,
+    "ai": "Bilde 1 av — 198 annonser funnet.",
+    "avgBucketMedianPrivate": 341888,
+    "avgBucketMedianDealer": 340130,
+    "avgBucketP25Private": 292294,
+    "avgBucketP75Private": 374975,
+    "avgLowballTarget": 235652,
+    "avgLowballMargin": 106236,
+    "avgMedianMargin": 61407,
     "avgCompCount": 24,
     "avgCompSpreadPct": 28,
-    "bucketCoverage": 130,
-    "bucketDealerCoverage": 130,
-    "priceToBucketPct": 73,
+    "bucketCoverage": 132,
+    "bucketDealerCoverage": 132,
+    "priceToBucketPct": 75,
     "underBucketShare": 100,
-    "p25DealShare": 88,
+    "p25DealShare": 81,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 109,
-      "medium": 21
+      "high": 118,
+      "medium": 14
     },
     "primaryValuationSource": "bucket_dealer_min",
     "valuationBreakdown": {
-      "bucket_dealer_min": 38,
-      "comps_private_min": 32,
-      "bucket_private_min": 22,
-      "comps_dealer_min": 34,
-      "comps_private_thin_min": 4
+      "bucket_private_min": 26,
+      "bucket_dealer_min": 36,
+      "comps_private_min": 34,
+      "comps_dealer_min": 30,
+      "comps_private_thin_min": 6
     },
     "sellerMix": {
-      "private_likely": 100,
-      "unknown": 88,
+      "private_likely": 109,
+      "unknown": 87,
       "auction": 2
     },
-    "analysisBaseCount": 130,
-    "cohortFilteredCount": 130,
-    "bestDealScore": 99,
-    "bestMargin": 142355,
+    "analysisBaseCount": 132,
+    "cohortFilteredCount": 132,
+    "bestDealScore": 98,
+    "bestMargin": 126474,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -440,11 +443,10 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 212,
+    "snittDager": 214,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      192741,
       197021,
       197021,
       188766
@@ -540,7 +542,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 212,
+    "snittDager": 214,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -628,21 +630,162 @@
     ]
   },
   {
+    "id": "volkswagen",
+    "merke": "volkswagen",
+    "navn": "Volkswagen ID.4 Pro",
+    "sub": "2022–2022 · 77kWh 204hk",
+    "score": 70,
+    "flipScore": 60,
+    "snittPris": 269532,
+    "minPris": 269532,
+    "maxPris": 269532,
+    "snittDager": 214,
+    "antallAnnonser": 1,
+    "prisEndring": -75037,
+    "prisData": [
+      405749,
+      405749,
+      405749,
+      324532,
+      454000,
+      454000,
+      454000,
+      454000,
+      454000,
+      454000,
+      454000,
+      454000,
+      299532,
+      379266,
+      379266,
+      379266,
+      379266,
+      379266,
+      379266,
+      379266,
+      379266,
+      379266,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      299532,
+      466505,
+      466505,
+      466505,
+      466505,
+      466505,
+      466505,
+      466505,
+      466505,
+      466505,
+      447703,
+      391468
+    ],
+    "volum": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Pris ned",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      }
+    ],
+    "ai": "VW ID.4 Pro 2022 med 67k km til 269.5k. Rimelig pris. Tilsvarende selges for 280-290k privat. Moderat margin.",
+    "avgBucketMedianPrivate": null,
+    "avgBucketMedianDealer": 414350,
+    "avgBucketP25Private": null,
+    "avgBucketP75Private": null,
+    "avgLowballTarget": 250665,
+    "avgLowballMargin": 163685,
+    "avgMedianMargin": 135588,
+    "avgCompCount": 4,
+    "avgCompSpreadPct": 32,
+    "bucketCoverage": 0,
+    "bucketDealerCoverage": 1,
+    "priceToBucketPct": null,
+    "underBucketShare": 100,
+    "p25DealShare": 0,
+    "topCompConfidence": "medium",
+    "confidenceBreakdown": {
+      "medium": 1
+    },
+    "primaryValuationSource": "comps_dealer_min",
+    "valuationBreakdown": {
+      "comps_dealer_min": 1
+    },
+    "sellerMix": {
+      "unknown": 1
+    },
+    "analysisBaseCount": 1,
+    "cohortFilteredCount": 1,
+    "bestDealScore": 60,
+    "bestMargin": 125043,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 75,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 100,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 15,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 68,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model Y",
     "sub": "2021–2023 · Long Range AWD, hengerfeste, nye sommerdekk",
-    "score": 79,
-    "flipScore": 61,
-    "snittPris": 352688,
+    "score": 75,
+    "flipScore": 58,
+    "snittPris": 356392,
     "minPris": 319532,
     "maxPris": 389000,
-    "snittDager": 221,
+    "snittDager": 222,
     "antallAnnonser": 8,
-    "prisEndring": -21770,
+    "prisEndring": -13942,
     "prisData": [
-      421759,
-      393344,
       423429,
       412399,
       403661,
@@ -711,7 +854,8 @@
       364132,
       424930,
       424930,
-      424930
+      424930,
+      419558
     ],
     "volum": [
       8,
@@ -741,55 +885,53 @@
         "c": "g"
       },
       {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
         "t": "Mange under p25",
         "c": "g"
       }
     ],
     "ai": "Tesla Model Y LR 2021 med 75k km og hengerfeste. Prisen 319.532kr er god for en Long Range med hvit interiør. Tilsvarende biler selges for 340-360k hos forhandlere. God margin mulig.",
-    "avgBucketMedianPrivate": 387502,
-    "avgBucketMedianDealer": 404300,
-    "avgBucketP25Private": 380341,
-    "avgBucketP75Private": 395170,
-    "avgLowballTarget": 328000,
-    "avgLowballMargin": 59502,
-    "avgMedianMargin": 27533,
+    "avgBucketMedianPrivate": 388751,
+    "avgBucketMedianDealer": 407063,
+    "avgBucketP25Private": 381256,
+    "avgBucketP75Private": 395472,
+    "avgLowballTarget": 331445,
+    "avgLowballMargin": 57306,
+    "avgMedianMargin": 24825,
     "avgCompCount": 7,
-    "avgCompSpreadPct": 9,
-    "bucketCoverage": 3,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 91,
+    "avgCompSpreadPct": 8,
+    "bucketCoverage": 4,
+    "bucketDealerCoverage": 4,
+    "priceToBucketPct": 92,
     "underBucketShare": 100,
     "p25DealShare": 100,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 2,
+      "high": 3,
       "medium": 1
     },
     "primaryValuationSource": "comps_private_min",
     "valuationBreakdown": {
-      "comps_private_min": 3
+      "comps_private_min": 2,
+      "bucket_private_min": 1,
+      "comps_dealer_min": 1
     },
     "sellerMix": {
-      "private_likely": 4,
-      "unknown": 4
+      "private_likely": 3,
+      "unknown": 5
     },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 3,
+    "analysisBaseCount": 4,
+    "cohortFilteredCount": 4,
     "bestDealScore": 82,
     "bestMargin": 18348,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 84,
+        "v": 80,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 23,
+        "v": 17,
         "c": "#e8a020"
       },
       {
@@ -805,6 +947,175 @@
     ]
   },
   {
+    "id": "hyundaiion",
+    "merke": "hyundai",
+    "navn": "Hyundai Ioniq 5",
+    "sub": "2025–2022 · RWD",
+    "score": 68,
+    "flipScore": 56,
+    "snittPris": 326766,
+    "minPris": 254532,
+    "maxPris": 399000,
+    "snittDager": 215,
+    "antallAnnonser": 2,
+    "prisEndring": -2000,
+    "prisData": [
+      392749,
+      384801,
+      374431,
+      299532,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      439000,
+      549000,
+      549000,
+      549000,
+      464000,
+      464000,
+      549000,
+      442505,
+      443950,
+      443468,
+      443468,
+      443468,
+      443468,
+      399900,
+      432576,
+      432576,
+      432576,
+      432576,
+      404041,
+      404041,
+      427135,
+      427135,
+      427135,
+      319000,
+      427135,
+      400101,
+      400101,
+      400101,
+      398851,
+      425468,
+      419450,
+      419450,
+      419450,
+      419450,
+      549000,
+      549000,
+      549000,
+      459450,
+      459450,
+      509000,
+      475967,
+      475967,
+      475967,
+      475967,
+      425135
+    ],
+    "volum": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Lavt volum",
+        "c": "a"
+      },
+      {
+        "t": "Over bucket",
+        "c": "a"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
+    "avgBucketMedianPrivate": 297032,
+    "avgBucketMedianDealer": 424400,
+    "avgBucketP25Private": 295782,
+    "avgBucketP75Private": 298282,
+    "avgLowballTarget": 301898,
+    "avgLowballMargin": 121069,
+    "avgMedianMargin": 94211,
+    "avgCompCount": 2,
+    "avgCompSpreadPct": 3,
+    "bucketCoverage": 1,
+    "bucketDealerCoverage": 2,
+    "priceToBucketPct": 110,
+    "underBucketShare": 100,
+    "p25DealShare": 50,
+    "topCompConfidence": "low",
+    "confidenceBreakdown": {
+      "low": 2
+    },
+    "primaryValuationSource": "bucket_dealer",
+    "valuationBreakdown": {
+      "bucket_dealer": 1,
+      "comps_private_thin_min": 1
+    },
+    "sellerMix": {
+      "private_likely": 1,
+      "unknown": 1
+    },
+    "analysisBaseCount": 2,
+    "cohortFilteredCount": 0,
+    "bestDealScore": 73,
+    "bestMargin": 136335,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 73,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Prismargin",
+        "v": 100,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 30,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 84,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model 3",
@@ -814,12 +1125,10 @@
     "snittPris": 224483,
     "minPris": 224434,
     "maxPris": 224532,
-    "snittDager": 216,
+    "snittDager": 218,
     "antallAnnonser": 2,
     "prisEndring": 0,
     "prisData": [
-      337553,
-      397505,
       346439,
       357999,
       347887,
@@ -944,173 +1253,6 @@
     ]
   },
   {
-    "id": "hyundaiion",
-    "merke": "hyundai",
-    "navn": "Hyundai Ioniq 5",
-    "sub": "2025–2022 · RWD",
-    "score": 68,
-    "flipScore": 51,
-    "snittPris": 316021,
-    "minPris": 254532,
-    "maxPris": 399000,
-    "snittDager": 212,
-    "antallAnnonser": 3,
-    "prisEndring": 12090,
-    "prisData": [
-      381918,
-      321716,
-      392749,
-      384801,
-      374431,
-      299532,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      439000,
-      549000,
-      549000,
-      549000,
-      464000,
-      464000,
-      549000,
-      442505,
-      443950,
-      443468,
-      443468,
-      443468,
-      443468,
-      399900,
-      432576,
-      432576,
-      432576,
-      432576,
-      404041,
-      404041,
-      427135,
-      427135,
-      427135,
-      319000,
-      427135,
-      400101,
-      400101,
-      400101,
-      398851,
-      425468,
-      419450,
-      419450,
-      419450,
-      419450,
-      549000,
-      549000,
-      549000,
-      459450,
-      459450,
-      509000,
-      475967,
-      475967,
-      475967,
-      439225
-    ],
-    "volum": [
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3,
-      3
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Pris opp",
-        "c": "a"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Hyundai Ioniq 5 Long Range 2025 til 399 000 kr fra privatperson. Nypris var 543 900 kr. Selger oppgir liten bulk på bakdør. Realistisk markedsverdi er 430-450 000 kr etter klargjøring. God margin.",
-    "avgBucketMedianPrivate": 302776,
-    "avgBucketMedianDealer": 392600,
-    "avgBucketP25Private": 299904,
-    "avgBucketP75Private": 305647,
-    "avgLowballTarget": 291588,
-    "avgLowballMargin": 93229,
-    "avgMedianMargin": 67470,
-    "avgCompCount": 2,
-    "avgCompSpreadPct": 2,
-    "bucketCoverage": 2,
-    "bucketDealerCoverage": 3,
-    "priceToBucketPct": 104,
-    "underBucketShare": 100,
-    "p25DealShare": 67,
-    "topCompConfidence": "low",
-    "confidenceBreakdown": {
-      "low": 3
-    },
-    "primaryValuationSource": "bucket_dealer",
-    "valuationBreakdown": {
-      "bucket_dealer": 1,
-      "bucket_private_min": 1,
-      "comps_private_thin_min": 1
-    },
-    "sellerMix": {
-      "private_likely": 2,
-      "unknown": 1
-    },
-    "analysisBaseCount": 3,
-    "cohortFilteredCount": 0,
-    "bestDealScore": 73,
-    "bestMargin": 136335,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 73,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Prismargin",
-        "v": 88,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 45,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "toyotarav4",
     "merke": "toyota",
     "navn": "Toyota RAV4 Plug-in",
@@ -1120,11 +1262,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 212,
+    "snittDager": 214,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      492541,
       494305,
       494305,
       494305,
@@ -1144,6 +1285,7 @@
       489900,
       489900,
       489900,
+      519900,
       519900,
       519900,
       519900,
@@ -1236,60 +1378,18 @@
   {
     "id": "volkswagen",
     "merke": "volkswagen",
-    "navn": "Volkswagen ID.4 Pro",
-    "sub": "2022–2022 · 77kWh 204hk",
-    "score": 70,
-    "flipScore": 48,
-    "snittPris": 269532,
-    "minPris": 269532,
-    "maxPris": 269532,
-    "snittDager": 212,
+    "navn": "Volkswagen ID.4 2021",
+    "sub": "2021–2021 · ∙ 43 500 km ∙ El ∙ 495 km rekkevidde",
+    "score": 80,
+    "flipScore": 35,
+    "snittPris": 239000,
+    "minPris": 239000,
+    "maxPris": 239000,
+    "snittDager": 226,
     "antallAnnonser": 1,
-    "prisEndring": -18802,
+    "prisEndring": 0,
     "prisData": [
-      408782,
-      405749,
-      405749,
-      405749,
-      324532,
-      454000,
-      454000,
-      454000,
-      454000,
-      454000,
-      454000,
-      454000,
-      454000,
-      299532,
-      379266,
-      379266,
-      379266,
-      379266,
-      379266,
-      379266,
-      379266,
-      379266,
-      379266,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      299532,
-      466505,
-      466505,
-      466505,
-      466505,
-      466505,
-      466505,
-      466505,
-      466505,
-      466505,
-      447703
+      239000
     ],
     "volum": [
       1,
@@ -1307,15 +1407,11 @@
     ],
     "tags": [
       {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
         "t": "Lavt volum",
         "c": "a"
       },
       {
-        "t": "Pris ned",
+        "t": "Høy score",
         "c": "g"
       },
       {
@@ -1323,14 +1419,14 @@
         "c": "g"
       }
     ],
-    "ai": "VW ID.4 Pro 2022 med 67k km til 269.5k. Rimelig pris. Tilsvarende selges for 280-290k privat. Moderat margin.",
+    "ai": "Volkswagen ID.4 2021 med bare 43 500 km til 239 000 kr. Dette er en svært god pris for en populær el-SUV med lav km. Privatsalg, ingen større reparasjoner. Stor potensiell margin.",
     "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 414350,
+    "avgBucketMedianDealer": 273950,
     "avgBucketP25Private": null,
     "avgBucketP75Private": null,
-    "avgLowballTarget": 250665,
-    "avgLowballMargin": 163685,
-    "avgMedianMargin": 144818,
+    "avgLowballTarget": 222270,
+    "avgLowballMargin": 51680,
+    "avgMedianMargin": 34950,
     "avgCompCount": 0,
     "avgCompSpreadPct": null,
     "bucketCoverage": 0,
@@ -1351,18 +1447,18 @@
     },
     "analysisBaseCount": 1,
     "cohortFilteredCount": 0,
-    "bestDealScore": 48,
-    "bestMargin": 134273,
+    "bestDealScore": 35,
+    "bestMargin": 21385,
     "faktorer": [
       {
         "l": "Etterspørsel",
-        "v": 75,
+        "v": 85,
         "c": "#3d9960"
       },
       {
         "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
+        "v": 45,
+        "c": "#e8a020"
       },
       {
         "l": "Likviditet",
@@ -1371,7 +1467,7 @@
       },
       {
         "l": "Batteririsiko",
-        "v": 68,
+        "v": 60,
         "c": "#3d9960"
       }
     ]
