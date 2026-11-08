@@ -9,7 +9,7 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -114,11 +114,10 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
     "prisEndring": 5450,
     "prisData": [
-      198617,
       169900,
       179000,
       179000,
@@ -143,6 +142,7 @@
       199000,
       199000,
       199000,
+      184450,
       184450
     ],
     "volum": [
@@ -236,15 +236,14 @@
     "navn": "Bilde 1 av",
     "sub": "2023–2023 · 9 Nissan Leaf",
     "score": 1,
-    "flipScore": 66,
-    "snittPris": 252781,
+    "flipScore": 67,
+    "snittPris": 252377,
     "minPris": 41942,
-    "maxPris": 459999,
-    "snittDager": 22,
-    "antallAnnonser": 194,
-    "prisEndring": -5143,
+    "maxPris": 479000,
+    "snittDager": 23,
+    "antallAnnonser": 203,
+    "prisEndring": 28579,
     "prisData": [
-      350322,
       330508,
       352472,
       331264,
@@ -328,22 +327,23 @@
       352896,
       351729,
       351482,
-      350382,
-      348444
+      350364,
+      348427,
+      348226
     ],
     "volum": [
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194,
-      194
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203,
+      203
     ],
     "tags": [
       {
@@ -355,8 +355,8 @@
         "c": "b"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -371,41 +371,41 @@
         "c": "g"
       }
     ],
-    "ai": "Bilde 1 av — 194 annonser funnet.",
-    "avgBucketMedianPrivate": 339184,
-    "avgBucketMedianDealer": 338601,
-    "avgBucketP25Private": 285228,
-    "avgBucketP75Private": 375052,
-    "avgLowballTarget": 232375,
-    "avgLowballMargin": 106809,
-    "avgMedianMargin": 61359,
-    "avgCompCount": 24,
-    "avgCompSpreadPct": 29,
-    "bucketCoverage": 136,
-    "bucketDealerCoverage": 136,
-    "priceToBucketPct": 75,
+    "ai": "Bilde 1 av — 203 annonser funnet.",
+    "avgBucketMedianPrivate": 339057,
+    "avgBucketMedianDealer": 338794,
+    "avgBucketP25Private": 280536,
+    "avgBucketP75Private": 374696,
+    "avgLowballTarget": 231559,
+    "avgLowballMargin": 107498,
+    "avgMedianMargin": 62418,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 30,
+    "bucketCoverage": 142,
+    "bucketDealerCoverage": 142,
+    "priceToBucketPct": 74,
     "underBucketShare": 100,
-    "p25DealShare": 80,
+    "p25DealShare": 75,
     "topCompConfidence": "high",
     "confidenceBreakdown": {
-      "high": 117,
-      "medium": 19
+      "high": 127,
+      "medium": 15
     },
     "primaryValuationSource": "comps_dealer_min",
     "valuationBreakdown": {
-      "bucket_dealer_min": 30,
-      "comps_private_min": 35,
-      "bucket_private_min": 30,
-      "comps_private_thin_min": 5,
-      "comps_dealer_min": 36
+      "bucket_dealer_min": 25,
+      "comps_private_min": 37,
+      "bucket_private_min": 33,
+      "comps_dealer_min": 38,
+      "comps_private_thin_min": 9
     },
     "sellerMix": {
-      "private_likely": 106,
-      "unknown": 86,
+      "private_likely": 111,
+      "unknown": 90,
       "auction": 2
     },
-    "analysisBaseCount": 136,
-    "cohortFilteredCount": 136,
+    "analysisBaseCount": 142,
+    "cohortFilteredCount": 142,
     "bestDealScore": 99,
     "bestMargin": 147455,
     "faktorer": [
@@ -441,11 +441,10 @@
     "snittPris": 269532,
     "minPris": 269532,
     "maxPris": 269532,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
-    "prisEndring": -89844,
+    "prisEndring": -49703,
     "prisData": [
-      405749,
       324532,
       454000,
       454000,
@@ -485,8 +484,9 @@
       466505,
       466505,
       447703,
-      391468,
-      376661
+      447703,
+      418135,
+      416802
     ],
     "volum": [
       1,
@@ -522,14 +522,14 @@
     ],
     "ai": "VW ID.4 Pro 2022 med 67k km til 269.5k. Rimelig pris. Tilsvarende selges for 280-290k privat. Moderat margin.",
     "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 399800,
+    "avgBucketMedianDealer": 414350,
     "avgBucketP25Private": null,
     "avgBucketP75Private": null,
     "avgLowballTarget": 250665,
-    "avgLowballMargin": 149135,
-    "avgMedianMargin": 106420,
-    "avgCompCount": 5,
-    "avgCompSpreadPct": 17,
+    "avgLowballMargin": 163685,
+    "avgMedianMargin": 135588,
+    "avgCompCount": 4,
+    "avgCompSpreadPct": 16,
     "bucketCoverage": 0,
     "bucketDealerCoverage": 1,
     "priceToBucketPct": null,
@@ -549,7 +549,7 @@
     "analysisBaseCount": 1,
     "cohortFilteredCount": 1,
     "bestDealScore": 66,
-    "bestMargin": 95875,
+    "bestMargin": 125043,
     "faktorer": [
       {
         "l": "Etterspørsel",
@@ -583,7 +583,7 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -680,7 +680,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -777,11 +777,10 @@
     "snittPris": 356392,
     "minPris": 319532,
     "maxPris": 389000,
-    "snittDager": 224,
+    "snittDager": 225,
     "antallAnnonser": 8,
-    "prisEndring": -5962,
+    "prisEndring": 21216,
     "prisData": [
-      403661,
       424972,
       527505,
       527505,
@@ -849,7 +848,8 @@
       424930,
       424930,
       419324,
-      413439
+      413439,
+      440617
     ],
     "volum": [
       8,
@@ -871,8 +871,8 @@
         "c": "b"
       },
       {
-        "t": "Pris ned",
-        "c": "g"
+        "t": "Pris opp",
+        "c": "a"
       },
       {
         "t": "Under bucket",
@@ -949,11 +949,10 @@
     "snittPris": 326766,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 217,
+    "snittDager": 218,
     "antallAnnonser": 2,
     "prisEndring": 59349,
     "prisData": [
-      374431,
       299532,
       439000,
       439000,
@@ -1014,6 +1013,7 @@
       475967,
       475967,
       425135,
+      459450,
       459450
     ],
     "volum": [
@@ -1121,11 +1121,10 @@
     "snittPris": 224483,
     "minPris": 224434,
     "maxPris": 224532,
-    "snittDager": 220,
+    "snittDager": 221,
     "antallAnnonser": 2,
     "prisEndring": 0,
     "prisData": [
-      347887,
       351616,
       329000,
       329000,
@@ -1154,6 +1153,7 @@
       330969,
       330969,
       330969,
+      437505,
       437505
     ],
     "volum": [
@@ -1257,11 +1257,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 216,
+    "snittDager": 217,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      494305,
       474900,
       506267,
       485950,
@@ -1278,6 +1277,7 @@
       489900,
       489900,
       489900,
+      519900,
       519900,
       519900,
       519900,
@@ -1379,7 +1379,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 228,
+    "snittDager": 229,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1419,12 +1419,12 @@
     ],
     "ai": "Volkswagen ID.4 2021 med bare 43 500 km til 239 000 kr. Dette er en svært god pris for en populær el-SUV med lav km. Privatsalg, ingen større reparasjoner. Stor potensiell margin.",
     "avgBucketMedianPrivate": null,
-    "avgBucketMedianDealer": 314450,
+    "avgBucketMedianDealer": 313950,
     "avgBucketP25Private": null,
     "avgBucketP75Private": null,
     "avgLowballTarget": 222270,
-    "avgLowballMargin": 92180,
-    "avgMedianMargin": 75450,
+    "avgLowballMargin": 91680,
+    "avgMedianMargin": 74950,
     "avgCompCount": 0,
     "avgCompSpreadPct": null,
     "bucketCoverage": 0,
@@ -1446,7 +1446,7 @@
     "analysisBaseCount": 1,
     "cohortFilteredCount": 0,
     "bestDealScore": 45,
-    "bestMargin": 61885,
+    "bestMargin": 61385,
     "faktorer": [
       {
         "l": "Etterspørsel",
