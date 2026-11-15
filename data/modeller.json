@@ -9,10 +9,11 @@
     "snittPris": 120000,
     "minPris": 120000,
     "maxPris": 120000,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
+      239900,
       239900,
       239900,
       239900
@@ -116,7 +117,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -238,11 +239,10 @@
     "snittPris": 469532,
     "minPris": 469532,
     "maxPris": 469532,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
-      485950,
       432450,
       489900,
       457450,
@@ -346,7 +346,7 @@
     "snittPris": 189532,
     "minPris": 189532,
     "maxPris": 189532,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -443,7 +443,7 @@
     "snittPris": 139532,
     "minPris": 139532,
     "maxPris": 139532,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -531,208 +531,6 @@
     ]
   },
   {
-    "id": "bilde1av",
-    "merke": "bilde",
-    "navn": "Bilde 1 av",
-    "sub": "2023–2018 · 9 Hyundai Kona",
-    "score": 1,
-    "flipScore": 60,
-    "snittPris": 261170,
-    "minPris": 19900,
-    "maxPris": 479800,
-    "snittDager": 13,
-    "antallAnnonser": 433,
-    "prisEndring": -7484,
-    "prisData": [
-      351550,
-      351826,
-      320964,
-      352256,
-      338405,
-      353224,
-      353657,
-      317112,
-      352734,
-      353434,
-      352326,
-      381129,
-      352545,
-      353132,
-      346677,
-      353634,
-      354910,
-      353792,
-      342600,
-      361926,
-      354691,
-      343716,
-      353389,
-      337329,
-      354873,
-      342704,
-      354584,
-      354441,
-      331699,
-      356276,
-      355741,
-      331999,
-      356403,
-      355341,
-      356032,
-      331544,
-      355484,
-      344013,
-      355284,
-      319831,
-      356633,
-      355260,
-      355413,
-      342134,
-      355954,
-      317036,
-      357307,
-      355007,
-      355442,
-      329529,
-      356351,
-      354640,
-      353612,
-      319647,
-      352637,
-      352155,
-      330710,
-      353218,
-      335500,
-      355148,
-      333882,
-      353505,
-      352783,
-      344898,
-      353351,
-      329791,
-      355525,
-      325159,
-      352113,
-      351973,
-      352506,
-      353218,
-      338246,
-      353580,
-      348585,
-      352974,
-      351807,
-      351546,
-      350457,
-      348502,
-      348314,
-      348422,
-      348042,
-      313643,
-      348530,
-      325726,
-      347664
-    ],
-    "volum": [
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433,
-      433
-    ],
-    "tags": [
-      {
-        "t": "God margin",
-        "c": "g"
-      },
-      {
-        "t": "Høyt volum",
-        "c": "b"
-      },
-      {
-        "t": "Pris ned",
-        "c": "g"
-      },
-      {
-        "t": "Under bucket",
-        "c": "g"
-      },
-      {
-        "t": "Sterk medianmargin",
-        "c": "g"
-      },
-      {
-        "t": "Mange under p25",
-        "c": "g"
-      }
-    ],
-    "ai": "Bilde 1 av — 433 annonser funnet.",
-    "avgBucketMedianPrivate": 360692,
-    "avgBucketMedianDealer": 354931,
-    "avgBucketP25Private": 301773,
-    "avgBucketP75Private": 394460,
-    "avgLowballTarget": 244817,
-    "avgLowballMargin": 115875,
-    "avgMedianMargin": 69931,
-    "avgCompCount": 25,
-    "avgCompSpreadPct": 30,
-    "bucketCoverage": 376,
-    "bucketDealerCoverage": 376,
-    "priceToBucketPct": 72,
-    "underBucketShare": 100,
-    "p25DealShare": 77,
-    "topCompConfidence": "high",
-    "confidenceBreakdown": {
-      "high": 328,
-      "medium": 48
-    },
-    "primaryValuationSource": "comps_dealer_min",
-    "valuationBreakdown": {
-      "bucket_private_min": 75,
-      "bucket_dealer_min": 101,
-      "comps_private_min": 49,
-      "comps_dealer_min": 132,
-      "comps_private_thin_min": 19
-    },
-    "sellerMix": {
-      "private_likely": 87,
-      "unknown": 344,
-      "auction": 2
-    },
-    "analysisBaseCount": 376,
-    "cohortFilteredCount": 376,
-    "bestDealScore": 100,
-    "bestMargin": 117221,
-    "faktorer": [
-      {
-        "l": "Etterspørsel",
-        "v": 6,
-        "c": "#e8a020"
-      },
-      {
-        "l": "Prismargin",
-        "v": 100,
-        "c": "#3d9960"
-      },
-      {
-        "l": "Likviditet",
-        "v": 100,
-        "c": "#1f5fa6"
-      },
-      {
-        "l": "Batteririsiko",
-        "v": 76,
-        "c": "#3d9960"
-      }
-    ]
-  },
-  {
     "id": "hyundaiion",
     "merke": "hyundai",
     "navn": "Hyundai Ioniq 5",
@@ -742,11 +540,10 @@
     "snittPris": 316021,
     "minPris": 254532,
     "maxPris": 399000,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 3,
     "prisEndring": 19550,
     "prisData": [
-      439000,
       439000,
       439000,
       439000,
@@ -803,6 +600,7 @@
       452753,
       549000,
       549000,
+      439000,
       439000,
       439000,
       439000,
@@ -898,6 +696,208 @@
     ]
   },
   {
+    "id": "bilde1av",
+    "merke": "bilde",
+    "navn": "Bilde 1 av",
+    "sub": "2023–2018 · 9 Hyundai Kona",
+    "score": 0,
+    "flipScore": 59,
+    "snittPris": 262565,
+    "minPris": 19900,
+    "maxPris": 479800,
+    "snittDager": 13,
+    "antallAnnonser": 448,
+    "prisEndring": 13179,
+    "prisData": [
+      351826,
+      320964,
+      352256,
+      338405,
+      353224,
+      353657,
+      317112,
+      352734,
+      353434,
+      352326,
+      381129,
+      352545,
+      353132,
+      346677,
+      353634,
+      354910,
+      353792,
+      342600,
+      361926,
+      354691,
+      343716,
+      353389,
+      337329,
+      354873,
+      342704,
+      354584,
+      354441,
+      331699,
+      356276,
+      355741,
+      331999,
+      356403,
+      355341,
+      356032,
+      331544,
+      355484,
+      344013,
+      355284,
+      319831,
+      356633,
+      355260,
+      355413,
+      342134,
+      355954,
+      317036,
+      357307,
+      355007,
+      355442,
+      329529,
+      356351,
+      354640,
+      353612,
+      319647,
+      352637,
+      352155,
+      330710,
+      353218,
+      335500,
+      355148,
+      333882,
+      353505,
+      352783,
+      344898,
+      353351,
+      329791,
+      355525,
+      325159,
+      352113,
+      351973,
+      352506,
+      353218,
+      338246,
+      353580,
+      348585,
+      352974,
+      351807,
+      351546,
+      350457,
+      348502,
+      348314,
+      348422,
+      348042,
+      313643,
+      348530,
+      325726,
+      347664,
+      347061
+    ],
+    "volum": [
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448,
+      448
+    ],
+    "tags": [
+      {
+        "t": "God margin",
+        "c": "g"
+      },
+      {
+        "t": "Høyt volum",
+        "c": "b"
+      },
+      {
+        "t": "Pris opp",
+        "c": "a"
+      },
+      {
+        "t": "Under bucket",
+        "c": "g"
+      },
+      {
+        "t": "Sterk medianmargin",
+        "c": "g"
+      },
+      {
+        "t": "Mange under p25",
+        "c": "g"
+      }
+    ],
+    "ai": "Bilde 1 av — 448 annonser funnet.",
+    "avgBucketMedianPrivate": 361881,
+    "avgBucketMedianDealer": 356705,
+    "avgBucketP25Private": 298500,
+    "avgBucketP75Private": 394922,
+    "avgLowballTarget": 243652,
+    "avgLowballMargin": 118229,
+    "avgMedianMargin": 69721,
+    "avgCompCount": 25,
+    "avgCompSpreadPct": 30,
+    "bucketCoverage": 393,
+    "bucketDealerCoverage": 393,
+    "priceToBucketPct": 73,
+    "underBucketShare": 100,
+    "p25DealShare": 72,
+    "topCompConfidence": "high",
+    "confidenceBreakdown": {
+      "high": 344,
+      "medium": 49
+    },
+    "primaryValuationSource": "bucket_dealer_min",
+    "valuationBreakdown": {
+      "bucket_private_min": 78,
+      "bucket_dealer_min": 119,
+      "comps_private_min": 55,
+      "comps_dealer_min": 118,
+      "comps_private_thin_min": 23
+    },
+    "sellerMix": {
+      "private_likely": 82,
+      "unknown": 364,
+      "auction": 2
+    },
+    "analysisBaseCount": 393,
+    "cohortFilteredCount": 393,
+    "bestDealScore": 100,
+    "bestMargin": 117987,
+    "faktorer": [
+      {
+        "l": "Etterspørsel",
+        "v": 5,
+        "c": "#e8a020"
+      },
+      {
+        "l": "Prismargin",
+        "v": 100,
+        "c": "#3d9960"
+      },
+      {
+        "l": "Likviditet",
+        "v": 100,
+        "c": "#1f5fa6"
+      },
+      {
+        "l": "Batteririsiko",
+        "v": 76,
+        "c": "#3d9960"
+      }
+    ]
+  },
+  {
     "id": "teslamodel",
     "merke": "tesla",
     "navn": "Tesla Model Y",
@@ -907,11 +907,10 @@
     "snittPris": 364914,
     "minPris": 319532,
     "maxPris": 399000,
-    "snittDager": 231,
+    "snittDager": 232,
     "antallAnnonser": 9,
-    "prisEndring": 10614,
+    "prisEndring": -113803,
     "prisData": [
-      527505,
       542435,
       408505,
       522203,
@@ -980,6 +979,7 @@
       423728,
       442005,
       436097,
+      436097,
       436097
     ],
     "volum": [
@@ -1002,8 +1002,8 @@
         "c": "b"
       },
       {
-        "t": "Pris opp",
-        "c": "a"
+        "t": "Pris ned",
+        "c": "g"
       },
       {
         "t": "Mange under p25",
@@ -1077,7 +1077,7 @@
     "snittPris": 224483,
     "minPris": 224434,
     "maxPris": 224532,
-    "snittDager": 227,
+    "snittDager": 228,
     "antallAnnonser": 2,
     "prisEndring": 0,
     "prisData": [
@@ -1210,11 +1210,10 @@
     "snittPris": 399900,
     "minPris": 399900,
     "maxPris": 399900,
-    "snittDager": 1,
+    "snittDager": 2,
     "antallAnnonser": 1,
-    "prisEndring": -12500,
+    "prisEndring": -29820,
     "prisData": [
-      522333,
       522333,
       522333,
       459000,
@@ -1274,7 +1273,8 @@
       486500,
       486500,
       399900,
-      486500
+      486500,
+      469180
     ],
     "volum": [
       1,
@@ -1371,11 +1371,10 @@
     "snittPris": 269532,
     "minPris": 269532,
     "maxPris": 269532,
-    "snittDager": 223,
+    "snittDager": 224,
     "antallAnnonser": 1,
-    "prisEndring": -64425,
+    "prisEndring": -89267,
     "prisData": [
-      454000,
       454000,
       454000,
       454000,
@@ -1406,7 +1405,8 @@
       359000,
       354450,
       354450,
-      364475
+      339633,
+      339633
     ],
     "volum": [
       1,
@@ -1503,7 +1503,7 @@
     "snittPris": 239000,
     "minPris": 239000,
     "maxPris": 239000,
-    "snittDager": 234,
+    "snittDager": 236,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
@@ -1604,10 +1604,11 @@
     "snittPris": 279000,
     "minPris": 279000,
     "maxPris": 279000,
-    "snittDager": 3,
+    "snittDager": 4,
     "antallAnnonser": 1,
     "prisEndring": 0,
     "prisData": [
+      279000,
       279000,
       279000,
       279000
